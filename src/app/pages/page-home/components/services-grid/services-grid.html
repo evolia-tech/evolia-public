@@ -1,0 +1,92 @@
+<section class="services" id="services">
+  <div class="container">
+    
+    <!-- HEADER DE SECTION (Row Layout) -->
+    <div class="services__header">
+      <!-- H2 SEO : Mots clés "Expertise", "Web", "Mobile", "France", "Cameroun" (implicite) -->
+      <h2 class="services__title">
+        Une expertise technique pointue au service de votre croissance.
+      </h2>
+      
+      <p class="services__intro">
+        Nous ne nous contentons pas de coder. Nous bâtissons des écosystèmes digitaux complets. 
+        De l'architecture serveur complexe à l'interface utilisateur pixel-perfect, 
+        <strong>Évolia Tech</strong> maîtrise toute la chaîne de valeur pour livrer des produits d'exception.
+      </p>
+    </div>
+
+    <!-- BENTO GRID -->
+    <div class="bento-grid">
+      
+      <!-- 1. DÉVELOPPEMENT WEB (Grand bloc gauche) -->
+      <article class="card card--web">
+        <div class="card__content">
+          <h3 class="card__title">Développement Web & Plateformes SaaS</h3>
+          <p class="card__desc">
+            Des applications web rapides, sécurisées et scalables. 
+            Nous utilisons la puissance d'<strong>Angular</strong> et <strong>NestJS</strong> pour créer des architectures robustes capables de gérer des milliers d'utilisateurs.
+          </p>
+          <ul class="card__tags">
+            <li>SSR & SEO Friendly</li>
+            <li>Architecture Modulaire</li>
+            <li>API REST / GraphQL</li>
+          </ul>
+        </div>
+        <!-- Décoration visuelle abstraite -->
+        <div class="card__visual-web">
+          <div class="code-block">
+            <span>&lt;Evolia /&gt;</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. DÉVELOPPEMENT MOBILE (Bloc droite haut - Image débordante) -->
+      <article class="card card--mobile">
+        <div class="card__content">
+          <h3 class="card__title">Applications Mobiles (Flutter)</h3>
+          <p class="card__desc">
+            Une seule base de code, deux applications natives (iOS & Android) performantes et fluides.
+          </p>
+        </div>
+        <!-- L'image qui va déborder -->
+        <div class="card__img-container">
+          <!-- Placeholder pour ton image de téléphone -->
+          <img src="images/services/mobile.jpeg" alt="Application Mobile Flutter" class="mobile-img">
+        </div>
+      </article>
+
+      <!-- 3. WEB DESIGN (Bloc bas gauche) -->
+      <article class="card card--design">
+        <h3 class="card__title">UI/UX Design</h3>
+        <p class="card__desc">
+          Des interfaces ergonomiques conçues sur <strong>Figma</strong> qui subliment l'expérience utilisateur.
+        </p>
+      </article>
+
+      <!-- 4. IDENTITÉ VISUELLE (Bloc bas milieu) -->
+      <article class="card card--logo">
+        <h3 class="card__title">Identité & Logo</h3>
+        <p class="card__desc">
+          Création de logos et chartes graphiques qui marquent les esprits et incarnent vos valeurs.
+        </p>
+      </article>
+
+      <!-- 5. CTA / CONVAINCRE (Bloc bas droite) -->
+      <article class="card card--cta">
+        <p class="card__desc">
+          Vous avez le projet, nous avons l'équipe technique pour le réaliser.
+        </p>
+        <div class="card__action">
+          <app-evo-button 
+            text="Lancer mon projet" 
+            link="#contact" 
+            preset="white" 
+            variant="solid"
+            icon="faArrowRight">
+          </app-evo-button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>

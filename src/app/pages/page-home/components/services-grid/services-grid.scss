@@ -1,0 +1,199 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.services {
+  padding: $spacing-4xl 0;
+  position: relative;
+
+  // --- HEADER SECTION ---
+  &__header {
+    display: flex;
+    gap: $spacing-lg;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__title {
+    max-width: 550px;
+    line-height: 1.1; // Un peu plus aéré pour la lisibilité
+    letter-spacing: -1px;
+    
+    .text-gradient {
+      @include text-gradient($light-cream, $accent-green-light);
+    }
+  }
+
+  &__intro {
+    max-width: 500px;
+    font-size: 1.05rem;
+    color: $text-muted;
+    line-height: 1.5;
+
+    strong {
+      color: $light-cream;
+    }
+  }
+}
+
+// --- BENTO GRID SYSTEM ---
+.bento-grid {
+    margin-top: 4rem;
+  display: grid;
+  gap: 1.5rem;
+  
+  // MOBILE (1 colonne)
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "web"
+    "mobile"
+    "design"
+    "logo"
+    "cta";
+
+  // TABLETTE (2 colonnes)
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "web     web"
+      "mobile  design"
+      "mobile  logo"
+      "cta     cta";
+  }
+
+  // DESKTOP (3 colonnes - Ta grille custom)
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 170px); // Hauteur totale = 660px + gaps
+    
+    grid-template-areas: 
+      "web    web    mobile" // Ligne 1
+      "web    web    mobile" // Ligne 2
+      "design logo   mobile" // Ligne 3
+      "design logo   cta";    // Ligne 4
+  }
+}
+
+// --- CARDS (Style commun) ---
+.card {
+  background-color: $dark-secondary;
+  border-radius: $border-radius-xl; // 16px ou 24px
+  padding: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba($light-cream, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba($accent-green, 0.3);
+    box-shadow: $shadow-lg;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-weight: bold;
+    font-size: 1.5rem; // h3 standard
+    margin-bottom: $spacing-sm;
+    color: $light-cream;
+    line-height: 1.2;
+  }
+
+  &__desc {
+    font-size: 0.95rem;
+    color: $text-muted;
+    line-height: 1.6;
+    
+    strong { color: $light-cream; }
+  }
+}
+
+// --- ZONES SPÉCIFIQUES ---
+
+// 1. WEB (Grand rectangle haut gauche)
+.card--web {
+  grid-area: web;
+  justify-content: space-between; // Contenu en haut, tags en bas
+
+  // Tags en bas
+  .card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto; // Pousse vers le bas
+
+    li {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 99px;
+      background: rgba($white, 0.05);
+      color: rgba($white, 0.8);
+      border: 1px solid rgba($white, 0.1);
+    }
+  }
+}
+
+// 2. MOBILE (Grande colonne droite)
+.card--mobile {
+  grid-area: mobile;
+  //background: linear-gradient(180deg, $dark-secondary 0%, darken($dark-secondary, 5%) 100%);
+  
+  // Contenu en haut
+  .card__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  // Image en bas qui déborde à droite
+  .card__img-container {
+    position: absolute;
+    bottom: -20px;
+    right: -40px; // Déborde à droite
+    width: 80%; // Prend 80% de la largeur de la carte
+    max-width: 300px;
+    height: auto;
+    
+    img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &:hover .card__img-container img {
+    transform: scale(1.05) rotate(-3deg);
+  }
+}
+
+// 3. DESIGN & LOGO (Petits carrés bas gauche)
+.card--design { grid-area: design; }
+.card--logo   { grid-area: logo; }
+
+// 4. CTA (Petit rectangle bas droite)
+.card--cta {
+  grid-area: cta;
+  background-color: $accent-green; // Vert Émeraude plein
+  border: none;
+  padding: 1rem 1.5rem;
+  
+  // Titre blanc plus grand
+  .card__title {
+    font-size: 1.5rem;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card__desc {
+    color: $white;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    max-width: 330px;
+  }
+  
+  // Bouton Blanc
+  // On peut surcharger le style du bouton pour qu'il soit blanc sur fond vert
+}

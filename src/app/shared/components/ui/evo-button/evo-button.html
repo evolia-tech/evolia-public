@@ -1,23 +1,25 @@
 <!-- CAS : LIEN -->
-<a *ngIf="link(); else actionBtn"
-   class="btn"
-   [ngClass]="['btn--' + preset(), 'btn--' + variant()]"
-   [style]="dynamicStyles()"
-   [href]="isExternal() ? link() : null"
-   [routerLink]="!isExternal() && !link()?.startsWith('#') ? link() : null"
-   [target]="isExternal() ? '_blank' : '_self'"
-   (click)="handleClick($event)"
-   (mouseenter)="onMouseEnter($event)"
-   (mouseleave)="onMouseLeave($event)">
-   
-   <span class="btn__content">
-     {{ text() }}
-     <i *ngIf="icon()" [class]="icon()"></i>
-   </span>
-</a>
-
-<!-- CAS : BOUTON -->
-<ng-template #actionBtn>
+ @if (link()) {
+    <a 
+        class="btn"
+        [ngClass]="['btn--' + preset(), 'btn--' + variant()]"
+        [style]="dynamicStyles()"
+        [href]="isExternal() ? link() : null"
+        [routerLink]="!isExternal() && !link()?.startsWith('#') ? link() : null"
+        [target]="isExternal() ? '_blank' : '_self'"
+        (click)="handleClick($event)"
+        (mouseenter)="onMouseEnter($event)"
+        (mouseleave)="onMouseLeave($event)">
+        
+        <span class="btn__content">
+          {{ text() }}
+            @if (icon()) {
+                    <fa-icon [icon]="icon()! | toFaIcon"></fa-icon>
+            }   
+        </span>
+    </a>
+ }
+ @else {
   <button class="btn"
           [ngClass]="['btn--' + preset(), 'btn--' + variant()]"
           [style]="dynamicStyles()"
@@ -26,7 +28,9 @@
           
     <span class="btn__content">
       {{ text() }}
-      <i *ngIf="icon()" [class]="icon()"></i>
+      @if (icon()) {
+        <fa-icon [icon]="icon()! | toFaIcon"></fa-icon>
+      }
     </span>
   </button>
-</ng-template>
+ }

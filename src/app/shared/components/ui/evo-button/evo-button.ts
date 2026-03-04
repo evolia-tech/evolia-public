@@ -1,6 +1,8 @@
 import { Component, input, inject, ElementRef, computed } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToFaIconPipe } from '../../../../shared/pipes/to-fa-icon-pipe';
 
 // Types
 export type ButtonVariant = 'solid' | 'outline';
@@ -8,10 +10,14 @@ export type ButtonPreset = 'green' | 'cream' | 'white' | 'dark'; // Correspond a
 
 @Component({
   selector: 'app-evo-button',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
   templateUrl: './evo-button.html',
-  styleUrls: ['./evo-button.scss']
+  styleUrl: './evo-button.scss',
+  imports: [
+    CommonModule, 
+    RouterModule,
+    FontAwesomeModule,
+    ToFaIconPipe
+  ],
 })
 export class EvoButton {
   // --- CONTENU & NAVIGATION ---

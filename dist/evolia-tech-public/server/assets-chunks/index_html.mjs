@@ -3,16 +3,567 @@ export default `<!DOCTYPE html><html lang="fr" data-beasties-container><head>
   <title>Evolia Tech</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style type="text/css" id="fa-auto-css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 'Font Awesome 7 Free';
+  --fa-font-regular: normal 400 1em/1 'Font Awesome 7 Free';
+  --fa-font-light: normal 300 1em/1 'Font Awesome 7 Pro';
+  --fa-font-thin: normal 100 1em/1 'Font Awesome 7 Pro';
+  --fa-font-duotone: normal 900 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-regular: normal 400 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-light: normal 300 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-thin: normal 100 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-brands: normal 400 1em/1 'Font Awesome 7 Brands';
+  --fa-font-sharp-solid: normal 900 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-regular: normal 400 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-light: normal 300 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-thin: normal 100 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-regular: normal 400 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-light: normal 300 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-thin: normal 100 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-slab-regular: normal 400 1em/1 'Font Awesome 7 Slab';
+  --fa-font-slab-press-regular: normal 400 1em/1 'Font Awesome 7 Slab Press';
+  --fa-font-whiteboard-semibold: normal 600 1em/1 'Font Awesome 7 Whiteboard';
+  --fa-font-thumbprint-light: normal 300 1em/1 'Font Awesome 7 Thumbprint';
+  --fa-font-notdog-solid: normal 900 1em/1 'Font Awesome 7 Notdog';
+  --fa-font-notdog-duo-solid: normal 900 1em/1 'Font Awesome 7 Notdog Duo';
+  --fa-font-etch-solid: normal 900 1em/1 'Font Awesome 7 Etch';
+  --fa-font-graphite-thin: normal 100 1em/1 'Font Awesome 7 Graphite';
+  --fa-font-jelly-regular: normal 400 1em/1 'Font Awesome 7 Jelly';
+  --fa-font-jelly-fill-regular: normal 400 1em/1 'Font Awesome 7 Jelly Fill';
+  --fa-font-jelly-duo-regular: normal 400 1em/1 'Font Awesome 7 Jelly Duo';
+  --fa-font-chisel-regular: normal 400 1em/1 'Font Awesome 7 Chisel';
+  --fa-font-utility-semibold: normal 600 1em/1 'Font Awesome 7 Utility';
+  --fa-font-utility-duo-semibold: normal 600 1em/1 'Font Awesome 7 Utility Duo';
+  --fa-font-utility-fill-semibold: normal 600 1em/1 'Font Awesome 7 Utility Fill';
+}
+
+.svg-inline--fa {
+  box-sizing: content-box;
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285714em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left,
+.svg-inline--fa .fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-pull-right,
+.svg-inline--fa .fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  inset-block-start: 0.25em; /* syncing vertical alignment with Web Font rendering */
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.fa-layers .svg-inline--fa {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-counter-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: calc(10 / 16 * 1em); /* converts a 10px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 10 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 10 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xs {
+  font-size: calc(12 / 16 * 1em); /* converts a 12px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 12 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 12 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-sm {
+  font-size: calc(14 / 16 * 1em); /* converts a 14px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 14 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 14 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-lg {
+  font-size: calc(20 / 16 * 1em); /* converts a 20px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 20 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 20 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xl {
+  font-size: calc(24 / 16 * 1em); /* converts a 24px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 24 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 24 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-2xl {
+  font-size: calc(32 / 16 * 1em); /* converts a 32px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 32 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 32 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-width-auto {
+  --fa-width: auto;
+}
+
+.fa-fw,
+.fa-width-fixed {
+  --fa-width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-inline-start: var(--fa-li-margin, 2.5em);
+  padding-inline-start: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+/* Heads Up: Bordered Icons will not be supported in the future!
+  - This feature will be deprecated in the next major release of Font Awesome (v8)!
+  - You may continue to use it in this version *v7), but it will not be supported in Font Awesome v8.
+*/
+/* Notes:
+* --@{v.\$css-prefix}-border-width = 1/16 by default (to render as ~1px based on a 16px default font-size)
+* --@{v.\$css-prefix}-border-padding =
+  ** 3/16 for vertical padding (to give ~2px of vertical whitespace around an icon considering it's vertical alignment)
+  ** 4/16 for horizontal padding (to give ~4px of horizontal whitespace around an icon)
+*/
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.0625em);
+  box-sizing: var(--fa-border-box-sizing, content-box);
+  padding: var(--fa-border-padding, 0.1875em 0.25em);
+}
+
+.fa-pull-left,
+.fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right,
+.fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+  .fa-bounce,
+  .fa-fade,
+  .fa-beat-fade,
+  .fa-flip,
+  .fa-pulse,
+  .fa-shake,
+  .fa-spin,
+  .fa-spin-pulse {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-shake {
+  0% {
+    transform: rotate(-15deg);
+  }
+  4% {
+    transform: rotate(15deg);
+  }
+  8%, 24% {
+    transform: rotate(-18deg);
+  }
+  12%, 28% {
+    transform: rotate(18deg);
+  }
+  16% {
+    transform: rotate(-22deg);
+  }
+  20% {
+    transform: rotate(22deg);
+  }
+  32% {
+    transform: rotate(-12deg);
+  }
+  36% {
+    transform: rotate(12deg);
+  }
+  40%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.svg-inline--fa.fa-inverse {
+  fill: var(--fa-inverse, #fff);
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  --fa-width: 1.25em;
+  height: 1em;
+  width: var(--fa-width);
+}
+.svg-inline--fa.fa-stack-2x {
+  --fa-width: 2.5em;
+  height: 2em;
+  width: var(--fa-width);
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  z-index: var(--fa-stack-z-index, auto);
+}</style><link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preload" href="/public/fonts/inter/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/public/fonts/sora/sora-variable.woff2" as="font" type="font/woff2" crossorigin>
-<style>*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;font-size:16px;min-height:100%}body{min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}h1{font-size:inherit;font-weight:inherit;overflow-wrap:break-word}p{overflow-wrap:break-word}a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}img{display:block;max-width:100%}img{height:auto;-webkit-user-drag:none;-webkit-user-select:none;user-select:none}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}@font-face{font-family:Inter;src:url(/public/fonts/inter/inter-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:Sora;src:url(/public/fonts/sora/sora-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}body{font-family:Inter,sans-serif;font-size:1rem;font-weight:400;color:#f9f9d3;background-color:#0a0325}h1{font-family:var("Sora", sans-serif);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#f9f9d3}h1{font-size:4.5rem}@media(max-width:992px){h1{font-size:3rem}}@media(max-width:768px){h1{font-size:2.5rem}}@media(max-width:576px){h1{font-size:2rem}}p{font-size:1.125rem;line-height:1.7;color:#f9f9d3cc}a{transition:color .3s ease}a:hover{color:#14694d}.container{max-width:1400px;margin:0 auto;padding:0 1rem;width:100%}
-</style><link rel="stylesheet" href="styles-Z4LDPMX7.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-Z4LDPMX7.css"></noscript><style ng-app-id="ng">.header[_ngcontent-ng-c892327671]{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all .4s ease-in-out;padding:1.5rem 0;background-color:transparent;-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0);border-bottom:1px solid transparent}.header__container[_ngcontent-ng-c892327671]{display:flex;align-items:center;justify-content:space-between}.header__brand[_ngcontent-ng-c892327671]{display:flex;align-items:center;gap:1rem;text-decoration:none;-webkit-user-select:none;user-select:none}.header__brand[_ngcontent-ng-c892327671]   .header__logo-icon[_ngcontent-ng-c892327671]{height:85px;width:auto;transition:height .3s ease}.header__brand[_ngcontent-ng-c892327671]   .header__logo-text[_ngcontent-ng-c892327671]{font-family:Sora,sans-serif;font-weight:700;font-size:2rem;color:#f9f9d3;margin-top:20px}.header__actions[_ngcontent-ng-c892327671]{display:flex;align-items:center}.header.scrolled[_ngcontent-ng-c892327671]{padding:.5rem 0;background-color:#0a0325d9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(249,249,211,.1)}.header.scrolled[_ngcontent-ng-c892327671]   .header__brand[_ngcontent-ng-c892327671]   .header__logo-icon[_ngcontent-ng-c892327671]{height:32px}</style><style ng-app-id="ng">.btn[_ngcontent-ng-c2368879480]{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.5rem;border-radius:9999px;font-family:Sora,sans-serif;font-weight:600;font-size:1.1rem;text-decoration:none;cursor:pointer;border:2px solid transparent;position:relative;overflow:hidden;transition:transform .3s ease;--x: 50%;--y: 50%}.btn__content[_ngcontent-ng-c2368879480]{position:relative;z-index:5;display:flex;align-items:center;gap:.5rem;transition:color .3s ease}.btn[_ngcontent-ng-c2368879480]:before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;background-color:var(--hover-bg, currentColor);clip-path:circle(0% at var(--x) var(--y));transition:clip-path .5s cubic-bezier(.4,0,.2,1)}.btn[_ngcontent-ng-c2368879480]:hover{transform:translateY(-3px)}.btn[_ngcontent-ng-c2368879480]:hover:before{clip-path:circle(150% at var(--x) var(--y))}.btn--green.btn--solid[_ngcontent-ng-c2368879480]{background-color:#0e4735;color:#f9f9d3;border-color:#0e4735;--hover-bg: #14694D}.btn--green.btn--solid[_ngcontent-ng-c2368879480]:hover{color:#fff}.btn--green.btn--outline[_ngcontent-ng-c2368879480]{background-color:transparent;color:#0e4735;border-color:#0e4735;--hover-bg: #0E4735}.btn--green.btn--outline[_ngcontent-ng-c2368879480]:hover{color:#f9f9d3}.btn--cream.btn--solid[_ngcontent-ng-c2368879480]{background-color:#f9f9d3;color:#0a0325;border-color:#f9f9d3;--hover-bg: #FFFFFF}.btn--cream.btn--solid[_ngcontent-ng-c2368879480]:hover{color:#0e4735}.btn--cream.btn--outline[_ngcontent-ng-c2368879480]{background-color:transparent;color:#f9f9d3;border-color:#f9f9d3;--hover-bg: #F9F9D3}.btn--cream.btn--outline[_ngcontent-ng-c2368879480]:hover{color:#0a0325}.btn--white.btn--solid[_ngcontent-ng-c2368879480]{background-color:#fff;color:#0a0325;border-color:#fff;--hover-bg: #F9F9D3}.btn--white.btn--solid[_ngcontent-ng-c2368879480]:hover{color:#0e4735}.btn--white.btn--outline[_ngcontent-ng-c2368879480]{background-color:transparent;color:#fff;border-color:#fff;--hover-bg: #FFFFFF}.btn--white.btn--outline[_ngcontent-ng-c2368879480]:hover{color:#0a0325}.btn--dark.btn--solid[_ngcontent-ng-c2368879480]{background-color:#0a0325;color:#f9f9d3;border-color:#0a0325;--hover-bg: #1E1A45}.btn--dark.btn--solid[_ngcontent-ng-c2368879480]:hover{color:#f9f9d3}.btn--dark.btn--outline[_ngcontent-ng-c2368879480]{background-color:transparent;color:#0a0325;border-color:#0a0325;--hover-bg: #0A0325}.btn--dark.btn--outline[_ngcontent-ng-c2368879480]:hover{color:#f9f9d3}</style><style ng-app-id="ng">.hero[_ngcontent-ng-c857397021]{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:6rem}.hero__bg[_ngcontent-ng-c857397021]{position:absolute;inset:0;z-index:0;pointer-events:none}.hero__bg[_ngcontent-ng-c857397021]   .grid-pattern[_ngcontent-ng-c857397021]{position:absolute;inset:0;background-image:linear-gradient(rgba(249,249,211,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(249,249,211,.03) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:radial-gradient(circle at center,black 40%,transparent 80%);mask-image:radial-gradient(circle at center,black 40%,transparent 80%)}.hero__bg[_ngcontent-ng-c857397021]   .glow-effect[_ngcontent-ng-c857397021]{position:absolute;width:300px;height:600px;border-radius:50%;filter:blur(60px);top:-200px}.hero__bg[_ngcontent-ng-c857397021]   .glow-left[_ngcontent-ng-c857397021]{left:0;transform:rotate(-45deg);background:radial-gradient(circle,rgba(14,71,53,.4) 0%,transparent 90%)}.hero__bg[_ngcontent-ng-c857397021]   .glow-right[_ngcontent-ng-c857397021]{top:-50%;transform:translateY(50%);right:-100px;background:radial-gradient(circle,rgba(86,6,98,.4) 0%,transparent 70%)}.hero__container[_ngcontent-ng-c857397021]{position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:2rem}.hero__title[_ngcontent-ng-c857397021]{max-width:750px;line-height:1;letter-spacing:-1px;font-weight:600;font-size:3.3rem}.hero__title[_ngcontent-ng-c857397021]   .text-gradient[_ngcontent-ng-c857397021]{background:linear-gradient(135deg,#f9f9d3,#f9f9d3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero__description[_ngcontent-ng-c857397021]{max-width:600px;margin:0 auto;font-size:1.1rem;color:#a8a5b8}.hero__description[_ngcontent-ng-c857397021]   strong[_ngcontent-ng-c857397021]{color:#f9f9d3;font-weight:600}.hero__actions[_ngcontent-ng-c857397021]{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;justify-content:center}.hero__actions[_ngcontent-ng-c857397021]   a[_ngcontent-ng-c857397021]{position:relative;overflow:hidden;z-index:1;padding:1rem 2rem;border-radius:100px;font-size:1.05rem;font-weight:600;border:1px solid black}.hero__actions[_ngcontent-ng-c857397021]   a[_ngcontent-ng-c857397021]:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:var(--hover-bg, #0E4735);z-index:2;border-radius:inherit;clip-path:circle(0% at var(--x, 50%) var(--y, 50%));transition:clip-path .4s ease-out}.hero__actions[_ngcontent-ng-c857397021]   a[_ngcontent-ng-c857397021]:hover:before{clip-path:circle(150% at var(--x, 50%) var(--y, 50%))}.hero__actions[_ngcontent-ng-c857397021]   a[_ngcontent-ng-c857397021]   span[_ngcontent-ng-c857397021]{position:relative;z-index:5;pointer-events:none;transition:color .3s ease}.hero__actions[_ngcontent-ng-c857397021]   .our-projects[_ngcontent-ng-c857397021]{background-color:#0e4735;border:2px solid transparent}.hero__actions[_ngcontent-ng-c857397021]   .our-projects[_ngcontent-ng-c857397021]:before{background-color:#14694d}.hero__actions[_ngcontent-ng-c857397021]   .our-projects[_ngcontent-ng-c857397021]:hover   span[_ngcontent-ng-c857397021]{color:#0e4735}.hero__actions[_ngcontent-ng-c857397021]   .our-projects[_ngcontent-ng-c857397021]   span[_ngcontent-ng-c857397021]{color:#f9f9d3}.hero__actions[_ngcontent-ng-c857397021]   .contact[_ngcontent-ng-c857397021]{background:none;border:2px solid #F9F9D3;color:#f9f9d3}.hero__actions[_ngcontent-ng-c857397021]   .contact[_ngcontent-ng-c857397021]:before{background-color:#f9f9d3}.hero__actions[_ngcontent-ng-c857397021]   .contact[_ngcontent-ng-c857397021]:hover   span[_ngcontent-ng-c857397021]{color:#0a0325}.hero__actions[_ngcontent-ng-c857397021]   .contact[_ngcontent-ng-c857397021]   span[_ngcontent-ng-c857397021]{color:#f9f9d3}@media(max-width:768px){.hero-banner__actions[_ngcontent-ng-c857397021]{flex-direction:column;width:100%}.hero-banner__actions[_ngcontent-ng-c857397021]   .btn[_ngcontent-ng-c857397021]{width:100%}}</style></head>
+<style>*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;font-size:16px;min-height:100%}body{min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}h1,h2,h3{font-size:inherit;font-weight:inherit;overflow-wrap:break-word}p{overflow-wrap:break-word}ul{list-style:none}a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}img,svg{display:block;max-width:100%}img{height:auto;-webkit-user-drag:none;-webkit-user-select:none;user-select:none}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}@font-face{font-family:Inter;src:url(/public/fonts/inter/inter-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:Sora;src:url(/public/fonts/sora/sora-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}body{font-family:Inter,sans-serif;font-size:1rem;font-weight:400;color:#f9f9d3;background-color:#0a0325}h1,h2,h3{font-family:var("Sora", sans-serif);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#f9f9d3}h1{font-size:4.5rem}@media(max-width:992px){h1{font-size:3rem}}@media(max-width:768px){h1{font-size:2.5rem}}@media(max-width:576px){h1{font-size:2rem}}h2{font-size:3rem}@media(max-width:992px){h2{font-size:2.5rem}}@media(max-width:768px){h2{font-size:2rem}}h3{font-size:2rem}@media(max-width:768px){h3{font-size:1.5rem}}p{font-size:1.125rem;line-height:1.7;color:#f9f9d3cc}a{transition:color .3s ease}a:hover{color:#14694d}.container{max-width:1400px;margin:0 auto;padding:0 1rem;width:100%}
+</style><link rel="stylesheet" href="styles-Z4LDPMX7.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-Z4LDPMX7.css"></noscript><style ng-app-id="ng">.header[_ngcontent-ng-c892327671]{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:all .4s ease-in-out;padding:1.5rem 0;background-color:transparent;-webkit-backdrop-filter:blur(0);backdrop-filter:blur(0);border-bottom:1px solid transparent}.header__container[_ngcontent-ng-c892327671]{display:flex;align-items:center;justify-content:space-between}.header__brand[_ngcontent-ng-c892327671]{display:flex;align-items:center;gap:1rem;text-decoration:none;-webkit-user-select:none;user-select:none}.header__brand[_ngcontent-ng-c892327671]   .header__logo-icon[_ngcontent-ng-c892327671]{height:85px;width:auto;transition:height .3s ease}.header__brand[_ngcontent-ng-c892327671]   .header__logo-text[_ngcontent-ng-c892327671]{font-family:Sora,sans-serif;font-weight:700;font-size:2rem;color:#f9f9d3;margin-top:20px}.header__actions[_ngcontent-ng-c892327671]{display:flex;align-items:center}.header.scrolled[_ngcontent-ng-c892327671]{padding:.5rem 0;background-color:#0a0325d9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(249,249,211,.1)}.header.scrolled[_ngcontent-ng-c892327671]   .header__brand[_ngcontent-ng-c892327671]   .header__logo-icon[_ngcontent-ng-c892327671]{height:32px}</style><style ng-app-id="ng">.btn[_ngcontent-ng-c1717056994]{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.5rem;border-radius:9999px;font-family:Sora,sans-serif;font-weight:600;font-size:1.1rem;text-decoration:none;cursor:pointer;border:2px solid transparent;position:relative;overflow:hidden;transition:transform .3s ease;--x: 50%;--y: 50%}.btn__content[_ngcontent-ng-c1717056994]{position:relative;z-index:5;display:flex;align-items:center;gap:.5rem;transition:color .3s ease}.btn[_ngcontent-ng-c1717056994]:before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;background-color:var(--hover-bg, currentColor);clip-path:circle(0% at var(--x) var(--y));transition:clip-path .5s cubic-bezier(.4,0,.2,1)}.btn[_ngcontent-ng-c1717056994]:hover{transform:translateY(-3px)}.btn[_ngcontent-ng-c1717056994]:hover:before{clip-path:circle(150% at var(--x) var(--y))}.btn--green.btn--solid[_ngcontent-ng-c1717056994]{background-color:#0e4735;color:#f9f9d3;border-color:#0e4735;--hover-bg: #14694D}.btn--green.btn--solid[_ngcontent-ng-c1717056994]:hover{color:#fff}.btn--green.btn--outline[_ngcontent-ng-c1717056994]{background-color:transparent;color:#0e4735;border-color:#0e4735;--hover-bg: #0E4735}.btn--green.btn--outline[_ngcontent-ng-c1717056994]:hover{color:#f9f9d3}.btn--cream.btn--solid[_ngcontent-ng-c1717056994]{background-color:#f9f9d3;color:#0a0325;border-color:#f9f9d3;--hover-bg: #FFFFFF}.btn--cream.btn--solid[_ngcontent-ng-c1717056994]:hover{color:#0e4735}.btn--cream.btn--outline[_ngcontent-ng-c1717056994]{background-color:transparent;color:#f9f9d3;border-color:#f9f9d3;--hover-bg: #F9F9D3}.btn--cream.btn--outline[_ngcontent-ng-c1717056994]:hover{color:#0a0325}.btn--white.btn--solid[_ngcontent-ng-c1717056994]{background-color:#fff;color:#0a0325;border-color:#fff;--hover-bg: #F9F9D3}.btn--white.btn--solid[_ngcontent-ng-c1717056994]:hover{color:#0e4735}.btn--white.btn--outline[_ngcontent-ng-c1717056994]{background-color:transparent;color:#fff;border-color:#fff;--hover-bg: #FFFFFF}.btn--white.btn--outline[_ngcontent-ng-c1717056994]:hover{color:#0a0325}.btn--dark.btn--solid[_ngcontent-ng-c1717056994]{background-color:#0a0325;color:#f9f9d3;border-color:#0a0325;--hover-bg: #1E1A45}.btn--dark.btn--solid[_ngcontent-ng-c1717056994]:hover{color:#f9f9d3}.btn--dark.btn--outline[_ngcontent-ng-c1717056994]{background-color:transparent;color:#0a0325;border-color:#0a0325;--hover-bg: #0A0325}.btn--dark.btn--outline[_ngcontent-ng-c1717056994]:hover{color:#f9f9d3}</style><style ng-app-id="ng">.hero[_ngcontent-ng-c857397021]{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:6rem}.hero__bg[_ngcontent-ng-c857397021]{position:absolute;inset:0;z-index:0;pointer-events:none}.hero__bg[_ngcontent-ng-c857397021]   .grid-pattern[_ngcontent-ng-c857397021]{position:absolute;inset:0;background-image:linear-gradient(rgba(249,249,211,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(249,249,211,.03) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:radial-gradient(circle at center,black 40%,transparent 80%);mask-image:radial-gradient(circle at center,black 40%,transparent 80%)}.hero__bg[_ngcontent-ng-c857397021]   .glow-effect[_ngcontent-ng-c857397021]{position:absolute;width:300px;height:600px;border-radius:50%;filter:blur(60px);top:-200px}.hero__bg[_ngcontent-ng-c857397021]   .glow-left[_ngcontent-ng-c857397021]{left:0;transform:rotate(-45deg);background:radial-gradient(circle,rgba(14,71,53,.4) 0%,transparent 90%)}.hero__bg[_ngcontent-ng-c857397021]   .glow-right[_ngcontent-ng-c857397021]{top:-50%;transform:translateY(50%);right:-100px;background:radial-gradient(circle,rgba(86,6,98,.4) 0%,transparent 70%)}.hero__container[_ngcontent-ng-c857397021]{position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:2rem}.hero__title[_ngcontent-ng-c857397021]{max-width:750px;line-height:1;letter-spacing:-1px;font-weight:600;font-size:3.3rem}.hero__title[_ngcontent-ng-c857397021]   .text-gradient[_ngcontent-ng-c857397021]{background:linear-gradient(135deg,#f9f9d3,#f9f9d3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero__description[_ngcontent-ng-c857397021]{max-width:600px;margin:0 auto;font-size:1.1rem;color:#a8a5b8}.hero__description[_ngcontent-ng-c857397021]   strong[_ngcontent-ng-c857397021]{color:#f9f9d3;font-weight:600}.hero__actions[_ngcontent-ng-c857397021]{display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;justify-content:center}.hero__actions[_ngcontent-ng-c857397021]   a[_ngcontent-ng-c857397021]{position:relative;overflow:hidden;z-index:1;padding:1rem 2rem;border-radius:100px;font-size:1.05rem;font-weight:600;border:1px solid black}.hero__actions[_ngcontent-ng-c857397021]   a[_ngcontent-ng-c857397021]:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-color:var(--hover-bg, #0E4735);z-index:2;border-radius:inherit;clip-path:circle(0% at var(--x, 50%) var(--y, 50%));transition:clip-path .4s ease-out}.hero__actions[_ngcontent-ng-c857397021]   a[_ngcontent-ng-c857397021]:hover:before{clip-path:circle(150% at var(--x, 50%) var(--y, 50%))}.hero__actions[_ngcontent-ng-c857397021]   a[_ngcontent-ng-c857397021]   span[_ngcontent-ng-c857397021]{position:relative;z-index:5;pointer-events:none;transition:color .3s ease}.hero__actions[_ngcontent-ng-c857397021]   .our-projects[_ngcontent-ng-c857397021]{background-color:#0e4735;border:2px solid transparent}.hero__actions[_ngcontent-ng-c857397021]   .our-projects[_ngcontent-ng-c857397021]:before{background-color:#14694d}.hero__actions[_ngcontent-ng-c857397021]   .our-projects[_ngcontent-ng-c857397021]:hover   span[_ngcontent-ng-c857397021]{color:#0e4735}.hero__actions[_ngcontent-ng-c857397021]   .our-projects[_ngcontent-ng-c857397021]   span[_ngcontent-ng-c857397021]{color:#f9f9d3}.hero__actions[_ngcontent-ng-c857397021]   .contact[_ngcontent-ng-c857397021]{background:none;border:2px solid #F9F9D3;color:#f9f9d3}.hero__actions[_ngcontent-ng-c857397021]   .contact[_ngcontent-ng-c857397021]:before{background-color:#f9f9d3}.hero__actions[_ngcontent-ng-c857397021]   .contact[_ngcontent-ng-c857397021]:hover   span[_ngcontent-ng-c857397021]{color:#0a0325}.hero__actions[_ngcontent-ng-c857397021]   .contact[_ngcontent-ng-c857397021]   span[_ngcontent-ng-c857397021]{color:#f9f9d3}@media(max-width:768px){.hero-banner__actions[_ngcontent-ng-c857397021]{flex-direction:column;width:100%}.hero-banner__actions[_ngcontent-ng-c857397021]   .btn[_ngcontent-ng-c857397021]{width:100%}}</style><style ng-app-id="ng">.services[_ngcontent-ng-c1309409468]{padding:6rem 0;position:relative}.services__header[_ngcontent-ng-c1309409468]{display:flex;gap:1.5rem;justify-content:space-between;align-items:flex-end}.services__title[_ngcontent-ng-c1309409468]{max-width:550px;line-height:1.1;letter-spacing:-1px}.services__title[_ngcontent-ng-c1309409468]   .text-gradient[_ngcontent-ng-c1309409468]{background:linear-gradient(135deg,#f9f9d3,#14694d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.services__intro[_ngcontent-ng-c1309409468]{max-width:500px;font-size:1.05rem;color:#a8a5b8;line-height:1.5}.services__intro[_ngcontent-ng-c1309409468]   strong[_ngcontent-ng-c1309409468]{color:#f9f9d3}.bento-grid[_ngcontent-ng-c1309409468]{margin-top:4rem;display:grid;gap:1.5rem;grid-template-columns:1fr;grid-template-areas:"web" "mobile" "design" "logo" "cta"}@media(min-width:768px){.bento-grid[_ngcontent-ng-c1309409468]{grid-template-columns:1fr 1fr;grid-template-areas:"web     web" "mobile  design" "mobile  logo" "cta     cta"}}@media(min-width:1024px){.bento-grid[_ngcontent-ng-c1309409468]{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,170px);grid-template-areas:"web    web    mobile" "web    web    mobile" "design logo   mobile" "design logo   cta"}}.card[_ngcontent-ng-c1309409468]{background-color:#1e1a45;border-radius:16px;padding:2rem;display:flex;flex-direction:column;position:relative;overflow:hidden;border:1px solid rgba(249,249,211,.05);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}.card[_ngcontent-ng-c1309409468]:hover{transform:translateY(-5px);border-color:#0e47354d;box-shadow:0 10px 15px -3px #0000001a,0 4px 6px -2px #0000000d}.card__title[_ngcontent-ng-c1309409468]{font-family:Sora,sans-serif;font-weight:700;font-size:1.5rem;margin-bottom:.5rem;color:#f9f9d3;line-height:1.2}.card__desc[_ngcontent-ng-c1309409468]{font-size:.95rem;color:#a8a5b8;line-height:1.6}.card__desc[_ngcontent-ng-c1309409468]   strong[_ngcontent-ng-c1309409468]{color:#f9f9d3}.card--web[_ngcontent-ng-c1309409468]{grid-area:web;justify-content:space-between}.card--web[_ngcontent-ng-c1309409468]   .card__tags[_ngcontent-ng-c1309409468]{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}.card--web[_ngcontent-ng-c1309409468]   .card__tags[_ngcontent-ng-c1309409468]   li[_ngcontent-ng-c1309409468]{font-size:.8rem;padding:6px 14px;border-radius:99px;background:#ffffff0d;color:#fffc;border:1px solid rgba(255,255,255,.1)}.card--mobile[_ngcontent-ng-c1309409468]{grid-area:mobile}.card--mobile[_ngcontent-ng-c1309409468]   .card__content[_ngcontent-ng-c1309409468]{position:relative;z-index:2}.card--mobile[_ngcontent-ng-c1309409468]   .card__img-container[_ngcontent-ng-c1309409468]{position:absolute;bottom:-20px;right:-40px;width:80%;max-width:300px;height:auto}.card--mobile[_ngcontent-ng-c1309409468]   .card__img-container[_ngcontent-ng-c1309409468]   img[_ngcontent-ng-c1309409468]{width:100%;height:auto;filter:drop-shadow(0 10px 20px rgba(0,0,0,.5));transition:transform .5s ease}.card--mobile[_ngcontent-ng-c1309409468]:hover   .card__img-container[_ngcontent-ng-c1309409468]   img[_ngcontent-ng-c1309409468]{transform:scale(1.05) rotate(-3deg)}.card--design[_ngcontent-ng-c1309409468]{grid-area:design}.card--logo[_ngcontent-ng-c1309409468]{grid-area:logo}.card--cta[_ngcontent-ng-c1309409468]{grid-area:cta;background-color:#0e4735;border:none;padding:1rem 1.5rem}.card--cta[_ngcontent-ng-c1309409468]   .card__title[_ngcontent-ng-c1309409468]{font-size:1.5rem;color:#fff;margin-bottom:.5rem}.card--cta[_ngcontent-ng-c1309409468]   .card__desc[_ngcontent-ng-c1309409468]{color:#fff;font-weight:600;margin-bottom:1.5rem;font-size:1.05rem;line-height:1.5;max-width:330px}</style></head>
 <body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
 </script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
-  <app-root ng-version="21.2.0" ngh="3" ng-server-context="ssg"><app-header _nghost-ng-c892327671 ngh="1"><header _ngcontent-ng-c892327671 class="header"><div _ngcontent-ng-c892327671 class="container header__container"><a _ngcontent-ng-c892327671 routerlink="/" class="header__brand" href="/" jsaction="click:;"><img _ngcontent-ng-c892327671 src="/images/logo-evolia-tech.png" alt="Évolia Tech Logo" class="header__logo-icon"><span _ngcontent-ng-c892327671 class="header__logo-text"> Évolia <span _ngcontent-ng-c892327671 class="text-highlight">Tech</span></span></a><div _ngcontent-ng-c892327671 class="header__actions"><app-evo-button _ngcontent-ng-c892327671 text="Contactez-nous" link="#contact" preset="green" variant="solid" _nghost-ng-c2368879480 ngh="0"><a _ngcontent-ng-c2368879480 class="btn btn--green btn--solid" target="_self" jsaction="click:;"><span _ngcontent-ng-c2368879480 class="btn__content"> Contactez-nous <!----></span></a><!----><!----></app-evo-button></div></div></header></app-header><main><router-outlet></router-outlet><app-page-home ngh="1"><div class="page-home"><app-hero-banner _nghost-ng-c857397021 ngh="1"><section _ngcontent-ng-c857397021 class="hero"><div _ngcontent-ng-c857397021 class="hero__bg"><div _ngcontent-ng-c857397021 class="grid-pattern"></div><div _ngcontent-ng-c857397021 class="glow-effect glow-left"></div><div _ngcontent-ng-c857397021 class="glow-effect glow-right"></div></div><div _ngcontent-ng-c857397021 class="container hero__container"><h1 _ngcontent-ng-c857397021 class="hero__title"> Créons ensemble le <span _ngcontent-ng-c857397021 class="text-gradient">site web ou l'application mobile</span> qui propulse votre activité. </h1><p _ngcontent-ng-c857397021 class="hero__description"> Co-construisons la solution web ou mobile <strong _ngcontent-ng-c857397021>sur-mesure, intuitives et performantes</strong> qui fera grandir votre activité <strong _ngcontent-ng-c857397021>avec Évolia Tech</strong>. </p><div _ngcontent-ng-c857397021 class="hero__actions"><app-evo-button _ngcontent-ng-c857397021 text="Nos Réalisations" link="#contact" variant="solid" color="primary" icon="fa-solid fa-arrow-right" _nghost-ng-c2368879480 ngh="2"><a _ngcontent-ng-c2368879480 class="btn btn--green btn--solid" target="_self" jsaction="click:;"><span _ngcontent-ng-c2368879480 class="btn__content"> Nos Réalisations <i _ngcontent-ng-c2368879480 class="fa-arrow-right fa-solid"></i><!----></span></a><!----><!----></app-evo-button><app-evo-button _ngcontent-ng-c857397021 text="Nous Contacter" link="#contact" preset="cream" variant="outline" color="primary" icon="fa-solid fa-arrow-right" _nghost-ng-c2368879480 ngh="2"><a _ngcontent-ng-c2368879480 class="btn btn--cream btn--outline" target="_self" jsaction="click:;"><span _ngcontent-ng-c2368879480 class="btn__content"> Nous Contacter <i _ngcontent-ng-c2368879480 class="fa-arrow-right fa-solid"></i><!----></span></a><!----><!----></app-evo-button></div></div></section></app-hero-banner></div></app-page-home><!----></main></app-root>
-<link rel="modulepreload" href="chunk-HMDYGAIZ.js"><script src="main-EZAISPJT.js" type="module"></script>
-<link rel="modulepreload" href="chunk-OY76DCV4.js">
+  <app-root ng-version="21.2.0" ngh="3" ng-server-context="ssg"><app-header _nghost-ng-c892327671 ngh="1"><header _ngcontent-ng-c892327671 class="header"><div _ngcontent-ng-c892327671 class="container header__container"><a _ngcontent-ng-c892327671 routerlink="/" class="header__brand" href="/" jsaction="click:;"><img _ngcontent-ng-c892327671 src="/images/logo-evolia-tech.png" alt="Évolia Tech Logo" class="header__logo-icon"><span _ngcontent-ng-c892327671 class="header__logo-text"> Évolia <span _ngcontent-ng-c892327671 class="text-highlight">Tech</span></span></a><div _ngcontent-ng-c892327671 class="header__actions"><app-evo-button _ngcontent-ng-c892327671 text="Contactez-nous" link="#contact" preset="green" variant="solid" _nghost-ng-c1717056994 ngh="0"><a _ngcontent-ng-c1717056994 class="btn btn--green btn--solid" target="_self" jsaction="click:;"><span _ngcontent-ng-c1717056994 class="btn__content"> Contactez-nous <!----></span></a><!----><!----></app-evo-button></div></div></header></app-header><main><router-outlet></router-outlet><app-page-home ngh="1"><div class="page-home"><app-hero-banner _nghost-ng-c857397021 ngh="1"><section _ngcontent-ng-c857397021 class="hero"><div _ngcontent-ng-c857397021 class="hero__bg"><div _ngcontent-ng-c857397021 class="grid-pattern"></div><div _ngcontent-ng-c857397021 class="glow-effect glow-left"></div><div _ngcontent-ng-c857397021 class="glow-effect glow-right"></div></div><div _ngcontent-ng-c857397021 class="container hero__container"><h1 _ngcontent-ng-c857397021 class="hero__title"> Créons ensemble le <span _ngcontent-ng-c857397021 class="text-gradient">site web ou l'application mobile</span> qui propulse votre activité. </h1><p _ngcontent-ng-c857397021 class="hero__description"> Co-construisons la solution web ou mobile <strong _ngcontent-ng-c857397021>sur-mesure, intuitives et performantes</strong> qui fera grandir votre activité <strong _ngcontent-ng-c857397021>avec Évolia Tech</strong>. </p><div _ngcontent-ng-c857397021 class="hero__actions"><app-evo-button _ngcontent-ng-c857397021 text="Nos Réalisations" link="#contact" variant="solid" color="primary" icon="fa-solid fa-arrow-right" _nghost-ng-c1717056994 ngh="2"><a _ngcontent-ng-c1717056994 class="btn btn--green btn--solid" target="_self" jsaction="click:;"><span _ngcontent-ng-c1717056994 class="btn__content"> Nos Réalisations <fa-icon _ngcontent-ng-c1717056994 class="ng-fa-icon" ngh="1"><svg data-prefix="fas" data-icon="code" class="svg-inline--fa fa-code fa-undefined fa-pull-undefined" role="img" viewBox="0 0 576 512" aria-hidden="true"><path fill="currentColor" d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 150.6 182.6c12.5-12.5 12.5-32.8 0-45.3z"/></svg></fa-icon><!----></span></a><!----><!----></app-evo-button><app-evo-button _ngcontent-ng-c857397021 text="Nous Contacter" link="#contact" preset="cream" variant="outline" color="primary" icon="fa-solid fa-arrow-right" _nghost-ng-c1717056994 ngh="2"><a _ngcontent-ng-c1717056994 class="btn btn--cream btn--outline" target="_self" jsaction="click:;"><span _ngcontent-ng-c1717056994 class="btn__content"> Nous Contacter <fa-icon _ngcontent-ng-c1717056994 class="ng-fa-icon" ngh="1"><svg data-prefix="fas" data-icon="code" class="svg-inline--fa fa-code fa-undefined fa-pull-undefined" role="img" viewBox="0 0 576 512" aria-hidden="true"><path fill="currentColor" d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 150.6 182.6c12.5-12.5 12.5-32.8 0-45.3z"/></svg></fa-icon><!----></span></a><!----><!----></app-evo-button></div></div></section></app-hero-banner><app-services-grid _nghost-ng-c1309409468 ngh="1"><section _ngcontent-ng-c1309409468 id="services" class="services"><div _ngcontent-ng-c1309409468 class="container"><div _ngcontent-ng-c1309409468 class="services__header"><h2 _ngcontent-ng-c1309409468 class="services__title"> Une expertise technique pointue au service de votre croissance. </h2><p _ngcontent-ng-c1309409468 class="services__intro"> Nous ne nous contentons pas de coder. Nous bâtissons des écosystèmes digitaux complets. De l'architecture serveur complexe à l'interface utilisateur pixel-perfect, <strong _ngcontent-ng-c1309409468>Évolia Tech</strong> maîtrise toute la chaîne de valeur pour livrer des produits d'exception. </p></div><div _ngcontent-ng-c1309409468 class="bento-grid"><article _ngcontent-ng-c1309409468 class="card card--web"><div _ngcontent-ng-c1309409468 class="card__content"><h3 _ngcontent-ng-c1309409468 class="card__title">Développement Web &amp; Plateformes SaaS</h3><p _ngcontent-ng-c1309409468 class="card__desc"> Des applications web rapides, sécurisées et scalables. Nous utilisons la puissance d'<strong _ngcontent-ng-c1309409468>Angular</strong> et <strong _ngcontent-ng-c1309409468>NestJS</strong> pour créer des architectures robustes capables de gérer des milliers d'utilisateurs. </p><ul _ngcontent-ng-c1309409468 class="card__tags"><li _ngcontent-ng-c1309409468>SSR &amp; SEO Friendly</li><li _ngcontent-ng-c1309409468>Architecture Modulaire</li><li _ngcontent-ng-c1309409468>API REST / GraphQL</li></ul></div><div _ngcontent-ng-c1309409468 class="card__visual-web"><div _ngcontent-ng-c1309409468 class="code-block"><span _ngcontent-ng-c1309409468>&lt;Evolia /&gt;</span></div></div></article><article _ngcontent-ng-c1309409468 class="card card--mobile"><div _ngcontent-ng-c1309409468 class="card__content"><h3 _ngcontent-ng-c1309409468 class="card__title">Applications Mobiles (Flutter)</h3><p _ngcontent-ng-c1309409468 class="card__desc"> Une seule base de code, deux applications natives (iOS &amp; Android) performantes et fluides. </p></div><div _ngcontent-ng-c1309409468 class="card__img-container"><img _ngcontent-ng-c1309409468 src="images/services/mobile.jpeg" alt="Application Mobile Flutter" class="mobile-img"></div></article><article _ngcontent-ng-c1309409468 class="card card--design"><h3 _ngcontent-ng-c1309409468 class="card__title">UI/UX Design</h3><p _ngcontent-ng-c1309409468 class="card__desc"> Des interfaces ergonomiques conçues sur <strong _ngcontent-ng-c1309409468>Figma</strong> qui subliment l'expérience utilisateur. </p></article><article _ngcontent-ng-c1309409468 class="card card--logo"><h3 _ngcontent-ng-c1309409468 class="card__title">Identité &amp; Logo</h3><p _ngcontent-ng-c1309409468 class="card__desc"> Création de logos et chartes graphiques qui marquent les esprits et incarnent vos valeurs. </p></article><article _ngcontent-ng-c1309409468 class="card card--cta"><p _ngcontent-ng-c1309409468 class="card__desc"> Vous avez le projet, nous avons l'équipe technique pour le réaliser. </p><div _ngcontent-ng-c1309409468 class="card__action"><app-evo-button _ngcontent-ng-c1309409468 text="Lancer mon projet" link="#contact" preset="white" variant="solid" icon="faArrowRight" _nghost-ng-c1717056994 ngh="2"><a _ngcontent-ng-c1717056994 class="btn btn--white btn--solid" target="_self" jsaction="click:;"><span _ngcontent-ng-c1717056994 class="btn__content"> Lancer mon projet <fa-icon _ngcontent-ng-c1717056994 class="ng-fa-icon" ngh="1"><svg data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-undefined fa-pull-undefined" role="img" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></fa-icon><!----></span></a><!----><!----></app-evo-button></div></article></div></div></section></app-services-grid></div></app-page-home><!----></main></app-root>
+<link rel="modulepreload" href="chunk-4HTEHEHE.js"><script src="main-426MTF3R.js" type="module"></script>
+<link rel="modulepreload" href="chunk-OOHY3CCC.js">
 
 
-<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"0":"t0","1":"t2"},"c":{"0":[{"i":"t0","r":1,"t":{"3":"t1"},"c":{"3":[]}}],"1":[]}},{},{"t":{"0":"t0","1":"t2"},"c":{"0":[{"i":"t0","r":1,"t":{"3":"t1"},"c":{"3":[{"i":"t1","r":1}]}}],"1":[]}},{"c":{"2":[{"i":"c2835789882","r":1}]}}]}</script></body></html>`;
+<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"0":"t0","1":"t2"},"c":{"0":[{"i":"t0","r":1,"t":{"3":"t1"},"c":{"3":[]}}],"1":[]}},{},{"t":{"0":"t0","1":"t2"},"c":{"0":[{"i":"t0","r":1,"t":{"3":"t1"},"c":{"3":[{"i":"t1","r":1}]}}],"1":[]}},{"c":{"2":[{"i":"c1135049403","r":1}]}}]}</script></body></html>`;
