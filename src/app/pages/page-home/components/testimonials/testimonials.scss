@@ -1,0 +1,249 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.testimonials {
+  padding: $spacing-4xl 0;
+  background-color: $dark-primary; // Fond principal
+  overflow: hidden;
+
+  // --- HEADER ---
+  &__header {
+    margin-bottom: $spacing-3xl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .subtitle {
+      //font-family: $font-mono;
+      color: $accent-green;
+      font-size: $font-size-sm;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: $spacing-md;
+      opacity: 0.8;
+    }
+
+    .title {
+      max-width: 700px;
+      line-height: 1;
+      letter-spacing: -1px;
+
+      .text-gradient {
+        @include text-gradient($light-cream, $accent-green-light);
+      }
+    }
+  }
+
+  // --- LAYOUT ---
+  &__content {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 5fr 3fr;
+  }
+}
+
+// --- COLONNE GAUCHE : VISUEL ---
+.visual-col {
+  position: relative;
+
+  .visual-card {
+    position: relative;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    height: 32rem;
+    background-color: $dark-secondary;
+    border: 1px solid rgba($light-cream, 0.05);
+    box-shadow: $shadow-xl;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4); // Assombris l'image
+    }
+    // Image principale
+    .visual-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    // Overlay VIDEO
+    &.is-video {
+      cursor: pointer;
+
+      .video-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-md;
+        transition: background 0.3s ease;
+
+        .play-btn {
+          z-index: 5;
+          width: 64px;
+          height: 64px;
+          background: rgba($white, 0.2);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          box-shadow:
+            rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $white;
+          font-size: $font-size-xl;
+          border: 1px solid rgba($white, 0.4);
+          transition:
+            transform 0.3s ease,
+            background 0.3s ease;
+        }
+
+        .play-text {
+          font-size: $font-size-sm;
+          font-weight: $font-weight-semibold;
+          color: $white;
+          opacity: 0; // Caché par défaut
+          transform: translateY(10px);
+          transition: all 0.3s ease;
+        }
+      }
+
+      &:hover {
+        .visual-img {
+          transform: scale(1.05);
+        }
+
+        .video-overlay {
+          background: rgba(0, 0, 0, 0.2);
+        }
+
+        // Éclaircit au survol
+
+        .play-btn {
+          background: $accent-green; // Play devient vert
+          transform: scale(1.1);
+          border-color: $accent-green;
+        }
+
+        .play-text {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+.text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px; // Hauteur min pour éviter les sauts
+  padding-top: 1.5rem;
+
+  .quote-block {
+    margin-bottom: $spacing-2xl;
+
+    .quote-text {
+      font-size: 1.2rem; // Grand texte comme sur l'image
+      line-height: 1.4;
+      font-weight: $font-weight-medium;
+      color: $light-cream;
+    }
+
+    .quote-summary {
+      font-size: 1.2rem;
+      font-weight: $font-weight-medium;
+      color: $white;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); // Lisibilité sur image
+      margin-top: 3rem;
+
+      .name {
+        font-family: $font-heading;
+        font-weight: bold;
+        color: $white;
+      }
+
+      .role {
+        font-size: $font-size-xs;
+        color: rgba($white, 0.8);
+      }
+    }
+  }
+
+  // Contrôles de navigation (Footer du bloc)
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba($light-cream, 0.1);
+    padding-top: $spacing-lg;
+
+    .counter {
+      //font-family: $font-mono;
+      color: $text-muted;
+      font-size: $font-size-sm;
+
+      .divider {
+        color: $accent-green;
+        margin: 0 4px;
+      }
+    }
+
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      gap: $spacing-lg;
+
+      .nav-btn {
+        padding: 0.25rem 0.5rem ;
+        border-radius: 5px;
+        background: none;
+        border: none;
+        color: $light-cream;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
+        transition: all 0.3s ease;
+        border: 1px solid $light-cream;
+
+        &:hover {
+          background-color: $accent-green;
+          color: $white;
+                  border: 1px solid $accent-green;
+
+        }
+
+        span {
+          display: none; // Cache le texte "Suivant" sur mobile
+
+          @include respond-to('md') {
+            display: inline;
+          }
+        }
+      }
+
+      .divider-v {
+        width: 1px;
+        height: 16px;
+        background: rgba($light-cream, 0.1);
+      }
+    }
+  }
+}

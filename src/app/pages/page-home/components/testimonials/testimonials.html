@@ -1,0 +1,74 @@
+<section class="testimonials">
+  <div class="container">
+    <!-- 1. HEADER (H2) -->
+    <div class="testimonials__header">
+      <h2 class="title">
+        Ce que disent <br>
+        nos partenaires de <br />
+         notre collaboration.
+      </h2>
+    </div>
+
+    <!-- 2. CONTENT AREA (Split Layout) -->
+    <!-- #contentWrapper est la cible de l'animation GSAP -->
+    <div class="testimonials__content" #contentWrapper>
+      <!-- GAUCHE : VISUEL (Image ou Vidéo) -->
+      <div class="visual-col">
+        <div class="visual-card" [class.is-video]="current().type === 'video'">
+          <!-- L'image de fond (Photo ou Thumbnail) -->
+          <img [src]="current().image" [alt]="current().authorName" class="visual-img" />
+
+          <!-- Overlay si c'est une VIDÉO -->
+          @if (current().type === 'video') {
+            <div class="video-overlay" (click)="playVideo(current().videoUrl)">
+              <div class="play-btn">
+                <fa-icon [icon]="'faPlay' | toFaIcon"></fa-icon>
+              </div>
+              <span class="play-text">Voir le retour d'expérience</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- DROITE : TEXTE & NAVIGATION -->
+      <div class="text-col">
+        <!-- Le contenu textuel -->
+        <div class="quote-block">
+          <!-- Cas TEXTE : Citation complète -->
+          @if (current().type === 'text') {
+            <p class="quote-text">"{{ current().content }}"</p>
+          }
+
+          <!-- Cas VIDÉO : Résumé court -->
+          @if (current().type === 'video') {
+            <p class="quote-summary">"{{ current().summary }}"</p>
+          }
+
+          <div class="author-info">
+            <span class="name">{{ current().authorName }}</span>
+            <span class="role">{{ current().authorRole }} @ {{ current().companyName }}</span>
+          </div>
+        </div>
+
+        <!-- Barre de Navigation (Inspirée de l'image) -->
+        <div class="nav-controls">
+          <div class="counter">
+            {{ currentIndex() + 1 }} <span class="divider">/</span> {{ testimonials.length }}
+          </div>
+
+          <div class="nav-buttons">
+            <button class="nav-btn prev" (click)="prev()">
+              <fa-icon [icon]="'faArrowLeft' | toFaIcon"></fa-icon>
+              <span>Précédent</span>
+            </button>
+            <div class="divider-v"></div>
+            <button class="nav-btn next" (click)="next()">
+              <span>Suivant</span>
+              <fa-icon [icon]="'faArrowRight' | toFaIcon"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

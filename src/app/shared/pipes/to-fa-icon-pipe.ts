@@ -10,12 +10,13 @@ import {
   faAngleDown,
   faAngleUp,
   faChevronRight,
-  
+
   // Contact & Social
   faEnvelope,
   faPhone,
   faLocationDot,
-  
+
+
   // Services (Bento Grid)
   faCode,                // Web Dev
   faMobileScreenButton,  // Mobile Dev
@@ -24,11 +25,13 @@ import {
   faRocket,              // Performance / Growth
   faShieldHalved,        // Sécurité
   faLayerGroup,          // Architecture
-  
+  faQuoteLeft,
+
   // Actions
   faCheck,
   faXmark,
-  faSearch
+  faSearch,
+  faPlay
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -57,7 +60,7 @@ const ICONS_MAP: Record<string, IconProp> = {
   'faEnvelope': faEnvelope,
   'faPhone': faPhone,
   'faLocationDot': faLocationDot,
-
+  'faQuoteLeft': faQuoteLeft,
   // --- Services ---
   'faCode': faCode,
   'faMobileScreenButton': faMobileScreenButton,
@@ -71,7 +74,7 @@ const ICONS_MAP: Record<string, IconProp> = {
   'faCheck': faCheck,
   'faXmark': faXmark,
   'faSearch': faSearch,
-
+  'faPlay': faPlay,
   // --- Brands ---
   'faLinkedin': faLinkedin,
   'faTwitter': faTwitter,

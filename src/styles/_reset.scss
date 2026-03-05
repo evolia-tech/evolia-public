@@ -83,6 +83,7 @@ img {
 
     // Évite le drag & drop non souhaité
     -webkit-user-drag: none;
+    -webkit-user-select: none;
     user-select: none;
 }
 
