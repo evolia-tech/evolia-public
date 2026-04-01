@@ -1,23 +1,78 @@
 <section class="hero">
-    <!-- 🌟 Background Effects -->
-    <div class="hero__bg">
-        <div class="grid-pattern"></div>
-        <div #glowLeft class="glow-effect glow-left"></div>
-        <div #glowRight class="glow-effect glow-right"></div>
-    </div>
+  <div class="hero__bg">
+    <div class="grid-pattern"></div>
+    <div class="glow-effect glow-left"></div>
+    <div class="glow-effect glow-right"></div>
+  </div>
 
-    <!-- 📦 Contenu Principal Hero -->
-    <div class="container hero__container" #heroContent>
-        <h1 class="hero__title">
-            Créons ensemble le <span class="text-gradient">site web ou l'application mobile</span> qui propulse votre activité.
-        </h1>
-        <p class="hero__description">
-            Co-construisons la solution web ou mobile <strong>sur-mesure, intuitives et performantes</strong>
-            qui fera grandir votre activité <strong>avec Évolia Tech</strong>.
-        </p>
-        <div class="hero__actions">
-             <app-evo-button text="Nos Réalisations" link="#works" variant="solid" preset="green"></app-evo-button>
-             <app-evo-button text="Nous Contacter" link="#contact" variant="outline" preset="cream"></app-evo-button>
-        </div>
+  <div class="container hero__container">
+    <h1 class="hero__title">
+      Créons ensemble le <span class="text-gradient">site web</span> ou
+      <span class="text-gradient">l'application mobile</span> qui propulse votre activité
+    </h1>
+    <p class="hero__description">
+      Co-construisons la solution web ou mobile
+      <strong>sur-mesure, intuitive et performante</strong> qui fera grandir votre activité
+      <strong>avec Évolia Tech</strong>.
+    </p>
+    <div class="hero__actions">
+      <app-evo-button
+        text="Nos Réalisations"
+        link="#works"
+        variant="solid"
+        preset="green"
+      ></app-evo-button>
+      <app-evo-button
+        text="Nous Contacter"
+        link="#contact"
+        variant="outline"
+        preset="cream"
+      ></app-evo-button>
     </div>
+  </div>
+
+  <div class="latest-works" id="works">
+    <div class="nav-buttons">
+      <button class="nav-btn prev" (click)="move(1)" aria-label="Précédent">
+        <fa-icon [icon]="'faAngleLeft' | toFaIcon"></fa-icon>
+      </button>
+      <button class="nav-btn next" (click)="move(-1)" aria-label="Suivant">
+        <fa-icon [icon]="'faAngleRight' | toFaIcon"></fa-icon>
+      </button>
+    </div>
+    <div class="carousel-wrapper">
+      <div
+        class="carousel-container"
+        #carouselContainer
+        (mouseenter)="pauseGallery()"
+        (mouseleave)="resumeGallery()"
+      >
+        @for (work of projectsForCarousel(); track $index) {
+          <div class="work-card" (click)="onProjectClicked($index)">
+            <div class="image-wrapper">
+              <img
+                [ngSrc]="work.image"
+                [alt]="work.title"
+                fill
+                [priority]="$index < 5"
+                decoding="async"
+              />
+
+              <div class="card-overlay">
+                <h3>{{ work.title }}</h3>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
 </section>
+
+<app-project-modal 
+  [isVisible]="projectService.isModalVisible()"
+  [modalImage]="projectService.selectedProject()?.modalImage ?? ''"
+  [contentComponent]="projectService.currentComponent()"
+  [componentInputs]="{ projectUrl: projectService.selectedProject()?.clientUrl }"
+  (close)="handleClose()">
+</app-project-modal>

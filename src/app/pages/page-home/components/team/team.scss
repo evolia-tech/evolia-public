@@ -11,25 +11,25 @@
     gap: 3rem;
 
     .title {
-      max-width: 550px;
-    line-height: 1.1; // Un peu plus aéré pour la lisibilité
-    letter-spacing: -1px;
+      max-width: 500px;
+      line-height: 1.1; // Un peu plus aéré pour la lisibilité
+      letter-spacing: -1px;
+      font-weight: 500;
 
-
-      .text-gradient {
-        @include text-gradient($light-cream, $accent-green-light);
+      span{
+        color: #b9b4e9;
       }
     }
 
     .description {
       max-width: 500px;
-    font-size: 1.05rem;
-    color: $text-muted;
-    line-height: 1.5;
+      font-size: 1.05rem;
+      color: $text-muted;
+      line-height: 1.5;
 
-    strong {
-      color: $light-cream;
-    }
+      strong {
+        color: $light-cream;
+      }
     }
   }
 
@@ -43,7 +43,7 @@
 
     // Sur grand écran, on limite la largeur pour pas que ça s'étale trop
     @media (min-width: 1200px) {
-        // Optionnel : Grid spécifique si tu veux
+      // Optionnel : Grid spécifique si tu veux
     }
   }
 

@@ -11,15 +11,18 @@
     gap: $spacing-lg;
     justify-content: space-between;
     align-items: flex-end;
+
   }
 
   &__title {
-    max-width: 550px;
+    max-width: 500px;
     line-height: 1.1; // Un peu plus aéré pour la lisibilité
     letter-spacing: -1px;
+    font-weight: 500;
+    font-size: 3rem;
 
-    .text-gradient {
-      @include text-gradient($light-cream, $accent-green-light);
+    span{
+      color: #b9b4e9;
     }
   }
 
@@ -37,27 +40,27 @@
 
 // --- BENTO GRID SYSTEM ---
 .bento-grid {
-    margin-top: 4rem;
+  margin-top: 4rem;
   display: grid;
   gap: 1.5rem;
 
   // MOBILE (1 colonne)
   grid-template-columns: 1fr;
   grid-template-areas:
-    "web"
-    "mobile"
-    "design"
-    "logo"
-    "cta";
+    'web'
+    'mobile'
+    'design'
+    'logo'
+    'cta';
 
   // TABLETTE (2 colonnes)
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "web     web"
-      "mobile  design"
-      "mobile  logo"
-      "cta     cta";
+      'web     web'
+      'mobile  design'
+      'mobile  logo'
+      'cta     cta';
   }
 
   // DESKTOP (3 colonnes - Ta grille custom)
@@ -65,11 +68,10 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 170px); // Hauteur totale = 660px + gaps
 
-    grid-template-areas:
-      "web    web    mobile" // Ligne 1
-      "web    web    mobile" // Ligne 2
-      "design logo   mobile" // Ligne 3
-      "design logo   cta";    // Ligne 4
+    grid-template-areas: 'web    web    mobile' // Ligne 1
+      'web    web    mobile' // Ligne 2
+      'design logo   mobile' // Ligne 3
+      'design logo   cta'; // Ligne 4
   }
 }
 
@@ -83,7 +85,10 @@
   position: relative;
   overflow: hidden;
   border: 1px solid rgba($light-cream, 0.05);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
@@ -96,7 +101,7 @@
     font-weight: bold;
     font-size: 1.5rem; // h3 standard
     margin-bottom: $spacing-sm;
-    color: $light-cream;
+    color: $dark-quaternary;
     line-height: 1.2;
   }
 
@@ -105,7 +110,9 @@
     color: $text-muted;
     line-height: 1.6;
 
-    strong { color: $light-cream; }
+    strong {
+      color: $light-cream;
+    }
   }
 }
 
@@ -157,7 +164,7 @@
     img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
       transition: transform 0.5s ease;
     }
   }
@@ -168,8 +175,12 @@
 }
 
 // 3. DESIGN & LOGO (Petits carrés bas gauche)
-.card--design { grid-area: design; }
-.card--logo   { grid-area: logo; }
+.card--design {
+  grid-area: design;
+}
+.card--logo {
+  grid-area: logo;
+}
 
 // 4. CTA (Petit rectangle bas droite)
 .card--cta {

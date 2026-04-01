@@ -12,22 +12,22 @@ $btn-padding: $spacing-md $spacing-2xl;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   border-radius: $btn-radius;
-  
+
   font-family: $font-heading;
   font-weight: $font-weight-semibold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-decoration: none;
   cursor: pointer;
-  
+
   // Prépare la bordure pour éviter le décalage (layout shift)
-  border: 2px solid transparent; 
-  
+  border: 2px solid transparent;
+
   position: relative;
   overflow: hidden; // ESSENTIEL pour l'effet clip-path
   transition: transform $transition-base;
-  
+
   // Variables CSS par défaut (Fallback)
   --x: 50%;
   --y: 50%;
@@ -35,7 +35,7 @@ $btn-padding: $spacing-md $spacing-2xl;
   // ============================================
   // ✨ EFFET DIRECTIONAL HOVER (Le remplissage)
   // ============================================
-  
+
   // Le contenu (Texte + Icône) doit rester au-dessus
   &__content {
     position: relative;
@@ -53,10 +53,10 @@ $btn-padding: $spacing-md $spacing-2xl;
     inset: 0;
     z-index: 1; // Sous le texte
     border-radius: inherit;
-    
+
     // Utilise la variable définie par le mixin
     background-color: var(--hover-bg, currentColor);
-    
+
     // Animation Clip-Path : Cercle taille 0% au repos
     clip-path: circle(0% at var(--x) var(--y));
     transition: clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -65,16 +65,16 @@ $btn-padding: $spacing-md $spacing-2xl;
   // Au survol : Le bouton monte un peu et le fond se remplit
   &:hover {
     transform: translateY(-3px);
-    
+
     &::before {
       clip-path: circle(150% at var(--x) var(--y));
     }
   }
-  
+
   // ============================================
   // 🎨 APPLICATION DES PRESETS (Couleurs)
   // ============================================
-  
+
   // 1. GREEN (Vert Émeraude)
   // Solid: Vert -> Hover Vert Clair | Outline: Bordure Verte -> Fond Vert
   @include button-variant('green', $accent-green, $light-cream, $accent-green-light, $white);
@@ -90,5 +90,5 @@ $btn-padding: $spacing-md $spacing-2xl;
   // 4. DARK (Bleu Nuit)
   // Solid: Bleu -> Hover Bleu Clair | Outline: Bordure Bleu -> Fond Bleu
   @include button-variant('dark', $dark-primary, $light-cream, $dark-secondary, $light-cream);
-  
+
 }

@@ -1,198 +1,345 @@
 @use '../../../../../styles/variables' as *;
 
 .hero {
-    position: relative;
-    min-height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3xl; // Important pour empiler Hero + Works
+  align-items: center;
+  overflow-x: hidden; // Empêche le scroll horizontal des vagues
+  padding-top: 15rem;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+
+    // Grille subtile en fond (comme sur ta photo)
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba($light-cream, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba($light-cream, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+      mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    }
+
+    // Effet de lumière (Glow)
+    .glow-effect {
+      position: absolute;
+      width: 300px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(60px); // Le flou qui crée l'ambiance
+      //opacity: 0; // Géré par GSAP
+      top: -200px;
+    }
+
+    .glow-left {
+      left: 0;
+      transform: rotate(-45deg);
+      background: radial-gradient(circle, rgba($accent-green, 0.5) 0%, transparent 90%);
+    }
+
+    .glow-right {
+      top: -10%;
+      transform: translateY(50%);
+      right: -150px;
+      background: radial-gradient(circle, rgba(rgba(86, 6, 98, 0.568), 0.4) 0%, transparent 70%);
+    }
+  }
+
+  // --- CONTENU ---
+  &__container {
+    position: relative; // Passe au dessus du fond
+    z-index: 1;
+    text-align: center;
     display: flex;
-    flex-direction: column; // Important pour empiler Hero + Works
+    flex-direction: column;
     align-items: center;
-    overflow-x: hidden; // Empêche le scroll horizontal des vagues
-    padding-top: $spacing-4xl;
+    gap: $spacing-xl;
+    z-index: 2;
+  }
 
-// --- ARRIÈRE PLAN (Lumières + Grille) ---
-    &__bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
+  // --- TYPOGRAPHIE ---
+  &__title {
+    max-width: 720px;
+    // La taille est gérée responsive dans styles.scss (h1),
+    // mais on peut forcer un peu plus grand ici si besoin
+    line-height: 1;
+    letter-spacing: -1px;
+    font-weight: 500;
+    font-size: 3.3rem;
 
-        // Grille subtile en fond (comme sur ta photo)
-        .grid-pattern {
+    .text-gradient {
+      color: $dark-quaternary;
+    }
+  }
+
+  &__description {
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: $text-muted;
+    font-weight: 300;
+
+    strong {
+      color: $light-cream;
+      font-weight: 400;
+    }
+  }
+
+  // --- BOUTONS ---
+  &__actions {
+    display: flex;
+    gap: $spacing-lg;
+    margin-top: $spacing-lg;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.latest-works {
+  width: 100%;
+  position: relative;
+  margin-top: -4rem; // Espace après les boutons du hero
+  color: $light-cream;
+  padding-bottom: 4rem;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 110vw;
+    height: 100px;
+    background-color: $dark-primary;
+    border-bottom-left-radius: 80%;
+    border-bottom-right-radius: 80%;
+    z-index: 4;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 110vw;
+    height: 100px;
+    background-color: $dark-primary;
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;
+    z-index: 6;
+  }
+
+  // --- NAVIGATION BUTTONS ---
+  .nav-buttons {
+    pointer-events: none; // Laisse cliquer au travers (sauf sur les boutons)
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; // Largeur max pour les boutons
+    max-width: $container-max-width;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 0 $spacing-lg; // Un peu de padding pour les boutons sur mobile
+
+    .nav-btn {
+      pointer-events: all;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba($dark-primary, 0.6);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba($light-cream, 0.1);
+      color: $light-cream;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+
+      &:hover {
+        background: $accent-green;
+        color: $white;
+        transform: scale(1.1);
+        border-color: $accent-green;
+      }
+    }
+  }
+
+  // --- CAROUSEL WRAPPER ---
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 32rem; // Hauteur fixe ajustée
+    overflow: hidden;
+    display: flex;
+
+    // --- CAROUSEL CONTAINER (Scrollable) ---
+    .carousel-container {
+      display: flex;
+      gap: 1.25rem;
+      display: flex;
+      gap: 1.5rem;
+      will-change: transform; // Prépare le GPU
+      //transform-style: preserve-3d;
+      //backface-visibility: hidden;
+      //perspective: 1000px;
+
+      // --- CARTE PROJET ---
+      .work-card {
+        position: relative;
+        flex: 1 0 auto; // Largeur fixe par carte
+        height: 100%;
+        display: flex;
+        width: 32vw;
+        flex-direction: column;
+        background-color: $dark-primary;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        border: 1px solid rgba($light-cream, 0.05);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+
+        user-select: none; // Empêche la sélection de texte pendant le drag
+        -webkit-user-drag: none; // Empêche le drag d'image natif du navigateur
+        cursor: pointer;
+        z-index: 3;
+        transform: translateZ(0);
+        // Indique au navigateur que chaque carte est un calque indépendant
+        transform: translateZ(0);
+        backface-visibility: hidden;
+
+        // Optionnel mais puissant : évite le recalcul du layout
+        contain: content;
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: $shadow-xl;
+          border-color: rgba($accent-green, 0.3);
+
+          .image-wrapper img {
+            transform: scale(1.05);
+          }
+
+          .card-footer .btn-see-more {
+            color: $accent-green;
+            border-color: $accent-green;
+          }
+        }
+
+        // IMAGE
+        .image-wrapper {
+          position: relative;
+          width: 100%;
+          height: 100%; // 2/3 de la carte
+          overflow: hidden;
+
+          // Overlay dégradé
+          &::before {
+            content: '';
             position: absolute;
             inset: 0;
-            background-image:
-                linear-gradient(rgba($light-cream, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba($light-cream, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-        }
+            background: linear-gradient(to top, rgba($dark-primary, 0.4), transparent 60%);
+            z-index: 1;
+            pointer-events: none;
+          }
 
-        // Effet de lumière (Glow)
-        .glow-effect {
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000;
+            content-visibility: auto;
+            -webkit-user-drag: none;
+            will-change: transform;
+            transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            backface-visibility: hidden;
+            transform: translateZ(0);
+          }
+
+          // BADGES TECH
+          .tech-tags {
             position: absolute;
-            width: 300px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(60px); // Le flou qui crée l'ambiance
-            //opacity: 0; // Géré par GSAP
-            top: -200px;
+            bottom: $spacing-md;
+            left: $spacing-md;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+
+            li {
+              font-size: 10px;
+              //font-family: $font-mono;
+              text-transform: uppercase;
+              background-color: rgba($accent-green, 0.9);
+              color: $white;
+              padding: 4px 8px;
+              border-radius: 4px;
+              font-weight: bold;
+            }
+          }
         }
 
-        .glow-left {
-            left: 0;
-            transform: rotate(-45deg);
-            background: radial-gradient(circle, rgba($accent-green, 0.5) 0%, transparent 90%);
-        }
+        // FOOTER (Texte + Bouton)
+        .card-footer {
+          flex: 1;
+          padding: $spacing-md;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background-color: $dark-primary;
+          border-top: 1px solid rgba($light-cream, 0.05);
 
-        .glow-right {
-            top: -50%;
-            transform: translateY(50%);
-            right: -100px;
-            background: radial-gradient(circle, rgba(rgba(86, 6, 98, 0.568), 0.4) 0%, transparent 70%);
-        }
-    }
-
-
-
-    // --- CONTENU ---
-    &__container {
-        position: relative; // Passe au dessus du fond
-        z-index: 1;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: $spacing-xl;
-        margin-top: 9rem;
-    }
-
-    // --- TYPOGRAPHIE ---
-    &__title {
-        max-width: 750px;
-        // La taille est gérée responsive dans styles.scss (h1),
-        // mais on peut forcer un peu plus grand ici si besoin
-        line-height: 1;
-        letter-spacing: -1px;
-        font-weight: 600;
-        font-size: 3.3rem;
-
-        .text-gradient {
-            @include text-gradient($light-cream, $light-cream);
-        }
-    }
-
-    &__description {
-        max-width: 600px;
-        margin: 0 auto;
-        font-size: 1.1rem;
-        color: $text-muted;
-
-        strong {
+          h3 {
+            font-family: $font-heading;
+            font-size: $font-size-md;
             color: $light-cream;
-            font-weight: 600;
-        }
-    }
-
-    // --- BOUTONS ---
-    &__actions {
-        display: flex;
-        gap: $spacing-lg;
-        margin-top: $spacing-lg;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        a {
-            position: relative;
+            margin: 0;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            z-index: 1; // Crée un contexte d'empilement
-            padding: 1rem 2rem;
-            border-radius: 100px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            border: 1px solid black;
+          }
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: var(--hover-bg, #0E4735); // Couleur par défaut
-                z-index: 2; // Sous le texte (5), mais au-dessus du fond de base
-                border-radius: inherit; // Suit les coins arrondis
-
-                // L'astuce : On utilise clip-path pour masquer/afficher le fond
-                // Au repos (pas survolé), le cercle est minuscule (0%)
-                // Il est positionné là où la souris est SORTIE la dernière fois
-                clip-path: circle(0% at var(--x, 50%) var(--y, 50%));
-
-                // Transition fluide pour l'agrandissement/rétrécissement
-                transition: clip-path 0.4s ease-out;
-            }
-
-            // AU SURVOL
-            &:hover {
-
-                &::before {
-                    // Le cercle s'agrandit pour couvrir tout le bouton (150%)
-                    // Mais attention : on veut qu'il grandisse DEPUIS le point d'entrée
-                    clip-path: circle(150% at var(--x, 50%) var(--y, 50%));
-                }
-            }
-
-
-
-            // LE TEXTE (Important !)
-            // On met le texte dans un span pour pouvoir le mettre au-dessus du fond
-            span {
-                position: relative;
-                z-index: 5; // Toujours au-dessus de tout
-                pointer-events: none; // Laisse passer la souris
-                transition: color 0.3s ease; // Changement de couleur fluide
-            }
-
-            // LE FOND COLORÉ (L'effet)
-        }
-
-        .our-projects {
-            background-color: $accent-green;
-            border: 2px solid transparent;
-
-            &::before {
-                background-color: $accent-green-light; // Couleur spécifique pour ce bouton
-            }
-
-            &:hover{
-                span{
-                    color: $accent-green; // Texte en vert au survol
-                }
-            }
-
-            span {
-                color: $light-cream;
-            }
-        }
-
-        .contact {
-            background: none;
-            border: 2px solid $light-cream;
+          .btn-see-more {
+            align-self: flex-start;
+            background: transparent;
+            border: 1px solid rgba($light-cream, 0.2);
             color: $light-cream;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: $font-size-sm;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            margin-top: $spacing-sm;
+            cursor: pointer;
 
-            &::before {
-                background-color: $light-cream; // Couleur spécifique pour ce bouton
+            fa-icon {
+              font-size: 0.8em;
             }
-
-            &:hover{
-                span{
-                    color: $dark-primary; // Texte en vert au survol
-                }
-            }
-
-            span {
-                color: $light-cream; // Texte en blanc
-            }
+          }
         }
+      }
     }
+  }
 }

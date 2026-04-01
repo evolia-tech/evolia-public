@@ -1,0 +1,31 @@
+<p-dialog 
+  [visible]="isVisible()" 
+  [modal]="true" 
+  [dismissableMask]="true"
+  [showHeader]="false"
+  styleClass="project-modal"
+  (onHide)="onModalClosed()">
+
+  @if (modalImage() || contentComponent()) {
+    <div class="modal-layout">
+      
+      <div class="media-side">
+        <img [ngSrc]="modalImage()" alt="Visuel du projet" fill priority>
+        <div class="media-overlay"></div>
+      </div>
+  
+      <div class="content-side">
+        <button class="close-overlay-btn" (click)="onModalClosed()" title="Fermer">
+          <fa-icon [icon]="'faXmark' | toFaIcon "></fa-icon>
+        </button>
+  
+        <div class="dynamic-content-injector">
+          <ng-container 
+            *ngComponentOutlet="contentComponent(); inputs: componentInputs()">
+          </ng-container>
+        </div>
+      </div>
+  
+    </div>
+  }
+</p-dialog>

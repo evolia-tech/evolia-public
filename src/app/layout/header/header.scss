@@ -33,7 +33,7 @@
 
     // Icône logo
     .header__logo-icon {
-      height: 85px; // Taille initiale
+      height: 75px; // Taille initiale
       width: auto;
       transition: height 0.3s ease;
     }
@@ -42,9 +42,47 @@
     .header__logo-text {
       font-family: $font-heading; // Sora
       font-weight: $font-weight-bold;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: $light-cream;
       margin-top: 20px;
+
+    }
+  }
+
+  nav{
+    ul{
+      display: flex;
+      gap: $spacing-2xl;
+
+      li{
+        a{
+          position: relative;
+          font-size: 1.05rem;
+          font-family: $font-primary;
+          font-weight: 500;
+          color: $text-muted;
+          padding: 10px 0;
+
+          &::after{
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: $light-cream;
+            transition: width 0.3s ease;
+          }
+
+          &:hover{
+            color: $light-cream;
+
+            &::after{
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -70,7 +108,12 @@
     // Réduction de la taille du logo pour gagner de la place
     .header__brand {
       .header__logo-icon {
-        height: 32px;
+        height: 60px;
+      }
+
+      .header__logo-text{
+        margin-top: 5px;
+        font-size: 1.5rem;
       }
     }
   }

@@ -1,25 +1,36 @@
 <!-- On ajoute la classe .scrolled conditionnellement via le Signal -->
 <header class="header" [class.scrolled]="isScrolled()">
   <div class="container header__container">
-    
+
     <!-- GAUCHE : Logo + Nom -->
     <a routerLink="/" class="header__brand">
       <!-- Le Symbole (Image) -->
       <img src="/images/logo-evolia-tech.png" alt="Évolia Tech Logo" class="header__logo-icon">
-      
+
       <!-- Le Nom (Texte) -->
       <span class="header__logo-text">
         Évolia <span class="text-highlight">Tech</span>
       </span>
     </a>
 
+    <nav>
+      <ul>
+<!--
+        <li><a routerLink="/services">Services</a></li>
+-->
+        <li><a routerLink="/portfolio">Nos Réalisations</a></li>
+        <li><a routerLink="/about">À Propos</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
     <!-- DROITE : Bouton Contact -->
     <div class="header__actions">
       <!-- On utilise ton composant EvoButton -->
-      <app-evo-button 
-        text="Contactez-nous" 
-        link="#contact" 
-        preset="green" 
+      <app-evo-button
+        text="Devis Gratuit"
+        link="#contact"
+        preset="green"
         variant="solid">
       </app-evo-button>
     </div>

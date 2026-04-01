@@ -26,9 +26,10 @@
       max-width: 700px;
       line-height: 1;
       letter-spacing: -1px;
+        font-weight: 500;
 
-      .text-gradient {
-        @include text-gradient($light-cream, $accent-green-light);
+      span{
+        color: #b9b4e9;
       }
     }
   }

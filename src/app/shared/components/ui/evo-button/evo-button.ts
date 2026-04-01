@@ -13,7 +13,7 @@ export type ButtonPreset = 'green' | 'cream' | 'white' | 'dark'; // Correspond a
   templateUrl: './evo-button.html',
   styleUrl: './evo-button.scss',
   imports: [
-    CommonModule, 
+    CommonModule,
     RouterModule,
     FontAwesomeModule,
     ToFaIconPipe
@@ -36,7 +36,7 @@ export class EvoButton {
   bgColor = input<string | null>(null);       // Couleur de fond normale
   textColor = input<string | null>(null);     // Couleur texte normale
   borderColor = input<string | null>(null);   // Couleur bordure normale
-  
+
   hoverBgColor = input<string | null>(null);  // Couleur de fond au survol (L'effet de remplissage)
   hoverTextColor = input<string | null>(null);// Couleur texte au survol
   hoverBorderColor = input<string | null>(null); // Couleur bordure au survol
@@ -51,7 +51,7 @@ export class EvoButton {
     if (this.bgColor()) styles['--btn-bg'] = this.bgColor()!;
     if (this.textColor()) styles['--btn-color'] = this.textColor()!;
     if (this.borderColor()) styles['--btn-border'] = this.borderColor()!;
-    
+
     if (this.hoverBgColor()) styles['--btn-hover-bg'] = this.hoverBgColor()!;
     if (this.hoverTextColor()) styles['--btn-hover-color'] = this.hoverTextColor()!;
     if (this.hoverBorderColor()) styles['--btn-hover-border'] = this.hoverBorderColor()!;

@@ -20,9 +20,14 @@
       margin-bottom: $spacing-md;
       line-height: 1.1;
       letter-spacing: -1px;
+      font-weight: 500;
+
+      span{
+        color: #b9b4e9;
+      }
     }
 
-    .faq-desc {
+    .desc {
       font-size: 1.05rem;
       color: $text-muted;
       margin-top: 1.5rem;
@@ -54,7 +59,7 @@
   }
 
   .faq-item {
-    background-color: $dark-secondary;
+    background-color: $dark-tertiary;
     border-radius: $border-radius-lg;
     border: 1px solid rgba($light-cream, 0.05);
     overflow: hidden;
@@ -63,8 +68,14 @@
     // État Ouvert (Style conteneur)
     &.is-open {
       background-color: lighten($dark-secondary, 3%); // Légèrement plus clair
-      border-color: rgba($accent-green, 0.3);
       box-shadow: $shadow-md;
+
+      .faq-question{
+        .question-text{
+          color: $dark-quaternary;
+          font-weight: $font-weight-semibold;
+        }
+      }
 
       .icon-plus {
         transform: rotate(45deg); // Devient une croix (X)
@@ -87,9 +98,9 @@
 
       .question-text {
         font-family: $font-heading;
-        font-size: $font-size-md;
-        font-weight: $font-weight-semibold;
-        color: $white;
+        font-size: 1.1rem;
+        font-weight: $font-weight-medium;
+        color: $text-muted;
         line-height: 1.4;
       }
 
@@ -123,13 +134,13 @@
       // Le contenu interne
       .faq-answer {
         overflow: hidden; // Cache le contenu quand height = 0
-        color: $text-muted;
 
         p {
           padding: 0 $spacing-lg $spacing-lg; // Padding seulement en bas et côtés
           padding-right: $spacing-2xl; // Un peu plus à droite pour la lisibilité
           line-height: 1.5;
           font-size: 1rem;
+          color: $text-muted;
         }
       }
     }
