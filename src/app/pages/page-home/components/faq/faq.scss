@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../../../../../styles/variables' as *;
 @use '../../../../../styles/mixins' as *;
 
@@ -67,7 +68,7 @@
 
     // État Ouvert (Style conteneur)
     &.is-open {
-      background-color: lighten($dark-secondary, 3%); // Légèrement plus clair
+      background-color: color.adjust($dark-secondary, $lightness: 3%); // Légèrement plus clair
       box-shadow: $shadow-md;
 
       .faq-question{
@@ -98,10 +99,11 @@
 
       .question-text {
         font-family: $font-heading;
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         font-weight: $font-weight-medium;
         color: $text-muted;
         line-height: 1.4;
+        letter-spacing: -1px;
       }
 
       .icon-wrapper {

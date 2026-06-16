@@ -4,11 +4,61 @@
   width: 100%;
   padding-bottom: 2rem; // Un peu d'espace en bas du site
 
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.875rem;
+      border-top: 2px solid $dark-secondary;
+      padding-top: 2rem;
+
+      p {
+        font-size: 1rem;
+        color: $text-muted;
+      }
+
+      ul {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          &:last-child{
+            padding-left: 1.3rem;
+              border-left: 1px solid $text-muted;
+            }
+          a {
+            font-size: 1rem;
+            color: $text-muted;
+            font-weight: $font-weight-regular;
+            text-decoration: none;
+            transition: color $transition-fast;
+            line-height: 1;
+            width: fit-content;
+
+
+            &:hover {
+              cursor: pointer;
+              color: $light-cream;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .brand {
     width: 100%;
     container-type: inline-size;
     text-align: center;
     margin-bottom: 4rem;
+    margin-top: 4rem; // Compense le padding pour garder le layout propre
     display: flex;
     justify-content: center;
 
@@ -16,7 +66,6 @@
     // MAIS on ajoute du padding vertical pour que le texte ne soit pas coupé à l'intérieur.
     overflow: hidden;
     padding: 2rem 0; // <--- TRÈS IMPORTANT : Laisse de la place pour les accents et les ombres
-    margin-top: -2rem; // Compense le padding pour garder le layout propre
 
     .brand-container {
       container-type: inline-size;
@@ -26,7 +75,7 @@
         margin: 0;
         font-weight: 900;
         white-space: nowrap;
-        font-size: 16cqw;
+        font-size: 14.8cqw;
         color: $light-cream;
         text-align: center;
         font-family: $font-heading; // Sora

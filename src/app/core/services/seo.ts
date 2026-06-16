@@ -13,7 +13,7 @@ export class SeoService {
     keywords?: string;
     image?: string;
   }): void {
-    const url = window.location.href;
+    const url = typeof window !== 'undefined' ? window.location.href : '';
     this.title.setTitle(data.title);
 
     // --- BALISES STANDARDS ---

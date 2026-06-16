@@ -265,3 +265,28 @@ button {
     }
   }
 }
+
+// Custom styles for PrimeNG Dynamic Dialog (Quote Request Form)
+.p-dialog.quote-dialog-custom {
+  background: rgba($dark-secondary, 0.45) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba($light-cream, 0.08) !important;
+  box-shadow: $shadow-xl, 0 0 50px rgba($accent-green, 0.08) !important;
+  border-radius: $border-radius-2xl !important;
+  overflow: hidden;
+
+  .p-dialog-content {
+    background: transparent !important;
+    color: $light-cream !important;
+    padding: $spacing-xl !important;
+    border: none !important;
+  }
+}
+
+.p-dialog-mask {
+  background-color: rgba($dark-primary, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: all 0.3s ease;
+}

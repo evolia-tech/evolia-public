@@ -30,7 +30,7 @@
         </div>
         <ul class="card__tags" #tagList>
           @for (tool of toolsWeUse; track $index) {
-            <li>{{ tool }}</li>
+          <li>{{ tool }}</li>
           }
         </ul>
       </article>
@@ -47,29 +47,107 @@
         <!-- L'image qui va déborder -->
         <div class="card__img-container">
           <!-- Placeholder pour ton image de téléphone -->
-          <img
-            src="images/services/mobile.jpeg"
-            alt="Application Mobile Flutter"
-            class="mobile-img"
-          />
+          <img src="images/services/mobile.png" alt="Application Mobile Flutter" class="mobile-img" />
         </div>
       </article>
 
       <!-- 3. WEB DESIGN (Bloc bas gauche) -->
-      <article class="card card--design">
-        <h3 class="card__title">UI/UX Design</h3>
-        <p class="card__desc">
-          Des interfaces ergonomiques conçues sur <strong>Figma</strong> qui subliment l'expérience
-          utilisateur.
-        </p>
+      <article class="card card--design" #designCard>
+        <div class="card__content">
+          <h3 class="card__title">UI/UX Design</h3>
+          <p class="card__desc">
+            Des interfaces ergonomiques conçues sur <strong>Figma</strong> qui subliment l'expérience
+            utilisateur.
+          </p>
+        </div>
+        <!-- Figma Wireframe Canvas -->
+        <div class="card__design-canvas">
+          <div class="blueprint-grid"></div>
+          <svg class="wireframe-svg" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect class="wf-card" x="20" y="30" width="120" height="90" rx="6" stroke="currentColor" stroke-width="1"
+              stroke-dasharray="3 3" />
+            <rect class="wf-input" x="160" y="30" width="120" height="24" rx="4" stroke="currentColor"
+              stroke-width="1" />
+            <rect class="wf-button" #figmaButton x="160" y="70" width="120" height="30" rx="15" stroke="currentColor"
+              stroke-width="1" />
+            <line class="wf-line" x1="30" y1="90" x2="130" y2="90" stroke="currentColor" stroke-width="1" />
+            <line class="wf-line" x1="30" y1="100" x2="90" y2="100" stroke="currentColor" stroke-width="1" />
+            <circle class="wf-avatar" cx="45" cy="55" r="15" stroke="currentColor" stroke-width="1" />
+          </svg>
+          <div class="figma-cursor" #figmaCursor>
+            <svg viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 14px; height: 16px;">
+              <path d="M0 0V18.156L4.721 13.435H12.754L0 0Z" fill="#22C55E" />
+            </svg>
+            <span class="cursor-label">Design</span>
+          </div>
+        </div>
       </article>
 
       <!-- 4. IDENTITÉ VISUELLE (Bloc bas milieu) -->
-      <article class="card card--logo">
-        <h3 class="card__title">Identité & Logo</h3>
-        <p class="card__desc">
-          Création de logos et chartes graphiques qui marquent les esprits et incarnent vos valeurs.
-        </p>
+      <article class="card card--logo" #logoCard>
+        <div class="card__content">
+          <h3 class="card__title">Identité & Logo</h3>
+          <p class="card__desc">
+            Création de logos et chartes graphiques qui marquent les esprits et incarnent vos valeurs.
+          </p>
+        </div>
+        <!-- Vector & Typography Studio Canvas -->
+        <div class="card__logo-canvas">
+          <svg class="vector-studio-svg" viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Typographic Guidelines -->
+            <line class="guide-line cap-line" x1="10" y1="30" x2="290" y2="30" stroke="currentColor" stroke-width="0.5"
+              stroke-dasharray="2 4" />
+            <line class="guide-line x-line" x1="10" y1="60" x2="290" y2="60" stroke="currentColor" stroke-width="0.5"
+              stroke-dasharray="2 4" />
+            <line class="guide-line base-line" x1="10" y1="110" x2="290" y2="110" stroke="currentColor"
+              stroke-width="0.5" stroke-dasharray="2 4" />
+            <line class="guide-line desc-line" x1="10" y1="130" x2="290" y2="130" stroke="currentColor"
+              stroke-width="0.5" stroke-dasharray="2 4" />
+
+            <!-- Technical annotations -->
+            <text class="guide-label" x="12" y="26">CAP HEIGHT</text>
+            <text class="guide-label" x="12" y="56">X-HEIGHT</text>
+            <text class="guide-label" x="12" y="106">BASELINE</text>
+            <text class="guide-label" x="12" y="126">DESCENDER</text>
+            <text class="guide-ratio" x="250" y="26">1.618 (GOLDEN)</text>
+
+            <!-- Typography Glyph: Geometric Letter E -->
+            <path class="letter-glyph" d="M60 30 H110 V42 H72 V64 H102 V76 H72 V98 H110 V110 H60 Z"
+              stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+
+            <!-- Bezier Curve -->
+            <path class="vector-path" #vectorPath d="M140 110 C170 110, 180 30, 240 30" stroke="currentColor"
+              stroke-width="1.5" stroke-linecap="round" />
+
+            <!-- Tangent Handles & Lines -->
+            <line class="vector-handle-line handle-line-1" #handleLine1 x1="140" y1="110" x2="170" y2="110"
+              stroke="currentColor" stroke-width="0.8" stroke-dasharray="1.5 1.5" />
+            <line class="vector-handle-line handle-line-2" #handleLine2 x1="240" y1="30" x2="180" y2="30"
+              stroke="currentColor" stroke-width="0.8" stroke-dasharray="1.5 1.5" />
+
+            <!-- Handle Node points -->
+            <circle class="vector-handle-point handle-point-1" #handlePoint1 cx="170" cy="110" r="3.5"
+              fill="currentColor" stroke="currentColor" stroke-width="1" />
+            <circle class="vector-handle-point handle-point-2" #handlePoint2 cx="180" cy="30" r="3.5"
+              fill="currentColor" stroke="currentColor" stroke-width="1" />
+
+            <!-- Anchor Nodes -->
+            <rect class="vector-anchor anchor-start" x="137" y="107" width="6" height="6" fill="currentColor"
+              stroke="currentColor" stroke-width="1" />
+            <rect class="vector-anchor anchor-end" x="237" y="27" width="6" height="6" fill="currentColor"
+              stroke="currentColor" stroke-width="1" />
+          </svg>
+
+          <!-- Pen Tool cursor -->
+          <div class="vector-pen-tool" #penTool>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="width: 16px; height: 16px; transform: rotate(-30deg);">
+              <path d="M3 21l1.65-4.95L15.9 4.8a1.5 1.5 0 0 1 2.1 0l1.2 1.2a1.5 1.5 0 0 1 0 2.1L7.95 19.35 3 21z"
+                fill="currentColor" />
+              <path d="M15 6l3 3" stroke="#fff" stroke-width="1.5" />
+            </svg>
+          </div>
+        </div>
       </article>
 
       <!-- 5. CTA / CONVAINCRE (Bloc bas droite) -->
@@ -78,13 +156,8 @@
           Vous avez le projet, nous avons l'équipe technique pour le réaliser.
         </p>
         <div class="card__action">
-          <app-evo-button
-            text="Lancer mon projet"
-            link="#contact"
-            preset="white"
-            variant="solid"
-            icon="faArrowRight"
-          >
+          <app-evo-button text="Lancer mon projet" preset="white" variant="solid" icon="faArrowRight"
+            (click)="quoteService.openQuoteForm()">
           </app-evo-button>
         </div>
       </article>

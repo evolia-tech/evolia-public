@@ -104,7 +104,7 @@
     line-height: 1.2;
   }
 
-  &__desc {
+  .card__desc {
     font-size: 0.95rem;
     color: $text-muted;
     line-height: 1.6;
@@ -148,8 +148,10 @@
       opacity: 0;
       touch-action: pan-y; // Autorise le scroll vertical même si on touche l'élément
       cursor: grab;
-      -webkit-user-select: none; /* Safari */
-      -ms-user-select: none; /* IE 10 et + / Edge ancien */
+      -webkit-user-select: none;
+      /* Safari */
+      -ms-user-select: none;
+      /* IE 10 et + / Edge ancien */
       user-select: none;
       max-width: 90%;
       pointer-events: all;
@@ -164,7 +166,7 @@
 // 2. MOBILE (Grande colonne droite)
 .card--mobile {
   grid-area: mobile;
-  //background: linear-gradient(180deg, $dark-secondary 0%, darken($dark-secondary, 5%) 100%);
+  overflow: hidden; // Ensures truncation at borders
 
   // Contenu en haut
   .card__content {
@@ -172,34 +174,233 @@
     z-index: 2;
   }
 
-  // Image en bas qui déborde à droite
+  // Image en bas qui déborde à droite et en bas
   .card__img-container {
     position: absolute;
-    bottom: -20px;
-    right: -40px; // Déborde à droite
-    width: 80%; // Prend 80% de la largeur de la carte
-    max-width: 300px;
+    left: 45%; // Starts at 45% of parent width
+    top: 65%; // Starts at 65% of parent height
+    width: 60%; // Extends beyond 100% to ensure right overflow
     height: auto;
+    transition: left 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+      top 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+      width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
-      transition: transform 0.5s ease;
+      display: block;
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.55));
     }
   }
 
-  &:hover .card__img-container img {
-    transform: scale(1.05) rotate(-3deg);
+  &:hover {
+    .card__img-container {
+      left: 35%; // Moves left so width is 70% of parent (from 30% to 100%)
+      top: 35%; // Moves up to start at 35% height of parent
+      width: 70%; // Expands width, keeping the right overflow
+    }
   }
 }
 
-// 3. DESIGN & LOGO (Petits carrés bas gauche)
+// 3. DESIGN (Petits carrés bas gauche)
 .card--design {
   grid-area: design;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .card__content {
+    position: relative;
+    z-index: 5;
+  }
+
+  .card__design-canvas {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    margin-top: 1rem;
+    border-radius: $border-radius-lg;
+    background: rgba(#000, 0.2);
+    border: 1px solid rgba($white, 0.03);
+    overflow: hidden;
+
+    .blueprint-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba($white, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba($white, 0.03) 1px, transparent 1px);
+      background-size: 15px 15px;
+      background-position: center;
+      pointer-events: none;
+    }
+
+    .wireframe-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: rgba($white, 0.15);
+      pointer-events: none;
+
+      rect,
+      circle,
+      line {
+        transition: all 0.4s ease;
+      }
+
+      .wf-button {
+        color: rgba($white, 0.15);
+      }
+
+      &.highlighted {
+        .wf-button {
+          stroke: $accent-green;
+          fill: rgba($accent-green, 0.1);
+          filter: drop-shadow(0 0 6px rgba($accent-green, 0.3));
+        }
+      }
+    }
+
+    .figma-cursor {
+      position: absolute;
+      top: 30px;
+      left: 200px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      pointer-events: none;
+      z-index: 10;
+      will-change: transform;
+
+      .cursor-label {
+        background: $accent-green;
+        color: $white;
+        font-weight: 700;
+        font-size: 0.65rem;
+        padding: 2px 6px;
+        border-radius: 3px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
 }
+
+// 4. LOGO (Petits carrés bas milieu)
 .card--logo {
   grid-area: logo;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  perspective: 1000px; // Permet l'effet 3D tilt
+
+  .card__content {
+    position: relative;
+    z-index: 5;
+  }
+
+  .card__logo-canvas {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    margin-top: 1rem;
+    border-radius: $border-radius-lg;
+    background: rgba(#000, 0.2);
+    border: 1px solid rgba($white, 0.03);
+    overflow: hidden;
+
+    .vector-studio-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+
+      .guide-line {
+        color: rgba($white, 0.05);
+        transition: color 0.4s ease;
+      }
+
+      .guide-label {
+        font-family: monospace;
+        font-size: 6px;
+        fill: rgba($white, 0.2);
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        transition: fill 0.4s ease;
+      }
+
+      .guide-ratio {
+        font-family: monospace;
+        font-size: 5.5px;
+        fill: rgba($accent-green-light, 0.3);
+        font-weight: bold;
+      }
+
+      .letter-glyph {
+        color: rgba($white, 0.1);
+        fill: rgba($white, 0.02);
+        transition: all 0.5s ease;
+      }
+
+      .vector-path {
+        color: rgba($white, 0.25);
+        fill: none;
+        transition: all 0.4s ease;
+      }
+
+      .vector-handle-line {
+        color: rgba($white, 0.15);
+      }
+
+      .vector-handle-point {
+        color: $accent-green;
+        fill: $dark-secondary;
+      }
+
+      .vector-anchor {
+        color: $white;
+        fill: $dark-secondary;
+      }
+
+      &.hovered {
+        .guide-line {
+          color: rgba($accent-green-light, 0.12);
+        }
+
+        .guide-label {
+          fill: rgba($white, 0.4);
+        }
+
+        .letter-glyph {
+          color: rgba($white, 0.25);
+          fill: rgba($white, 0.04);
+          filter: drop-shadow(0 0 4px rgba($white, 0.1));
+        }
+
+        .vector-path {
+          color: $accent-green-light;
+          filter: drop-shadow(0 0 6px rgba($accent-green-light, 0.4));
+        }
+      }
+    }
+
+    .vector-pen-tool {
+      position: absolute;
+      top: 90px;
+      left: 50px;
+      color: $accent-green-light;
+      pointer-events: none;
+      z-index: 10;
+      will-change: transform;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+    }
+  }
 }
 
 // 4. CTA (Petit rectangle bas droite)

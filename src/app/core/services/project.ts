@@ -5,6 +5,9 @@ import { PageComingSoon } from '../../pages/page-coming-soon/page-coming-soon';
 import { SeoService } from './seo';
 import { PageProjectMaholDiaspora } from '../../pages/page-project-mahol-diaspora/page-project-mahol-diaspora';
 import { PageProjectForYouMediaAfrica } from '../../pages/page-project-for-you-media-africa/page-project-for-you-media-africa';
+import { PageProjectSopranoVesinet } from '../../pages/page-project-soprano-vesinet/page-project-soprano-vesinet';
+import { PageProjectStella } from '../../pages/page-project-stella/page-project-stella';
+import { PageProjectLikoAuto } from '../../pages/page-project-liko-auto/page-project-liko-auto';
 
 @Injectable({
   providedIn: 'root',
@@ -26,8 +29,11 @@ export class ProjectService {
 
   private readonly projectMap: Record<string, any> = {
     default: PageComingSoon,
+    'liko-auto': PageProjectLikoAuto,
     'association-mahol-diaspora': PageProjectMaholDiaspora,
     'for-you-media-africa': PageProjectForYouMediaAfrica,
+    'soprano-vesinet': PageProjectSopranoVesinet,
+    'stella': PageProjectStella,
   };
 
   /**

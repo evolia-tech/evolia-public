@@ -2,6 +2,8 @@
 @use '../../../../../../../styles/mixins' as *;
 
 .team-card {
+  --shader-color-rgb: 20, 105, 77;
+  --shader-glow-color: rgba(20, 105, 77, 0.3);
   position: relative;
   border-radius: $border-radius-xl;
   background-color: $dark-secondary;
@@ -11,11 +13,59 @@
   display: flex;
   flex-direction: column;
   overflow: hidden; // Important pour le border-radius
-  //padding: 0.8rem;
 
-    // --- 3. HOVER STATE (PLAVÉ À LA FIN = GAGNE LA PRIORITÉ) ---
+  // Shaders
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(var(--shader-color-rgb), 0.12) 0%,
+      transparent 70%
+    );
+    z-index: 1;
+    pointer-events: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      transparent 0deg,
+      rgba(var(--shader-color-rgb), 0.08) 120deg,
+      transparent 240deg,
+      transparent 360deg
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5;
+    animation: rotate-ray 15s linear infinite;
+    transition: opacity 0.5s ease;
+  }
+
+  // --- 3. HOVER STATE ---
   &:hover {
-    box-shadow: $shadow-xl;
+    box-shadow: 0 12px 32px var(--shader-glow-color, rgba($accent-green, 0.2));
+    border-color: rgba(var(--shader-color-rgb), 0.3);
+
+    &::before {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+
+    &::after {
+      opacity: 0.9;
+    }
 
     // On cible .card-image à l'intérieur du hover
     .card-image {
@@ -28,10 +78,9 @@
   // --- 1. IMAGE AREA (Défini en premier) ---
   .card-image {
     position: relative;
+    z-index: 2;
     width: 100%;
     overflow: hidden;
-    //background-color: darken($dark-secondary, 5%);
-    // Pas besoin de border-radius spécifique car le parent a overflow: hidden
     height: 18rem;
 
     img {
@@ -81,6 +130,8 @@
 
   // --- 2. CONTENT AREA ---
   .card-content {
+    position: relative;
+    z-index: 2;
     padding: $spacing-lg; // Le padding est ICI pour le texte
     display: flex;
     flex-direction: column;
@@ -179,5 +230,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes rotate-ray {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -2,6 +2,7 @@ import { Component, signal, HostListener, inject, PLATFORM_ID } from '@angular/c
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { EvoButton } from '../../shared/components/ui/evo-button/evo-button';
+import { QuoteService } from '../../core/services/quote';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +20,7 @@ export class Header {
   isScrolled = signal(false);
   
   private platformId = inject(PLATFORM_ID);
+  public quoteService = inject(QuoteService);
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

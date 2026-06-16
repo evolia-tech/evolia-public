@@ -10,20 +10,27 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
+import { RouterLink } from '@angular/router';
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
-  imports: []
+  imports: [
+    RouterLink
+  ]
 })
 export class Footer implements AfterViewInit, OnDestroy {
   private ngZone = inject(NgZone);
   private platformId = inject(PLATFORM_ID);
   private ctx?: gsap.Context;
+
+  protected readonly currentYear = new Date().getFullYear();
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {

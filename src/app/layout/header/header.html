@@ -29,9 +29,9 @@
       <!-- On utilise ton composant EvoButton -->
       <app-evo-button
         text="Devis Gratuit"
-        link="#contact"
         preset="green"
-        variant="solid">
+        variant="solid"
+        (click)="quoteService.openQuoteForm()">
       </app-evo-button>
     </div>
 

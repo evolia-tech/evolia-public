@@ -22,6 +22,7 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
   @ViewChild('carouselContainer') carouselContainer!: ElementRef;
   private ngZone = inject(NgZone);
   private platformId = inject(PLATFORM_ID);
+
   private ctx?: gsap.Context;
   private loop?: gsap.core.Animation;
   private draggable?: Draggable[];
