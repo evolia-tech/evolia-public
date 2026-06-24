@@ -13,10 +13,10 @@ export class Team {
       role: 'CEO & Lead Fullstack',
       // Pro: Homme d'affaires moderne / Tech
       photoPro:
-        'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop',
+        '/images/team/samuel.jpeg',
       // Hobby: Guitare
       photoHobby:
-        'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=800&auto=format&fit=crop',
+        '/images/team/samuel.jpeg',
       hobbyLabel: 'Guitariste 🎸',
       mainSkills: ['Angular', 'NestJS', 'Architecture'],
       socials: [
@@ -32,10 +32,10 @@ export class Team {
       role: 'Expert Backend Developer (Nestjs)',
       // Pro: Développeur backend sérieux
       photoPro:
-        'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop',
+        '/images/team/steve.jpeg',
       // Hobby: Exploration / Nature
       photoHobby:
-        'https://images.unsplash.com/photo-1533240332313-0db49b459ad6?q=80&w=800&auto=format&fit=crop',
+        '/images/team/steve.jpeg',
       hobbyLabel: 'Explorateur 🔍',
       mainSkills: ['Node.js', 'PostgreSQL', 'Microservices'],
       socials: [{ platform: 'LinkedIn', icon: 'faLinkedin', url: '#' }],

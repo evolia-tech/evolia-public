@@ -17,12 +17,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToFaIconPipe } from '../../shared/pipes/to-fa-icon-pipe';
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
   imports: [
-    RouterLink
+    RouterLink,
+    FontAwesomeModule,
+    ToFaIconPipe
   ]
 })
 export class Footer implements AfterViewInit, OnDestroy {

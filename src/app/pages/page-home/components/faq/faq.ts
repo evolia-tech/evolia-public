@@ -15,34 +15,34 @@ export class Faq {
 
   faqItems: FaqItem[] = [
     {
-      question: "Combien coûte la création d'un site web ou d'une application ?",
+      question: 'Quelles technologies utilisez-vous pour garantir la performance de mon projet ?',
       answer:
-        "Chaque projet est unique. Un site vitrine simple démarre à partir de X€, tandis qu'une application complexe demande un chiffrage précis. Contactez-nous pour un devis gratuit et détaillé sous 48h.",
+        "Nous sélectionnons des technologies modernes, robustes et hautement scalables. Pour le web, nous privilégions le duo Angular (pour des interfaces utilisateur fluides et dynamiques) et NestJS (pour un back-end performant et sécurisé). Pour le mobile, nous utilisons Flutter, permettant de déployer sur iOS et Android à partir d'un code unique. Toutes nos architectures sont prêtes pour le cloud et conteneurisées avec Docker.",
     },
     {
-      question: 'Combien de temps faut-il pour développer mon projet ?',
+      question: 'Comment garantissez-vous le respect des délais et de la qualité ?',
       answer:
-        'En moyenne, comptez 4 à 8 semaines pour un site web et 3 à 6 mois pour une application mobile complète. Nous travaillons en méthode Agile pour vous livrer des versions testables régulièrement.',
+        "Nous travaillons en méthodologie Agile (Scrum). Votre projet est découpé en cycles de développement courts (sprints de 2 semaines). À la fin de chaque cycle, nous vous livrons une version testable et fonctionnelle. Cette approche vous permet de suivre l'avancée concrète du projet en temps réel et d'ajuster les fonctionnalités selon vos besoins réels.",
     },
     {
-      question: 'Assurez-vous la maintenance après la mise en ligne ?',
+      question: "Comment se passe l'estimation du coût et du délai de développement ?",
       answer:
-        'Absolument. Nous proposons des forfaits de maintenance (TMA) pour garantir la sécurité, les mises à jour et les évolutions de votre solution sur le long terme.',
+        "Chaque projet débute par une phase de cadrage gratuite pour analyser vos besoins et objectifs. Nous vous transmettons ensuite un devis détaillé et transparent sous 48 heures. À titre d'exemple, un produit web ou une application simple prend généralement 4 à 8 semaines, tandis qu'une plateforme SaaS complexe ou une application mobile complète demande entre 3 et 6 mois.",
     },
     {
-      question: 'Je suis en France, comment allons-nous collaborer ?',
+      question: 'Proposez-vous un accompagnement après la mise en ligne ?',
       answer:
-        "La distance n'est pas un frein. Nous utilisons Slack, Trello et Google Meet pour communiquer quotidiennement. Vous avez un chef de projet dédié qui est votre interlocuteur unique.",
+        "Tout à fait. La mise en ligne n'est que le début. Nous proposons des contrats de Tierce Maintenance Applicative (TMA) sur-mesure pour assurer la maintenance corrective (correction de bugs), préventive (mises à jour de sécurité et de dépendances) et évolutive (développement de nouvelles fonctionnalités au rythme de votre croissance).",
     },
     {
-      question: 'Puis-je mettre à jour mon site moi-même ?',
+      question: 'Comment collaborons-nous si nos équipes sont géographiquement éloignées ?',
       answer:
-        "Oui ! Nous développons des interfaces d'administration sur-mesure ou utilisons des CMS headless qui vous permettent de modifier vos textes et images en toute autonomie.",
+        "La collaboration hybride et à distance fait partie de notre quotidien. Nous utilisons des outils collaboratifs performants : Slack pour les échanges instantanés, Notion pour la documentation et le suivi de projet, et Google Meet pour nos points réguliers. Vous bénéficiez également d'un chef de projet dédié comme interlocuteur unique.",
     },
     {
-      question: 'Puis-je mettre à jour mon site moi-même ?',
+      question: 'Serai-je pleinement propriétaire du code source et des maquettes design ?',
       answer:
-        "Oui ! Nous développons des interfaces d'administration sur-mesure ou utilisons des CMS headless qui vous permettent de modifier vos textes et images en toute autonomie.",
+        "Oui, sans aucune restriction. À la livraison finale du projet et après règlement, vous devenez propriétaire exclusif de l'intégralité du code source (déployé sur vos serveurs et hébergé sur vos dépôts Git) ainsi que de l'ensemble des livrables de design créés sur Figma.",
     },
   ];
 
