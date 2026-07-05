@@ -1,0 +1,54 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.footer__brand-display {
+    position: relative;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+
+    .brand-stretch-wrapper {
+        @include container;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .company-name {
+        margin: 0;
+        font-weight: 900;
+        white-space: nowrap;
+
+        // Plus besoin de vw ici, le TS écrase cette valeur par le calcul en px
+        font-size: 40px;
+
+        color: $dark-secondary;
+        font-family: $font-heading;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        display: inline-block;
+        width: auto;
+
+        // Le line-height et le padding s'adaptent désormais proportionnellement au font-size calculé
+        line-height: 1;
+        padding-top: 0.05em;
+
+        will-change: transform, opacity;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .brand-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        background: linear-gradient(to bottom, transparent 0%, rgba($dark-primary, 1) 90%);
+        pointer-events: none;
+        z-index: 2;
+    }
+}

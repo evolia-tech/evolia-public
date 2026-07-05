@@ -32,10 +32,10 @@ export class Team {
       role: 'Expert Backend Developer (Nestjs)',
       // Pro: Développeur backend sérieux
       photoPro:
-        '/images/team/steve.jpeg',
+        '/images/team/steve.png',
       // Hobby: Exploration / Nature
       photoHobby:
-        '/images/team/steve.jpeg',
+        '/images/team/steve.png',
       hobbyLabel: 'Explorateur 🔍',
       mainSkills: ['Node.js', 'PostgreSQL', 'Microservices'],
       socials: [{ platform: 'LinkedIn', icon: 'faLinkedin', url: '#' }],

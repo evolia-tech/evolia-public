@@ -1,0 +1,90 @@
+@use 'sass:color';
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.blog-section {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-4xl 0;
+    position: relative;
+    background-color: transparent; // S'intègre sur votre fond global sombre
+    width: 100%;
+
+
+    // On s'assure que .content.my-container se comporte correctement au besoin
+    .container {
+        width: 100%;
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: $spacing-2xl;
+            margin-bottom: $spacing-3xl;
+
+            @include respond-to('md') {
+                flex-direction: column;
+                gap: $spacing-xl;
+                margin-bottom: $spacing-2xl;
+            }
+
+            .title {
+                max-width: 550px;
+                line-height: 1.1; // Un peu plus aéré pour la lisibilité
+                letter-spacing: -1px;
+                font-weight: 500;
+
+                span {
+                    color: #b9b4e9;
+                }
+            }
+
+            .action-block {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: $spacing-lg;
+                max-width: 500px;
+
+                @include respond-to('md') {
+                    max-width: 100%;
+                }
+
+                .description {
+                    font-size: 1.05rem;
+                    color: $text-muted;
+
+                    strong {
+                        color: $light-cream;
+                    }
+                }
+            }
+        }
+
+        // Grille d'articles Responsive
+        .blog-grid {
+            overflow: hidden;
+            display: grid;
+            gap: 1.5rem; // Espacement plus large pour aérer
+            grid-template-columns: repeat(3, 1fr);
+
+            @include respond-to('lg') {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include respond-to('md') {
+                grid-template-columns: 1fr;
+                gap: $spacing-2xl;
+            }
+        }
+
+        .empty-message {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: $text-muted;
+            font-style: italic;
+            padding: $spacing-2xl 0;
+        }
+    }
+}

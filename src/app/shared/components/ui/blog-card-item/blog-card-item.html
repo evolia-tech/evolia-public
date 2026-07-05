@@ -1,0 +1,14 @@
+<article class="blog-card" [routerLink]="['/blog', post().slug]">
+    <div class="image-wrapper">
+        <img [src]="post().imageUrl" [alt]="post().imageAlt" loading="lazy">
+    </div>
+
+    <div class="card-content">
+        <div class="card-meta">
+            <time [attr.datetime]="post().publishedAt.toISOString()">{{ post().publishedAt | date:'mediumDate' }}</time>
+            <span class="category">{{ post().category }}</span>
+        </div>
+
+        <h3 class="card-title">{{ post().title }}</h3>
+    </div>
+</article>

@@ -1,0 +1,34 @@
+<section class="blog-section">
+    <div class="container my-container">
+
+        <div class="section-header">
+            <h2 class="title">
+                Regards croisés sur les <span>tendances</span>
+                qui façonnent <span>l'innovation digitale</span>
+            </h2>
+
+
+            <div class="action-block">
+                <p class="description">
+                    Découvrez notre <strong>regard unique</strong> sur l'univers du numérique. Explorez les
+                    coulisses du
+                    <strong>développement sur mesure</strong>, l'impact du design UI/UX et <strong>les défis
+                        des technologies</strong> de demain.
+                </p>
+
+                <app-evo-button text="Voir tous les articles" [link]="'/blog'" variant="solid" preset="green">
+                </app-evo-button>
+
+            </div>
+        </div>
+
+        <div class="blog-grid">
+            @for (postItem of posts(); track postItem.id) {
+            <app-blog-card-item [post]="postItem"></app-blog-card-item>
+            } @empty {
+            <p class="empty-message">Aucun article disponible pour le moment.</p>
+            }
+        </div>
+
+    </div>
+</section>
