@@ -1,0 +1,71 @@
+<section class="stats-section">
+  <div class="stats-section__header">
+    <h2 class="stats-section__title">
+      L'innovation conçue <span class="italic">pour vous</span>
+    </h2>
+    <p class="stats-section__subtitle">
+      Parce que chaque projet est unique, nous concevons des écosystèmes digitaux sur-mesure adaptés à vos ambitions.
+    </p>
+  </div>
+
+  <div class="stats-grid">
+    <!-- COLONNE GAUCHE : Grande image avec badge flottant -->
+    <div class="stats-left">
+      <div class="stats-left__img-box">
+        <img src="/images/projects/elites-voyages.png" alt="Evolia Tech Projet">
+      </div>
+      <!-- Badge flottant -->
+      <div class="stats-left__badge">
+        <div class="badge-icon">
+          <fa-icon [icon]="faGear"></fa-icon>
+        </div>
+        <div class="badge-content">
+          <h4>Développement moderne</h4>
+          <p>Technologies robustes et scalables</p>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLONNE DROITE : 3 cartes -->
+    <div class="stats-right">
+      <!-- 1. Carte horizontale en haut -->
+      <div class="stats-card stats-card--horizontal">
+        <div class="stats-card__info">
+          <h3>Des experts seniors à vos côtés</h3>
+          <p>Ingénieurs, concepteurs et chefs de projet chevronnés collaborant sur chaque ligne de code.</p>
+        </div>
+        <div class="stats-card__avatars">
+          <div class="avatar-stack">
+            @for (avatar of teamAvatars; track avatar.name) {
+              <div class="avatar-item" [attr.data-tooltip]="avatar.name">
+                <img [src]="avatar.url" [alt]="avatar.name">
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Ligne du bas (deux cartes carrées) -->
+      <div class="stats-bottom-row">
+        <!-- Carte R&D (Verte) -->
+        <div class="stats-card stats-card--square stats-card--square-green">
+          <div class="dots-pattern"></div>
+          <div class="stats-value">5 <span class="unit">ans</span></div>
+          <h4 class="stats-label">Recherche & Développement</h4>
+          <p class="stats-desc">Innovation continue et intégration des dernières technologies web et mobiles.</p>
+        </div>
+
+        <!-- Carte Projets (Glass/Blanche) -->
+        <div class="stats-card stats-card--square stats-card--square-glass">
+          <div class="dots-pattern"></div>
+          <div class="stats-value">50<span class="unit">+</span></div>
+          <h4 class="stats-label">Projets livrés</h4>
+          <p class="stats-desc">Des solutions robustes conçues sur-mesure pour propulser l'activité de nos clients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

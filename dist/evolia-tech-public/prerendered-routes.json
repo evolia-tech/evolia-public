@@ -1,6 +1,8 @@
 {
   "routes": {
     "/": {},
+    "/about": {},
+    "/contact": {},
     "/estimation-projet": {}
   }
 }

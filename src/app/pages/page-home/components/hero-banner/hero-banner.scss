@@ -9,6 +9,10 @@
   overflow-x: hidden; // Empêche le scroll horizontal des vagues
   padding-top: 15rem;
 
+  @media (max-width: 480px) {
+    padding-top: 10rem;
+  }
+
   &__bg {
     position: absolute;
     inset: 0;
@@ -72,7 +76,7 @@
     line-height: 1;
     letter-spacing: -1px;
     font-weight: 500;
-    font-size: 3.3rem;
+    font-size: clamp(2.2rem, 5.5vw, 3.3rem);
 
     .text-gradient {
       color: $dark-quaternary;

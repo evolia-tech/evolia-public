@@ -1,0 +1,148 @@
+<div class="page-contact">
+  <div class="container page-contact__container">
+
+    <!-- GAUCHE : Coordonnées et réseaux -->
+    <div class="page-contact__info">
+
+      <h1 class="page-contact__title">
+        Échangeons sur
+        votre prochaine
+        ambition digitale
+      </h1>
+
+      <p class="page-contact__subtitle">
+        Une idée de produit SaaS, une application mobile sur-mesure ou une identité de marque à façonner ? Nos équipes
+        d'experts sont à votre entière disposition pour donner vie à vos projets les plus ambitieux. Partagez-nous votre
+        vision pour initier notre future collaboration.
+      </p>
+
+      <div class="contact-directory">
+        <div class="directory-header">
+          <span class="directory-label">Lignes directes</span>
+        </div>
+        <div class="directory-list">
+          <div class="directory-item">
+            <span class="directory-country">🇫🇷 France</span>
+            <a href="tel:+33783189171" class="directory-link">(+33) 07 83 18 91 71</a>
+          </div>
+          <div class="directory-item">
+            <span class="directory-country">🇨🇲 Cameroun</span>
+            <a href="tel:+237699476512" class="directory-link">(+237) 6 99 47 65 12</a>
+          </div>
+          <div class="directory-item">
+            <span class="directory-country">🇨🇦 Canada</span>
+            <a href="tel:+14388002415" class="directory-link">(+1) 438 800 2415</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Réseaux sociaux -->
+      <div class="socials-section">
+        <span class="socials-label">Suivez-nous :</span>
+        <div class="social-links">
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-link">
+            <fa-icon [icon]="'faLinkedin' | toFaIcon"></fa-icon>
+          </a>
+          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-link">
+            <fa-icon [icon]="'faGithub' | toFaIcon"></fa-icon>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter / X" class="social-link">
+            <fa-icon [icon]="'faTwitter' | toFaIcon"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DROITE : Formulaire -->
+    <div class="page-contact__form-container">
+      <div class="form-card">
+
+        @if (isSubmitted) {
+        <div class="success-message" aria-live="polite">
+          <div class="success-icon">
+            <fa-icon [icon]="'faCheck' | toFaIcon"></fa-icon>
+          </div>
+          <h3>Message envoyé !</h3>
+          <p>Merci pour votre message. Notre équipe prendra contact avec vous rapidement.</p>
+        </div>
+        } @else {
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate class="contact-form">
+
+          <div class="form-grid">
+            <!-- Nom complet -->
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" formControlName="name" placeholder="Ex: Jean Dupont" autocomplete="name"
+                [attr.aria-invalid]="name?.invalid && name?.touched" aria-describedby="name-error">
+              @if (name?.invalid && name?.touched) {
+              <span id="name-error" class="error-text">Le nom est obligatoire (min. 2 caractères).</span>
+              }
+            </div>
+
+            <!-- Adresse e-mail -->
+            <div class="form-group">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" formControlName="email" placeholder="Ex: jean.dupont@email.com"
+                autocomplete="email" [attr.aria-invalid]="email?.invalid && email?.touched"
+                aria-describedby="email-error">
+              @if (email?.invalid && email?.touched) {
+              <span id="email-error" class="error-text">Veuillez entrer une adresse e-mail valide.</span>
+              }
+            </div>
+
+            <!-- Téléphone -->
+            <div class="form-group">
+              <label for="phone">Numéro de téléphone (optionnel)</label>
+              <input type="tel" id="phone" formControlName="phone" placeholder="Ex: +33 7 83 18 91 71"
+                autocomplete="tel" [attr.aria-invalid]="phone?.invalid && phone?.touched"
+                aria-describedby="phone-error">
+              @if (phone?.invalid && phone?.touched) {
+              <span id="phone-error" class="error-text">Veuillez entrer un numéro de téléphone valide.</span>
+              }
+            </div>
+
+            <!-- Objet -->
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" formControlName="subject" placeholder="Ex: Demande de devis"
+                [attr.aria-invalid]="subject?.invalid && subject?.touched" aria-describedby="subject-error">
+              @if (subject?.invalid && subject?.touched) {
+              <span id="subject-error" class="error-text">Le sujet est obligatoire (min. 3 caractères).</span>
+              }
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group full-width">
+            <label for="message">Message</label>
+            <textarea id="message" formControlName="message" rows="5"
+              placeholder="Décrivez votre projet ou votre demande..."
+              [attr.aria-invalid]="message?.invalid && message?.touched" aria-describedby="message-error"></textarea>
+            @if (message?.invalid && message?.touched) {
+            <span id="message-error" class="error-text">Le message doit contenir au moins 15 caractères.</span>
+            }
+          </div>
+
+          <!-- Bouton Envoyer -->
+          <button type="submit" class="submit-button" [disabled]="isSubmitting">
+            <span class="btn-text">
+              @if (isSubmitting) {
+              Envoi en cours...
+              } @else {
+              Envoyer le message <fa-icon [icon]="'faArrowRight' | toFaIcon"></fa-icon>
+              }
+            </span>
+          </button>
+
+          <!-- Mentions légales / RGPD -->
+          <p class="form-disclaimer">
+            En soumettant ce formulaire, vous acceptez notre <a routerLink="/politique-de-confidentialite">Politique de
+              Confidentialité</a>. Vos données sont protégées et ne seront jamais partagées.
+          </p>
+        </form>
+        }
+      </div>
+    </div>
+
+  </div>
+</div>

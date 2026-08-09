@@ -1,0 +1,243 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.team-card {
+  --shader-color-rgb: 20, 105, 77;
+  --shader-glow-color: rgba(20, 105, 77, 0.3);
+  position: relative;
+  border-radius: $border-radius-xl;
+  background-color: $dark-secondary;
+  border: 1px solid rgba($light-cream, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; // Important pour le border-radius
+
+  // Shaders
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(var(--shader-color-rgb), 0.12) 0%,
+      transparent 70%
+    );
+    z-index: 1;
+    pointer-events: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      transparent 0deg,
+      rgba(var(--shader-color-rgb), 0.08) 120deg,
+      transparent 240deg,
+      transparent 360deg
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5;
+    animation: rotate-ray 15s linear infinite;
+    transition: opacity 0.5s ease;
+  }
+
+  // --- 3. HOVER STATE ---
+  &:hover {
+    box-shadow: 0 12px 32px var(--shader-glow-color, rgba($accent-green, 0.2));
+    border-color: rgba(var(--shader-color-rgb), 0.3);
+
+    &::before {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+
+    &::after {
+      opacity: 0.9;
+    }
+
+    // On cible .card-image à l'intérieur du hover
+    .card-image {
+      .img-pro { opacity: 0; }
+      .img-hobby { opacity: 1; transform: scale(1.05); }
+      .hobby-badge { transform: translateY(0); opacity: 1; }
+    }
+  }
+
+  // --- 1. IMAGE AREA (Défini en premier) ---
+  .card-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    overflow: hidden;
+    height: 18rem;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-position: top;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .img-pro {
+      opacity: 1;
+      filter: grayscale(20%);
+      z-index: 1;
+    }
+
+    .img-hobby {
+      opacity: 0; // Caché par défaut
+      z-index: 2;
+      filter: saturate(1.1);
+    }
+
+    .hobby-badge {
+      position: absolute;
+      bottom: $spacing-md;
+      left: $spacing-md;
+      right: $spacing-md;
+      background: rgba($dark-primary, 0.85);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      padding: 6px 12px;
+      border-radius: $border-radius-lg;
+      text-align: center;
+      color: $accent-green;
+      font-weight: bold;
+      font-size: $font-size-sm;
+      z-index: 3;
+      transform: translateY(20px);
+      opacity: 0; // Caché par défaut
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: 1px solid rgba($accent-green, 0.2);
+    }
+  }
+
+  // --- 2. CONTENT AREA ---
+  .card-content {
+    position: relative;
+    z-index: 2;
+    padding: $spacing-lg; // Le padding est ICI pour le texte
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    flex-grow: 1;
+
+    .header-info {
+
+      .name {
+        font-family: $font-heading;
+        font-size: $font-size-lg;
+        color: $light-cream;
+        margin-bottom: 4px;
+      }
+
+      .role {
+        font-size: $font-size-sm;
+        color: $text-muted;
+        font-weight: $font-weight-medium;
+      }
+    }
+
+    // --- SOCIALS ---
+    .socials {
+      display: flex;
+      gap: $spacing-md;
+
+      .social-link {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        background-color: $dark-tertiary;
+        color: $light-cream;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size-sm;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        fa-icon {
+          pointer-events: none;
+        }
+
+        // Interaction Social
+        &:hover {
+          background-color: $accent-green;
+          color: $white;
+          transform: translateY(-4px);
+          box-shadow: 0 5px 15px rgba($accent-green, 0.3);
+
+          &::after, &::before {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -8px);
+          }
+        }
+
+        // Tooltip Text
+        &::after {
+          content: attr(data-tooltip);
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          transform: translate(-50%, 0);
+          background-color: $dark-primary;
+          color: $white;
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-size: 10px;
+          font-weight: bold;
+          white-space: nowrap;
+          pointer-events: none;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s ease;
+          border: 1px solid rgba($white, 0.1);
+          z-index: 10;
+          box-shadow: $shadow-md;
+        }
+
+        // Tooltip Arrow
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          transform: translate(-50%, 0);
+          border: 5px solid transparent;
+          border-top-color: $dark-primary;
+          margin-bottom: -9px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s ease;
+          z-index: 10;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate-ray {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

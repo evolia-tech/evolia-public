@@ -4,37 +4,6 @@
 .services {
   padding: $spacing-4xl 0;
   position: relative;
-
-  // --- HEADER SECTION ---
-  &__header {
-    display: flex;
-    gap: $spacing-lg;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  &__title {
-    max-width: 500px;
-    line-height: 1.1; // Un peu plus aéré pour la lisibilité
-    letter-spacing: -1px;
-    font-weight: 500;
-    font-size: 3rem;
-
-    span {
-      color: #b9b4e9;
-    }
-  }
-
-  &__intro {
-    max-width: 500px;
-    font-size: 1.05rem;
-    color: $text-muted;
-    line-height: 1.5;
-
-    strong {
-      color: $light-cream;
-    }
-  }
 }
 
 // --- BENTO GRID SYSTEM ---

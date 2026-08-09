@@ -1,15 +1,14 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; // Défini dans variables (1000)
-  transition: all 0.4s ease-in-out;
-  padding: $spacing-lg 0; // Padding initial large (aéré)
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: $spacing-lg 0;
 
   // Fond transparent par défaut
   background-color: transparent;
@@ -18,8 +17,7 @@
   border-bottom: 1px solid transparent;
 
   &__container {
-
-    @include flex-between; // Mixin flex-between
+    @include flex-between;
   }
 
   // --- LOGO ---
@@ -30,40 +28,107 @@
     text-decoration: none;
     -webkit-user-select: none;
     user-select: none;
+    z-index: 1010; // Devant le menu mobile
 
     // Icône logo
     .header__logo-icon {
-      height: 75px; // Taille initiale
+      height: 75px;
       width: auto;
       transition: height 0.3s ease;
+
+      @include respond-to('md') {
+        height: 60px;
+      }
     }
 
     // Texte logo
     .header__logo-text {
-      font-family: $font-heading; // Sora
+      font-family: $font-heading;
       font-weight: $font-weight-bold;
       font-size: 1.8rem;
       color: $light-cream;
       margin-top: 20px;
+      transition: all 0.3s ease;
 
+      @include respond-to('md') {
+        font-size: 1.4rem;
+        margin-top: 5px;
+      }
     }
   }
 
-  nav{
-    ul{
+  // --- HAMBURGER TOGGLE ---
+  &__toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: $light-cream;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1010; // Devant le menu mobile
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+
+    @include respond-to('md') {
+      display: block;
+    }
+
+    &:hover {
+      color: $accent-green-light;
+    }
+  }
+
+  // --- NAVIGATION ---
+  &__nav {
+    @include respond-to('md') {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba($dark-primary, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      padding: 2rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+      z-index: 1005;
+    }
+
+    ul {
       display: flex;
       gap: $spacing-2xl;
 
-      li{
-        a{
+      @include respond-to('md') {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      li {
+        a {
           position: relative;
           font-size: 1.05rem;
           font-family: $font-primary;
           font-weight: 500;
           color: $text-muted;
           padding: 10px 0;
+          text-decoration: none;
+          transition: color 0.3s ease;
 
-          &::after{
+          @include respond-to('md') {
+            font-size: 1.5rem;
+            color: $light-cream;
+          }
+
+          &::after {
             content: '';
             position: absolute;
             display: block;
@@ -72,12 +137,16 @@
             height: 2px;
             background: $light-cream;
             transition: width 0.3s ease;
+
+            @include respond-to('md') {
+              display: none; // Pas de barre sur mobile
+            }
           }
 
-          &:hover{
+          &:hover {
             color: $light-cream;
 
-            &::after{
+            &::after {
               width: 100%;
             }
           }
@@ -86,34 +155,66 @@
     }
   }
 
-  // --- ACTIONS (Droite) ---
+  // Action mobile interne au nav
+  &__mobile-actions {
+    display: none;
+
+    @include respond-to('md') {
+      display: block;
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+    }
+  }
+
+  // --- ACTIONS (Droite - Desktop) ---
   &__actions {
     display: flex;
     align-items: center;
+
+    @include respond-to('md') {
+      display: none; // Caché sur mobile au profit du menu
+    }
   }
 
   // ============================================
   // 📜 ÉTAT SCROLLED (Sticky)
   // ============================================
   &.scrolled {
-    padding: $spacing-sm 0; // Devient plus compact
-
-    // Effet Glassmorphism sombre
+    padding: $spacing-sm 0;
     background-color: rgba($dark-primary, 0.85);
-    backdrop-filter: blur(12px); // Le flou derrière
-    -webkit-backdrop-filter: blur(12px); // Pour Safari
-    border-bottom: 1px solid rgba($light-cream, 0.1); // Petite ligne de séparation
-    //box-shadow: $shadow-lg;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba($light-cream, 0.1);
 
-    // Réduction de la taille du logo pour gagner de la place
     .header__brand {
       .header__logo-icon {
         height: 60px;
       }
 
-      .header__logo-text{
+      .header__logo-text {
         margin-top: 5px;
         font-size: 1.5rem;
+      }
+    }
+  }
+
+  // ============================================
+  // 📱 ÉTAT MENU OUVERT (Mobile)
+  // ============================================
+  &.menu-open {
+    @include respond-to('md') {
+      background-color: rgba($dark-primary, 0.98);
+
+      .header__nav {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .header__toggle {
+        transform: rotate(90deg);
       }
     }
   }

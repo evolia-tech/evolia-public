@@ -7,6 +7,14 @@ export const routes: Routes = [
     },
     {
         path: 'estimation-projet',
-        loadComponent: () => import('./pages/page-quote-wizard/page-quote-wizard').then(m => m.PageQuoteWizard)
+        loadComponent: () => import('./pages/quote-wizard-modal/quote-wizard-modal').then(m => m.QuoteWizardModal)
+    },
+    {
+        path: 'contact',
+        loadComponent: () => import('./pages/page-contact/page-contact').then(m => m.PageContact)
+    },
+    {
+        path: 'about',
+        loadComponent: () => import('./pages/page-about/page-about').then(m => m.PageAbout)
     }
 ];
