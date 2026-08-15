@@ -7,6 +7,7 @@ $accent-green-light: #14694D;
 $accent-green-hover: #0B3A2A;
 $dark-tertiary: #100d2b;
 $dark-quaternary: #b9b4e9;
+$dark-quinary: #ebe6fff5;
 $white: #FFFFFF;
 $light-gray: #F5F5F5;
 $text-muted: #A8A5B8;
@@ -15,17 +16,17 @@ $text-muted: #A8A5B8;
 $font-heading: 'Sora', sans-serif;
 $font-primary: 'Inter', sans-serif;
 
-$font-size-xs: 0.75rem;       // 12px
-$font-size-sm: 0.875rem;      // 14px
-$font-size-base: 1rem;        // 16px
-$font-size-md: 1.125rem;      // 18px
-$font-size-lg: 1.25rem;       // 20px
-$font-size-xl: 1.5rem;        // 24px
-$font-size-2xl: 2rem;         // 32px
-$font-size-3xl: 2.5rem;       // 40px
-$font-size-4xl: 3rem;         // 48px
-$font-size-5xl: 3.75rem;      // 60px
-$font-size-hero: 4.5rem;      // 72px
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-md: 1.125rem; // 18px
+$font-size-lg: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-2xl: 2rem; // 32px
+$font-size-3xl: 2.5rem; // 40px
+$font-size-4xl: 3rem; // 48px
+$font-size-5xl: 3.75rem; // 60px
+$font-size-hero: 4.5rem; // 72px
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -40,13 +41,13 @@ $line-height-normal: 1.5;
 $line-height-relaxed: 1.7;
 
 // --- Espacements ---
-$spacing-sm: 0.5rem;          // 8px
-$spacing-md: 1rem;            // 16px
-$spacing-lg: 1.5rem;          // 24px
-$spacing-xl: 2rem;            // 32px
-$spacing-2xl: 3rem;           // 48px
-$spacing-3xl: 4rem;           // 64px
-$spacing-4xl: 6rem;           // 96px
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-2xl: 3rem; // 48px
+$spacing-3xl: 4rem; // 64px
+$spacing-4xl: 6rem; // 96px
 
 $shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 $shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -78,16 +79,34 @@ $transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // ============================================
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == 'sm' {
-    @media (max-width: 576px) { @content; }
-  } @else if $breakpoint == 'md' {
-    @media (max-width: 768px) { @content; }
-  } @else if $breakpoint == 'lg' {
-    @media (max-width: 992px) { @content; }
-  } @else if $breakpoint == 'xl' {
-    @media (max-width: 1200px) { @content; }
-  } @else if $breakpoint == '2xl' {
-    @media (max-width: 1400px) { @content; }
+  @if $breakpoint =='sm' {
+    @media (max-width: 576px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='md' {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='lg' {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='xl' {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='2xl' {
+    @media (max-width: 1400px) {
+      @content;
+    }
   }
 }
 

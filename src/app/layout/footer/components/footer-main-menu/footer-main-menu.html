@@ -8,15 +8,11 @@
             fluides, nous transformons vos ambitions en produits technologiques d'exception.
         </p>
         <div class="footer__socials">
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-link">
-                <fa-icon [icon]="'faLinkedin' | toFaIcon"></fa-icon>
-            </a>
-            <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-link">
-                <fa-icon [icon]="'faGithub' | toFaIcon"></fa-icon>
-            </a>
-            <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="social-link">
-                <fa-icon [icon]="'faTwitter' | toFaIcon"></fa-icon>
-            </a>
+            @for (social of socialLinks; track social.name) {
+                <a [href]="social.url" target="_blank" [attr.aria-label]="social.ariaLabel" class="social-link">
+                    <fa-icon [icon]="social.icon | toFaIcon"></fa-icon>
+                </a>
+            }
         </div>
     </div>
 

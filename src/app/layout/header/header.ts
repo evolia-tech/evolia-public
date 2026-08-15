@@ -1,6 +1,7 @@
-import { Component, signal, HostListener, inject, PLATFORM_ID } from '@angular/core';
+import { Component, signal, HostListener, inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { EvoButton } from '../../shared/components/ui/evo-button/evo-button';
 import { QuoteService } from '../../core/services/quote';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -17,8 +18,10 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
     FontAwesomeModule
   ],
 })
+export class Header implements OnInit {
+  // Signal pour suivre si la route courante impose un header scrolled par défaut
+  isDefaultScrolled = signal(false);
 
-export class Header {
   // Signal pour suivre l'état du scroll
   isScrolled = signal(false);
   
@@ -30,14 +33,40 @@ export class Header {
   faTimes = faTimes;
   
   private platformId = inject(PLATFORM_ID);
+  private router = inject(Router);
   public quoteService = inject(QuoteService);
+
+  constructor() {
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.updateScrolledState();
+    });
+  }
+
+  ngOnInit() {
+    this.updateScrolledState();
+  }
+
+  private updateScrolledState() {
+    let route = this.router.routerState.root;
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+    const defaultScrolled = route.snapshot.data['defaultScrolled'] ?? route.snapshot.data['headerScrolled'] ?? route.snapshot.data['isScrolled'] ?? false;
+    this.isDefaultScrolled.set(!!defaultScrolled);
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.isScrolled.set(this.isDefaultScrolled() || window.scrollY > 50);
+    } else {
+      this.isScrolled.set(this.isDefaultScrolled());
+    }
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // Vérification SSR (Pour ne pas planter côté serveur)
     if (isPlatformBrowser(this.platformId)) {
-      // Si on scrolle de plus de 50px, on change l'état
-      this.isScrolled.set(window.scrollY > 50);
+      this.isScrolled.set(this.isDefaultScrolled() || window.scrollY > 50);
     }
   }
 

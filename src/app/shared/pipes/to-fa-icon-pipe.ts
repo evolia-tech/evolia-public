@@ -40,6 +40,8 @@ import {
 import {
   // Marques (Footer / Réseaux)
   faLinkedin,
+  faFacebook,
+  faFacebookF,
   faTwitter,
   faInstagram,
   faGithub,
@@ -83,6 +85,8 @@ const ICONS_MAP: Record<string, IconProp> = {
   'faPlus': faPlus,
   // --- Brands ---
   'faLinkedin': faLinkedin,
+  'faFacebook': faFacebook,
+  'faFacebookF': faFacebookF,
   'faTwitter': faTwitter,
   'faInstagram': faInstagram,
   'faGithub': faGithub,

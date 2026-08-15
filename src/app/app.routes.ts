@@ -11,10 +11,12 @@ export const routes: Routes = [
     },
     {
         path: 'contact',
-        loadComponent: () => import('./pages/page-contact/page-contact').then(m => m.PageContact)
+        loadComponent: () => import('./pages/page-contact/page-contact').then(m => m.PageContact),
+        data: { defaultScrolled: true }
     },
     {
         path: 'about',
-        loadComponent: () => import('./pages/page-about/page-about').then(m => m.PageAbout)
+        loadComponent: () => import('./pages/page-about/page-about').then(m => m.PageAbout),
+        data: { defaultScrolled: true }
     }
 ];
