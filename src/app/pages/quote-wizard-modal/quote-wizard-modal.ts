@@ -1,5 +1,5 @@
-import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, OnDestroy, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { QuoteService } from '../../core/services/quote';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
@@ -33,10 +33,11 @@ import { Router, RouterModule } from '@angular/router';
   encapsulation: ViewEncapsulation.None,
   imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule, RouterModule],
 })
-export class QuoteWizardModal implements OnInit {
+export class QuoteWizardModal implements OnInit, OnDestroy {
   private fb = inject(FormBuilder);
   private quoteService = inject(QuoteService);
   private router = inject(Router);
+  private platformId = inject(PLATFORM_ID);
   
   // DynamicDialogRef might not be present if the component is routed rather than opened as modal
   public dialogRef = inject(DynamicDialogRef, { optional: true });
@@ -263,6 +264,14 @@ export class QuoteWizardModal implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
+    }
+
     this.quoteForm = this.fb.group({
       projectType: ['', Validators.required],
       
@@ -311,6 +320,13 @@ export class QuoteWizardModal implements OnInit {
       message: ['', [Validators.required, Validators.minLength(15)]],
     });
     this.updateProgressSteps();
+  }
+
+  ngOnDestroy(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
   }
 
   get projectType() { return this.quoteForm?.get('projectType'); }

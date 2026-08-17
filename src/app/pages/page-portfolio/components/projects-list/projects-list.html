@@ -1,0 +1,9 @@
+<div class="projects-list">
+  @for (project of projects; track project.id) {
+  <app-project-card
+    [project]="project"
+    [index]="$index"
+    (cardClick)="onProjectSelect($event)">
+  </app-project-card>
+  }
+</div>

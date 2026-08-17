@@ -4,12 +4,12 @@
     <ul>
       <!-- Sections dynamiques -->
       @for (section of data()?.sections; track section.id) {
-        <li>
-          <button (click)="scrollTo(section.id)">
-            <span> {{ $index + 1 }}. </span>
-            {{ section.label }}
-          </button>
-        </li>
+      <li>
+        <button [class.active]="activeSectionId() === section.id" (click)="scrollTo(section.id)">
+          <span> {{ $index + 1 }}. </span>
+          {{ section.label }}
+        </button>
+      </li>
       }
     </ul>
   </nav>
@@ -20,20 +20,20 @@
 
     <div class="key-results-sidebar">
       @for (result of data()?.keyResults; track $index) {
-        <div class="key-stat">
+      <div class="key-stat">
 
-          <!-- Affichage du chiffre si présent -->
-          @if (result.value) {
-            <span class="stat-value">{{ result.value }}</span>
-          }
+        <!-- Affichage du chiffre si présent -->
+        @if (result.value) {
+        <span class="stat-value">{{ result.value }}</span>
+        }
 
-          <!-- Affichage de l'icône si présent et pas de value -->
-          @if (result.icon && !result.value) {
-            <fa-icon [icon]="result.icon | toFaIcon" class="key-icon"></fa-icon>
-          }
+        <!-- Affichage de l'icône si présent et pas de value -->
+        @if (result.icon && !result.value) {
+        <fa-icon [icon]="result.icon | toFaIcon" class="key-icon"></fa-icon>
+        }
 
-          <span class="key-label">{{ result.label }}</span>
-        </div>
+        <span class="key-label">{{ result.label }}</span>
+      </div>
       }
     </div>
   </div>

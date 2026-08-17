@@ -31,4 +31,10 @@ export interface Project {
   seoTitle: string;
   seoDescription: string;
   keywords: string;
+
+  // Ordre de priorité d'affichage
+  order?: number;
+
+  // Carrousel page d'accueil
+  isSpotlighted?: boolean;
 }

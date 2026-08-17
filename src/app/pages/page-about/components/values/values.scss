@@ -38,7 +38,7 @@
 
       .card {
         border-radius: $border-radius-xl;
-        padding: 2.25rem 2rem;
+        padding: 1.25rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -66,7 +66,7 @@
         }
 
         .desc {
-          font-size: $font-size-sm;
+          font-size: 0.98rem;
           line-height: 1.6;
           margin: 0;
         }
@@ -77,7 +77,7 @@
           overflow: hidden;
           background: $dark-secondary;
           background-image: radial-gradient(ellipse at 50% 0%, rgba($accent-green, 0.18) 0%, transparent 65%),
-                            radial-gradient(ellipse at 80% 100%, rgba($dark-quaternary, 0.15) 0%, transparent 60%);
+            radial-gradient(ellipse at 80% 100%, rgba($dark-quaternary, 0.15) 0%, transparent 60%);
           border: 1px solid rgba($light-cream, 0.1);
           color: $light-cream;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -109,9 +109,10 @@
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
           .icon-box {
-            background: #f0f4f1;
+            background: rgba($accent-green, 0.08);
             color: color.adjust($accent-green, $lightness: -15%);
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba($accent-green, 0.2);
+            box-shadow: 0 4px 14px rgba($accent-green, 0.08);
           }
 
           .title {

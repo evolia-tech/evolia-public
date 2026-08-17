@@ -1,0 +1,62 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.large-screen-menu {
+  display: block;
+
+  @include respond-to('md') {
+    display: none; // Uniquement pour grands écrans
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xl;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        position: relative;
+        font-size: 1.05rem;
+        font-family: $font-primary;
+        font-weight: $font-weight-medium;
+        color: $text-muted;
+        padding: 8px 0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: inline-block;
+
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: currentColor;
+          transition: width 0.3s ease;
+        }
+
+        &:hover {
+          color: $light-cream;
+
+          &::after {
+            width: 0;
+          }
+        }
+
+        &.active {
+          color: $light-cream;
+
+          &::after {
+            width: 100%;
+            background: currentColor;
+          }
+        }
+      }
+    }
+  }
+}

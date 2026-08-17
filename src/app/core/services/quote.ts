@@ -24,6 +24,12 @@ export class QuoteService {
     if (isMobile) {
       this.router.navigate(['/estimation-projet']);
     } else {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
+
       this.dialogRef = this.dialogService.open(QuoteWizardModal, {
         width: '750px',
         modal: true,
@@ -31,6 +37,12 @@ export class QuoteService {
         dismissableMask: true,
         showHeader: false, // Custom header handled inside the component for perfect aesthetic control
         styleClass: 'quote-dialog-modal',
+      });
+
+      this.dialogRef!.onClose.subscribe(() => {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        this.dialogRef = undefined;
       });
     }
   }

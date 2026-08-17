@@ -2,70 +2,24 @@
 @use '../../../../../styles/mixins' as *;
 
 .team-card {
-  --shader-color-rgb: 20, 105, 77;
-  --shader-glow-color: rgba(20, 105, 77, 0.3);
   position: relative;
   border-radius: $border-radius-xl;
-  background-color: $dark-secondary;
-  border: 1px solid rgba($light-cream, 0.05);
+  background: $dark-secondary;
+  background-image: radial-gradient(ellipse at 30% 20%, rgba($accent-green, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 80%, rgba($dark-quaternary, 0.18) 0%, transparent 60%);
+  border: 1px solid rgba($light-cream, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden; // Important pour le border-radius
+  overflow: hidden;
 
-  // Shaders
-  &::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 140%;
-    height: 140%;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(var(--shader-color-rgb), 0.12) 0%,
-      transparent 70%
-    );
-    z-index: 1;
-    pointer-events: none;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: -40%;
-    left: -40%;
-    width: 180%;
-    height: 180%;
-    background: conic-gradient(
-      from 0deg at 50% 50%,
-      transparent 0deg,
-      rgba(var(--shader-color-rgb), 0.08) 120deg,
-      transparent 240deg,
-      transparent 360deg
-    );
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.5;
-    animation: rotate-ray 15s linear infinite;
-    transition: opacity 0.5s ease;
-  }
-
-  // --- 3. HOVER STATE ---
+  // --- HOVER STATE ---
   &:hover {
-    box-shadow: 0 12px 32px var(--shader-glow-color, rgba($accent-green, 0.2));
-    border-color: rgba(var(--shader-color-rgb), 0.3);
-
-    &::before {
-      transform: scale(1.1);
-      opacity: 0.9;
-    }
-
-    &::after {
-      opacity: 0.9;
-    }
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35), 0 0 30px rgba($accent-green, 0.2);
+    border-color: rgba($accent-green, 0.3);
 
     // On cible .card-image à l'intérieur du hover
     .card-image {

@@ -28,7 +28,7 @@ import { ProjectModalService } from './services/project-modal';
 })
 export class ProjectModal implements AfterViewChecked {
   private modalService = inject(ProjectModalService);
-  private projectService = inject(ProjectService); // ← Injection
+  private projectService = inject(ProjectService);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   isOpen = this.modalService.isOpen;
@@ -48,15 +48,20 @@ export class ProjectModal implements AfterViewChecked {
 
   scrollProgress = signal(0);
   estimatedReadTime = signal(4);
+  activeSectionId = signal<string>('');
 
   private contentElement: HTMLElement | null = null;
 
   constructor() {
-    // Effet qui surveille l'état isOpen
+    // Effet qui surveille l'état isOpen et réinitialise la section active sur la 1ère section
     effect(() => {
       if (!this.isBrowser) return;
       if (this.isOpen()) {
         document.body.style.overflow = 'hidden';
+        const proj = this.project();
+        if (proj?.sections && proj.sections.length > 0) {
+          this.activeSectionId.set(proj.sections[0].id);
+        }
       } else {
         document.body.style.overflow = 'visible';
       }
@@ -72,13 +77,39 @@ export class ProjectModal implements AfterViewChecked {
       const progress = (element.scrollTop / totalHeight) * 100;
       this.scrollProgress.set(Math.round(progress));
     }
+
+    // Scroll-spy: Détection de la section active en cours de lecture
+    const sections = this.project()?.sections;
+    if (!sections || sections.length === 0) return;
+
+    const containerTop = element.getBoundingClientRect().top;
+    const offsetThreshold = 140; // Seuil d'activation de la section
+
+    let currentActiveId = sections[0].id;
+
+    for (const section of sections) {
+      const sectionEl = document.getElementById(section.id);
+      if (sectionEl) {
+        const rect = sectionEl.getBoundingClientRect();
+        if (rect.top - containerTop <= offsetThreshold) {
+          currentActiveId = section.id;
+        }
+      }
+    }
+
+    if (this.activeSectionId() !== currentActiveId) {
+      this.activeSectionId.set(currentActiveId);
+    }
   }
 
   scrollTo(sectionId: string): void {
     if (!this.isBrowser) return;
 
+    this.activeSectionId.set(sectionId);
     const element = document.getElementById(sectionId);
-    if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   scrollToTop(): void {

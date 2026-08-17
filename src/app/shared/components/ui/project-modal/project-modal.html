@@ -19,6 +19,7 @@
         <div class="media-side">
           <app-project-modal-sidebar
             [data]="sidebarData()"
+            [activeSectionId]="activeSectionId()"
             [onScrollTo]="scrollTo.bind(this)"
           />
         </div>

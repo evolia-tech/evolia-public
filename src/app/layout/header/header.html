@@ -13,39 +13,27 @@
       </span>
     </a>
 
-    <!-- Toggle menu mobile -->
-    <button class="header__toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()" aria-label="Ouvrir le menu">
-      <fa-icon [icon]="isMenuOpen() ? faTimes : faBars"></fa-icon>
-    </button>
 
-    <nav class="header__nav">
-      <ul>
-        <li><a routerLink="/portfolio" routerLinkActive="active" (click)="closeMenu()">Nos Réalisations</a></li>
-        <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">À Propos</a></li>
-        <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
-      </ul>
-      
-      <!-- Bouton d'action doublé pour la version mobile -->
-      <div class="header__mobile-actions">
-        <app-evo-button
-          text="Devis Gratuit"
-          preset="green"
-          variant="solid"
-          (click)="quoteService.openQuoteForm(); closeMenu()">
-        </app-evo-button>
-      </div>
-    </nav>
 
-    <!-- DROITE : Bouton Contact (Affiché sur desktop uniquement) -->
+
+    <!-- MENU GRAND ÉCRAN (Caché sur mobile via CSS) -->
+    <app-large-screen-menu></app-large-screen-menu>
+
+    <!-- DROITE : Bouton Contact (Caché sur mobile via CSS) -->
     <div class="header__actions">
-      <!-- On utilise ton composant EvoButton -->
-      <app-evo-button
-        text="Devis Gratuit"
-        preset="green"
-        variant="solid"
-        (click)="quoteService.openQuoteForm()">
+      <app-evo-button text="Devis Gratuit" preset="green" variant="solid" (click)="quoteService.openQuoteForm()">
       </app-evo-button>
     </div>
 
+    <!-- Toggle menu mobile -->
+    <button class="header__toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()"
+      aria-label="Ouvrir le menu">
+      <fa-icon [icon]="isMenuOpen() ? faTimes : faBars"></fa-icon>
+    </button>
   </div>
+
+  @if (isMenuOpen()) {
+    <!-- MENU PETIT ÉCRAN (OVERLAY MOBILE) -->
+    <app-small-screen-menu (closeMenu)="closeMenu()"></app-small-screen-menu>
+  }
 </header>

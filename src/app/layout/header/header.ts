@@ -1,4 +1,4 @@
-import { Component, signal, HostListener, inject, PLATFORM_ID, OnInit } from '@angular/core';
+import { Component, signal, HostListener, inject, PLATFORM_ID, OnInit, effect } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -6,6 +6,8 @@ import { EvoButton } from '../../shared/components/ui/evo-button/evo-button';
 import { QuoteService } from '../../core/services/quote';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { LargeScreenMenu } from './components/large-screen-menu/large-screen-menu';
+import { SmallScreenMenu } from './components/small-screen-menu/small-screen-menu';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +17,9 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
     CommonModule, 
     RouterModule, 
     EvoButton,
-    FontAwesomeModule
+    FontAwesomeModule,
+    LargeScreenMenu,
+    SmallScreenMenu
   ],
 })
 export class Header implements OnInit {
@@ -41,6 +45,23 @@ export class Header implements OnInit {
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe(() => {
       this.updateScrolledState();
+      this.closeMenu();
+    });
+
+    // Effet réactif : Bloque ou débloque le défilement (scroll) du body quand le menu burger s'ouvre/se ferme sans saut d'écran
+    effect(() => {
+      if (isPlatformBrowser(this.platformId)) {
+        if (this.isMenuOpen()) {
+          const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+          document.body.style.overflow = 'hidden';
+          if (scrollbarWidth > 0) {
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+          }
+        } else {
+          document.body.style.overflow = '';
+          document.body.style.paddingRight = '';
+        }
+      }
     });
   }
 

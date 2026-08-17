@@ -38,9 +38,15 @@
 .media-side {
   width: 450px;
   background: $dark-secondary;
-  padding: 1rem;
+  background-image: radial-gradient(ellipse at 30% 20%, rgba($accent-green, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 80%, rgba($dark-quaternary, 0.18) 0%, transparent 60%);
+  padding: 1.5rem;
   overflow-y: auto;
-  border-right: 1px solid rgba($light-cream, 0.05);
+  border-right: 1px solid rgba($light-cream, 0.1);
+
+  @media (max-width: 992px) {
+    display: none; // Masqué complètement sur mobile et tablette
+  }
 }
 
 .content-side {
@@ -48,12 +54,30 @@
   padding: 2.5rem 1rem 0 4rem;
   overflow-y: auto;
   background: $dark-primary;
+
+  @media (max-width: 992px) {
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
 }
 
 .dynamic-content-injector {
   display: flex;
   flex-direction: column;
   gap: 4.5rem;
+
+  @media (max-width: 768px) {
+    gap: 2.5rem;
+  }
+}
+
+.dynamic-content-injector {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+
+  @media (max-width: 768px) {
+    gap: 2.5rem;
+  }
 }
 
 /* Animations */

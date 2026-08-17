@@ -1,7 +1,7 @@
 <div class="footer__main container">
     <div class="footer__col footer__col--brand">
         <div class="footer__logo">
-            <span class="logo-text">Évolia <span class="accent">Tech</span></span>
+            <span class="logo-text">Évolia Tech</span>
         </div>
         <p class="footer__description">
             Nous concevons des écosystèmes digitaux performants. Des plateformes SaaS scalables aux applications mobiles
@@ -9,9 +9,9 @@
         </p>
         <div class="footer__socials">
             @for (social of socialLinks; track social.name) {
-                <a [href]="social.url" target="_blank" [attr.aria-label]="social.ariaLabel" class="social-link">
-                    <fa-icon [icon]="social.icon | toFaIcon"></fa-icon>
-                </a>
+            <a [href]="social.url" target="_blank" [attr.aria-label]="social.ariaLabel" class="social-link">
+                <fa-icon [icon]="social.icon | toFaIcon"></fa-icon>
+            </a>
             }
         </div>
     </div>
@@ -29,10 +29,10 @@
     <div class="footer__col">
         <h3 class="footer__title">Navigation</h3>
         <ul class="footer__links">
-            <li><a href="#services">Nos Services</a></li>
-            <li><a href="#projects">Nos Réalisations</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contactez-nous</a></li>
+            <li><a routerLink="/">Accueil</a></li>
+            <li><a routerLink="/about">À Propos</a></li>
+            <li><a routerLink="/portfolio">Nos Réalisations</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
         </ul>
     </div>
 

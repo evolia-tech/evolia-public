@@ -11,8 +11,9 @@ import { Project } from '../../../../../models/project';
 })
 
 export class ProjectModalSidebar {
-   // Input Signals
+  // Input Signals
   data = input<Partial<Project> | null>(null);
+  activeSectionId = input<string>('');
 
   // Callbacks (fonctions passées par le parent)
   onScrollTo = input.required<(id: string) => void>();

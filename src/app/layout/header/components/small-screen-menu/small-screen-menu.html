@@ -1,0 +1,26 @@
+<nav class="small-screen-menu is-open">
+  <div class="small-screen-menu__inner">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" (click)="onLinkClick()">
+          Accueil
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/about" routerLinkActive="active" (click)="onLinkClick()">
+          À Propos
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/portfolio" routerLinkActive="active" (click)="onLinkClick()">
+          Nos Réalisations
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/contact" routerLinkActive="active" (click)="onLinkClick()">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

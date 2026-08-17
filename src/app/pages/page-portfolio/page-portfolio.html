@@ -1,0 +1,14 @@
+<div class="page-portfolio">
+  <div class="content container">
+    <!-- En-tête de la page -->
+    <app-portfolio-hero-banner></app-portfolio-hero-banner>
+
+    <!-- Liste des projets -->
+    <app-projects-list
+      [projects]="projects()"
+      (projectSelect)="openProjectModal($event)">
+    </app-projects-list>
+  </div>
+</div>
+
+<app-project-modal></app-project-modal>

@@ -1,0 +1,45 @@
+<div class="project-card-wrapper">
+
+  <!-- Numéro du projet en haut à droite (1/3 glissé sous le blur du parent) -->
+  <span class="project-index">{{ (index + 1).toString().padStart(2, '0') }}</span>
+
+  <article class="project-item" (click)="onCardClick()">
+
+    <!-- Zone visuelle -->
+    <div class="project-visual">
+      <div class="visual-frame">
+        <img [src]="project.image" [alt]="project.title" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Infos du projet -->
+    <div class="project-meta">
+      <div class="project-meta__top">
+        <div class="meta-top">
+          <span class="project-client">{{ project.clientName }}</span>
+        </div>
+        @if (project.seoDescription) {
+        <p class="project-description">{{ project.seoDescription }}</p>
+        }
+        <div class="project-tags">
+          @for (kr of project.keyResults.slice(0, 2); track $index) {
+          <span class="tag">{{ kr.label }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="project-meta__bottom">
+        <app-evo-button
+          text="En savoir plus"
+          preset="cream"
+          variant="solid"
+          bgColor="#b9b4e9"
+          textColor="#0A0325"
+          hoverBgColor="#faf7e8"
+          hoverTextColor="#0A0325">
+        </app-evo-button>
+      </div>
+    </div>
+
+  </article>
+</div>

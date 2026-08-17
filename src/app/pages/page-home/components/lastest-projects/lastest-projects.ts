@@ -35,7 +35,7 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
   protected projectModalService = inject(ProjectModalService);
 
   protected projectsForCarousel = computed(() => {
-    const base = this.projectService.projects();
+    const base = this.projectService.spotlightedProjects();
     return [...base, ...base, ...base];
   });
 

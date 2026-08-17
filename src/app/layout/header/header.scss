@@ -7,7 +7,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.4s ease, border-color 0.4s ease, padding 0.4s ease;
   padding: $spacing-lg 0;
 
   // Fond transparent par défaut
@@ -66,141 +66,22 @@
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1010; // Devant le menu mobile
-    padding: 0.5rem;
-    transition: transform 0.3s ease;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
 
     @include respond-to('md') {
-      display: block;
+      display: inline-flex;
     }
 
     &:hover {
       color: $accent-green-light;
-    }
-  }
-
-  // --- NAVIGATION ---
-  &__nav {
-    @include respond-to('md') {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      height: 100dvh;
-      background: rgba($dark-primary, 0.98);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding-top: 130px;
-      padding-bottom: 2.5rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      gap: 2.5rem;
-      overflow-y: auto;
-      transform: translateY(-100%);
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
-      z-index: 1005;
-    }
-
-    ul {
-      display: flex;
-      gap: $spacing-xl;
-
-      @include respond-to('md') {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 1.25rem;
-      }
-
-      li {
-        a {
-          position: relative;
-          font-size: 1.05rem;
-          font-family: $font-primary;
-          font-weight: $font-weight-medium;
-          color: $text-muted;
-          padding: 8px 0;
-          text-decoration: none;
-          transition: color 0.3s ease;
-          display: inline-block;
-
-          @include respond-to('md') {
-            font-size: 1.35rem;
-            color: $light-cream;
-            padding: 10px 24px;
-            text-align: center;
-            border-radius: $border-radius-full;
-          }
-
-          &::after {
-            content: '';
-            position: absolute;
-            display: block;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: currentColor;
-            transition: width 0.3s ease;
-
-            @include respond-to('md') {
-              display: none; // Sur mobile, l'état actif utilise le style pilule/badge
-            }
-          }
-
-          &:hover {
-            color: $light-cream;
-
-            &::after {
-              width: 0; // Pas de barre au survol
-            }
-
-            @include respond-to('md') {
-              color: $accent-green-light;
-            }
-          }
-
-          // --- ÉTAT ACTIF (ROUTER LINK ACTIVE) ---
-          &.active {
-            color: $light-cream;
-
-            &::after {
-              width: 100%; // La barre apparaît uniquement quand c'est actif
-              background: currentColor; // Même couleur que le texte
-            }
-
-            @include respond-to('md') {
-              color: $accent-green-light;
-              background: rgba($accent-green-light, 0.15);
-              border: 1px solid rgba($accent-green-light, 0.3);
-              box-shadow: 0 4px 20px rgba($accent-green-light, 0.15);
-
-              &::after {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // Action mobile interne au nav
-  &__mobile-actions {
-    display: none;
-
-    @include respond-to('md') {
-      display: block;
-      margin-top: 1rem;
-      width: 100%;
-      max-width: 250px;
-      text-align: center;
     }
   }
 
@@ -242,16 +123,6 @@
   &.menu-open {
     @include respond-to('md') {
       background-color: rgba($dark-primary, 0.98);
-
-      .header__nav {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      .header__toggle {
-        transform: rotate(90deg);
-      }
     }
   }
 }

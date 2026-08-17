@@ -2,30 +2,73 @@
   <div class="content container">
     <div class="section-header">
       <h2 class="title">
-        L'innovation conçue <span>pour vous</span>
+        <span>L'expérience</span> du terrain au service de <span>vos projets</span>
       </h2>
       <p class="subtitle">
-        Parce que chaque projet est unique, nous concevons des écosystèmes digitaux sur-mesure adaptés à vos ambitions.
+        Évolia Tech est le fruit de plusieurs années d'ingénierie et de développement. Nous mettons ce bagage technique
+        éprouvé et notre rigueur au service de vos ambitions.
       </p>
     </div>
 
     <div class="grid">
-      <!-- COLONNE GAUCHE : Grande image avec badge flottant -->
-      <div class="left">
-        <div class="img-box">
-          <img src="/images/projects/elites-voyages.png" alt="Evolia Tech Projet">
-        </div>
-        <!-- Badge flottant -->
-        <div class="badge">
-          <div class="badge-icon">
-            <fa-icon [icon]="faGear"></fa-icon>
-          </div>
-          <div class="badge-content">
-            <h4>Développement moderne</h4>
-            <p>Technologies robustes et scalables</p>
-            <div class="progress-bar">
-              <div class="progress-fill"></div>
+      <!-- COLONNE GAUCHE : Showcase Carte d'Excellence & Avis Google -->
+      <div class="left showcase-card">
+
+        <!-- Contenu en Flexbox space-between -->
+        <div class="showcase-content">
+          <!-- HAUT : Badge Avis Google & Titre -->
+          <div class="showcase-top">
+
+            <!-- Titre & Description -->
+            <div class="showcase-metrics">
+              <h3 class="showcase-title">Conception Web & Mobile</h3>
+              <p class="showcase-subtitle">Des architectures sur-mesure pensées pour la vitesse, la sécurité et la
+                croissance de votre activité.</p>
             </div>
+
+            <div class="showcase-header">
+              <!-- Badge Avis Google Cliquable -->
+              <a [href]="googleReviews.url" target="_blank" rel="noopener noreferrer" class="google-review-badge"
+                title="Consulter nos avis sur Google">
+                <div class="google-icon-circle">
+                  <svg viewBox="0 0 24 24" width="22" height="22">
+                    <path fill="#4285F4"
+                      d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
+                    <path fill="#34A853"
+                      d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.27v3.15C3.25 21.3 7.31 24 12 24z" />
+                    <path fill="#FBBC05"
+                      d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.27C.46 8.2.0 10.05.0 12s.46 3.8 1.27 5.42l4.01-3.15z" />
+                    <path fill="#EA4335"
+                      d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.25 2.7 1.27 6.58l4.01 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
+                  </svg>
+                </div>
+                <div class="review-details">
+                  <div class="stars">
+                    @for (fill of starFills; track $index) {
+                    <svg viewBox="0 0 24 24" width="18" height="18" class="star-svg">
+                      <defs>
+                        <linearGradient [id]="'star-grad-' + $index" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop [attr.offset]="fill + '%'" stop-color="#ffc107" />
+                          <stop [attr.offset]="fill + '%'" stop-color="#ffffff" />
+                        </linearGradient>
+                      </defs>
+                      <path [attr.fill]="'url(#star-grad-' + $index + ')'"
+                        d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.399 8.166L12 18.896l-7.333 3.864 1.399-8.166-5.934-5.784 8.2-1.192z" />
+                    </svg>
+                    }
+                  </div>
+                  <span class="rating-info">{{ googleReviews.rating }} basé sur {{ googleReviews.count }} avis</span>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- BAS : Bouton d'action EvoButton -->
+          <div class="showcase-bottom">
+            <app-evo-button text="Découvrir nos réalisations" preset="green" variant="solid" size="md"
+              routerLink="/portfolio">
+            </app-evo-button>
           </div>
         </div>
       </div>
@@ -35,8 +78,9 @@
         <!-- 1. Carte horizontale en haut -->
         <div class="card card--horizontal">
           <div class="info">
-            <h3>Des experts seniors à vos côtés</h3>
-            <p>Ingénieurs, concepteurs et chefs de projet chevronnés collaborant sur chaque ligne de code.</p>
+            <h3>Une équipe expérimentée et dédiée</h3>
+            <p>Des profils qui associent vision produit, design moderne et exigence technique sur chaque ligne
+              de code.</p>
           </div>
           <div class="avatars">
             <div class="avatar-stack">
@@ -51,21 +95,22 @@
 
         <!-- 2. Ligne du bas (deux cartes carrées) -->
         <div class="bottom-row">
-          <!-- Carte R&D (Verte) -->
+          <!-- Carte Expertise (Verte) -->
           <div class="card card--square card--green">
             <div class="dots-pattern"></div>
             <div class="value">5 <span class="unit">ans</span></div>
-            <h4 class="label">Recherche & Développement</h4>
-            <p class="desc">Innovation continue et intégration des dernières technologies web et mobiles.</p>
+            <h4 class="label">D'expertise & d'innovation</h4>
+            <p class="desc">Une pratique continue du développement d'applications web & mobiles pour faire les meilleurs
+              choix techniques.</p>
           </div>
 
           <!-- Carte Projets (Glass/Blanche) -->
           <div class="card card--square card--glass">
             <div class="dots-pattern"></div>
-            <div class="value">50<span class="unit">+</span></div>
-            <h4 class="label">Projets livrés</h4>
-            <p class="desc">Des solutions robustes conçues sur-mesure pour propulser l'activité de nos clients.
-            </p>
+            <div class="value">15<span class="unit">+</span></div>
+            <h4 class="label">Projets concrétisés</h4>
+            <p class="desc">Un historique de réalisations réussies, des premières missions indépendantes d'envergure aux
+              projets d'agence actuels.</p>
           </div>
         </div>
       </div>

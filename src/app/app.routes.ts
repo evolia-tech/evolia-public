@@ -6,6 +6,16 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/page-home/page-home')
     },
     {
+        path: 'portfolio',
+        loadComponent: () => import('./pages/page-portfolio/page-portfolio').then(m => m.PagePortfolio),
+        data: { defaultScrolled: true }
+    },
+    {
+        path: 'realisations',
+        redirectTo: 'portfolio',
+        pathMatch: 'full'
+    },
+    {
         path: 'estimation-projet',
         loadComponent: () => import('./pages/quote-wizard-modal/quote-wizard-modal').then(m => m.QuoteWizardModal)
     },

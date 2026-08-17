@@ -131,13 +131,13 @@
 
     .contact-email {
         font-size: $font-size-md;
-        color: $light-cream;
+        color: $text-muted;
         font-weight: $font-weight-medium;
         text-decoration: none;
         transition: color $transition-fast;
 
         &:hover {
-            color: $accent-green-light;
+            color: $light-cream;
         }
     }
 }
@@ -156,7 +156,7 @@
         &-city {
             font-size: $font-size-base;
             font-weight: $font-weight-medium;
-            color: $light-cream;
+            color: $text-muted;
         }
 
         &-country {

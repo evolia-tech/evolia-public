@@ -4,6 +4,18 @@
 .page-contact {
   min-height: calc(100vh - 80px); // Déduction de la hauteur du header
   padding: 12rem 0 $spacing-3xl 0;
+
+  @include respond-to('lg') {
+    padding-top: 9.5rem;
+  }
+
+  @include respond-to('md') {
+    padding-top: 8.5rem;
+  }
+
+  @include respond-to('sm') {
+    padding-top: 7.5rem;
+  }
   background-color: $dark-primary;
   position: relative;
   overflow: hidden;
@@ -54,27 +66,6 @@
   &__info {
     display: flex;
     flex-direction: column;
-
-    .breadcrumb {
-      font-size: $font-size-sm;
-      color: $text-muted;
-      margin-bottom: $spacing-md;
-
-      a {
-        color: $text-muted;
-        text-decoration: none;
-        transition: color $transition-fast;
-
-        &:hover {
-          color: $light-cream;
-        }
-      }
-
-      .active {
-        color: $light-cream;
-        font-weight: $font-weight-medium;
-      }
-    }
   }
 
   &__title {
@@ -83,11 +74,15 @@
     font-size: clamp(2.2rem, 5.5vw, 3.3rem);
     line-height: 1;
     letter-spacing: -1px;
-    color: $dark-quaternary;
-    margin-bottom: $spacing-md;
+    color: $light-cream;
+    margin-bottom: 1.5rem;
 
     @media (min-width: 768px) {
       font-size: $font-size-4xl;
+    }
+
+    span {
+      color: $dark-quaternary;
     }
   }
 
@@ -199,15 +194,15 @@
     overflow: hidden;
     background: $dark-secondary;
     background-image: radial-gradient(ellipse at 50% 0%, rgba($accent-green, 0.18) 0%, transparent 65%),
-                      radial-gradient(ellipse at 80% 100%, rgba($dark-quaternary, 0.15) 0%, transparent 60%);
+      radial-gradient(ellipse at 80% 100%, rgba($dark-quaternary, 0.15) 0%, transparent 60%);
     border-radius: $border-radius-2xl;
-    padding: $spacing-xl;
+    padding: 2rem 1rem;
     border: 1px solid rgba($light-cream, 0.1);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     color: $light-cream;
 
     @media (min-width: 768px) {
-      padding: $spacing-2xl;
+      padding: 3rem 2rem;
     }
   }
 
@@ -240,7 +235,7 @@
 
     label {
       font-size: $font-size-sm;
-      font-weight: $font-weight-semibold;
+      font-weight: 500;
       color: $light-cream;
     }
 

@@ -1,0 +1,53 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 1.5rem;
+  margin-bottom: 7rem;
+  max-width: 800px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+
+  .title {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .action-block {
+    max-width: 720px;
+    align-items: flex-start;
+    text-align: left;
+
+    .description {
+      text-align: left;
+    }
+  }
+
+  @include respond-to('md') {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+
+    .title {
+      text-align: center;
+    }
+
+    .action-block {
+      align-items: center;
+      text-align: center;
+
+      .description {
+        text-align: center;
+      }
+    }
+  }
+}

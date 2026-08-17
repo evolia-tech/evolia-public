@@ -10,9 +10,13 @@
   border-bottom: 1px solid rgba($light-cream, 0.06);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
+  @media (max-width: 768px) {
+    padding: 0.75rem 1rem;
+  }
+
   h2 {
     font-family: $font-heading;
-    font-size: 2.05rem;
+    font-size: clamp(1.2rem, 4vw, 2.05rem);
     color: $light-cream;
     font-weight: 700;
     letter-spacing: -1.1px;
@@ -25,13 +29,25 @@
     align-items: center;
     gap: 12px;
     cursor: pointer;
-    padding: 0.45rem 0.9rem;
+    padding: 0.45rem 0.35rem 0.45rem 0.9rem;
     border-radius: 50px;
+    border: 1px solid rgba($light-cream, 0.12);
     transition: all 0.3s ease;
     -webkit-user-select: none;
 
+    @media (max-width: 576px) {
+      padding: 0.25rem 0.35rem 0.25rem 0.6rem;
+      gap: 6px;
+
+      .close-label {
+        display: none;
+      }
+    }
+
     &:hover {
-      background: rgba($accent-green, 0.15);
+      background: rgba($accent-green, 0.2);
+      border-color: rgba($accent-green, 0.4);
+      transform: translateY(-1px);
     }
 
     .close-label {

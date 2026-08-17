@@ -3,4 +3,16 @@
 
 .page-about {
   padding: 12rem 0 $spacing-3xl 0;
+
+  @include respond-to('lg') {
+    padding-top: 9.5rem;
+  }
+
+  @include respond-to('md') {
+    padding-top: 8.5rem;
+  }
+
+  @include respond-to('sm') {
+    padding-top: 7.5rem;
+  }
 }
