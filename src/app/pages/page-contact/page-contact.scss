@@ -2,23 +2,14 @@
 @use '../../../styles/mixins' as *;
 
 .page-contact {
-  min-height: calc(100vh - 80px); // Déduction de la hauteur du header
   padding: 12rem 0 $spacing-3xl 0;
+  position: relative;
+  overflow: hidden;
 
   @include respond-to('lg') {
     padding-top: 9.5rem;
   }
 
-  @include respond-to('md') {
-    padding-top: 8.5rem;
-  }
-
-  @include respond-to('sm') {
-    padding-top: 7.5rem;
-  }
-  background-color: $dark-primary;
-  position: relative;
-  overflow: hidden;
 
   // Décorations en arrière-plan (Halos de lumière)
   &::before,

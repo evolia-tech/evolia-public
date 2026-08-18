@@ -17,12 +17,19 @@ $black: #000000;
   color: $light-cream;
 
   @include respond-to('sm') {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: $dark-primary;
     border: none;
-    background: transparent;
     backdrop-filter: none;
     box-shadow: none;
-    padding: $spacing-md;
+    padding: $spacing-md 1rem;
     gap: $spacing-lg;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .top-bar {
@@ -32,18 +39,22 @@ $black: #000000;
     transform: translateX(-50%);
     width: 100%;
     padding: 2rem 2rem 1rem 2rem;
-    background: rgba($dark-secondary, 0.45) !important;
-    backdrop-filter: blur(50px) !important;
-    -webkit-backdrop-filter: blur(50px) !important;
+    background: rgba($dark-secondary, 0.95) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border-top-left-radius: $border-radius-2xl;
+    border-top-right-radius: $border-radius-2xl;
+    border-bottom: 1px solid rgba($light-cream, 0.05);
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: stretch;
     z-index: 1000;
-    pointer-events: none;
+    pointer-events: auto;
 
     @include respond-to('sm') {
       padding: $spacing-md $spacing-md $spacing-sm $spacing-md;
+      border-radius: 0;
     }
 
     .top-row {
@@ -56,7 +67,7 @@ $black: #000000;
     }
 
     .top-title {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
       font-weight: $font-weight-medium;
       letter-spacing: -1px;
       color: $light-cream;
@@ -109,10 +120,10 @@ $black: #000000;
     display: flex;
     flex-direction: column;
     gap: $spacing-xl;
-    padding: 9rem 1.5rem 7rem 1.5rem;
+    padding: 8rem 1.5rem 5rem 1.5rem;
 
     @include respond-to('sm') {
-      padding: 6rem 1rem 7rem 1rem;
+      padding: 6rem 0 7rem 0;
     }
 
     .step {
@@ -126,7 +137,7 @@ $black: #000000;
       }
 
       .title {
-        font-size: 1.8rem;
+        font-size: clamp(1.2rem, 4.5vw, 1.8rem);
         font-weight: $font-weight-medium;
         line-height: 1.25;
         margin-bottom: 1rem;
@@ -138,7 +149,7 @@ $black: #000000;
         }
 
         @include respond-to('sm') {
-          font-size: 1.5rem;
+          font-size: clamp(1.1rem, 4.2vw, 1.45rem);
         }
       }
 
@@ -155,7 +166,7 @@ $black: #000000;
 
       &--cols-2 {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: $spacing-md;
 
         @include respond-to('sm') {
@@ -208,8 +219,56 @@ $black: #000000;
         padding-right: 3.5rem;
 
         .check {
-          top: 50%;
-          transform: translateY(-50%);
+          top: 0.3rem;
+          right: 0.3rem;
+          transform: none;
+        }
+
+        @include respond-to('sm') {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          grid-template-rows: auto auto;
+          column-gap: 0.5rem;
+          row-gap: 0.35rem;
+          padding: 0.6rem 0.85rem;
+          align-items: center;
+
+          &.option-card {
+            .icon-wrapper {
+              grid-column: 1;
+              grid-row: 1;
+              width: 26px;
+              height: 26px;
+              font-size: 0.8rem;
+              border-radius: 4px;
+            }
+
+            .label {
+              grid-column: 2;
+              grid-row: 1;
+              margin-bottom: 0;
+              font-size: 0.9rem;
+              padding-right: 1.5rem;
+            }
+
+            .desc {
+              grid-column: 1 / span 2;
+              grid-row: 2;
+              font-size: 0.78rem;
+              line-height: 1.35;
+              width: 100%;
+            }
+
+            .check {
+              top: 0.3rem;
+              right: 0.3rem;
+              transform: none;
+            }
+          }
+
+          .content {
+            display: contents;
+          }
         }
       }
 
@@ -288,7 +347,7 @@ $black: #000000;
       .check {
         position: absolute;
         right: 0.3rem;
-        top: $spacing-md;
+        top: 0.3rem;
         width: 20px;
         height: 20px;
         border-radius: $border-radius-full;
@@ -309,7 +368,7 @@ $black: #000000;
 
       .fields-row {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: $spacing-md;
 
         @include respond-to('sm') {
@@ -465,7 +524,13 @@ $black: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: $spacing-xl 0;
+    padding: 8rem 1.5rem 5rem 1.5rem;
+    min-height: 520px;
+
+    @include respond-to('sm') {
+      padding: 7rem 1rem 3rem 1rem;
+      min-height: calc(100vh - 120px);
+    }
 
     .success-card {
       text-align: center;
@@ -523,6 +588,151 @@ $black: #000000;
         font-family: monospace;
       }
     }
+  }
+
+  .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 1.5rem 5rem 1.5rem;
+    min-height: 520px;
+
+    @include respond-to('sm') {
+      padding: 7rem 1rem 3rem 1rem;
+      min-height: calc(100vh - 120px);
+    }
+
+    .error-card {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-md;
+      max-width: 480px;
+
+      .icon-wrapper {
+        width: 64px;
+        height: 64px;
+        border-radius: $border-radius-full;
+        background: rgba(#ef4444, 0.15);
+        border: 2px solid #ef4444;
+        color: #ef4444;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        animation: pulse-red 2s infinite;
+        box-shadow: 0 0 20px rgba(#ef4444, 0.2);
+      }
+
+      .title {
+        font-size: 2rem;
+        font-weight: $font-weight-medium;
+
+        .text-gradient {
+          @include text-gradient(#ef4444, #f87171);
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      .message {
+        font-size: 1.05rem;
+        color: rgba($light-cream, 0.9);
+        line-height: 1.5;
+      }
+
+      .submessage {
+        font-size: 0.9rem;
+        color: $text-muted;
+        line-height: 1.5;
+      }
+
+      .fallback-box {
+        margin-top: $spacing-sm;
+        width: 100%;
+        padding: $spacing-md;
+        background: rgba($white, 0.03);
+        border: 1px dashed rgba($light-cream, 0.15);
+        border-radius: $border-radius-xl;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .fallback-title {
+          font-size: 0.9rem;
+          color: rgba($light-cream, 0.85);
+          font-weight: 500;
+          margin: 0;
+        }
+
+        .email-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: rgba($black, 0.25);
+          border: 1px solid rgba($light-cream, 0.08);
+          border-radius: $border-radius-md;
+          padding: 6px 12px;
+          gap: 12px;
+
+          .email-link {
+            font-size: 1rem;
+            color: $white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: $accent-green-light;
+            }
+          }
+
+          .btn-copy {
+            background: rgba($white, 0.1);
+            border: 1px solid rgba($white, 0.15);
+            color: $white;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:hover {
+              background: rgba($white, 0.2);
+              border-color: rgba($white, 0.3);
+            }
+          }
+        }
+
+        .fallback-desc {
+          font-size: 0.8rem;
+          color: $text-muted;
+          margin: 0;
+          line-height: 1.35;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(#ef4444, 0.4);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(#ef4444, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(#ef4444, 0);
   }
 }
 

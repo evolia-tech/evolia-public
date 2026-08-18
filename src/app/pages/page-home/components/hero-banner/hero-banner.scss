@@ -14,11 +14,17 @@
   }
 
   @include respond-to('md') {
-    padding-top: 8.5rem;
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
   }
 
   @include respond-to('sm') {
-    padding-top: 7.5rem;
+    min-height: auto;
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+    box-sizing: border-box;
   }
 
   &__bg {
@@ -75,6 +81,10 @@
     align-items: center;
     gap: $spacing-xl;
     z-index: 2;
+
+    @include respond-to('md') {
+      gap: 1.5rem;
+    }
   }
 
   // --- TYPOGRAPHIE ---
@@ -94,14 +104,13 @@
 
   &__description {
     max-width: 550px;
-    margin: 0 auto;
     font-size: 1.05rem;
+    line-height: 1.5;
     color: $text-muted;
-    font-weight: 300;
 
-    strong {
-      color: $light-cream;
-      font-weight: 400;
+    @include respond-to('md') {
+      font-size: 1rem;
+      line-height: 1.45;
     }
   }
 
@@ -112,5 +121,11 @@
     margin-top: $spacing-lg;
     flex-wrap: wrap;
     justify-content: center;
+
+    @include respond-to('md') {
+      app-evo-button:first-child {
+        display: none !important;
+      }
+    }
   }
 }

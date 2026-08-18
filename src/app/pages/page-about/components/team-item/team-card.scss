@@ -86,7 +86,7 @@
   .card-content {
     position: relative;
     z-index: 2;
-    padding: $spacing-lg; // Le padding est ICI pour le texte
+    padding: 1rem; // Padding 1rem pour les infos du membre
     display: flex;
     flex-direction: column;
     gap: $spacing-md;

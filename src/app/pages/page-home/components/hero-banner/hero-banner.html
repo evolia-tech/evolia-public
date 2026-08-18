@@ -12,22 +12,13 @@
     </h1>
     <p class="hero__description">
       Co-construisons la solution web ou mobile
-      <strong>sur-mesure, intuitive et performante</strong> qui fera grandir votre activité
-      <strong>avec Évolia Tech</strong>.
+      <span>sur-mesure, intuitive et performante</span> qui fera grandir votre activité
+      <span>avec Évolia Tech</span>.
     </p>
     <div class="hero__actions">
-      <app-evo-button
-        text="Nos Réalisations"
-        link="/portfolio"
-        variant="solid"
-        preset="green"
-      ></app-evo-button>
-      <app-evo-button
-        text="Lancer mon projet"
-        variant="outline"
-        preset="cream"
-        (click)="quoteService.openQuoteForm()"
-      ></app-evo-button>
+      <app-evo-button text="Nos Réalisations" link="/portfolio" variant="solid" preset="green"></app-evo-button>
+      <app-evo-button text="Lancer mon projet" variant="outline" preset="cream"
+        (click)="quoteService.openQuoteForm()"></app-evo-button>
     </div>
   </div>
 </section>

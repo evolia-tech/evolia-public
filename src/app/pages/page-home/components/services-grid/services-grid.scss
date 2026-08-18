@@ -4,6 +4,10 @@
 .services {
   padding: $spacing-4xl 0;
   position: relative;
+
+  @include respond-to('md') {
+    padding: $spacing-xl 0;
+  }
 }
 
 // --- BENTO GRID SYSTEM ---
@@ -61,6 +65,10 @@
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 
+  @include respond-to('md') {
+    padding: 1rem;
+  }
+
   &:hover {
     transform: translateY(-5px);
     border-color: rgba($accent-green, 0.3);
@@ -97,15 +105,21 @@
   // Tags en bas
   .card__tags {
     position: relative;
-    height: 100%; // Réserve l'espace pour la chute
+    height: 200px;
+    min-height: 180px;
     width: 100%;
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
     display: flex;
     flex-wrap: wrap;
     pointer-events: none;
     touch-action: pan-y !important;
+
+    @media (min-width: 1024px) {
+      height: 100%;
+      min-height: 140px;
+    }
 
     li {
       position: absolute; // Indispensable pour la physique
@@ -170,6 +184,33 @@
       left: 35%; // Moves left so width is 70% of parent (from 30% to 100%)
       top: 35%; // Moves up to start at 35% height of parent
       width: 70%; // Expands width, keeping the right overflow
+    }
+  }
+
+  @include respond-to('md') {
+    min-height: 350px;
+
+    .card__img-container {
+      position: absolute;
+      top: 55%;
+      left: 45%;
+      width: 65%;
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &:hover,
+    &:active {
+      .card__img-container {
+        top: 38%;
+        left: 28%;
+        width: 75%;
+        transform: none;
+      }
     }
   }
 }
@@ -398,6 +439,22 @@
     max-width: 330px;
   }
 
-  // Bouton Blanc
-  // On peut surcharger le style du bouton pour qu'il soit blanc sur fond vert
+  @include respond-to('md') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+
+    .card__desc {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .card__action {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 }

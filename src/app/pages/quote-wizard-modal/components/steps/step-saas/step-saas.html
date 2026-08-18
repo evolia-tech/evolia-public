@@ -1,0 +1,107 @@
+<!-- Étape 2: Niveau de maturité -->
+@if (state.currentStep() === 2) {
+  <div class="step animate-fade-in">
+    <h2 class="title">À quel stade se trouve votre projet ?</h2>
+    <p class="subtitle">Déterminez le niveau de maturité actuel de l'application.</p>
+    <div class="options-grid">
+      @for (opt of saasMaturityOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('saasMaturity')?.value === opt.value"
+          (select)="state.selectOption('saasMaturity', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 3: Cible d'utilisateurs -->
+@if (state.currentStep() === 3) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Qui seront les utilisateurs principaux de l'application ?</h2>
+    <p class="subtitle">Désignez la cible pour guider les choix ergonomiques et fonctionnels.</p>
+    <div class="options-grid">
+      @for (opt of saasUsersOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('saasUsers')?.value === opt.value"
+          (select)="state.selectOption('saasUsers', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 4: Modules & Fonctionnalités clés -->
+@if (state.currentStep() === 4) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quelles sont les fonctionnalités clés requises ?</h2>
+    <p class="subtitle">Cochez les briques techniques indispensables (choix multiples).</p>
+    <div class="options-grid options-grid--cols-2">
+      @for (opt of saasFeaturesOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.isArrayOptionSelected('saasFeatures', opt.value)"
+          (select)="state.toggleArrayOption('saasFeatures', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 5: Infra & Exigences -->
+@if (state.currentStep() === 5) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Avez-vous des contraintes d'hébergement ou de sécurité ?</h2>
+    <p class="subtitle">Précisez les exigences d'infrastructure de votre SaaS.</p>
+    <div class="options-grid">
+      @for (opt of saasInfraOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('saasInfraSec')?.value === opt.value"
+          (select)="state.selectOption('saasInfraSec', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 6: Enveloppe budgétaire SaaS -->
+@if (state.currentStep() === 6) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel est l'investissement envisagé pour cette première version ?</h2>
+    <p class="subtitle">Estimez l'enveloppe budgétaire allouée au MVP.</p>
+    <div class="options-grid">
+      @for (opt of saasBudgetOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('saasBudget')?.value === opt.value"
+          (select)="state.selectOption('saasBudget', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 7: Démarrage souhaité -->
+@if (state.currentStep() === 7) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Sous quel délai souhaitez-vous démarrer la phase de build ?</h2>
+    <p class="subtitle">Sélectionnez la date estimative pour lancer le développement.</p>
+    <div class="options-grid">
+      @for (opt of saasStartOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('saasStartDelay')?.value === opt.value"
+          (select)="state.selectOption('saasStartDelay', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}

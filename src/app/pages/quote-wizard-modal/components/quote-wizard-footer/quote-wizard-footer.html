@@ -1,0 +1,34 @@
+<footer class="footer">
+  @if (state.currentStep() > 1) {
+    <button type="button" class="btn secondary" (click)="state.prevStep()">
+      <fa-icon [icon]="faArrowLeft"></fa-icon> Retour
+    </button>
+  }
+
+  <div class="footer-spacer"></div>
+
+  @if (state.currentStep() < state.totalSteps()) {
+    <button 
+      type="button" 
+      class="btn primary" 
+      [disabled]="!state.isStepValid(state.currentStep())" 
+      (click)="state.nextStep()">
+      Suivant <fa-icon [icon]="faArrowRight"></fa-icon>
+    </button>
+  }
+
+  @if (state.currentStep() === state.totalSteps()) {
+    <button 
+      type="submit" 
+      class="btn primary" 
+      [disabled]="!state.isStepValid(state.currentStep()) || state.isLoading()">
+      @if (state.isLoading()) {
+        <span style="display: inline-flex; align-items: center; gap: 8px;">
+          Traitement... <fa-icon [icon]="faSpinner" class="fa-spin-animation"></fa-icon>
+        </span>
+      } @else {
+        Valider ma demande <fa-icon [icon]="faCheck"></fa-icon>
+      }
+    </button>
+  }
+</footer>

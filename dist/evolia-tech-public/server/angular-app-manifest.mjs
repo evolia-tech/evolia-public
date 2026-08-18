@@ -8,16 +8,16 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-AWT35YGK.js",
-      "chunk-FEK4Q3AW.js"
+      "chunk-5CY3VNYM.js",
+      "chunk-FDTZDUNQ.js"
     ],
     "route": "/"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-L4O7XSSP.js",
-      "chunk-FEK4Q3AW.js"
+      "chunk-N3WRUC7D.js",
+      "chunk-FDTZDUNQ.js"
     ],
     "route": "/portfolio"
   },
@@ -29,34 +29,34 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-TG72NWKE.js"
+      "chunk-3FEYGEMB.js"
     ],
     "route": "/estimation-projet"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-T2SQIM3C.js"
+      "chunk-DYLGQAPT.js"
     ],
     "route": "/contact"
   },
   {
     "renderMode": 2,
     "preload": [
-      "chunk-B2VIK2CI.js"
+      "chunk-3WOAZVNX.js"
     ],
     "route": "/about"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 2041, hash: 'f1b3a69bae151d67f55c195d80002494e456b8ad86ad5ba05c0f3f6b3d52a297', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 1634, hash: '759c31fbc2a992cb98b99ee3b5e85f1656e95f6af6e23127e43120326969e325', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'portfolio/index.html': {size: 95996, hash: 'd6d8257269096b0f321921f2070d990a8c81cb9baf68582cd5b10264de3cf3ee', text: () => import('./assets-chunks/portfolio_index_html.mjs').then(m => m.default)},
-    'index.html': {size: 124705, hash: '97f811a67810987865f58fae1a6e5da06ccd0b1b52d157df9a3097487013da32', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
-    'about/index.html': {size: 126765, hash: '97dd5196a4decf025e8cf0d53b1147c04221432cb5dedc622bf82e7ca91ad3ef', text: () => import('./assets-chunks/about_index_html.mjs').then(m => m.default)},
-    'estimation-projet/index.html': {size: 77125, hash: '5898e0c8dd4cfb244193685ce6324f8f126b7506193c20f612bdbe0a91d3e629', text: () => import('./assets-chunks/estimation-projet_index_html.mjs').then(m => m.default)},
-    'contact/index.html': {size: 80417, hash: '20bc05872b240a377c8d3f8c209b53a666b98c232940e02f2c1f1090f9c571ea', text: () => import('./assets-chunks/contact_index_html.mjs').then(m => m.default)},
-    'styles-S5CEN6OC.css': {size: 6218, hash: 'xZmwsQ9m8CI', text: () => import('./assets-chunks/styles-S5CEN6OC_css.mjs').then(m => m.default)}
+    'index.csr.html': {size: 2041, hash: 'd052b29f5447b0fb3254d35ac52af66dd04406a88432303a85657688bded3da6', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 1634, hash: '5a54d7b94f5cf6661cd58a01051e36fb6edb3fa7f9a1e91c51139926c7a3feca', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'index.html': {size: 132515, hash: '698d30a80da98723ddf825f46a4b0d7af05369bf0aef032b36094819c3861023', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'portfolio/index.html': {size: 97583, hash: 'f5d45fb730ea09c8ff44a531c8db7d62f8d6380bdcfae6f96498950a87cdbe96', text: () => import('./assets-chunks/portfolio_index_html.mjs').then(m => m.default)},
+    'about/index.html': {size: 131069, hash: '43cbd1ee0608a72ff39a4a735022ca6e3ff3c6b9cdff5a67ea82f84a57848400', text: () => import('./assets-chunks/about_index_html.mjs').then(m => m.default)},
+    'contact/index.html': {size: 81445, hash: '198b8168a6e9f7a1dffa631998c8333a8e463382cb6ff7dd857f0b01c3ea8ca4', text: () => import('./assets-chunks/contact_index_html.mjs').then(m => m.default)},
+    'estimation-projet/index.html': {size: 83825, hash: '579705c9ebcfd579c3452697ff63a63b3890bfca7c898f4f89a9158f9d799922', text: () => import('./assets-chunks/estimation-projet_index_html.mjs').then(m => m.default)},
+    'styles-NURMBUMH.css': {size: 6509, hash: 'ZHvWkRB2Y7U', text: () => import('./assets-chunks/styles-NURMBUMH_css.mjs').then(m => m.default)}
   },
 };

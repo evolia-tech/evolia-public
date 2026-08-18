@@ -1,0 +1,130 @@
+<div class="step animate-fade-in">
+  @if (state.projectType() === 'web' || state.projectType() === 'ecommerce' || state.projectType() === 'mobile') {
+    <h2 class="title">Parlez-nous de votre projet</h2>
+    <p class="subtitle">
+      @if (state.projectType() === 'web') {
+        Les projets SaaS et Web Apps sur-mesure nécessitent une étude d'architecture précise. Laissez-nous vos coordonnées pour que notre Architecte Solution analyse votre besoin.
+      } @else if (state.projectType() === 'ecommerce') {
+        Les projets E-commerce & Marketplace nécessitent un cadrage d'architecture spécifique. Laissez-nous vos coordonnées pour recevoir votre estimation.
+      } @else {
+        Les applications mobiles sur-mesure nécessitent un cadrage d'architecture spécifique. Laissez-nous vos coordonnées pour que notre équipe étudie votre besoin.
+      }
+    </p>
+
+    <div class="contact-form">
+      <div class="fields-row">
+        <div class="field">
+          <label for="lastName" class="label">Nom *</label>
+          <div class="input-wrapper">
+            <fa-icon [icon]="faUser" class="icon"></fa-icon>
+            <input type="text" id="lastName" [formControl]="$any(state.quoteForm.get('lastName'))" class="input" placeholder="Dupont" />
+          </div>
+          @if (state.quoteForm.get('lastName')?.invalid && (state.quoteForm.get('lastName')?.dirty || state.quoteForm.get('lastName')?.touched)) {
+            <span class="error">Le nom est requis.</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="firstName" class="label">Prénom *</label>
+          <div class="input-wrapper">
+            <fa-icon [icon]="faUser" class="icon"></fa-icon>
+            <input type="text" id="firstName" [formControl]="$any(state.quoteForm.get('firstName'))" class="input" placeholder="Jean" />
+          </div>
+          @if (state.quoteForm.get('firstName')?.invalid && (state.quoteForm.get('firstName')?.dirty || state.quoteForm.get('firstName')?.touched)) {
+            <span class="error">Le prénom est requis.</span>
+          }
+        </div>
+      </div>
+
+      <div class="fields-row">
+        <div class="field">
+          <label for="ecoCompany" class="label">Nom de l'entreprise / Projet *</label>
+          <div class="input-wrapper">
+            <fa-icon [icon]="faGlobe" class="icon"></fa-icon>
+            <input type="text" id="ecoCompany" [formControl]="$any(state.quoteForm.get('ecoCompany'))" class="input" placeholder="ex: Mon App Flutter" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="phone" class="label">Téléphone (facultatif)</label>
+          <div class="input-wrapper">
+            <fa-icon [icon]="faPhone" class="icon"></fa-icon>
+            <input type="tel" id="phone" [formControl]="$any(state.quoteForm.get('phone'))" class="input" placeholder="+33 6 12 34 56 78" />
+          </div>
+        </div>
+      </div>
+
+      <div class="fields-row">
+        <div class="field">
+          <label for="email" class="label">Email Professionnel *</label>
+          <div class="input-wrapper">
+            <fa-icon [icon]="faEnvelope" class="icon"></fa-icon>
+            <input type="email" id="email" [formControl]="$any(state.quoteForm.get('email'))" class="input" placeholder="jean.dupont@entreprise.com" />
+          </div>
+          @if (state.emailControl?.invalid && (state.emailControl?.dirty || state.emailControl?.touched)) {
+            <span class="error">Veuillez entrer une adresse email valide.</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="oldUrl" class="label">Lien projet existant / Maquettes Figma (facultatif)</label>
+          <div class="input-wrapper">
+            <fa-icon [icon]="faGlobe" class="icon"></fa-icon>
+            <input type="text" id="oldUrl" [formControl]="$any(state.quoteForm.get('oldUrl'))" class="input" placeholder="ex: https://figma.com/..." />
+          </div>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top: 1rem;">
+        <label for="message" class="label">Décrivez votre besoin en quelques mots *</label>
+        <textarea id="message" [formControl]="$any(state.quoteForm.get('message'))" class="textarea" placeholder="Expliquez-nous l'objectif principal de votre projet, les fonctionnalités clés attendues, etc. (minimum 15 caractères)"></textarea>
+        @if (state.messageControl?.invalid && (state.messageControl?.dirty || state.messageControl?.touched)) {
+          <span class="error">Veuillez entrer une description d'au moins 15 caractères.</span>
+        }
+      </div>
+    </div>
+  } @else {
+    <h2 class="title">Où devons-nous vous envoyer votre devis ?</h2>
+    <p class="subtitle">Laissez-nous vos coordonnées pour recevoir votre estimation personnalisée et gratuite.</p>
+
+    <div class="contact-form">
+      <div class="field">
+        <label for="name" class="label">Votre Nom et Prénom *</label>
+        <div class="input-wrapper">
+          <fa-icon [icon]="faUser" class="icon"></fa-icon>
+          <input type="text" id="name" [formControl]="$any(state.quoteForm.get('name'))" class="input" placeholder="ex: Jean Dupont" />
+        </div>
+        @if (state.nameControl?.invalid && (state.nameControl?.dirty || state.nameControl?.touched)) {
+          <span class="error">Le nom est requis.</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="email" class="label">Adresse e-mail professionnelle *</label>
+        <div class="input-wrapper">
+          <fa-icon [icon]="faEnvelope" class="icon"></fa-icon>
+          <input type="email" id="email" [formControl]="$any(state.quoteForm.get('email'))" class="input" placeholder="jean.dupont@entreprise.com" />
+        </div>
+        @if (state.emailControl?.invalid && (state.emailControl?.dirty || state.emailControl?.touched)) {
+          <span class="error">Veuillez entrer une adresse email valide.</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="phone" class="label">Numéro de téléphone (facultatif)</label>
+        <div class="input-wrapper">
+          <fa-icon [icon]="faPhone" class="icon"></fa-icon>
+          <input type="tel" id="phone" [formControl]="$any(state.quoteForm.get('phone'))" class="input" placeholder="+33 6 12 34 56 78" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message" class="label">Décrivez votre besoin en quelques mots *</label>
+        <textarea id="message" [formControl]="$any(state.quoteForm.get('message'))" class="textarea" placeholder="Expliquez-nous l'objectif principal de votre projet, les fonctionnalités clés attendues, etc. (minimum 15 caractères)"></textarea>
+        @if (state.messageControl?.invalid && (state.messageControl?.dirty || state.messageControl?.touched)) {
+          <span class="error">Veuillez entrer une description d'au moins 15 caractères.</span>
+        }
+      </div>
+    </div>
+  }
+</div>

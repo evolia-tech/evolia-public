@@ -2,25 +2,11 @@
 @use '../../../styles/mixins' as *;
 
 .page-portfolio {
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 12rem;
-  padding-bottom: 8rem;
+  padding: 12rem 0 $spacing-3xl 0;
 
   @include respond-to('lg') {
     padding-top: 9.5rem;
   }
-
-  @include respond-to('md') {
-    padding-top: 8.5rem;
-  }
-
-  @include respond-to('sm') {
-    padding-top: 7.5rem;
-  }
-  background: $dark-primary;
-  position: relative;
-  z-index: 1;
 
   .content {
     display: flex;

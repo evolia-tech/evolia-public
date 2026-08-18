@@ -1,0 +1,16 @@
+<div class="top-bar">
+  <div class="top-row">
+    <span class="top-title">Devis 100% gratuit</span>
+    <button class="close-btn" (click)="state.close()" aria-label="Fermer">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
+  </div>
+
+  @if (state.currentStep() > 1) {
+    <div class="progress-container">
+      @for (stepIndex of state.progressSteps(); track stepIndex) {
+        <div class="progress-segment" [class.active]="(state.currentStep() - 1) >= stepIndex"></div>
+      }
+    </div>
+  }
+</div>

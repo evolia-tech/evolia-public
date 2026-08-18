@@ -1,0 +1,107 @@
+<!-- Étape 2: Modèle de vente -->
+@if (state.currentStep() === 2) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel type de plateforme souhaitez-vous lancer ?</h2>
+    <p class="subtitle">Sélectionnez le modèle de plateforme transactionnelle ciblé.</p>
+    <div class="options-grid options-grid--cols-2">
+      @for (opt of ecoModelOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('ecoModel')?.value === opt.value"
+          (select)="state.selectOption('ecoModel', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 3: Volume du catalogue -->
+@if (state.currentStep() === 3) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quelle est la taille de votre catalogue et votre situation actuelle ?</h2>
+    <p class="subtitle">Permet de mesurer l'effort de modélisation et de migration de données.</p>
+    <div class="options-grid">
+      @for (opt of ecoCatalogOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('ecoCatalog')?.value === opt.value"
+          (select)="state.selectOption('ecoCatalog', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 4: Besoins en paiements -->
+@if (state.currentStep() === 4) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quels sont vos besoins spécifiques en matière de paiement et de gestion ?</h2>
+    <p class="subtitle">Sélectionnez toutes les options qui s'appliquent (choix multiples).</p>
+    <div class="options-grid">
+      @for (opt of ecoPaymentsOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.isArrayOptionSelected('ecoPayments', opt.value)"
+          (select)="state.toggleArrayOption('ecoPayments', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 5: Expérience client & IA -->
+@if (state.currentStep() === 5) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quelles fonctionnalités avancées souhaitez-vous pour vos utilisateurs ?</h2>
+    <p class="subtitle">Sélectionnez toutes les fonctionnalités visées (choix multiples).</p>
+    <div class="options-grid">
+      @for (opt of ecoFeaturesOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.isArrayOptionSelected('ecoFeatures', opt.value)"
+          (select)="state.toggleArrayOption('ecoFeatures', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 6: Budget estimé E-commerce -->
+@if (state.currentStep() === 6) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel est le budget alloué à ce projet ?</h2>
+    <p class="subtitle">Déterminez l'enveloppe budgétaire pour concevoir votre plateforme.</p>
+    <div class="options-grid">
+      @for (opt of ecoBudgetOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('ecoBudget')?.value === opt.value"
+          (select)="state.selectOption('ecoBudget', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 7: Échéances souhaitées -->
+@if (state.currentStep() === 7) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quelle est votre échéance de lancement idéalement ?</h2>
+    <p class="subtitle">Sélectionnez le délai souhaité pour la mise en ligne.</p>
+    <div class="options-grid">
+      @for (opt of ecoTimeframeOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('ecoTimeframe')?.value === opt.value"
+          (select)="state.selectOption('ecoTimeframe', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}

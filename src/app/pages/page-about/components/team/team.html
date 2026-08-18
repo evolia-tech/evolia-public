@@ -7,7 +7,7 @@
       <div class="action-block">
         <p class="description">
           Une équipe franco-camerounaise soudée par la passion du code bien fait.
-          Chez <strong>Évolia Tech</strong>, nous allions rigueur technique et créativité pour donner vie à vos projets.
+          Chez <b>Évolia Tech</b>, nous allions rigueur technique et créativité pour donner vie à vos projets.
         </p>
       </div>
     </div>
@@ -17,7 +17,7 @@
 
       <!-- Cartes Membres -->
       @for (member of teamMembers; track member.id) {
-        <app-team-card [member]="member"></app-team-card>
+      <app-team-card [member]="member"></app-team-card>
       }
 
       <!-- Carte Recrutement ("We are hiring") -->
@@ -28,11 +28,7 @@
           <p class="hiring-desc">
             Nous sommes toujours à la recherche de talents passionnés pour grandir avec nous.
           </p>
-          <app-evo-button
-            text="Postuler"
-            link="#contact"
-            preset="white"
-            variant="outline">
+          <app-evo-button text="Postuler" link="#contact" preset="white" variant="outline">
           </app-evo-button>
         </div>
       </div>

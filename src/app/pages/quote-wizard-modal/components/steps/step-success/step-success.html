@@ -1,0 +1,67 @@
+<div class="success animate-fade-in">
+  <div class="success-card">
+    <div class="icon-wrapper">
+      <fa-icon [icon]="faCheck"></fa-icon>
+    </div>
+    <h2 class="title">Demande d'estimation <span class="text-gradient">reçue !</span></h2>
+
+    @if (state.projectType() === 'showcase') {
+      <p class="message">
+        Merci <strong>{{ state.quoteForm.get('name')?.value }}</strong>. Votre demande de devis personnalisé pour votre projet de <strong>Site Vitrine</strong> a bien été enregistrée.
+      </p>
+    } @else if (state.projectType() === 'web') {
+      <p class="message">
+        Merci <strong>{{ state.quoteForm.get('firstName')?.value }}</strong>. Votre demande d'architecture technique pour votre projet <strong>SaaS / Application Web</strong> a bien été reçue.
+      </p>
+      <p class="submessage" style="margin-top: 1rem;">
+        Vu la complexité de votre projet, nous vous conseillons de réserver dès maintenant un créneau téléphonique avec notre Architecte Solution pour cadrer votre besoin.
+      </p>
+      <div style="margin-top: 2rem;">
+        <button type="button" class="btn primary" (click)="state.bookCall()" style="padding: 12px 24px; font-size: 1rem; border-radius: 9999px;">
+          Réserver mon Appel d'Architecture (30 min)
+        </button>
+      </div>
+    } @else if (state.projectType() === 'ecommerce') {
+      <p class="message">
+        Merci <strong>{{ state.quoteForm.get('firstName')?.value }}</strong>. Votre projet semble nécessiter une architecture personnalisée. Votre demande d'estimation pour votre <strong>E-commerce / Marketplace</strong> a bien été reçue.
+      </p>
+      <p class="submessage" style="margin-top: 1rem;">
+        Pour accélérer le lancement de votre projet, nous vous proposons un entretien stratégique et de cadrage de 30 minutes avec notre architecte e-commerce.
+      </p>
+      <div style="margin-top: 2rem;">
+        <button type="button" class="btn primary" (click)="state.bookCall('https://calendly.com/evolia-tech/ecommerce')" style="padding: 12px 24px; font-size: 1rem; border-radius: 9999px;">
+          Planifier un entretien stratégique (30 min)
+        </button>
+      </div>
+    } @else if (state.projectType() === 'mobile') {
+      <p class="message">
+        Merci <strong>{{ state.quoteForm.get('firstName')?.value }}</strong>. Votre demande d'architecture pour votre projet <strong>Application Mobile (Flutter)</strong> a bien été reçue.
+      </p>
+      <p class="submessage" style="color: #b9b4e9; font-weight: 500; margin-top: 1rem;">
+        Nos applications mobiles sont conçues avec une architecture évolutive permettant une montée en charge et des intégrations futures (API, IA, services cloud).
+      </p>
+      <p class="submessage" style="margin-top: 1rem;">
+        Pour valider vos choix techniques, nous vous proposons un diagnostic mobile et cadrage de 30 minutes avec notre expert Flutter.
+      </p>
+      <div style="margin-top: 2rem;">
+        <button type="button" class="btn primary" (click)="state.bookCall('https://calendly.com/evolia-tech/mobile-diagnostic')" style="padding: 12px 24px; font-size: 1rem; border-radius: 9999px;">
+          Planifier un Diagnostic Mobile (30 min)
+        </button>
+      </div>
+    } @else {
+      <p class="message">
+        Merci <strong>{{ state.quoteForm.get('name')?.value }}</strong>. Votre demande de devis pour un projet de type <strong>{{ state.quoteForm.get('projectType')?.value | uppercase }}</strong> a bien été enregistrée.
+      </p>
+    }
+
+    <p class="submessage" style="margin-top: 1rem;">
+      Notre équipe va étudier vos besoins et vous recontactera sous 24 heures ouvrées.
+    </p>
+
+    <div style="margin-top: 2rem;">
+      <button type="button" class="btn primary" (click)="state.close()" style="padding: 12px 32px; font-size: 1rem; border-radius: 9999px;">
+        Fermer la fenêtre
+      </button>
+    </div>
+  </div>
+</div>

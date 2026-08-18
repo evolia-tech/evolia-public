@@ -1,0 +1,27 @@
+<div class="error animate-fade-in">
+  <div class="error-card">
+    <div class="icon-wrapper">
+      <fa-icon [icon]="faExclamationTriangle"></fa-icon>
+    </div>
+    <h2 class="title">Une erreur est <span class="text-gradient">survenue</span></h2>
+
+    <p class="submessage" style="font-size: 1rem;">
+      Une anomalie imprévue s'est produite lors de la transmission de votre demande de devis. Nos ingénieurs ont été immédiatement notifiés afin de résoudre cet incident technique au plus vite.
+    </p>
+
+    <div class="fallback-box" style="margin-top: 1.5rem;">
+      <p class="fallback-title">Pour ne pas retarder votre projet, écrivez-nous directement à :</p>
+      <div class="email-row">
+        <a href="mailto:devis@evolia-tech.com" class="email-link">
+          <fa-icon [icon]="faEnvelope" style="margin-right: 6px;"></fa-icon> devis@evolia-tech.com
+        </a>
+        <button type="button" class="btn-copy" (click)="copyEmail()" title="Copier l'adresse email">
+          {{ copied ? 'Copié !' : 'Copier' }}
+        </button>
+      </div>
+      <p class="fallback-desc">
+        Notre équipe étudiera votre demande et reviendra vers vous sous 24h ouvrées.
+      </p>
+    </div>
+  </div>
+</div>

@@ -59,6 +59,10 @@
           justify-content: space-between;
           padding: $spacing-xl;
           box-sizing: border-box;
+
+          @include respond-to('md') {
+            padding: 1rem;
+          }
         }
 
         // HAUT
@@ -196,6 +200,10 @@
             gap: $spacing-lg;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
+            @include respond-to('md') {
+              padding: 1rem;
+            }
+
             @media (min-width: 576px) {
               flex-direction: row;
               align-items: center;
@@ -265,6 +273,11 @@
             justify-content: flex-end;
             align-items: flex-start;
             min-height: 220px;
+
+            @include respond-to('md') {
+              padding: 1rem;
+              min-height: auto;
+            }
 
             .dots-pattern {
               position: absolute;

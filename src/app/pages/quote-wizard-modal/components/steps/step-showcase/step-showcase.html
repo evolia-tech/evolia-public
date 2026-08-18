@@ -1,0 +1,136 @@
+<!-- Étape 2: Création ou Refonte -->
+@if (state.currentStep() === 2) {
+  <div class="step animate-fade-in">
+    <h2 class="title">S'agit-il d'une création ou d'une refonte ?</h2>
+    <p class="subtitle">Sélectionnez la situation de votre site internet actuel.</p>
+    <div class="options-grid">
+      @for (opt of creationOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('creationOrRefonte')?.value === opt.value"
+          (select)="state.selectOption('creationOrRefonte', opt.value)">
+        </app-option-card>
+      }
+    </div>
+
+    @if (state.quoteForm.get('creationOrRefonte')?.value === 'refonte') {
+      <div class="contact-form animate-fade-in" style="margin-top: 1.5rem;">
+        <div class="field">
+          <label for="oldUrl" class="label">Adresse de votre site actuel (URL)</label>
+          <div class="input-wrapper">
+            <input type="text" id="oldUrl" class="input" style="padding-left: 14px;" [formControl]="$any(state.quoteForm.get('oldUrl'))" placeholder="https://..." />
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}
+
+<!-- Étape 3: Objectifs principaux -->
+@if (state.currentStep() === 3) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel est l'objectif principal de ce site ?</h2>
+    <p class="subtitle">Sélectionnez tous les objectifs qui s'appliquent (choix multiples).</p>
+    <div class="options-grid">
+      @for (opt of goalOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.isArrayOptionSelected('mainGoals', opt.value)"
+          (select)="state.toggleArrayOption('mainGoals', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 4: Volume du site -->
+@if (state.currentStep() === 4) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel est le nombre de pages visé pour votre site ?</h2>
+    <p class="subtitle">Estimez la taille globale de votre futur site vitrine.</p>
+    <div class="options-grid">
+      @for (opt of pagesOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('pagesCount')?.value === opt.value"
+          (select)="state.selectOption('pagesCount', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 5: Fonctionnalités spécifiques -->
+@if (state.currentStep() === 5) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Avez-vous besoin de fonctionnalités spécifiques ?</h2>
+    <p class="subtitle">Sélectionnez toutes les options qui s'appliquent à votre besoin.</p>
+    <div class="options-grid">
+      @for (opt of featuresOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.isArrayOptionSelected('features', opt.value)"
+          (select)="state.toggleArrayOption('features', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 6: Identité Visuelle et Contenus -->
+@if (state.currentStep() === 6) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Disposez-vous déjà de votre identité visuelle ?</h2>
+    <p class="subtitle">Dites-nous si vous disposez d'un logo, d'une charte graphique ou de contenus.</p>
+    <div class="options-grid">
+      @for (opt of brandingOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('brandingState')?.value === opt.value"
+          (select)="state.selectOption('brandingState', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 7: Budget envisagé -->
+@if (state.currentStep() === 7) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel est le budget envisagé pour ce projet ?</h2>
+    <p class="subtitle">Sélectionnez une fourchette indicative pour mieux cibler la proposition.</p>
+    <div class="options-grid">
+      @for (opt of budgetOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('budget')?.value === opt.value"
+          (select)="state.selectOption('budget', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 8: Délais souhaités -->
+@if (state.currentStep() === 8) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quels sont les délais envisagés pour la livraison ?</h2>
+    <p class="subtitle">Sélectionnez la contrainte de temps pour ce projet.</p>
+    <div class="options-grid">
+      @for (opt of timeframeOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('timeframe')?.value === opt.value"
+          (select)="state.selectOption('timeframe', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}

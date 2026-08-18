@@ -3,8 +3,12 @@
 
 .testimonials {
   padding: $spacing-4xl 0;
-  background-color: $dark-primary; // Fond principal
+  background-color: $dark-primary;
   overflow: hidden;
+
+  @include respond-to('md') {
+    padding: $spacing-xl 0;
+  }
 
   // --- HEADER ---
   &__header {
@@ -12,8 +16,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+
+    @include respond-to('md') {
+      margin-bottom: $spacing-xl;
+    }
+
     .subtitle {
-      //font-family: $font-mono;
       color: $accent-green;
       font-size: $font-size-sm;
       letter-spacing: 2px;
@@ -24,11 +33,12 @@
 
     .title {
       max-width: 700px;
-      line-height: 1;
+      line-height: 1.1;
       letter-spacing: -1px;
-        font-weight: 500;
+      font-weight: 500;
+      text-align: center;
 
-      span{
+      span {
         color: #b9b4e9;
       }
     }
@@ -39,12 +49,19 @@
     display: grid;
     gap: 3rem;
     grid-template-columns: 5fr 3fr;
+
+    @include respond-to('md') {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 }
 
 // --- COLONNE GAUCHE : VISUEL ---
 .visual-col {
   position: relative;
+  width: 100%;
 
   .visual-card {
     position: relative;
@@ -55,13 +72,27 @@
     border: 1px solid rgba($light-cream, 0.05);
     box-shadow: $shadow-xl;
 
+    @include respond-to('lg') {
+      height: 26rem;
+    }
+
+    @include respond-to('md') {
+      height: 22rem;
+    }
+
+    @include respond-to('sm') {
+      height: 16rem;
+      border-radius: $border-radius-lg;
+    }
+
     &::after {
       content: '';
       position: absolute;
       z-index: 1;
       inset: 0;
-      background: rgba(0, 0, 0, 0.4); // Assombris l'image
+      background: rgba(0, 0, 0, 0.35);
     }
+
     // Image principale
     .visual-img {
       width: 100%;
@@ -77,6 +108,7 @@
       .video-overlay {
         position: absolute;
         inset: 0;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -105,15 +137,26 @@
           transition:
             transform 0.3s ease,
             background 0.3s ease;
+
+          @include respond-to('sm') {
+            width: 52px;
+            height: 52px;
+            font-size: $font-size-lg;
+          }
         }
 
         .play-text {
           font-size: $font-size-sm;
           font-weight: $font-weight-semibold;
           color: $white;
-          opacity: 0; // Caché par défaut
+          opacity: 0;
           transform: translateY(10px);
           transition: all 0.3s ease;
+
+          @include respond-to('md') {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       }
 
@@ -126,10 +169,8 @@
           background: rgba(0, 0, 0, 0.2);
         }
 
-        // Éclaircit au survol
-
         .play-btn {
-          background: $accent-green; // Play devient vert
+          background: $accent-green;
           transform: scale(1.1);
           border-color: $accent-green;
         }
@@ -147,30 +188,49 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 250px; // Hauteur min pour éviter les sauts
+  min-height: 250px;
   padding-top: 1.5rem;
+
+  @include respond-to('md') {
+    padding-top: 0;
+    min-height: auto;
+    text-align: center;
+    align-items: center;
+  }
 
   .quote-block {
     margin-bottom: $spacing-2xl;
 
-    .quote-text {
-      font-size: 1.2rem; // Grand texte comme sur l'image
-      line-height: 1.4;
-      font-weight: $font-weight-medium;
-      color: $light-cream;
+    @include respond-to('md') {
+      margin-bottom: $spacing-lg;
+      text-align: center;
     }
 
+    .quote-text,
     .quote-summary {
       font-size: 1.2rem;
+      line-height: 1.4;
       font-weight: $font-weight-medium;
-      color: $white;
+      color: $text-muted;
+
+      @include respond-to('md') {
+        font-size: 1.05rem;
+        line-height: 1.5;
+        text-align: center;
+      }
     }
 
     .author-info {
       display: flex;
       flex-direction: column;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); // Lisibilité sur image
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
       margin-top: 3rem;
+
+      @include respond-to('md') {
+        margin-top: 1.5rem;
+        align-items: center;
+        text-align: center;
+      }
 
       .name {
         font-family: $font-heading;
@@ -192,11 +252,18 @@
     justify-content: space-between;
     border-top: 1px solid rgba($light-cream, 0.1);
     padding-top: $spacing-lg;
+    width: 100%;
+
+    @include respond-to('md') {
+      padding-top: $spacing-md;
+      justify-content: space-between;
+    }
 
     .counter {
-      //font-family: $font-mono;
       color: $text-muted;
       font-size: $font-size-sm;
+      font-weight: 500;
+      white-space: nowrap;
 
       .divider {
         color: $accent-green;
@@ -204,46 +271,28 @@
       }
     }
 
-    .nav-buttons {
+    .nav-btn {
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      background: none;
+      color: $light-cream;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: $spacing-lg;
+      gap: $spacing-sm;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      transition: all 0.3s ease;
+      border: 1px solid rgba($light-cream, 0.2);
 
-      .nav-btn {
-        padding: 0.25rem 0.5rem ;
-        border-radius: 5px;
-        background: none;
-        border: none;
-        color: $light-cream;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: $spacing-sm;
-        font-size: $font-size-sm;
-        font-weight: $font-weight-semibold;
-        transition: all 0.3s ease;
-        border: 1px solid $light-cream;
-
-        &:hover {
-          background-color: $accent-green;
-          color: $white;
-                  border: 1px solid $accent-green;
-
-        }
-
-        span {
-          display: none; // Cache le texte "Suivant" sur mobile
-
-          @include respond-to('md') {
-            display: inline;
-          }
-        }
+      &:hover {
+        background-color: $accent-green;
+        color: $white;
+        border-color: $accent-green;
       }
 
-      .divider-v {
-        width: 1px;
-        height: 16px;
-        background: rgba($light-cream, 0.1);
+      span {
+        display: inline;
       }
     }
   }

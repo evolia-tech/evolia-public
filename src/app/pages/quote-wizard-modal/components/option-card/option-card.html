@@ -1,0 +1,24 @@
+<button 
+  type="button" 
+  class="option-card" 
+  [class.option-card--horizontal]="horizontal()" 
+  [class.active]="selected()" 
+  (click)="select.emit()">
+
+  @if (icon(); as cardIcon) {
+    <div class="icon-wrapper">
+      <fa-icon [icon]="cardIcon"></fa-icon>
+    </div>
+  }
+
+  <div class="content">
+    <h3 class="label">{{ label() }}</h3>
+    <p class="desc">{{ desc() }}</p>
+  </div>
+
+  @if (selected()) {
+    <div class="check">
+      <fa-icon [icon]="faCheck"></fa-icon>
+    </div>
+  }
+</button>

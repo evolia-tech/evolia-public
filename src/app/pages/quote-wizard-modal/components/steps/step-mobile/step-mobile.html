@@ -1,0 +1,107 @@
+<!-- Étape 2: Cible plateforme mobile -->
+@if (state.currentStep() === 2) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Sur quelles plateformes souhaitez-vous lancer votre application ?</h2>
+    <p class="subtitle">Définissez la cible système et la nature fonctionnelle de votre produit.</p>
+    <div class="options-grid">
+      @for (opt of mobileTargetsOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('mobileTargets')?.value === opt.value"
+          (select)="state.selectOption('mobileTargets', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 3: Back-end / API -->
+@if (state.currentStep() === 3) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel est l'état actuel de votre système Backend / API ?</h2>
+    <p class="subtitle">Déterminez l'infrastructure serveur nécessaire pour alimenter l'application mobile.</p>
+    <div class="options-grid">
+      @for (opt of mobileBackendOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('mobileBackend')?.value === opt.value"
+          (select)="state.selectOption('mobileBackend', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 4: Fonctionnalités natives mobile -->
+@if (state.currentStep() === 4) {
+  <div class="step animate-fade-in">
+    <h2 class="title">De quelles fonctionnalités natives votre projet a-t-il besoin ?</h2>
+    <p class="subtitle">Cochez toutes les fonctionnalités matérielles visées (choix multiples).</p>
+    <div class="options-grid options-grid--cols-2">
+      @for (opt of mobileFeaturesOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.isArrayOptionSelected('mobileFeatures', opt.value)"
+          (select)="state.toggleArrayOption('mobileFeatures', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 5: Cible utilisateur & Déploiement -->
+@if (state.currentStep() === 5) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quelle est votre cible et votre besoin d'accompagnement pour les Stores ?</h2>
+    <p class="subtitle">Définissez le mode de déploiement et la validation du marché.</p>
+    <div class="options-grid">
+      @for (opt of mobileCibleOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('mobileCible')?.value === opt.value"
+          (select)="state.selectOption('mobileCible', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 6: Budget mobile -->
+@if (state.currentStep() === 6) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel est le budget alloué pour le développement de cette application ?</h2>
+    <p class="subtitle">Estimez l'enveloppe allouée pour concevoir l'application.</p>
+    <div class="options-grid">
+      @for (opt of mobileBudgetOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('mobileBudget')?.value === opt.value"
+          (select)="state.selectOption('mobileBudget', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}
+
+<!-- Étape 7: Échéances mobile -->
+@if (state.currentStep() === 7) {
+  <div class="step animate-fade-in">
+    <h2 class="title">Quel est votre horizon de lancement ?</h2>
+    <p class="subtitle">Sélectionnez le délai souhaité pour soumettre l'application aux stores.</p>
+    <div class="options-grid">
+      @for (opt of mobileTimeframeOptions; track opt.value) {
+        <app-option-card
+          [label]="opt.label"
+          [desc]="opt.desc"
+          [selected]="state.quoteForm.get('mobileTimeframe')?.value === opt.value"
+          (select)="state.selectOption('mobileTimeframe', opt.value)">
+        </app-option-card>
+      }
+    </div>
+  </div>
+}

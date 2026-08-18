@@ -1,0 +1,17 @@
+<div class="step animate-fade-in">
+  <h2 class="title">Quel type de projet souhaitez-vous réaliser ?</h2>
+  <p class="subtitle">Sélectionnez la catégorie qui correspond le mieux à votre idée.</p>
+
+  <div class="options-grid">
+    @for (opt of options; track opt.value) {
+      <app-option-card
+        [label]="opt.label"
+        [desc]="opt.desc"
+        [icon]="opt.icon"
+        [horizontal]="true"
+        [selected]="state.projectType() === opt.value"
+        (select)="state.selectOption('projectType', opt.value)">
+      </app-option-card>
+    }
+  </div>
+</div>

@@ -88,8 +88,8 @@ export class ServicesGrid implements AfterViewInit, OnDestroy {
         this.runner = Runner.create();
 
         const wallThickness = 100;
-        const width = container.clientWidth;
-        const height = container.clientHeight;
+        const width = container.clientWidth || 300;
+        const height = Math.max(container.clientHeight, 180);
 
         // Création des 4 parois (sol, plafond, murs gauche et droite)
         this.ground = Bodies.rectangle(
@@ -236,8 +236,8 @@ export class ServicesGrid implements AfterViewInit, OnDestroy {
     }
 
     const container = this.tagList.nativeElement;
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+    const width = container.clientWidth || 300;
+    const height = Math.max(container.clientHeight, 180);
     const wallThickness = 100;
 
     // Repositionne le sol

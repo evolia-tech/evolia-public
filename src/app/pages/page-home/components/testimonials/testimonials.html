@@ -50,23 +50,21 @@
           </div>
         </div>
 
-        <!-- Barre de Navigation (Inspirée de l'image) -->
+        <!-- Barre de Navigation -->
         <div class="nav-controls">
+          <button class="nav-btn prev" (click)="prev()">
+            <fa-icon [icon]="'faArrowLeft' | toFaIcon"></fa-icon>
+            <span>Précédent</span>
+          </button>
+
           <div class="counter">
             {{ currentIndex() + 1 }} <span class="divider">/</span> {{ testimonials.length }}
           </div>
 
-          <div class="nav-buttons">
-            <button class="nav-btn prev" (click)="prev()">
-              <fa-icon [icon]="'faArrowLeft' | toFaIcon"></fa-icon>
-              <span>Précédent</span>
-            </button>
-            <div class="divider-v"></div>
-            <button class="nav-btn next" (click)="next()">
-              <span>Suivant</span>
-              <fa-icon [icon]="'faArrowRight' | toFaIcon"></fa-icon>
-            </button>
-          </div>
+          <button class="nav-btn next" (click)="next()">
+            <span>Suivant</span>
+            <fa-icon [icon]="'faArrowRight' | toFaIcon"></fa-icon>
+          </button>
         </div>
       </div>
     </div>
