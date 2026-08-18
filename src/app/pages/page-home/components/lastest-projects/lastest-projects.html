@@ -11,8 +11,8 @@
       <div
         class="carousel-container"
         #carouselContainer
-        (mouseenter)="pauseGallery()"
-        (mouseleave)="resumeGallery()"
+        (mouseenter)="pauseGallery(true)"
+        (mouseleave)="resumeGallery(true)"
       >
         @for (work of projectsForCarousel(); track $index) {
           <div class="work-card" (click)="onProjectClicked($index)">

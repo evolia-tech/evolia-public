@@ -1,5 +1,5 @@
 import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
-import { AfterViewInit, Component, computed, ElementRef, inject, NgZone, OnDestroy, PLATFORM_ID, signal, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, computed, effect, ElementRef, inject, NgZone, OnDestroy, PLATFORM_ID, signal, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToFaIconPipe } from '../../../../shared/pipes/to-fa-icon-pipe';
 import { ProjectModal } from '../../../../shared/components/ui/project-modal/project-modal';
@@ -38,6 +38,20 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
     const base = this.projectService.spotlightedProjects();
     return [...base, ...base, ...base];
   });
+
+  constructor() {
+    const modalService = inject(ProjectModalService);
+    effect(() => {
+      const isOpen = modalService.isOpen();
+      if (isOpen) {
+        this.loop?.pause();
+      } else {
+        if (this.loop && !this.draggable?.[0].isDragging && !this.draggable?.[0].isThrowing) {
+          this.loop.play();
+        }
+      }
+    });
+  }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -183,11 +197,18 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
     }
   }
 
-  pauseGallery(): void {
+  private isMobileDevice(): boolean {
+    if (!isPlatformBrowser(this.platformId)) return false;
+    return window.innerWidth <= 768 || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  }
+
+  pauseGallery(isHover = false): void {
+    if (isHover && this.isMobileDevice()) return;
     this.loop?.pause();
   }
 
-  resumeGallery(): void {
+  resumeGallery(isHover = false): void {
+    if (isHover && this.isMobileDevice()) return;
     // On ne relance que si l'utilisateur n'est pas en train de draguer
     if (!this.draggable?.[0].isDragging && !this.draggable?.[0].isThrowing) {
       this.loop?.play();
