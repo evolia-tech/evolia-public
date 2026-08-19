@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+var e={production:!0,apiBaseUrl:"https://api.evolia-tech.com/api",gtmId:"GTM-XXXXXXX",siteUrl:"https://evolia-tech.com",defaultTitle:"Evolia Tech | Cr\xE9ation de Sites Web & Applications Mobiles sur mesure",defaultDescription:"Evolia Tech est une agence digitale sp\xE9cialis\xE9e dans le d\xE9veloppement de sites web sur mesure (SaaS, E-commerce, Vitrine) et d'applications mobiles. R\xE9alisez vos projets avec nos experts.",defaultOgImage:"https://evolia-tech.com/images/og-main.png"};export{e as a};

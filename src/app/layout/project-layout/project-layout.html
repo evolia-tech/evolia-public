@@ -1,0 +1,35 @@
+@if (isOpen()) {
+  <div class="project-page-layout">
+    <div class="project-container">
+
+      <!-- Header -->
+      <app-project-layout-header
+        [title]="project()?.clientName || ''"
+        [scrollProgress]="scrollProgress()"
+        [estimatedReadTime]="estimatedReadTime()"
+        (close)="closeModal()"
+      />
+
+      <!-- Corps du projet -->
+      <div class="project-main-grid">
+        <!-- Sidebar gauche -->
+        <div class="media-side">
+          <app-project-layout-sidebar
+            [data]="sidebarData()"
+            [activeSectionId]="activeSectionId()"
+            [onScrollTo]="scrollTo.bind(this)"
+          />
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="content-side" (scroll)="onScroll($event)">
+          <div class="dynamic-content-injector">
+            <main class="project-body">
+              <ng-container *ngComponentOutlet="currentComponent()"></ng-container>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}

@@ -1,53 +1,115 @@
-// core/services/seo.service.ts
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, DOCUMENT } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { Meta, Title } from '@angular/platform-browser';
+import { environment } from '../../../environments/environment';
 
-@Injectable({ providedIn: 'root' })
+export interface SeoConfig {
+  title?: string;
+  description?: string;
+  keywords?: string | string[];
+  image?: string;
+}
+
+@Injectable({
+  providedIn: 'root',
+})
 export class SeoService {
-  private readonly title = inject(Title);
-  private readonly meta = inject(Meta);
+  private document = inject(DOCUMENT);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private meta = inject(Meta);
+  private titleService = inject(Title);
 
-  updateMeta(data: {
-    title: string;
-    description: string;
-    keywords?: string;
-    image?: string;
-  }): void {
-    const url = typeof window !== 'undefined' ? window.location.href : '';
-    this.title.setTitle(data.title);
+  private readonly baseUrl = environment.siteUrl;
+  private readonly defaultTitle = environment.defaultTitle;
+  private readonly defaultDescription = environment.defaultDescription;
+  private readonly defaultImage = environment.defaultOgImage;
 
-    // --- BALISES STANDARDS ---
-    this.meta.updateTag({ name: 'description', content: data.description });
-    if (data.keywords) {
-      this.meta.updateTag({ name: 'keywords', content: data.keywords });
+  initCanonicalUrlListener(): void {
+    // Premier réglage sur l'URL actuelle
+    this.handleRouteChange(this.router.url);
+
+    // Écoute de tous les changements de routes futurs
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.handleRouteChange(event.urlAfterRedirects || event.url);
+      });
+  }
+
+  private handleRouteChange(url: string): void {
+    this.updateCanonicalUrl(url);
+
+    // Extraction dynamique des métadonnées de route (route.data)
+    let active = this.route.root;
+    while (active.firstChild) {
+      active = active.firstChild;
     }
 
-    // --- FACEBOOK / OPEN GRAPH ---
-    this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:url', content: url });
-    this.meta.updateTag({ property: 'og:title', content: data.title });
-    this.meta.updateTag({ property: 'og:description', content: data.description });
-    if (data.image) {
-      this.meta.updateTag({ property: 'og:image', content: data.image });
+    const routeData = active.snapshot.data;
+    if (routeData) {
+      const description = routeData['description'] || this.defaultDescription;
+      const image = routeData['ogImage'] || routeData['image'] || this.defaultImage;
+
+      this.updateMeta({
+        title: active.snapshot.title || this.defaultTitle,
+        description,
+        image,
+      });
+    }
+  }
+
+  updateCanonicalUrl(path: string): void {
+    if (!path) return;
+
+    // Nettoyage du chemin (suppression des paramètres d'URL ? et des ancres #)
+    const cleanPath = path.split('?')[0].split('#')[0];
+    const canonicalUrl = `${this.baseUrl}${cleanPath === '/' ? '' : cleanPath}`;
+
+    // 1. Balise <link rel="canonical" href="...">
+    let link: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']");
+    if (!link) {
+      link = this.document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      this.document.head.appendChild(link);
+    }
+    link.setAttribute('href', canonicalUrl);
+
+    // 2. Balises Méta Réseaux Sociaux (Open Graph et Twitter Card)
+    this.meta.updateTag({ property: 'og:url', content: canonicalUrl });
+    this.meta.updateTag({ name: 'twitter:url', content: canonicalUrl });
+  }
+
+  updateMeta(config: SeoConfig): void {
+    const title = config.title || this.defaultTitle;
+    const description = config.description || this.defaultDescription;
+    const image = config.image || this.defaultImage;
+
+    this.titleService.setTitle(title);
+
+    this.meta.updateTag({ name: 'description', content: description });
+    if (config.keywords) {
+      const keywordsStr = Array.isArray(config.keywords) ? config.keywords.join(', ') : config.keywords;
+      this.meta.updateTag({ name: 'keywords', content: keywordsStr });
     }
 
-    // --- TWITTER / X CARDS ---
-    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:url', content: url });
-    this.meta.updateTag({ name: 'twitter:title', content: data.title });
-    this.meta.updateTag({ name: 'twitter:description', content: data.description });
-    if (data.image) {
-      this.meta.updateTag({ name: 'twitter:image', content: data.image });
-    }
+    // Open Graph
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:image', content: image });
+
+    // Twitter Card
+    this.meta.updateTag({ name: 'twitter:title', content: title });
+    this.meta.updateTag({ name: 'twitter:description', content: description });
+    this.meta.updateTag({ name: 'twitter:image', content: image });
   }
 
   resetMeta(): void {
     this.updateMeta({
-      title: 'Évolia Tech | Agence Digitale & Expertise Web',
-      description:
-        'Nous transformons vos idées en solutions digitales haute performance : Angular, Node.js, E-commerce et Stratégie IT.',
-      keywords: 'Agence web Cameroun, Développement sur mesure, Évolia Tech, Digitalisation',
-      image: '/assets/icons/og-default-evolia.png',
+      title: this.defaultTitle,
+      description: this.defaultDescription,
+      image: this.defaultImage,
     });
   }
 }

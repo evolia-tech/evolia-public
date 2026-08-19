@@ -56,3 +56,5 @@ export class QuoteWizardModal implements OnInit, OnDestroy {
     }
   }
 }
+
+export default QuoteWizardModal;

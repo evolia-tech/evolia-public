@@ -30,6 +30,7 @@ export const PROJECTS_DATA: Project[] = [
       'Liko Auto est la première marketplace automobile connectée du Cameroun : achat et vente de véhicules, messagerie instantanée, garages partenaires, pièces détachées et accompagnement aux démarches administratives.',
     keywords:
       'marketplace automobile Cameroun, acheter voiture Cameroun, vendre voiture Douala Yaoundé, Liko Auto, garage Cameroun, pièces détachées auto Afrique',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 11,
@@ -54,6 +55,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Mahol Diaspora | Plateforme Solidaire & Engagement Communautaire',
     seoDescription: 'Portail web moderne pour l’association Mahol Diaspora : gestion de membres et collectes.',
     keywords: 'association solidaire, diaspora camerounaise',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 1,
@@ -83,6 +85,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'For You Média | Plateforme d’Information et Divertissement Africaine',
     seoDescription: 'Développement d’une interface web dynamique et interactive pour For You Média Africa.',
     keywords: 'média africain, actualité Afrique, For You Média',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 4,
@@ -111,6 +114,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Soprano Vésinet | Restaurant Italien Haut de Gamme',
     seoDescription: 'Conception d’un site vitrine élégant pour le restaurant Soprano au Vésinet.',
     keywords: 'restaurant italien Le Vésinet, Soprano Vésinet',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 5,
@@ -136,6 +140,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Amore Mio | Expérience Digital & E-commerce Premium',
     seoDescription: 'Conception et développement d’une plateforme web élégante et performante pour la marque Amore Mio.',
     keywords: 'Amore Mio, e-commerce luxe, expérience digitale, Évolia Tech',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 2,
@@ -165,6 +170,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Développement E-commerce Stella | Expert Vendure & Angular',
     seoDescription: 'Découvrez l’architecture headless Vendure et le frontend Angular ultra-rapide.',
     keywords: 'e-commerce Afrique, Vendure, NestJS',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 6,
@@ -190,6 +196,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Celebrate Congo | Portail Culturel & Billetterie Événementielle',
     seoDescription: 'Développement du portail événementiel et culturel Celebrate Congo avec billetterie intégrée.',
     keywords: 'Celebrate Congo, événementiel Congo, billetterie Afrique, Évolia Tech',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 7,
@@ -214,6 +221,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Présidentielles Cameroun | Dispositif d’Engagement Citoyen',
     seoDescription: 'Plateforme interactive et cartographie dynamique d’engagement pour les présidentielles au Cameroun.',
     keywords: 'Présidentielles Cameroun, engagement citoyen, cartographie électorale, Évolia Tech',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 8,
@@ -238,6 +246,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Présidentielles Sénégal | Suivi Électoral & Visualisation de Données',
     seoDescription: 'Plateforme hautement sécurisée de suivi des résultats et actualités des élections présidentielles au Sénégal.',
     keywords: 'Présidentielles Sénégal, données électorales, haute disponibilité, Évolia Tech',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 9,
@@ -262,6 +271,7 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Parti Politique P.U.R.S | Portail Institutionnel & Adhésions',
     seoDescription: 'Conception du portail officiel et de l’espace adhérents sécurisé du parti politique P.U.R.S.',
     keywords: 'P.U.R.S, parti politique, portail membre, Évolia Tech',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
     id: 10,
@@ -284,5 +294,6 @@ export const PROJECTS_DATA: Project[] = [
     seoTitle: 'Elites Voyages | Agence de Voyage sur-mesure & Séjours de Luxe',
     seoDescription: 'Plateforme digitale conçue pour l’exploration de destinations mondiales.',
     keywords: 'voyage sur mesure, agence de voyage luxe',
+    seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
 ];

@@ -1,6 +1,6 @@
-<div class="project-card-wrapper">
+<div class="project-card-wrapper" [class.is-reverse]="index % 2 === 1">
 
-  <!-- Numéro du projet en haut à droite (1/3 glissé sous le blur du parent) -->
+  <!-- Numéro du projet (Top 10 Netflix alterné gauche / droite) -->
   <span class="project-index">{{ (index + 1).toString().padStart(2, '0') }}</span>
 
   <article class="project-item" (click)="onCardClick()">
@@ -29,14 +29,8 @@
       </div>
 
       <div class="project-meta__bottom">
-        <app-evo-button
-          text="En savoir plus"
-          preset="cream"
-          variant="solid"
-          bgColor="#b9b4e9"
-          textColor="#0A0325"
-          hoverBgColor="#faf7e8"
-          hoverTextColor="#0A0325">
+        <app-evo-button text="En savoir plus" preset="cream" variant="solid" bgColor="#b9b4e9" textColor="#0A0325"
+          hoverBgColor="#faf7e8" hoverTextColor="#0A0325">
         </app-evo-button>
       </div>
     </div>

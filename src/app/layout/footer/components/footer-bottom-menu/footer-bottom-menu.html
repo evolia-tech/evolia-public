@@ -2,8 +2,9 @@
     <div class="footer__bottom-wrap container">
         <p class="copyright">&copy; {{ currentYear }} Évolia Tech. Tous droits réservés.</p>
         <ul class="bottom-links">
-            <li><a routerLink="">Politique de confidentialité</a></li>
-            <li><a routerLink="">Conditions d'utilisation</a></li>
+            <li><a routerLink="/mentions-legales">Mentions Légales</a></li>
+            <li><a routerLink="/politique-de-confidentialite">Politique de Confidentialité</a></li>
+            <li><button type="button" class="cookie-settings-btn" (click)="openCookieSettings()">Gestion des cookies</button></li>
         </ul>
     </div>
 </div>

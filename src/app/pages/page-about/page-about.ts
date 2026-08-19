@@ -15,3 +15,5 @@ import { AboutStats } from './components/stats/stats';
 export class PageAbout {
 
 }
+
+export default PageAbout;

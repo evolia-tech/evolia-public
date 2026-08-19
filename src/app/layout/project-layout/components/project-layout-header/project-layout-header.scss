@@ -1,0 +1,110 @@
+@use '../../../../../styles/variables' as *;
+
+.modal-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.85rem 1.8rem;
+  background-color: $dark-tertiary;
+  border-bottom: 1px solid rgba($light-cream, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 1rem;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: clamp(1.5rem, 4vw, 2.05rem);
+    color: $light-cream;
+    font-weight: 700;
+    letter-spacing: -1.1px;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .progress-close {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 0.45rem 0.35rem 0.45rem 0.9rem;
+    border-radius: 50px;
+    border: 1px solid rgba($light-cream, 0.12);
+    transition: all 0.3s ease;
+    -webkit-user-select: none;
+
+    @media (max-width: 768px) {
+      padding: 0 0 0 0.7rem;
+      gap: 8px;
+
+      .close-label {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        opacity: 0.9;
+      }
+
+      .progress-circle {
+        width: 44px;
+        height: 44px;
+
+        .percentage {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    &:hover {
+      background: rgba($accent-green, 0.2);
+      border-color: rgba($accent-green, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .close-label {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: $light-cream;
+      opacity: 0.75;
+      white-space: nowrap;
+    }
+
+    .progress-circle {
+      position: relative;
+      width: 54px;
+      height: 54px;
+
+      svg {
+        transform: rotate(-90deg);
+        width: 100%;
+        height: 100%;
+      }
+
+      .circle-bg {
+        fill: none;
+        stroke: rgba($white, 0.13);
+        stroke-width: 3.8;
+      }
+
+      .circle-bar {
+        fill: none;
+        stroke: $accent-green;
+        stroke-width: 3.8;
+        stroke-linecap: round;
+        transition: stroke-dasharray 0.3s ease;
+      }
+
+      .percentage {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: $light-cream;
+      }
+    }
+  }
+}

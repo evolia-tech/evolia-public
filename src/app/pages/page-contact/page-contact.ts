@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToFaIconPipe } from '../../shared/pipes/to-fa-icon-pipe';
+import { GtmService } from '../../core/services/gtm';
 
 @Component({
   selector: 'app-page-contact',
@@ -12,6 +13,7 @@ import { ToFaIconPipe } from '../../shared/pipes/to-fa-icon-pipe';
 })
 export class PageContact implements OnInit {
   private fb = inject(FormBuilder);
+  private gtmService = inject(GtmService);
 
   contactForm!: FormGroup;
   isSubmitted = false;
@@ -41,6 +43,10 @@ export class PageContact implements OnInit {
 
       // Simulate API submit
       setTimeout(() => {
+        this.gtmService.pushEvent('contact_form_submitted', {
+          subject: this.contactForm.value.subject,
+        });
+
         this.isSubmitting = false;
         this.isSubmitted = true;
         this.contactForm.reset();
@@ -57,3 +63,5 @@ export class PageContact implements OnInit {
     }
   }
 }
+
+export default PageContact;

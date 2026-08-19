@@ -1,0 +1,663 @@
+export default `<!DOCTYPE html><html lang="fr" data-beasties-container><head>
+  <meta charset="utf-8">
+  <title>Présidentielles Cameroun | Dispositif d’Engagement Citoyen</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plateforme interactive et cartographie dynamique d’engagement pour les présidentielles au Cameroun.">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evolia-tech.com/portfolio/presidentielles-cameroun">
+  <meta property="og:title" content="Présidentielles Cameroun | Dispositif d’Engagement Citoyen">
+  <meta property="og:description" content="Plateforme interactive et cartographie dynamique d’engagement pour les présidentielles au Cameroun.">
+  <meta property="og:image" content="https://evolia-tech.com/images/logo-evolia-tech.png">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://evolia-tech.com/portfolio/presidentielles-cameroun">
+  <meta name="twitter:title" content="Présidentielles Cameroun | Dispositif d’Engagement Citoyen">
+  <meta name="twitter:description" content="Plateforme interactive et cartographie dynamique d’engagement pour les présidentielles au Cameroun.">
+  <meta name="twitter:image" content="https://evolia-tech.com/images/logo-evolia-tech.png">
+
+  <!-- Web App & Mobile Theme Metas (SSG Compatible) -->
+  <meta name="theme-color" content="#0b0d14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Evolia Tech">
+  <style type="text/css" id="fa-auto-css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 'Font Awesome 7 Free';
+  --fa-font-regular: normal 400 1em/1 'Font Awesome 7 Free';
+  --fa-font-light: normal 300 1em/1 'Font Awesome 7 Pro';
+  --fa-font-thin: normal 100 1em/1 'Font Awesome 7 Pro';
+  --fa-font-duotone: normal 900 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-regular: normal 400 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-light: normal 300 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-duotone-thin: normal 100 1em/1 'Font Awesome 7 Duotone';
+  --fa-font-brands: normal 400 1em/1 'Font Awesome 7 Brands';
+  --fa-font-sharp-solid: normal 900 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-regular: normal 400 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-light: normal 300 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-thin: normal 100 1em/1 'Font Awesome 7 Sharp';
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-regular: normal 400 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-light: normal 300 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-sharp-duotone-thin: normal 100 1em/1 'Font Awesome 7 Sharp Duotone';
+  --fa-font-slab-regular: normal 400 1em/1 'Font Awesome 7 Slab';
+  --fa-font-slab-press-regular: normal 400 1em/1 'Font Awesome 7 Slab Press';
+  --fa-font-whiteboard-semibold: normal 600 1em/1 'Font Awesome 7 Whiteboard';
+  --fa-font-thumbprint-light: normal 300 1em/1 'Font Awesome 7 Thumbprint';
+  --fa-font-notdog-solid: normal 900 1em/1 'Font Awesome 7 Notdog';
+  --fa-font-notdog-duo-solid: normal 900 1em/1 'Font Awesome 7 Notdog Duo';
+  --fa-font-etch-solid: normal 900 1em/1 'Font Awesome 7 Etch';
+  --fa-font-graphite-thin: normal 100 1em/1 'Font Awesome 7 Graphite';
+  --fa-font-jelly-regular: normal 400 1em/1 'Font Awesome 7 Jelly';
+  --fa-font-jelly-fill-regular: normal 400 1em/1 'Font Awesome 7 Jelly Fill';
+  --fa-font-jelly-duo-regular: normal 400 1em/1 'Font Awesome 7 Jelly Duo';
+  --fa-font-chisel-regular: normal 400 1em/1 'Font Awesome 7 Chisel';
+  --fa-font-utility-semibold: normal 600 1em/1 'Font Awesome 7 Utility';
+  --fa-font-utility-duo-semibold: normal 600 1em/1 'Font Awesome 7 Utility Duo';
+  --fa-font-utility-fill-semibold: normal 600 1em/1 'Font Awesome 7 Utility Fill';
+}
+
+.svg-inline--fa {
+  box-sizing: content-box;
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285714em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left,
+.svg-inline--fa .fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-pull-right,
+.svg-inline--fa .fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  inset-block-start: 0.25em; /* syncing vertical alignment with Web Font rendering */
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: var(--fa-width, 1.25em);
+}
+.fa-layers .svg-inline--fa {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-counter-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: calc(10 / 16 * 1em); /* converts a 10px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 10 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 10 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xs {
+  font-size: calc(12 / 16 * 1em); /* converts a 12px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 12 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 12 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-sm {
+  font-size: calc(14 / 16 * 1em); /* converts a 14px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 14 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 14 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-lg {
+  font-size: calc(20 / 16 * 1em); /* converts a 20px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 20 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 20 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-xl {
+  font-size: calc(24 / 16 * 1em); /* converts a 24px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 24 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 24 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-2xl {
+  font-size: calc(32 / 16 * 1em); /* converts a 32px size into an em-based value that's relative to the scale's 16px base */
+  line-height: calc(1 / 32 * 1em); /* sets the line-height of the icon back to that of it's parent */
+  vertical-align: calc((6 / 32 - 0.375) * 1em); /* vertically centers the icon taking into account the surrounding text's descender */
+}
+
+.fa-width-auto {
+  --fa-width: auto;
+}
+
+.fa-fw,
+.fa-width-fixed {
+  --fa-width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-inline-start: var(--fa-li-margin, 2.5em);
+  padding-inline-start: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  inset-inline-start: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+/* Heads Up: Bordered Icons will not be supported in the future!
+  - This feature will be deprecated in the next major release of Font Awesome (v8)!
+  - You may continue to use it in this version *v7), but it will not be supported in Font Awesome v8.
+*/
+/* Notes:
+* --@{v.\$css-prefix}-border-width = 1/16 by default (to render as ~1px based on a 16px default font-size)
+* --@{v.\$css-prefix}-border-padding =
+  ** 3/16 for vertical padding (to give ~2px of vertical whitespace around an icon considering it's vertical alignment)
+  ** 4/16 for horizontal padding (to give ~4px of horizontal whitespace around an icon)
+*/
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.0625em);
+  box-sizing: var(--fa-border-box-sizing, content-box);
+  padding: var(--fa-border-padding, 0.1875em 0.25em);
+}
+
+.fa-pull-left,
+.fa-pull-start {
+  float: inline-start;
+  margin-inline-end: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right,
+.fa-pull-end {
+  float: inline-end;
+  margin-inline-start: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+  .fa-bounce,
+  .fa-fade,
+  .fa-beat-fade,
+  .fa-flip,
+  .fa-pulse,
+  .fa-shake,
+  .fa-spin,
+  .fa-spin-pulse {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-shake {
+  0% {
+    transform: rotate(-15deg);
+  }
+  4% {
+    transform: rotate(15deg);
+  }
+  8%, 24% {
+    transform: rotate(-18deg);
+  }
+  12%, 28% {
+    transform: rotate(18deg);
+  }
+  16% {
+    transform: rotate(-22deg);
+  }
+  20% {
+    transform: rotate(22deg);
+  }
+  32% {
+    transform: rotate(-12deg);
+  }
+  36% {
+    transform: rotate(12deg);
+  }
+  40%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.svg-inline--fa.fa-inverse {
+  fill: var(--fa-inverse, #fff);
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  --fa-width: 1.25em;
+  height: 1em;
+  width: var(--fa-width);
+}
+.svg-inline--fa.fa-stack-2x {
+  --fa-width: 2.5em;
+  height: 2em;
+  width: var(--fa-width);
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  z-index: var(--fa-stack-z-index, auto);
+}</style><link rel="manifest" href="/manifest.json">
+
+  <!-- Favicon & Canonical -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="canonical" href="https://evolia-tech.com/portfolio/presidentielles-cameroun">
+
+  <!-- Fonts Preload (Priorité maximale, sans FOUT) -->
+  <link rel="preload" href="/fonts/inter/inter-variable.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
+  <link rel="preload" href="/fonts/sora/sora-variable.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
+
+  <!-- JSON-LD Schema.org – Organisation & Service (Google Rich Snippet) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://evolia-tech.com/#organization",
+        "name": "Evolia Tech",
+        "url": "https://evolia-tech.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://evolia-tech.com/images/logo-evolia-tech.png"
+        },
+        "image": "https://evolia-tech.com/images/og-main.png",
+        "description": "Evolia Tech est une agence digitale spécialisée dans le développement de sites web sur mesure (SaaS, E-commerce, Vitrine) et d'applications mobiles.",
+        "foundingDate": "2025",
+        "founder": {
+          "@type": "Person",
+          "name": "Samuel Bonachi Mandeng",
+          "jobTitle": "Founder, CEO & Expert Web Developer"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "url": "https://evolia-tech.com/contact",
+          "availableLanguage": ["French", "English"]
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services Digitaux Evolia Tech",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Création de Sites Web sur Mesure",
+                "description": "Développement de sites vitrines, SaaS et e-commerce sur mesure."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Développement d'Applications Mobiles",
+                "description": "Conception et développement d'applications iOS et Android sur mesure."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://evolia-tech.com/#website",
+        "url": "https://evolia-tech.com",
+        "name": "Evolia Tech",
+        "description": "Agence digitale spécialisée dans la création de sites web et applications mobiles sur mesure.",
+        "publisher": {
+          "@id": "https://evolia-tech.com/#organization"
+        },
+        "inLanguage": "fr-FR"
+      }
+    ]
+  }
+  </script>
+<style>*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;font-size:16px;min-height:100%}body{min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}h2,h3{font-size:inherit;font-weight:inherit;overflow-wrap:break-word}p{overflow-wrap:break-word}ul{list-style:none}svg{display:block;max-width:100%}button{font:inherit;color:inherit;background:none;border:none;outline:none}button{cursor:pointer;-webkit-tap-highlight-color:transparent}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}@font-face{font-family:Inter;src:url(/fonts/inter/inter-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}@font-face{font-family:Sora;src:url(/fonts/sora/sora-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}body{font-family:Inter,sans-serif;font-size:1rem;font-weight:400;color:#f9f9d3;background-color:#0a0325}h2,h3{font-family:var("Sora", sans-serif);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#f9f9d3}h2{font-size:3rem}@media(max-width:992px){h2{font-size:2.5rem}}@media(max-width:768px){h2{font-size:2rem}}h3{font-size:2rem}@media(max-width:768px){h3{font-size:1.5rem}}p{font-size:1.125rem;line-height:1.7;color:#f9f9d3cc}button{font-family:Sora,sans-serif}
+</style><link rel="stylesheet" href="styles-CENQRYCQ.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-CENQRYCQ.css"></noscript><style type="text/css" data-primeng-style-id="primitive-variables">:root,:host{--p-stone-50:#fafaf9;--p-stone-100:#f5f5f4;--p-stone-200:#e7e5e4;--p-stone-300:#d6d3d1;--p-stone-400:#a8a29e;--p-stone-500:#78716c;--p-stone-600:#57534e;--p-stone-700:#44403c;--p-stone-800:#292524;--p-stone-900:#1c1917;--p-stone-950:#0c0a09;--p-neutral-50:#fafafa;--p-neutral-100:#f5f5f5;--p-neutral-200:#e5e5e5;--p-neutral-300:#d4d4d4;--p-neutral-400:#a3a3a3;--p-neutral-500:#737373;--p-neutral-600:#525252;--p-neutral-700:#404040;--p-neutral-800:#262626;--p-neutral-900:#171717;--p-neutral-950:#0a0a0a;--p-zinc-50:#fafafa;--p-zinc-100:#f4f4f5;--p-zinc-200:#e4e4e7;--p-zinc-300:#d4d4d8;--p-zinc-400:#a1a1aa;--p-zinc-500:#71717a;--p-zinc-600:#52525b;--p-zinc-700:#3f3f46;--p-zinc-800:#27272a;--p-zinc-900:#18181b;--p-zinc-950:#09090b;--p-gray-50:#f9fafb;--p-gray-100:#f3f4f6;--p-gray-200:#e5e7eb;--p-gray-300:#d1d5db;--p-gray-400:#9ca3af;--p-gray-500:#6b7280;--p-gray-600:#4b5563;--p-gray-700:#374151;--p-gray-800:#1f2937;--p-gray-900:#111827;--p-gray-950:#030712;--p-slate-50:#f8fafc;--p-slate-100:#f1f5f9;--p-slate-200:#e2e8f0;--p-slate-300:#cbd5e1;--p-slate-400:#94a3b8;--p-slate-500:#64748b;--p-slate-600:#475569;--p-slate-700:#334155;--p-slate-800:#1e293b;--p-slate-900:#0f172a;--p-slate-950:#020617;--p-rose-50:#fff1f2;--p-rose-100:#ffe4e6;--p-rose-200:#fecdd3;--p-rose-300:#fda4af;--p-rose-400:#fb7185;--p-rose-500:#f43f5e;--p-rose-600:#e11d48;--p-rose-700:#be123c;--p-rose-800:#9f1239;--p-rose-900:#881337;--p-rose-950:#4c0519;--p-pink-50:#fdf2f8;--p-pink-100:#fce7f3;--p-pink-200:#fbcfe8;--p-pink-300:#f9a8d4;--p-pink-400:#f472b6;--p-pink-500:#ec4899;--p-pink-600:#db2777;--p-pink-700:#be185d;--p-pink-800:#9d174d;--p-pink-900:#831843;--p-pink-950:#500724;--p-fuchsia-50:#fdf4ff;--p-fuchsia-100:#fae8ff;--p-fuchsia-200:#f5d0fe;--p-fuchsia-300:#f0abfc;--p-fuchsia-400:#e879f9;--p-fuchsia-500:#d946ef;--p-fuchsia-600:#c026d3;--p-fuchsia-700:#a21caf;--p-fuchsia-800:#86198f;--p-fuchsia-900:#701a75;--p-fuchsia-950:#4a044e;--p-purple-50:#faf5ff;--p-purple-100:#f3e8ff;--p-purple-200:#e9d5ff;--p-purple-300:#d8b4fe;--p-purple-400:#c084fc;--p-purple-500:#a855f7;--p-purple-600:#9333ea;--p-purple-700:#7e22ce;--p-purple-800:#6b21a8;--p-purple-900:#581c87;--p-purple-950:#3b0764;--p-violet-50:#f5f3ff;--p-violet-100:#ede9fe;--p-violet-200:#ddd6fe;--p-violet-300:#c4b5fd;--p-violet-400:#a78bfa;--p-violet-500:#8b5cf6;--p-violet-600:#7c3aed;--p-violet-700:#6d28d9;--p-violet-800:#5b21b6;--p-violet-900:#4c1d95;--p-violet-950:#2e1065;--p-indigo-50:#eef2ff;--p-indigo-100:#e0e7ff;--p-indigo-200:#c7d2fe;--p-indigo-300:#a5b4fc;--p-indigo-400:#818cf8;--p-indigo-500:#6366f1;--p-indigo-600:#4f46e5;--p-indigo-700:#4338ca;--p-indigo-800:#3730a3;--p-indigo-900:#312e81;--p-indigo-950:#1e1b4b;--p-blue-50:#eff6ff;--p-blue-100:#dbeafe;--p-blue-200:#bfdbfe;--p-blue-300:#93c5fd;--p-blue-400:#60a5fa;--p-blue-500:#3b82f6;--p-blue-600:#2563eb;--p-blue-700:#1d4ed8;--p-blue-800:#1e40af;--p-blue-900:#1e3a8a;--p-blue-950:#172554;--p-sky-50:#f0f9ff;--p-sky-100:#e0f2fe;--p-sky-200:#bae6fd;--p-sky-300:#7dd3fc;--p-sky-400:#38bdf8;--p-sky-500:#0ea5e9;--p-sky-600:#0284c7;--p-sky-700:#0369a1;--p-sky-800:#075985;--p-sky-900:#0c4a6e;--p-sky-950:#082f49;--p-cyan-50:#ecfeff;--p-cyan-100:#cffafe;--p-cyan-200:#a5f3fc;--p-cyan-300:#67e8f9;--p-cyan-400:#22d3ee;--p-cyan-500:#06b6d4;--p-cyan-600:#0891b2;--p-cyan-700:#0e7490;--p-cyan-800:#155e75;--p-cyan-900:#164e63;--p-cyan-950:#083344;--p-teal-50:#f0fdfa;--p-teal-100:#ccfbf1;--p-teal-200:#99f6e4;--p-teal-300:#5eead4;--p-teal-400:#2dd4bf;--p-teal-500:#14b8a6;--p-teal-600:#0d9488;--p-teal-700:#0f766e;--p-teal-800:#115e59;--p-teal-900:#134e4a;--p-teal-950:#042f2e;--p-yellow-50:#fefce8;--p-yellow-100:#fef9c3;--p-yellow-200:#fef08a;--p-yellow-300:#fde047;--p-yellow-400:#facc15;--p-yellow-500:#eab308;--p-yellow-600:#ca8a04;--p-yellow-700:#a16207;--p-yellow-800:#854d0e;--p-yellow-900:#713f12;--p-yellow-950:#422006;--p-amber-50:#fffbeb;--p-amber-100:#fef3c7;--p-amber-200:#fde68a;--p-amber-300:#fcd34d;--p-amber-400:#fbbf24;--p-amber-500:#f59e0b;--p-amber-600:#d97706;--p-amber-700:#b45309;--p-amber-800:#92400e;--p-amber-900:#78350f;--p-amber-950:#451a03;--p-orange-50:#fff7ed;--p-orange-100:#ffedd5;--p-orange-200:#fed7aa;--p-orange-300:#fdba74;--p-orange-400:#fb923c;--p-orange-500:#f97316;--p-orange-600:#ea580c;--p-orange-700:#c2410c;--p-orange-800:#9a3412;--p-orange-900:#7c2d12;--p-orange-950:#431407;--p-red-50:#fef2f2;--p-red-100:#fee2e2;--p-red-200:#fecaca;--p-red-300:#fca5a5;--p-red-400:#f87171;--p-red-500:#ef4444;--p-red-600:#dc2626;--p-red-700:#b91c1c;--p-red-800:#991b1b;--p-red-900:#7f1d1d;--p-red-950:#450a0a;--p-lime-50:#f7fee7;--p-lime-100:#ecfccb;--p-lime-200:#d9f99d;--p-lime-300:#bef264;--p-lime-400:#a3e635;--p-lime-500:#84cc16;--p-lime-600:#65a30d;--p-lime-700:#4d7c0f;--p-lime-800:#3f6212;--p-lime-900:#365314;--p-lime-950:#1a2e05;--p-green-50:#f0fdf4;--p-green-100:#dcfce7;--p-green-200:#bbf7d0;--p-green-300:#86efac;--p-green-400:#4ade80;--p-green-500:#22c55e;--p-green-600:#16a34a;--p-green-700:#15803d;--p-green-800:#166534;--p-green-900:#14532d;--p-green-950:#052e16;--p-emerald-50:#ecfdf5;--p-emerald-100:#d1fae5;--p-emerald-200:#a7f3d0;--p-emerald-300:#6ee7b7;--p-emerald-400:#34d399;--p-emerald-500:#10b981;--p-emerald-600:#059669;--p-emerald-700:#047857;--p-emerald-800:#065f46;--p-emerald-900:#064e3b;--p-emerald-950:#022c22;--p-border-radius-none:0;--p-border-radius-xs:2px;--p-border-radius-sm:4px;--p-border-radius-md:6px;--p-border-radius-lg:8px;--p-border-radius-xl:12px;}</style><style type="text/css" data-primeng-style-id="semantic-variables">:root,:host{--p-transition-duration:0.2s;--p-disabled-opacity:0.6;--p-icon-size:1rem;--p-anchor-gutter:2px;--p-overlay-navigation-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);--p-overlay-modal-border-radius:var(--p-border-radius-xl);--p-overlay-modal-padding:1.25rem;--p-overlay-modal-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 8px 10px -6px rgba(0,0,0,0.1);--p-overlay-popover-border-radius:var(--p-border-radius-md);--p-overlay-popover-padding:0.75rem;--p-overlay-popover-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);--p-overlay-select-border-radius:var(--p-border-radius-md);--p-overlay-select-shadow:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);--p-navigation-submenu-icon-size:0.875rem;--p-navigation-submenu-label-padding:0.5rem 0.75rem;--p-navigation-submenu-label-font-weight:600;--p-navigation-item-padding:0.5rem 0.75rem;--p-navigation-item-border-radius:var(--p-border-radius-sm);--p-navigation-item-gap:0.5rem;--p-navigation-list-padding:0.25rem 0.25rem;--p-navigation-list-gap:2px;--p-mask-transition-duration:0.3s;--p-content-border-radius:var(--p-border-radius-md);--p-list-padding:0.25rem 0.25rem;--p-list-gap:2px;--p-list-option-group-padding:0.5rem 0.75rem;--p-list-option-group-font-weight:600;--p-list-option-padding:0.5rem 0.75rem;--p-list-option-border-radius:var(--p-border-radius-sm);--p-list-header-padding:0.5rem 1rem 0.25rem 1rem;--p-form-field-padding-x:0.75rem;--p-form-field-padding-y:0.5rem;--p-form-field-border-radius:var(--p-border-radius-md);--p-form-field-transition-duration:var(--p-transition-duration);--p-form-field-focus-ring-width:0;--p-form-field-focus-ring-style:none;--p-form-field-focus-ring-color:transparent;--p-form-field-focus-ring-offset:0;--p-form-field-focus-ring-shadow:none;--p-form-field-lg-font-size:1.125rem;--p-form-field-lg-padding-x:0.875rem;--p-form-field-lg-padding-y:0.625rem;--p-form-field-sm-font-size:0.875rem;--p-form-field-sm-padding-x:0.625rem;--p-form-field-sm-padding-y:0.375rem;--p-primary-50:var(--p-emerald-50);--p-primary-100:var(--p-emerald-100);--p-primary-200:var(--p-emerald-200);--p-primary-300:var(--p-emerald-300);--p-primary-400:var(--p-emerald-400);--p-primary-500:var(--p-emerald-500);--p-primary-600:var(--p-emerald-600);--p-primary-700:var(--p-emerald-700);--p-primary-800:var(--p-emerald-800);--p-primary-900:var(--p-emerald-900);--p-primary-950:var(--p-emerald-950);--p-focus-ring-width:1px;--p-focus-ring-style:solid;--p-focus-ring-color:var(--p-primary-color);--p-focus-ring-offset:2px;--p-focus-ring-shadow:none;--p-navigation-submenu-icon-color:var(--p-surface-400);--p-navigation-submenu-icon-focus-color:var(--p-surface-500);--p-navigation-submenu-icon-active-color:var(--p-surface-500);--p-navigation-submenu-label-background:transparent;--p-navigation-submenu-label-color:var(--p-text-muted-color);--p-navigation-item-focus-background:var(--p-surface-100);--p-navigation-item-active-background:var(--p-surface-100);--p-navigation-item-color:var(--p-text-color);--p-navigation-item-focus-color:var(--p-text-hover-color);--p-navigation-item-active-color:var(--p-text-hover-color);--p-navigation-item-icon-color:var(--p-surface-400);--p-navigation-item-icon-focus-color:var(--p-surface-500);--p-navigation-item-icon-active-color:var(--p-surface-500);--p-list-option-group-background:transparent;--p-list-option-group-color:var(--p-text-muted-color);--p-list-option-focus-background:var(--p-surface-100);--p-list-option-selected-background:var(--p-highlight-background);--p-list-option-selected-focus-background:var(--p-highlight-focus-background);--p-list-option-color:var(--p-text-color);--p-list-option-focus-color:var(--p-text-hover-color);--p-list-option-selected-color:var(--p-highlight-color);--p-list-option-selected-focus-color:var(--p-highlight-focus-color);--p-list-option-icon-color:var(--p-surface-400);--p-list-option-icon-focus-color:var(--p-surface-500);--p-overlay-modal-background:var(--p-surface-0);--p-overlay-modal-border-color:var(--p-surface-200);--p-overlay-modal-color:var(--p-text-color);--p-overlay-popover-background:var(--p-surface-0);--p-overlay-popover-border-color:var(--p-surface-200);--p-overlay-popover-color:var(--p-text-color);--p-overlay-select-background:var(--p-surface-0);--p-overlay-select-border-color:var(--p-surface-200);--p-overlay-select-color:var(--p-text-color);--p-content-background:var(--p-surface-0);--p-content-hover-background:var(--p-surface-100);--p-content-border-color:var(--p-surface-200);--p-content-color:var(--p-text-color);--p-content-hover-color:var(--p-text-hover-color);--p-text-color:var(--p-surface-700);--p-text-hover-color:var(--p-surface-800);--p-text-muted-color:var(--p-surface-500);--p-text-hover-muted-color:var(--p-surface-600);--p-form-field-background:var(--p-surface-0);--p-form-field-disabled-background:var(--p-surface-200);--p-form-field-filled-background:var(--p-surface-50);--p-form-field-filled-hover-background:var(--p-surface-50);--p-form-field-filled-focus-background:var(--p-surface-50);--p-form-field-border-color:var(--p-surface-300);--p-form-field-hover-border-color:var(--p-surface-400);--p-form-field-focus-border-color:var(--p-primary-color);--p-form-field-invalid-border-color:var(--p-red-400);--p-form-field-color:var(--p-surface-700);--p-form-field-disabled-color:var(--p-surface-500);--p-form-field-placeholder-color:var(--p-surface-500);--p-form-field-invalid-placeholder-color:var(--p-red-600);--p-form-field-float-label-color:var(--p-surface-500);--p-form-field-float-label-focus-color:var(--p-primary-600);--p-form-field-float-label-active-color:var(--p-surface-500);--p-form-field-float-label-invalid-color:var(--p-form-field-invalid-placeholder-color);--p-form-field-icon-color:var(--p-surface-400);--p-form-field-shadow:0 0 #0000,0 0 #0000,0 1px 2px 0 rgba(18,18,23,0.05);--p-mask-background:rgba(0,0,0,0.4);--p-mask-color:var(--p-surface-200);--p-highlight-background:var(--p-primary-50);--p-highlight-focus-background:var(--p-primary-100);--p-highlight-color:var(--p-primary-700);--p-highlight-focus-color:var(--p-primary-800);--p-primary-color:var(--p-primary-500);--p-primary-contrast-color:#ffffff;--p-primary-hover-color:var(--p-primary-600);--p-primary-active-color:var(--p-primary-700);--p-surface-0:#ffffff;--p-surface-50:var(--p-slate-50);--p-surface-100:var(--p-slate-100);--p-surface-200:var(--p-slate-200);--p-surface-300:var(--p-slate-300);--p-surface-400:var(--p-slate-400);--p-surface-500:var(--p-slate-500);--p-surface-600:var(--p-slate-600);--p-surface-700:var(--p-slate-700);--p-surface-800:var(--p-slate-800);--p-surface-900:var(--p-slate-900);--p-surface-950:var(--p-slate-950);}.p-dark{--p-navigation-submenu-icon-color:var(--p-surface-500);--p-navigation-submenu-icon-focus-color:var(--p-surface-400);--p-navigation-submenu-icon-active-color:var(--p-surface-400);--p-navigation-submenu-label-background:transparent;--p-navigation-submenu-label-color:var(--p-text-muted-color);--p-navigation-item-focus-background:var(--p-surface-800);--p-navigation-item-active-background:var(--p-surface-800);--p-navigation-item-color:var(--p-text-color);--p-navigation-item-focus-color:var(--p-text-hover-color);--p-navigation-item-active-color:var(--p-text-hover-color);--p-navigation-item-icon-color:var(--p-surface-500);--p-navigation-item-icon-focus-color:var(--p-surface-400);--p-navigation-item-icon-active-color:var(--p-surface-400);--p-list-option-group-background:transparent;--p-list-option-group-color:var(--p-text-muted-color);--p-list-option-focus-background:var(--p-surface-800);--p-list-option-selected-background:var(--p-highlight-background);--p-list-option-selected-focus-background:var(--p-highlight-focus-background);--p-list-option-color:var(--p-text-color);--p-list-option-focus-color:var(--p-text-hover-color);--p-list-option-selected-color:var(--p-highlight-color);--p-list-option-selected-focus-color:var(--p-highlight-focus-color);--p-list-option-icon-color:var(--p-surface-500);--p-list-option-icon-focus-color:var(--p-surface-400);--p-overlay-modal-background:var(--p-surface-900);--p-overlay-modal-border-color:var(--p-surface-700);--p-overlay-modal-color:var(--p-text-color);--p-overlay-popover-background:var(--p-surface-900);--p-overlay-popover-border-color:var(--p-surface-700);--p-overlay-popover-color:var(--p-text-color);--p-overlay-select-background:var(--p-surface-900);--p-overlay-select-border-color:var(--p-surface-700);--p-overlay-select-color:var(--p-text-color);--p-content-background:var(--p-surface-900);--p-content-hover-background:var(--p-surface-800);--p-content-border-color:var(--p-surface-700);--p-content-color:var(--p-text-color);--p-content-hover-color:var(--p-text-hover-color);--p-text-color:var(--p-surface-0);--p-text-hover-color:var(--p-surface-0);--p-text-muted-color:var(--p-surface-400);--p-text-hover-muted-color:var(--p-surface-300);--p-form-field-background:var(--p-surface-950);--p-form-field-disabled-background:var(--p-surface-700);--p-form-field-filled-background:var(--p-surface-800);--p-form-field-filled-hover-background:var(--p-surface-800);--p-form-field-filled-focus-background:var(--p-surface-800);--p-form-field-border-color:var(--p-surface-600);--p-form-field-hover-border-color:var(--p-surface-500);--p-form-field-focus-border-color:var(--p-primary-color);--p-form-field-invalid-border-color:var(--p-red-300);--p-form-field-color:var(--p-surface-0);--p-form-field-disabled-color:var(--p-surface-400);--p-form-field-placeholder-color:var(--p-surface-400);--p-form-field-invalid-placeholder-color:var(--p-red-400);--p-form-field-float-label-color:var(--p-surface-400);--p-form-field-float-label-focus-color:var(--p-primary-color);--p-form-field-float-label-active-color:var(--p-surface-400);--p-form-field-float-label-invalid-color:var(--p-form-field-invalid-placeholder-color);--p-form-field-icon-color:var(--p-surface-400);--p-form-field-shadow:0 0 #0000,0 0 #0000,0 1px 2px 0 rgba(18,18,23,0.05);--p-mask-background:rgba(0,0,0,0.6);--p-mask-color:var(--p-surface-200);--p-highlight-background:color-mix(in srgb,var(--p-primary-400),transparent 84%);--p-highlight-focus-background:color-mix(in srgb,var(--p-primary-400),transparent 76%);--p-highlight-color:rgba(255,255,255,.87);--p-highlight-focus-color:rgba(255,255,255,.87);--p-primary-color:var(--p-primary-400);--p-primary-contrast-color:var(--p-surface-900);--p-primary-hover-color:var(--p-primary-300);--p-primary-active-color:var(--p-primary-200);--p-surface-0:#ffffff;--p-surface-50:var(--p-zinc-50);--p-surface-100:var(--p-zinc-100);--p-surface-200:var(--p-zinc-200);--p-surface-300:var(--p-zinc-300);--p-surface-400:var(--p-zinc-400);--p-surface-500:var(--p-zinc-500);--p-surface-600:var(--p-zinc-600);--p-surface-700:var(--p-zinc-700);--p-surface-800:var(--p-zinc-800);--p-surface-900:var(--p-zinc-900);--p-surface-950:var(--p-zinc-950);}</style><style type="text/css" data-primeng-style-id="global-variables">:root,:host{color-scheme:light}.p-dark{color-scheme:dark}</style><style type="text/css" data-primeng-style-id="global-style">*,::before,::after{box-sizing:border-box;}.p-collapsible-enter-active{animation:p-animate-collapsible-expand 0.2s ease-out;overflow:hidden;}.p-collapsible-leave-active{animation:p-animate-collapsible-collapse 0.2s ease-out;overflow:hidden;}@keyframes p-animate-collapsible-expand{from{grid-template-rows:0fr;}to{grid-template-rows:1fr;}} @keyframes p-animate-collapsible-collapse{from{grid-template-rows:1fr;}to{grid-template-rows:0fr;}} .p-disabled,.p-disabled *{cursor:default;pointer-events:none;user-select:none;}.p-disabled,.p-component:disabled{opacity:var(--p-disabled-opacity);}.pi{font-size:var(--p-icon-size);}.p-icon{width:var(--p-icon-size);height:var(--p-icon-size);}.p-overlay-mask{background:var(--px-mask-background,var(--p-mask-background));color:var(--p-mask-color);position:fixed;top:0;left:0;width:100%;height:100%;}.p-overlay-mask-enter-active{animation:p-animate-overlay-mask-enter var(--p-mask-transition-duration) forwards;}.p-overlay-mask-leave-active{animation:p-animate-overlay-mask-leave var(--p-mask-transition-duration) forwards;}@keyframes p-animate-overlay-mask-enter{from{background:transparent;}to{background:var(--px-mask-background,var(--p-mask-background));}} @keyframes p-animate-overlay-mask-leave{from{background:var(--px-mask-background,var(--p-mask-background));}to{background:transparent;}} .p-anchored-overlay-enter-active{animation:p-animate-anchored-overlay-enter 300ms cubic-bezier(.19,1,.22,1);}.p-anchored-overlay-leave-active{animation:p-animate-anchored-overlay-leave 300ms cubic-bezier(.19,1,.22,1);}@keyframes p-animate-anchored-overlay-enter{from{opacity:0;transform:scale(0.93);}} @keyframes p-animate-anchored-overlay-leave{to{opacity:0;transform:scale(0.93);}} li.p-autocomplete-option,div.p-cascadeselect-option-content,li.p-listbox-option,li.p-multiselect-option,li.p-select-option,li.p-listbox-option,div.p-tree-node-content,li.p-datatable-filter-constraint,.p-datatable .p-datatable-tbody > tr,.p-treetable .p-treetable-tbody > tr,div.p-menu-item-content,div.p-tieredmenu-item-content,div.p-contextmenu-item-content,div.p-menubar-item-content,div.p-megamenu-item-content,div.p-panelmenu-header-content,div.p-panelmenu-item-content,th.p-datatable-header-cell,th.p-treetable-header-cell,thead.p-datatable-thead > tr > th,.p-treetable thead.p-treetable-thead>tr>th{transition:none;}</style><style ng-app-id="ng">.project-page-layout{width:100vw;min-height:100vh;background:#0a0325}.project-container{width:100%;height:100vh;background:#100d2b;display:flex;flex-direction:column;overflow:hidden}.project-main-grid{display:flex;flex:1;overflow:hidden}@media(max-width:992px){.project-main-grid{flex-direction:column}}.media-side{width:450px;background:#1e1a45;background-image:radial-gradient(ellipse at 30% 20%,rgba(14,71,53,.22) 0%,transparent 65%),radial-gradient(ellipse at 80% 80%,rgba(185,180,233,.18) 0%,transparent 60%);padding:1.5rem;overflow-y:auto;border-right:1px solid rgba(249,249,211,.1)}@media(max-width:992px){.media-side{display:none}}.content-side{flex:1;padding:2.5rem 1rem 0 4rem;overflow-y:auto;background:#0a0325}@media(max-width:992px){.content-side{padding:1.5rem 1rem 2rem}}.dynamic-content-injector{display:flex;flex-direction:column;gap:4.5rem}@media(max-width:768px){.dynamic-content-injector{gap:2.5rem}}
+</style><meta name="keywords" content="Présidentielles Cameroun, engagement citoyen, cartographie électorale, Évolia Tech"><style ng-app-id="ng">.modal-header-content[_ngcontent-ng-c1103722741]{display:flex;align-items:center;justify-content:space-between;width:100%;padding:.85rem 1.8rem;background-color:#100d2b;border-bottom:1px solid rgba(249,249,211,.06);box-shadow:0 2px 8px #0000001a}@media(max-width:768px){.modal-header-content[_ngcontent-ng-c1103722741]{padding:.75rem 1rem}}.modal-header-content[_ngcontent-ng-c1103722741]   h2[_ngcontent-ng-c1103722741]{font-family:Sora,sans-serif;font-size:clamp(1.5rem,4vw,2.05rem);color:#f9f9d3;font-weight:700;letter-spacing:-1.1px;margin:0;line-height:1.1}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]{display:flex;align-items:center;gap:12px;cursor:pointer;padding:.45rem .35rem .45rem .9rem;border-radius:50px;border:1px solid rgba(249,249,211,.12);transition:all .3s ease;-webkit-user-select:none}@media(max-width:768px){.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]{padding:0 0 0 .7rem;gap:8px}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .close-label[_ngcontent-ng-c1103722741]{display:inline-block;font-size:.85rem;font-weight:600;opacity:.9}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .progress-circle[_ngcontent-ng-c1103722741]{width:44px;height:44px}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .progress-circle[_ngcontent-ng-c1103722741]   .percentage[_ngcontent-ng-c1103722741]{font-size:.7rem}}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]:hover{background:#0e473533;border-color:#0e473566;transform:translateY(-1px)}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .close-label[_ngcontent-ng-c1103722741]{font-size:.88rem;font-weight:500;color:#f9f9d3;opacity:.75;white-space:nowrap}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .progress-circle[_ngcontent-ng-c1103722741]{position:relative;width:54px;height:54px}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .progress-circle[_ngcontent-ng-c1103722741]   svg[_ngcontent-ng-c1103722741]{transform:rotate(-90deg);width:100%;height:100%}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .progress-circle[_ngcontent-ng-c1103722741]   .circle-bg[_ngcontent-ng-c1103722741]{fill:none;stroke:#ffffff21;stroke-width:3.8}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .progress-circle[_ngcontent-ng-c1103722741]   .circle-bar[_ngcontent-ng-c1103722741]{fill:none;stroke:#0e4735;stroke-width:3.8;stroke-linecap:round;transition:stroke-dasharray .3s ease}.modal-header-content[_ngcontent-ng-c1103722741]   .progress-close[_ngcontent-ng-c1103722741]   .progress-circle[_ngcontent-ng-c1103722741]   .percentage[_ngcontent-ng-c1103722741]{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#f9f9d3}</style><style ng-app-id="ng">.project-info-sidebar[_ngcontent-ng-c1051626410]{display:flex;flex-direction:column;justify-content:space-between;height:100%}.project-info-sidebar[_ngcontent-ng-c1051626410]   .summary-nav[_ngcontent-ng-c1051626410]   ul[_ngcontent-ng-c1051626410]   li[_ngcontent-ng-c1051626410]{margin-bottom:.25rem}.project-info-sidebar[_ngcontent-ng-c1051626410]   .summary-nav[_ngcontent-ng-c1051626410]   ul[_ngcontent-ng-c1051626410]   li[_ngcontent-ng-c1051626410]   button[_ngcontent-ng-c1051626410]{background:transparent;border:none;color:#f9f9d38c;padding:.4rem .6rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:.5rem;font-size:.92rem;font-weight:500;transition:all .25s cubic-bezier(.2,.8,.2,1);width:100%;text-align:left;border-left:3px solid transparent}.project-info-sidebar[_ngcontent-ng-c1051626410]   .summary-nav[_ngcontent-ng-c1051626410]   ul[_ngcontent-ng-c1051626410]   li[_ngcontent-ng-c1051626410]   button[_ngcontent-ng-c1051626410]   span[_ngcontent-ng-c1051626410]{font-size:.85rem;color:#f9f9d366;transition:color .25s ease}.project-info-sidebar[_ngcontent-ng-c1051626410]   .summary-nav[_ngcontent-ng-c1051626410]   ul[_ngcontent-ng-c1051626410]   li[_ngcontent-ng-c1051626410]   button[_ngcontent-ng-c1051626410]:hover, .project-info-sidebar[_ngcontent-ng-c1051626410]   .summary-nav[_ngcontent-ng-c1051626410]   ul[_ngcontent-ng-c1051626410]   li[_ngcontent-ng-c1051626410]   button.active[_ngcontent-ng-c1051626410]{color:#f9f9d3;transform:translate(4px);background:#ffffff0a}.project-info-sidebar[_ngcontent-ng-c1051626410]   .summary-nav[_ngcontent-ng-c1051626410]   ul[_ngcontent-ng-c1051626410]   li[_ngcontent-ng-c1051626410]   button[_ngcontent-ng-c1051626410]:hover   span[_ngcontent-ng-c1051626410], .project-info-sidebar[_ngcontent-ng-c1051626410]   .summary-nav[_ngcontent-ng-c1051626410]   ul[_ngcontent-ng-c1051626410]   li[_ngcontent-ng-c1051626410]   button.active[_ngcontent-ng-c1051626410]   span[_ngcontent-ng-c1051626410]{color:#f9f9d3cc}.project-info-sidebar[_ngcontent-ng-c1051626410]   .key-results-wrapper[_ngcontent-ng-c1051626410]{display:flex;flex-direction:column;gap:1rem}.project-info-sidebar[_ngcontent-ng-c1051626410]   .key-results-wrapper[_ngcontent-ng-c1051626410]   .key-results-title[_ngcontent-ng-c1051626410]{font-family:Sora,sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:1.6px;color:#f9f9d380;font-weight:600}.project-info-sidebar[_ngcontent-ng-c1051626410]   .key-results-wrapper[_ngcontent-ng-c1051626410]   .key-results-sidebar[_ngcontent-ng-c1051626410]{display:grid;grid-template-columns:repeat(3,1fr);gap:.3rem}.project-info-sidebar[_ngcontent-ng-c1051626410]   .key-results-wrapper[_ngcontent-ng-c1051626410]   .key-results-sidebar[_ngcontent-ng-c1051626410]   .key-stat[_ngcontent-ng-c1051626410]{display:flex;flex-direction:column;align-items:center;gap:.25rem;padding:.8rem .5rem;border-radius:5px;background-color:#f9f9d3;transition:transform .25s ease}.project-info-sidebar[_ngcontent-ng-c1051626410]   .key-results-wrapper[_ngcontent-ng-c1051626410]   .key-results-sidebar[_ngcontent-ng-c1051626410]   .key-stat[_ngcontent-ng-c1051626410]:hover{transform:translateY(-3px)}.project-info-sidebar[_ngcontent-ng-c1051626410]   .key-results-wrapper[_ngcontent-ng-c1051626410]   .key-results-sidebar[_ngcontent-ng-c1051626410]   .key-stat[_ngcontent-ng-c1051626410]   .stat-value[_ngcontent-ng-c1051626410]{font-size:1.75rem;font-weight:700;color:#0e4735;line-height:1;margin-bottom:3px}.project-info-sidebar[_ngcontent-ng-c1051626410]   .key-results-wrapper[_ngcontent-ng-c1051626410]   .key-results-sidebar[_ngcontent-ng-c1051626410]   .key-stat[_ngcontent-ng-c1051626410]   .key-icon[_ngcontent-ng-c1051626410]{font-size:1.25rem;color:#0e4735}.project-info-sidebar[_ngcontent-ng-c1051626410]   .key-results-wrapper[_ngcontent-ng-c1051626410]   .key-results-sidebar[_ngcontent-ng-c1051626410]   .key-stat[_ngcontent-ng-c1051626410]   .key-label[_ngcontent-ng-c1051626410]{color:#0a0325;text-align:center;font-size:.92rem;line-height:1.2;font-weight:500}</style></head>
+<body><!--nghm--><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
+  <app-root ng-version="21.2.0" ngh="4" ng-server-context="ssg"><router-outlet></router-outlet><app-blank-layout ngh="3"><main><router-outlet></router-outlet><app-project-layout ngh="2"><div class="project-page-layout"><div class="project-container"><app-project-layout-header _nghost-ng-c1103722741 ngh="0"><div _ngcontent-ng-c1103722741 class="modal-header-content"><h2 _ngcontent-ng-c1103722741>Présidentielles Cameroun</h2><div _ngcontent-ng-c1103722741 class="progress-close" jsaction="click:;"><span _ngcontent-ng-c1103722741 class="close-label">Retour</span><div _ngcontent-ng-c1103722741 class="progress-circle"><svg _ngcontent-ng-c1103722741="" viewBox="0 0 36 36"><path _ngcontent-ng-c1103722741="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" class="circle-bg"/><path _ngcontent-ng-c1103722741="" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" class="circle-bar" style="stroke-dasharray: 0, 100;"/></svg><span _ngcontent-ng-c1103722741 class="percentage">4 min</span></div></div></div></app-project-layout-header><div class="project-main-grid"><div class="media-side"><app-project-layout-sidebar _nghost-ng-c1051626410 ngh="1"><div _ngcontent-ng-c1051626410 class="project-info-sidebar"><nav _ngcontent-ng-c1051626410 class="summary-nav"><ul _ngcontent-ng-c1051626410><li _ngcontent-ng-c1051626410><button _ngcontent-ng-c1051626410 class jsaction="click:;"><span _ngcontent-ng-c1051626410> 1. </span> Aperçu </button></li><li _ngcontent-ng-c1051626410><button _ngcontent-ng-c1051626410 class jsaction="click:;"><span _ngcontent-ng-c1051626410> 2. </span> Contexte Citoyen </button></li><li _ngcontent-ng-c1051626410><button _ngcontent-ng-c1051626410 class jsaction="click:;"><span _ngcontent-ng-c1051626410> 3. </span> Défis de Mobilisation </button></li><li _ngcontent-ng-c1051626410><button _ngcontent-ng-c1051626410 class jsaction="click:;"><span _ngcontent-ng-c1051626410> 4. </span> Dispositif Numérique </button></li><li _ngcontent-ng-c1051626410><button _ngcontent-ng-c1051626410 class jsaction="click:;"><span _ngcontent-ng-c1051626410> 5. </span> Impact &amp; Engagement </button></li><!----></ul></nav><div _ngcontent-ng-c1051626410 class="key-results-wrapper"><h3 _ngcontent-ng-c1051626410 class="key-results-title">Résultats clés</h3><div _ngcontent-ng-c1051626410 class="key-results-sidebar"><div _ngcontent-ng-c1051626410 class="key-stat"><span _ngcontent-ng-c1051626410 class="stat-value">100k+</span><!----><!----><span _ngcontent-ng-c1051626410 class="key-label">Engagements citoyens</span></div><div _ngcontent-ng-c1051626410 class="key-stat"><!----><fa-icon _ngcontent-ng-c1051626410 class="ng-fa-icon key-icon" ngh="0"><svg data-prefix="fas" data-icon="code" class="svg-inline--fa fa-code fa-undefined fa-pull-undefined" role="img" viewBox="0 0 576 512" aria-hidden="true"><path fill="currentColor" d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 150.6 182.6c12.5-12.5 12.5-32.8 0-45.3z"/></svg></fa-icon><!----><span _ngcontent-ng-c1051626410 class="key-label">Cartographie interactive</span></div><div _ngcontent-ng-c1051626410 class="key-stat"><!----><fa-icon _ngcontent-ng-c1051626410 class="ng-fa-icon key-icon" ngh="0"><svg data-prefix="fas" data-icon="code" class="svg-inline--fa fa-code fa-undefined fa-pull-undefined" role="img" viewBox="0 0 576 512" aria-hidden="true"><path fill="currentColor" d="M360.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm64.6 136.1c-12.5 12.5-12.5 32.8 0 45.3l73.4 73.4-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-274.7 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 150.6 182.6c12.5-12.5 12.5-32.8 0-45.3z"/></svg></fa-icon><!----><span _ngcontent-ng-c1051626410 class="key-label">100% Responsive</span></div><!----></div></div></div></app-project-layout-sidebar></div><div class="content-side"><div class="dynamic-content-injector"><main class="project-body"><app-page-coming-soon ngh="0"><div class="coming-soon-container"><div class="message-box"><span class="loader-dot"></span><h2>Étude de cas en rédaction</h2><p> AKKA, tu es trop pressé ça arrive. Reviens après ! </p></div></div></app-page-coming-soon><!----></main></div></div></div></div></div><!----></app-project-layout><!----></main></app-blank-layout><!----></app-root>
+<link rel="modulepreload" href="chunk-MYVH5FUI.js"><link rel="modulepreload" href="chunk-MBPKCB2R.js"><link rel="modulepreload" href="chunk-YKUIDYGV.js"><link rel="modulepreload" href="chunk-73VBJSXK.js"><link rel="modulepreload" href="chunk-ETCF4NOG.js"><link rel="modulepreload" href="chunk-R2OBPUKH.js"><link rel="modulepreload" href="chunk-SBFIQTV6.js"><script src="main-VVSCQFKQ.js" type="module"></script>
+<link rel="modulepreload" href="chunk-PXJOFCWE.js">
+
+
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"4":"t1","10":"t2"},"c":{"4":[{"i":"t1","r":1,"x":5}],"10":[{"i":"t2","r":1,"t":{"1":"t3","2":"t4"},"c":{"1":[{"i":"t3","r":1}],"2":[]}},{"i":"t2","r":1,"t":{"1":"t3","2":"t4"},"c":{"1":[],"2":[{"i":"t4","r":1}]},"x":2}]}},{"t":{"0":"t0"},"c":{"0":[{"i":"t0","r":1,"t":{"9":"t5"},"c":{"9":[{"i":"c3047226035","r":1}]}}]}},{"c":{"1":[{"i":"c3225473654","r":1}]}},{"c":{"0":[{"i":"c604379576","r":1}]}}]}</script></body></html>`;

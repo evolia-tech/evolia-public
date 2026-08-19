@@ -2,37 +2,34 @@ import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { AfterViewInit, Component, computed, effect, ElementRef, inject, NgZone, OnDestroy, PLATFORM_ID, signal, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToFaIconPipe } from '../../../../shared/pipes/to-fa-icon-pipe';
-import { ProjectModal } from '../../../../shared/components/ui/project-modal/project-modal';
-
+import { Router } from '@angular/router';
+import { ProjectService } from '../../../../core/services/project';
+import { ProjectLayoutService } from '../../../../layout/project-layout/services/project-layout';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/all';
-import { ProjectService } from '../../../../core/services/project';
-import { ProjectModalService } from '../../../../shared/components/ui/project-modal/services/project-modal';
-
-gsap.registerPlugin(Draggable);
 
 @Component({
   selector: 'app-lastest-projects',
   templateUrl: './lastest-projects.html',
   styleUrl: './lastest-projects.scss',
   encapsulation: ViewEncapsulation.None,
-  imports: [NgOptimizedImage, FontAwesomeModule, ToFaIconPipe, ProjectModal],
+  imports: [NgOptimizedImage, FontAwesomeModule, ToFaIconPipe],
 })
 export class LastestProjects implements AfterViewInit, OnDestroy {
   @ViewChild('carouselContainer') carouselContainer!: ElementRef;
+
   private ngZone = inject(NgZone);
   private platformId = inject(PLATFORM_ID);
-
-  private ctx?: gsap.Context;
-  private loop?: gsap.core.Animation;
-  private draggable?: Draggable[];
+  private loop: any;
+  private draggable: any;
   private observer?: IntersectionObserver;
+  private ctx?: gsap.Context;
 
   // OPTIMISATION : Utilisation d'un signal pour la réactivité de la vitesse
   private scrollSpeed = signal(1);
 
   protected projectService = inject(ProjectService);
-  protected projectModalService = inject(ProjectModalService);
+  protected projectLayoutService = inject(ProjectLayoutService);
 
   protected projectsForCarousel = computed(() => {
     const base = this.projectService.spotlightedProjects();
@@ -40,9 +37,9 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
   });
 
   constructor() {
-    const modalService = inject(ProjectModalService);
+    const layoutService = inject(ProjectLayoutService);
     effect(() => {
-      const isOpen = modalService.isOpen();
+      const isOpen = layoutService.isOpen();
       if (isOpen) {
         this.loop?.pause();
       } else {
@@ -55,6 +52,7 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      gsap.registerPlugin(Draggable);
       this.initCarouselLogic();
       this.setupIntersectionObserver();
     }
@@ -167,7 +165,7 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
             });
 
             return () => {
-              this.draggable?.forEach((d) => d.kill());
+              this.draggable?.forEach((d: any) => d.kill());
               this.loop?.kill();
               gsap.killTweensOf(proxy);
             };
@@ -215,14 +213,14 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
     }
   }
 
+  private router = inject(Router);
+
   onProjectClicked(index: number) {
     const selectedProject = this.projectService.selectProject(index);
 
     if (selectedProject) {
-      this.projectModalService.open(selectedProject);   // ← Ouverture de la modale custom
+      this.router.navigate(['/portfolio', selectedProject.slug]);
     }
-
-    this.pauseGallery();
   }
 
   ngOnDestroy(): void {

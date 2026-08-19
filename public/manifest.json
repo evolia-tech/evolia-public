@@ -1,0 +1,17 @@
+{
+  "name": "Evolia Tech | Création de Sites Web & Applications Mobiles sur mesure",
+  "short_name": "Evolia Tech",
+  "description": "Evolia Tech est une agence digitale spécialisée dans le développement de sites web sur mesure (SaaS, E-commerce, Vitrine) et d'applications mobiles.",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#0b0d14",
+  "theme_color": "#0b0d14",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# ----------------------------------------------------------------------
+# REDIRECTION SPÉCIFIQUE POUR LE WEBMAIL
+# ----------------------------------------------------------------------
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^mail\.evolia-tech\.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.mail\.evolia-tech\.com$ [NC]
+RewriteRule ^(.*)$ https://evolia-tech.com:2096 [L,R=301]
+# ----------------------------------------------------------------------
+
+# ----------------------------------------------------------------------
+# CONFIGURATION POUR PROJET ANGULAR (Gestion du Refresh / 404)
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Si le domaine demandé est evolia-tech.com ou www.evolia-tech.com
+  RewriteCond %{HTTP_HOST} ^(www\.)?evolia-tech\.com$ [NC]
+  
+  # Et si le fichier ou le dossier demandé n'existe pas physiquement
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Alors on redirige en interne vers l'index.html d'Angular (sans changer l'URL du navigateur)
+  RewriteRule ^ index.html [L]
+</IfModule>
+# ----------------------------------------------------------------------

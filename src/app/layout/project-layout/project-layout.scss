@@ -1,0 +1,61 @@
+@use '../../../styles/variables' as *;
+
+.project-page-layout {
+  width: 100vw;
+  min-height: 100vh;
+  background: $dark-primary;
+}
+
+.project-container {
+  width: 100%;
+  height: 100vh;
+  background: $dark-tertiary;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.project-main-grid {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+}
+
+.media-side {
+  width: 450px;
+  background: $dark-secondary;
+  background-image: radial-gradient(ellipse at 30% 20%, rgba($accent-green, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 80%, rgba($dark-quaternary, 0.18) 0%, transparent 60%);
+  padding: 1.5rem;
+  overflow-y: auto;
+  border-right: 1px solid rgba($light-cream, 0.1);
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+.content-side {
+  flex: 1;
+  padding: 2.5rem 1rem 0 4rem;
+  overflow-y: auto;
+  background: $dark-primary;
+
+  @media (max-width: 992px) {
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
+}
+
+.dynamic-content-injector {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+
+  @media (max-width: 768px) {
+    gap: 2.5rem;
+  }
+}

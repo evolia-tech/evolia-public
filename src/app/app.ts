@@ -1,18 +1,23 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from "./layout/header/header";
-import { Footer } from './layout/footer/footer';
+import { SeoService } from './core/services/seo';
+import { GtmService } from './core/services/gtm';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
   imports: [
-    RouterOutlet,
-    Header,
-    Footer
+    RouterOutlet
   ]
 })
-export class App {
+export class App implements OnInit {
+  private seoService = inject(SeoService);
+  private gtmService = inject(GtmService);
   protected readonly title = signal('evolia-tech-public');
+
+  ngOnInit(): void {
+    this.seoService.initCanonicalUrlListener();
+    this.gtmService.initGtmTracking();
+  }
 }

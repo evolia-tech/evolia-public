@@ -72,7 +72,7 @@ export class ProjectService {
       title: project.seoTitle,
       description: project.seoDescription,
       keywords: project.keywords,
-      image: project.image,
+      image: project.seoImage || 'https://evolia-tech.com/images/logo-evolia-tech.png',
     });
 
     return project;

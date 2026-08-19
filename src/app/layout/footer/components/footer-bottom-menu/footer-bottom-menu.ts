@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +10,13 @@ import { RouterLink } from '@angular/router';
     RouterLink
   ]
 })
-
 export class FooterBottomMenu {
+  private platformId = inject(PLATFORM_ID);
   protected readonly currentYear = new Date().getFullYear();
+
+  openCookieSettings(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      window.dispatchEvent(new CustomEvent('openCookieBanner'));
+    }
+  }
 }

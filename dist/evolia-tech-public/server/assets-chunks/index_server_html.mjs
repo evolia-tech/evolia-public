@@ -2,16 +2,109 @@ export default `<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Evolia Tech</title>
+  <title>Evolia Tech | Création de Sites Web & Applications Mobiles sur mesure</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Evolia Tech est une agence digitale spécialisée dans le développement de sites web sur mesure (SaaS, E-commerce, Vitrine) et d'applications mobiles. Réalisez vos projets avec nos experts.">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://evolia-tech.com/">
+  <meta property="og:title" content="Evolia Tech | Création de Sites Web &amp; Applications Mobiles sur mesure">
+  <meta property="og:description" content="Evolia Tech est une agence digitale spécialisée dans le développement de sites web sur mesure (SaaS, E-commerce, Vitrine) et d'applications mobiles. Réalisez vos projets avec nos experts.">
+  <meta property="og:image" content="https://evolia-tech.com/images/og-main.png">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://evolia-tech.com/">
+  <meta name="twitter:title" content="Evolia Tech | Création de Sites Web &amp; Applications Mobiles sur mesure">
+  <meta name="twitter:description" content="Evolia Tech est une agence digitale spécialisée dans le développement de sites web sur mesure (SaaS, E-commerce, Vitrine) et d'applications mobiles. Réalisez vos projets avec nos experts.">
+  <meta name="twitter:image" content="https://evolia-tech.com/images/og-main.png">
+
+  <!-- Web App & Mobile Theme Metas (SSG Compatible) -->
+  <meta name="theme-color" content="#0b0d14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Evolia Tech">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Favicon & Canonical -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preload" href="/public/fonts/inter/inter-variable.woff2" as="font" type="font/woff2" crossorigin="">
-  <link rel="preload" href="/public/fonts/sora/sora-variable.woff2" as="font" type="font/woff2" crossorigin="">
-<link rel="stylesheet" href="styles-NURMBUMH.css"></head>
+  <link rel="canonical" href="https://evolia-tech.com/">
+
+  <!-- Fonts Preload (Priorité maximale, sans FOUT) -->
+  <link rel="preload" href="/fonts/inter/inter-variable.woff2" as="font" type="font/woff2" crossorigin="" fetchpriority="high">
+  <link rel="preload" href="/fonts/sora/sora-variable.woff2" as="font" type="font/woff2" crossorigin="" fetchpriority="high">
+
+  <!-- JSON-LD Schema.org – Organisation & Service (Google Rich Snippet) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://evolia-tech.com/#organization",
+        "name": "Evolia Tech",
+        "url": "https://evolia-tech.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://evolia-tech.com/images/logo-evolia-tech.png"
+        },
+        "image": "https://evolia-tech.com/images/og-main.png",
+        "description": "Evolia Tech est une agence digitale spécialisée dans le développement de sites web sur mesure (SaaS, E-commerce, Vitrine) et d'applications mobiles.",
+        "foundingDate": "2025",
+        "founder": {
+          "@type": "Person",
+          "name": "Samuel Bonachi Mandeng",
+          "jobTitle": "Founder, CEO & Expert Web Developer"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "url": "https://evolia-tech.com/contact",
+          "availableLanguage": ["French", "English"]
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services Digitaux Evolia Tech",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Création de Sites Web sur Mesure",
+                "description": "Développement de sites vitrines, SaaS et e-commerce sur mesure."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Développement d'Applications Mobiles",
+                "description": "Conception et développement d'applications iOS et Android sur mesure."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://evolia-tech.com/#website",
+        "url": "https://evolia-tech.com",
+        "name": "Evolia Tech",
+        "description": "Agence digitale spécialisée dans la création de sites web et applications mobiles sur mesure.",
+        "publisher": {
+          "@id": "https://evolia-tech.com/#organization"
+        },
+        "inLanguage": "fr-FR"
+      }
+    ]
+  }
+  </script>
+<link rel="stylesheet" href="styles-CENQRYCQ.css"></head>
 <body><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
 </script>
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-WJZW3ZQL.js"><link rel="modulepreload" href="chunk-NUVNY7WL.js"><link rel="modulepreload" href="chunk-W5ETQ4HJ.js"><link rel="modulepreload" href="chunk-EKIKVSQX.js"><link rel="modulepreload" href="chunk-2EO6JOJC.js"><link rel="modulepreload" href="chunk-WQIXLPUU.js"><link rel="modulepreload" href="chunk-X3TRHT5O.js"><link rel="modulepreload" href="chunk-FDROS2DZ.js"><link rel="modulepreload" href="chunk-HF5DISLO.js"><script src="main-ZYV6WID7.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-MYVH5FUI.js"><link rel="modulepreload" href="chunk-MBPKCB2R.js"><link rel="modulepreload" href="chunk-YKUIDYGV.js"><link rel="modulepreload" href="chunk-73VBJSXK.js"><link rel="modulepreload" href="chunk-ETCF4NOG.js"><link rel="modulepreload" href="chunk-R2OBPUKH.js"><link rel="modulepreload" href="chunk-SBFIQTV6.js"><script src="main-VVSCQFKQ.js" type="module"></script></body>
 </html>
 `;

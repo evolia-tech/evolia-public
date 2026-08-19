@@ -31,6 +31,7 @@ export interface Project {
   seoTitle: string;
   seoDescription: string;
   keywords: string;
+  seoImage?: string;
 
   // Ordre de priorité d'affichage
   order?: number;

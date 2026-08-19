@@ -50,10 +50,16 @@
             text-align: center;
         }
 
-        li a {
+        li a,
+        .cookie-settings-btn {
             font-size: $font-size-sm;
             color: $text-muted;
             text-decoration: none;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            font-family: inherit;
             transition: color $transition-fast;
 
             &:hover {

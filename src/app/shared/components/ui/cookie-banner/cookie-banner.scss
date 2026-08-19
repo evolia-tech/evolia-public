@@ -1,0 +1,365 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+// ─── BANNIÈRE COMPACTE FIXE ──────────────────────────────────────────────────
+.cookie-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: calc(100% - 3rem);
+  max-width: 1100px;
+  background: rgba($dark-secondary, 0.88);
+  background-image: radial-gradient(ellipse at 20% 0%, rgba($accent-green, 0.25) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 100%, rgba($dark-quaternary, 0.15) 0%, transparent 60%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba($light-cream, 0.12);
+  border-radius: $border-radius-2xl;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @media (max-width: 768px) {
+    bottom: 1rem;
+    width: calc(100% - 1.5rem);
+    padding: 1.25rem 1.25rem;
+    border-radius: $border-radius-xl;
+  }
+}
+
+.cookie-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+}
+
+.cookie-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+
+  .cookie-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .cookie-text {
+    h3 {
+      font-family: $font-heading;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $light-cream;
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: $text-muted;
+
+      a {
+        color: $light-cream;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: color $transition-fast;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column-reverse;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+// ─── BOUTONS REUTILISABLES ────────────────────────────────────────────────────
+.btn {
+  font-family: $font-primary;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: $border-radius-lg;
+  cursor: pointer;
+  transition: all $transition-fast;
+  white-space: nowrap;
+  outline: none;
+  border: 1px solid transparent;
+
+  &.btn-primary {
+    background: linear-gradient(135deg, $accent-green-light, $accent-green-hover);
+    color: $white;
+    box-shadow: 0 4px 12px rgba($accent-green-light, 0.3);
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba($accent-green-light, 0.5);
+    }
+  }
+
+  &.btn-secondary {
+    background: rgba($white, 0.06);
+    border-color: rgba($white, 0.12);
+    color: $light-cream;
+
+    &:hover {
+      background: rgba($white, 0.12);
+      border-color: rgba($light-cream, 0.3);
+    }
+  }
+
+  &.btn-outline {
+    background: transparent;
+    border-color: rgba($light-cream, 0.18);
+    color: $text-muted;
+
+    &:hover {
+      color: $white;
+      border-color: rgba($light-cream, 0.4);
+      background: rgba($white, 0.04);
+    }
+  }
+}
+
+// ─── MODALE DE PERSONNALISATION ──────────────────────────────────────────────
+.cookie-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  @include flex-center;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.cookie-modal {
+  width: 100%;
+  max-width: 620px;
+  background: $dark-secondary;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba($accent-green, 0.2) 0%, transparent 70%);
+  border: 1px solid rgba($light-cream, 0.15);
+  border-radius: $border-radius-2xl;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-header {
+  @include flex-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba($light-cream, 0.08);
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $light-cream;
+  }
+
+  .close-btn {
+    background: rgba($white, 0.05);
+    border: 1px solid rgba($white, 0.1);
+    color: $text-muted;
+    width: 34px;
+    height: 34px;
+    border-radius: $border-radius-full;
+    @include flex-center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      background: rgba($white, 0.15);
+      color: $white;
+    }
+  }
+}
+
+.modal-body {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .modal-description {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: $text-muted;
+  }
+}
+
+.cookie-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: rgba($dark-primary, 0.5);
+  border: 1px solid rgba($light-cream, 0.08);
+  border-radius: $border-radius-xl;
+
+  .category-info {
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: $light-cream;
+      margin-bottom: 0.25rem;
+
+      .badge-required {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: $border-radius-full;
+        background: rgba($accent-green, 0.25);
+        color: $accent-green-light;
+        border: 1px solid rgba($accent-green, 0.4);
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .badge-optional {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: $border-radius-full;
+        background: rgba($dark-quaternary, 0.15);
+        color: $dark-quaternary;
+        border: 1px solid rgba($dark-quaternary, 0.3);
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+
+    .category-desc {
+      font-size: 0.825rem;
+      color: $text-muted;
+      line-height: 1.45;
+    }
+  }
+}
+
+// ─── TOGGLE SWITCH DESIGN ─────────────────────────────────────────────────────
+.toggle-switch {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  flex-shrink: 0;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + label {
+      background-color: $accent-green-light;
+      border-color: rgba($accent-green-light, 0.8);
+
+      &::after {
+        transform: translateX(20px);
+        background-color: $white;
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: rgba($white, 0.12);
+    border: 1px solid rgba($white, 0.15);
+    border-radius: 34px;
+    transition: background-color $transition-fast, border-color $transition-fast;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: $text-muted;
+      border-radius: 50%;
+      transition: transform $transition-fast, background-color $transition-fast;
+    }
+  }
+
+  &.disabled label {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.modal-footer {
+  @include flex-between;
+  padding: 1.25rem 2rem;
+  background: rgba($dark-primary, 0.3);
+  border-top: 1px solid rgba($light-cream, 0.08);
+
+  @media (max-width: 576px) {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+// ─── ANIMATIONS ──────────────────────────────────────────────────────────────
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

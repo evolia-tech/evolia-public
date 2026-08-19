@@ -1,0 +1,94 @@
+@if (isVisible()) {
+  <!-- Bannière compacte principale -->
+  <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Gestion des cookies">
+    <div class="cookie-container">
+      <div class="cookie-content">
+        <div class="cookie-icon">🍪</div>
+        <div class="cookie-text">
+          <h3>Respect de votre vie privée</h3>
+          <p>
+            Nous utilisons des cookies analytiques anonymes (Google Analytics) pour mesurer l'audience et améliorer votre expérience sur notre site. 
+            Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment. Consultez notre 
+            <a routerLink="/politique-de-confidentialite" (click)="isVisible.set(false)">Politique de Confidentialité</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-outline" (click)="openCustomizeModal()">
+          Personnaliser
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="rejectAll()">
+          Refuser tout
+        </button>
+        <button type="button" class="btn btn-primary" (click)="acceptAll()">
+          Tout accepter
+        </button>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Modale de personnalisation des préférences -->
+@if (isCustomizeModalOpen()) {
+  <div class="cookie-modal-overlay" (click)="closeCustomizeModal()">
+    <div class="cookie-modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h2>Préférences de Confidentialité</h2>
+        <button type="button" class="close-btn" (click)="closeCustomizeModal()" aria-label="Fermer">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-description">
+          Gérez vos préférences relatives aux cookies. Les cookies essentiels garantissent le fonctionnement optimal du site et ne peuvent pas être désactivés.
+        </p>
+
+        <div class="cookie-category">
+          <div class="category-info">
+            <div class="category-title">
+              <span>Cookies Essentiels</span>
+              <span class="badge-required">Requis</span>
+            </div>
+            <p class="category-desc">
+              Indispensables à la navigation, la sécurité du site et la mémorisation de vos choix de confidentialité.
+            </p>
+          </div>
+          <div class="toggle-switch disabled">
+            <input type="checkbox" checked disabled id="essential-cookies">
+            <label for="essential-cookies"></label>
+          </div>
+        </div>
+
+        <div class="cookie-category">
+          <div class="category-info">
+            <div class="category-title">
+              <span>Mesure d'Audience (GTM & Google Analytics)</span>
+              <span class="badge-optional">Optionnel</span>
+            </div>
+            <p class="category-desc">
+              Nous permettent d'analyser le trafic et les conversions de manière totalement anonymisée afin d'optimiser nos services.
+            </p>
+          </div>
+          <div class="toggle-switch">
+            <input 
+              type="checkbox" 
+              [checked]="analyticsConsent()" 
+              (change)="toggleAnalytics()" 
+              id="analytics-cookies"
+            >
+            <label for="analytics-cookies"></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="rejectAll()">
+          Tout refuser
+        </button>
+        <button type="button" class="btn btn-primary" (click)="saveCustomPreferences()">
+          Enregistrer mes choix
+        </button>
+      </div>
+    </div>
+  </div>
+}
