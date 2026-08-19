@@ -164,7 +164,7 @@
           }
         }
 
-        h3 {
+        h2, h3, .work-title {
           position: absolute;
           left: 50%;
           bottom: 15%;
@@ -246,7 +246,7 @@
             }
           }
 
-          h3 {
+          h2, h3, .work-title {
             position: static;
             transform: none;
             left: auto;

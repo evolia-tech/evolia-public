@@ -4,7 +4,7 @@
         class="btn"
         [ngClass]="['btn--' + preset(), 'btn--' + variant()]"
         [style]="dynamicStyles()"
-        [href]="isExternal() ? link() : null"
+        [href]="link()"
         [routerLink]="!isExternal() && !link()?.startsWith('#') ? link() : null"
         [target]="isExternal() ? '_blank' : '_self'"
         (click)="handleClick($event)"
