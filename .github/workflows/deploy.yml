@@ -1,4 +1,4 @@
-name: Deploy Evolia Tech to o2switch
+name: Build and Deploy Evolia Tech
 
 on:
   push:
@@ -6,32 +6,30 @@ on:
       - main
 
 jobs:
-  web-deploy:
-    name: Build & Deploy via FTP to o2switch
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: 🟢 Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: 📦 Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      - name: 🏗️ Build Angular SSG Application
+      - name: Build Angular Project
         run: npm run build
 
-      - name: 🚀 Upload Files to o2switch FTP
-        uses: SamKirland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy to o2switch via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}
-          local-dir: './dist/evolia-tech-public/browser/'
-          dangerous-clean-slate: false
+          local-dir: ./dist/evolia-tech-public/browser/
+          server-dir: ./
+          port: 21
