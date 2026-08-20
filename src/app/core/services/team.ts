@@ -13,10 +13,10 @@ export class Team {
       role: 'CEO & Lead Fullstack',
       // Pro: Homme d'affaires moderne / Tech
       photoPro:
-        '/images/team/samuel.jpeg',
+        '/images/team/samuel.webp',
       // Hobby: Guitare
       photoHobby:
-        '/images/team/samuel.jpeg',
+        '/images/team/samuel.webp',
       hobbyLabel: 'Guitariste 🎸',
       mainSkills: ['Angular', 'NestJS', 'Architecture'],
       socials: [
@@ -32,10 +32,10 @@ export class Team {
       role: 'Expert Backend Developer (Nestjs)',
       // Pro: Développeur backend sérieux
       photoPro:
-        '/images/team/steve.png',
+        '/images/team/steve.webp',
       // Hobby: Exploration / Nature
       photoHobby:
-        '/images/team/steve.png',
+        '/images/team/steve.webp',
       hobbyLabel: 'Explorateur 🔍',
       mainSkills: ['Node.js', 'PostgreSQL', 'Microservices'],
       socials: [{ platform: 'LinkedIn', icon: 'faLinkedin', url: '#' }],
@@ -47,9 +47,9 @@ export class Team {
       role: 'Mobile Developer',
       // Pro: Développeur mobile
       photoPro:
-        '/images/team/chris.jpeg',
+        '/images/team/chris.webp',
       // Hobby: Gaming
-      photoHobby: '/images/team/chris.jpeg',
+      photoHobby: '/images/team/chris.webp',
       hobbyLabel: 'Gamer 🎮',
       mainSkills: ['Flutter', 'Dart', 'Clean Arch'],
       socials: [{ platform: 'GitHub', icon: 'faGithub', url: '#' }],
@@ -60,9 +60,9 @@ export class Team {
       lastName: 'Na Bisso',
       role: 'UI/UX Designer',
       // Pro: Créatif / Designer
-      photoPro: '/images/team/bisso.jpeg',
+      photoPro: '/images/team/bisso.webp',
       // Hobby: Boxe
-      photoHobby: '/images/team/bisso.jpeg',
+      photoHobby: '/images/team/bisso.webp',
       hobbyLabel: 'Boxeur 🥊',
       mainSkills: ['Figma', 'Prototyping', 'Design System'],
       socials: [
@@ -76,8 +76,8 @@ export class Team {
       lastName: 'Abougou',
       role: 'Assistant de Direction',
       // Pro: Professionnel administratif
-      photoPro: '/images/team/george.jpeg',      // Hobby: Football
-      photoHobby: '/images/team/george.jpeg',
+      photoPro: '/images/team/george.webp',      // Hobby: Football
+      photoHobby: '/images/team/george.webp',
       hobbyLabel: 'Footballeur ⚽',
       mainSkills: ['Gestion', 'Communication', 'Agile'],
       socials: [

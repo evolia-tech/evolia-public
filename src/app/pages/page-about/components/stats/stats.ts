@@ -39,9 +39,9 @@ export class AboutStats {
   }
 
   teamAvatars = [
-    { name: 'Steve', url: '/images/team/steve.jpeg' },
-    { name: 'Samuel', url: '/images/team/samuel.jpeg' },
-    { name: 'Chris', url: '/images/team/chris.jpeg' },
-    { name: 'George', url: '/images/team/george.jpeg' }
+    { name: 'Steve', url: '/images/team/steve.webp' },
+    { name: 'Samuel', url: '/images/team/samuel.webp' },
+    { name: 'Chris', url: '/images/team/chris.webp' },
+    { name: 'George', url: '/images/team/george.webp' }
   ];
 }

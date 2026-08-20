@@ -63,7 +63,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'for-you-media-africa',
     title: 'Plateforme média digitale panafricaine moderne',
     clientName: 'For You Média Africa',
-    image: '/images/projects/for-you-media.png',
+    image: '/images/projects/for-you-media.webp',
     isSpotlighted: true,
     keyResults: [
       { icon: 'faRocket', label: 'Temps de chargement < 2s' },

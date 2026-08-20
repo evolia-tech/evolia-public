@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
@@ -494,7 +495,7 @@ $black: #000000;
           color: $white;
 
           &:hover:not(:disabled) {
-            background: lighten($accent-green-light, 5%);
+            background: color.adjust($accent-green-light, $lightness: 5%);
             transform: translateY(-1px);
             box-shadow: 0 4px 15px rgba($accent-green-light, 0.3);
           }
