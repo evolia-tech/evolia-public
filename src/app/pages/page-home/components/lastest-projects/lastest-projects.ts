@@ -176,11 +176,25 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
   }
 
   private setupIntersectionObserver(): void {
+    // Sur mobile, le scroll se fait souvent dans un conteneur interne (pas la viewport),
+    // ce qui empêche l'IntersectionObserver (root: null) de détecter la visibilité.
+    // Solution : on ne met en pause que si l'utilisateur a DÉJÀ vu le carrousel
+    // et scrolle vers une autre section. On ne pause PAS lors du chargement initial.
+    let hasBeenVisible = false;
+
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // OPTIMISATION : Ne joue l'anim que si le carrousel est visible à l'écran
-          entry.isIntersecting ? this.loop?.play() : this.loop?.pause();
+          if (entry.isIntersecting) {
+            // Le carrousel est visible → on joue et on mémorise
+            hasBeenVisible = true;
+            this.loop?.play();
+          } else if (hasBeenVisible) {
+            // L'utilisateur a déjà vu le carrousel et est reparti → on pause
+            this.loop?.pause();
+          }
+          // Si jamais visible ET hors écran = chargement initial sous le fold
+          // → On ne touche pas au loop (il joue déjà, efficace car hors NgZone)
         });
       },
       { threshold: 0.05 },
