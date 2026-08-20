@@ -69,17 +69,19 @@ export class FooterBrandName implements AfterViewInit, OnDestroy {
         resizeTextToFitContainer();
         ScrollTrigger.addEventListener('refreshInit', resizeTextToFitContainer);
 
-        // Animation ScrollTrigger fluide (on anime le Y sans toucher au scale)
+        // Animation one-shot au scroll : se déclenche quand l'élément entre
+        // dans le viewport, indépendamment de la hauteur de la page.
+        // (fix page Contact : trop courte pour que scrub complète l'animation)
         gsap.from(this.companyName.nativeElement, {
           scrollTrigger: {
             trigger: '.footer__brand-display',
-            start: 'top bottom',
-            end: 'bottom bottom',
-            scrub: 1,
+            start: 'top 95%',
+            toggleActions: 'play none none none',
           },
-          y: '25%',
-          opacity: 0.1,
-          ease: 'power2.out',
+          y: '30%',
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
         });
 
       });
