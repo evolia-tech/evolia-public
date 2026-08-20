@@ -20,7 +20,7 @@ export class PagePortfolio {
   projects = this.projectService.projects;
 
   openProjectModal(project: Project): void {
-    this.router.navigate(['/portfolio', project.slug]);
+    this.router.navigate(['/portfolio', project.slug], { state: { from: '/portfolio' } });
   }
 }
 

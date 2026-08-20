@@ -33,6 +33,10 @@ export class ProjectLayout implements OnInit, AfterViewChecked {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
 
+  // Mémorise la route d'origine pour le bouton Fermer
+  // Défaut : '/' si accès direct via URL partagée
+  private originRoute = '/';
+
   isOpen = this.layoutService.isOpen;
   project = this.layoutService.currentProject;
   sidebarData = computed(() => {
@@ -54,6 +58,12 @@ export class ProjectLayout implements OnInit, AfterViewChecked {
   private contentElement: HTMLElement | null = null;
 
   ngOnInit(): void {
+    // Lire l'origine de navigation depuis le state du router
+    // (passé par page-home et page-portfolio via { state: { from: '...' } })
+    // history.state est disponible dès ngOnInit, avant qu'Angular le vide
+    const navState = this.isBrowser ? (history.state as { from?: string }) : {};
+    this.originRoute = navState?.from ?? '/';
+
     const slug = this.route.snapshot.paramMap.get('slug');
     if (slug) {
       const project = this.projectService.selectProject(slug);
@@ -127,7 +137,8 @@ export class ProjectLayout implements OnInit, AfterViewChecked {
 
   closeModal(): void {
     this.layoutService.close();
-    this.router.navigate(['/portfolio']);
+    // Retour intelligent : origine mémorisée ou '/' par défaut (lien partagé)
+    this.router.navigate([this.originRoute]);
   }
 
   ngAfterViewChecked(): void {

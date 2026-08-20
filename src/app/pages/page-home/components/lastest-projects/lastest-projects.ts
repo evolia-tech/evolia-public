@@ -153,17 +153,6 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
               });
             };
 
-            // 4. ANIMATION BACKGROUND (Vagues)
-            gsap.to(['.latest-works::before', '.latest-works::after'], {
-              scaleY: 1.1,
-              duration: 4,
-              repeat: -1,
-              yoyo: true,
-              ease: 'sine.inOut',
-              stagger: 0.5,
-              force3D: true,
-            });
-
             return () => {
               this.draggable?.forEach((d: any) => d.kill());
               this.loop?.kill();
@@ -233,7 +222,7 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
     const selectedProject = this.projectService.selectProject(index);
 
     if (selectedProject) {
-      this.router.navigate(['/portfolio', selectedProject.slug]);
+      this.router.navigate(['/portfolio', selectedProject.slug], { state: { from: '/' } });
     }
   }
 
