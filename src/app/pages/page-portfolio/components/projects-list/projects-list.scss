@@ -4,16 +4,18 @@
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 7rem;
 
-  @include respond-to('lg') {
+  // À partir de 992px et moins : Grille de 2 projets par ligne (sans index)
+  @media (max-width: 992px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3.5rem 2.25rem;
+    gap: 2.5rem 1.75rem;
   }
 
-  @include respond-to('md') {
+  // Écran mobile (< 640px) : Grille de 1 projet par ligne (sans index)
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 }

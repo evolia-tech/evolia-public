@@ -111,6 +111,6 @@ export default `<!doctype html>
 
 <body ngcm="">
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-V63FSPE4.js"><link rel="modulepreload" href="chunk-Q7RGF6WG.js"><link rel="modulepreload" href="chunk-LAQSOYTM.js"><link rel="modulepreload" href="chunk-73VBJSXK.js"><link rel="modulepreload" href="chunk-BIKBZTJ7.js"><link rel="modulepreload" href="chunk-336RGJPK.js"><link rel="modulepreload" href="chunk-FJC6VS3Y.js"><link rel="modulepreload" href="chunk-OWM4BQDK.js"><script src="main-EP533BHT.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-V63FSPE4.js"><link rel="modulepreload" href="chunk-Q7RGF6WG.js"><link rel="modulepreload" href="chunk-LAQSOYTM.js"><link rel="modulepreload" href="chunk-73VBJSXK.js"><link rel="modulepreload" href="chunk-BIKBZTJ7.js"><link rel="modulepreload" href="chunk-336RGJPK.js"><link rel="modulepreload" href="chunk-FJC6VS3Y.js"><link rel="modulepreload" href="chunk-OWM4BQDK.js"><script src="main-7UUNEP7T.js" type="module"></script></body>
 
 </html>`;

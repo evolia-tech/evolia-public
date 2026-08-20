@@ -21,11 +21,6 @@
         @if (project.seoDescription) {
         <p class="project-description">{{ project.seoDescription }}</p>
         }
-        <div class="project-tags">
-          @for (kr of project.keyResults.slice(0, 2); track $index) {
-          <span class="tag">{{ kr.label }}</span>
-          }
-        </div>
       </div>
 
       <div class="project-meta__bottom">
