@@ -1,0 +1,15 @@
+<section [id]="data().id" class="project-modal-detail-section">
+  <h3 class="section-title">{{ data().title }}</h3>
+  <ul class="challenges-list">
+    @for (challenge of data().challenges; track $index) {
+      <li class="challenge-item">
+        <span class="arrow-wrapper" aria-hidden="true">
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </span>
+        <span class="challenge-text" [innerHTML]="challenge"></span>
+      </li>
+    }
+  </ul>
+</section>

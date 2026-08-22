@@ -24,6 +24,7 @@ export default `<!doctype html>
 
   <!-- Web App & Mobile Theme Metas (SSG Compatible) -->
   <meta name="theme-color" content="#0b0d14">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Evolia Tech">
@@ -107,11 +108,11 @@ export default `<!doctype html>
     ]
   }
   </script>
-<link rel="stylesheet" href="styles-CENQRYCQ.css"></head>
+<link rel="stylesheet" href="styles-H223NSZR.css"></head>
 
 <body><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
 </script>
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-V63FSPE4.js"><link rel="modulepreload" href="chunk-Q7RGF6WG.js"><link rel="modulepreload" href="chunk-LAQSOYTM.js"><link rel="modulepreload" href="chunk-73VBJSXK.js"><link rel="modulepreload" href="chunk-BIKBZTJ7.js"><link rel="modulepreload" href="chunk-336RGJPK.js"><link rel="modulepreload" href="chunk-FJC6VS3Y.js"><link rel="modulepreload" href="chunk-OWM4BQDK.js"><script src="main-AP7WJ3RF.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-KJE2T2UU.js"><link rel="modulepreload" href="chunk-6ARSYQVQ.js"><link rel="modulepreload" href="chunk-LAQSOYTM.js"><link rel="modulepreload" href="chunk-GJTLTZS3.js"><link rel="modulepreload" href="chunk-BIKBZTJ7.js"><link rel="modulepreload" href="chunk-336RGJPK.js"><link rel="modulepreload" href="chunk-FJC6VS3Y.js"><link rel="modulepreload" href="chunk-OWM4BQDK.js"><script src="main-3QRTPGCI.js" type="module"></script></body>
 
 </html>`;

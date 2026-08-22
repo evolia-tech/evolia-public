@@ -24,6 +24,7 @@ export default `<!doctype html>
 
   <!-- Web App & Mobile Theme Metas (SSG Compatible) -->
   <meta name="theme-color" content="#0b0d14">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Evolia Tech">
@@ -107,10 +108,10 @@ export default `<!doctype html>
     ]
   }
   </script>
-<style>*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;font-size:16px;min-height:100%}body{min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}@font-face{font-family:Inter;src:url(/fonts/inter/inter-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}body{font-family:Inter,sans-serif;font-size:1rem;font-weight:400;color:#f9f9d3;background-color:#0a0325}</style><link rel="stylesheet" href="styles-CENQRYCQ.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-CENQRYCQ.css"></noscript></head>
+<style>*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;font-size:16px;min-height:100%}body{min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}@font-face{font-family:Inter;src:url(/fonts/inter/inter-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}body{font-family:Inter,sans-serif;font-size:1rem;font-weight:400;color:#f9f9d3;background-color:#0a0325}</style><link rel="stylesheet" href="styles-H223NSZR.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-H223NSZR.css"></noscript></head>
 
 <body ngcm="">
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-V63FSPE4.js"><link rel="modulepreload" href="chunk-Q7RGF6WG.js"><link rel="modulepreload" href="chunk-LAQSOYTM.js"><link rel="modulepreload" href="chunk-73VBJSXK.js"><link rel="modulepreload" href="chunk-BIKBZTJ7.js"><link rel="modulepreload" href="chunk-336RGJPK.js"><link rel="modulepreload" href="chunk-FJC6VS3Y.js"><link rel="modulepreload" href="chunk-OWM4BQDK.js"><script src="main-AP7WJ3RF.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-KJE2T2UU.js"><link rel="modulepreload" href="chunk-6ARSYQVQ.js"><link rel="modulepreload" href="chunk-LAQSOYTM.js"><link rel="modulepreload" href="chunk-GJTLTZS3.js"><link rel="modulepreload" href="chunk-BIKBZTJ7.js"><link rel="modulepreload" href="chunk-336RGJPK.js"><link rel="modulepreload" href="chunk-FJC6VS3Y.js"><link rel="modulepreload" href="chunk-OWM4BQDK.js"><script src="main-3QRTPGCI.js" type="module"></script></body>
 
 </html>`;

@@ -1,0 +1,30 @@
+<div class="project-media-block-wrapper">
+  @for (item of items(); track $index) {
+    <div
+      class="intro-media"
+      [class.media-mockup-variant]="item.variant === 'mockup'"
+    >
+      @if (item.variant === 'mockup') {
+        <div class="mockup-glow-container">
+          <div class="glow-backdrop"></div>
+          <img
+            [src]="item.src"
+            [alt]="item.alt || ''"
+            class="mockup-image"
+            loading="lazy"
+          />
+        </div>
+      } @else {
+        <img
+          [src]="item.src"
+          [alt]="item.alt || ''"
+          class="standard-image"
+          loading="lazy"
+        />
+      }
+      @if (item.caption) {
+        <span class="media-caption">{{ item.caption }}</span>
+      }
+    </div>
+  }
+</div>

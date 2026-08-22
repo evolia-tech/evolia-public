@@ -10,7 +10,6 @@
     padding-top: 9.5rem;
   }
 
-
   // Décorations en arrière-plan (Halos de lumière)
   &::before,
   &::after {
@@ -273,7 +272,7 @@
     }
   }
 
-  // Bouton d'envoi
+  // Bouton d'envoi & Spinner
   .submit-button {
     font-family: $font-primary;
     font-size: $font-size-base;
@@ -309,6 +308,22 @@
     }
   }
 
+  .submit-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: submitSpin 0.8s linear infinite;
+  }
+
+  @keyframes submitSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   .form-disclaimer {
     font-size: 0.75rem;
     line-height: $line-height-normal;
@@ -327,51 +342,159 @@
     }
   }
 
-  // Message de succès
-  .success-message {
+  // --- MODAL / POPUP DE FEEDBACK ---
+  .popup-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba($dark-primary, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    @include flex-center;
+    padding: 1.5rem;
+    animation: backdropFadeIn 0.3s ease forwards;
+  }
+
+  .popup-card {
+    background: $dark-secondary;
+    border: 1px solid rgba($light-cream, 0.15);
+    border-radius: $border-radius-2xl;
+    padding: 2.5rem 2rem;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba($accent-green, 0.1);
+    position: relative;
+    animation: popupSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: $spacing-xl 0;
-    animation: fadeIn 0.5s ease forwards;
 
-    .success-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: $border-radius-full;
-      background: rgba($accent-green-light, 0.1);
+    &--error {
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(#ef4444, 0.15);
+      border-color: rgba(#ef4444, 0.35);
+    }
+  }
+
+  .popup-badge {
+    width: 64px;
+    height: 64px;
+    border-radius: $border-radius-full;
+    @include flex-center;
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+
+    &--success {
+      background: rgba($accent-green-light, 0.12);
       border: 2px solid $accent-green-light;
       color: $accent-green-light;
-      @include flex-center;
-      font-size: 2rem;
-      margin-bottom: $spacing-lg;
+      box-shadow: 0 0 20px rgba($accent-green-light, 0.25);
     }
 
-    h3 {
-      font-family: $font-heading;
-      font-size: $font-size-xl;
+    &--error {
+      background: rgba(#ef4444, 0.12);
+      border: 2px solid #ef4444;
+      color: #ef4444;
+      box-shadow: 0 0 20px rgba(#ef4444, 0.25);
+    }
+  }
+
+  .popup-title {
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $light-cream;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .popup-message {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $text-muted;
+    margin-bottom: 1.5rem;
+  }
+
+  .email-fallback {
+    background: rgba($dark-primary, 0.6);
+    border: 1px solid rgba($accent-green-light, 0.3);
+    border-radius: $border-radius-lg;
+    padding: 12px 18px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    .email-fallback-link {
+      color: $accent-green-light;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color $transition-fast, transform $transition-fast;
+
+      &:hover {
+        color: $white;
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  .popup-actions {
+    width: 100%;
+  }
+
+  .popup-btn {
+    font-family: $font-primary;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: $border-radius-lg;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: transform $transition-fast, box-shadow $transition-fast, background-color $transition-fast;
+
+    &--success {
+      background: linear-gradient(135deg, $accent-green-light, $accent-green-hover);
       color: $white;
-      margin-bottom: $spacing-sm;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba($accent-green-light, 0.4);
+      }
     }
 
-    p {
-      font-size: $font-size-base;
-      color: $text-muted;
-      line-height: $line-height-relaxed;
-      max-width: 320px;
+    &--error {
+      background: rgba($light-cream, 0.12);
+      color: $light-cream;
+      border: 1px solid rgba($light-cream, 0.2);
+
+      &:hover {
+        background: rgba($light-cream, 0.2);
+        transform: translateY(-1px);
+      }
     }
   }
 }
 
-@keyframes fadeIn {
+@keyframes backdropFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
-
   to {
     opacity: 1;
-    transform: translateY(0);
+  }
+}
+
+@keyframes popupSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

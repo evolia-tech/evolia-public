@@ -1,0 +1,29 @@
+@use '../../../../../styles/variables' as *;
+
+.tech-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  p {
+    color: $text-muted;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+
+    span {
+      padding: 0.4rem 0.8rem;
+      background: rgba($white, 0.05);
+      border: 1px solid rgba($white, 0.1);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: $light-cream;
+      font-weight: 500;
+    }
+  }
+}

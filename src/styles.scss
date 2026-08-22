@@ -121,12 +121,10 @@ button {
 .container {
   @include container;
 }
-
 .project-modal-detail-content {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  padding-top: 3rem;
 
   .project-modal-detail-section {
     .section-title {
@@ -188,7 +186,8 @@ button {
       letter-spacing: -1px;
       line-height: 1;
 
-      .text-gradient {
+      .text-gradient,
+      .highlight {
         color: $dark-quaternary;
       }
     }
@@ -204,77 +203,13 @@ button {
 
   #client-context,
   #approach,
+  #retrospective,
   #conclusion {
     p {
       margin-bottom: 1rem;
     }
   }
-
-  #challenges {
-    ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.8rem 3rem;
-      list-style-type: '-' !important;
-
-      li {
-        color: $text-muted;
-        padding-left: 0.5rem;
-      }
-    }
-  }
-
-  #solution {
-    p {
-      margin-bottom: 2rem;
-    }
-
-    .project-modal-highlight-box {
-      display: flex;
-    }
-  }
-
-  #process {
-    .processes-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 2rem;
-
-      .process-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 1rem 2rem;
-
-        h4 {
-          font-size: 1rem;
-        }
-      }
-
-      hr {
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-    }
-  }
-
-  #lessons-learned {
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      list-style-type: '- ';
-      list-style: inside;
-
-      li {
-        font-size: 1rem;
-        line-height: 1.5;
-        color: $text-muted;
-      }
-    }
-  }
 }
-
 // Custom styles for PrimeNG Dynamic Dialog (Quote Request Form)
 .quote-dialog-modal {
   background: rgba($dark-secondary, 0.45) !important;

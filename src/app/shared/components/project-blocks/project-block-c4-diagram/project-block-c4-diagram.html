@@ -1,0 +1,6 @@
+<div class="c4-diagram-card">
+  <img [src]="data().imageSrc" [alt]="data().imageAlt || 'Diagramme C4 Niveau 1 Architecture System'" loading="lazy" class="c4-diagram-image" />
+  @if (data().caption) {
+    <span class="diagram-caption">{{ data().caption }}</span>
+  }
+</div>

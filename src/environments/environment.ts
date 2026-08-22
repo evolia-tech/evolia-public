@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://api.evolia-tech.com/api',
+  apiBaseUrl: 'https://api.evolia-tech.com/api/v1',
   gtmId: 'GTM-XXXXXXX',
   siteUrl: 'https://evolia-tech.com',
   defaultTitle: 'Evolia Tech | Création de Sites Web & Applications Mobiles sur mesure',

@@ -1,0 +1,33 @@
+<section [id]="data().id || 'highlight-cards'" class="project-modal-detail-section">
+  @if (data().title) {
+    <h3 class="section-title">{{ data().title }}</h3>
+  }
+  @if (data().introText) {
+    <p>{{ data().introText }}</p>
+  }
+
+  <div class="cards-list">
+    @for (card of data().cards; track $index) {
+      <div class="project-modal-highlight-box highlight-card-item">
+        @if (card.imagePosition === 'left' && card.imageSrc) {
+          <div class="image-wrapper towns">
+            <img [src]="card.imageSrc" [alt]="card.imageAlt || ''" />
+          </div>
+        }
+
+        <div class="texts">
+          @if (card.title) {
+            <h5>{{ card.title }}</h5>
+          }
+          <p [innerHTML]="card.text"></p>
+        </div>
+
+        @if ((card.imagePosition === 'right' || !card.imagePosition) && card.imageSrc) {
+          <div class="image-wrapper towns">
+            <img [src]="card.imageSrc" [alt]="card.imageAlt || ''" />
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

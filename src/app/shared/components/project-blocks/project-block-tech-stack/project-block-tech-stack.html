@@ -1,0 +1,13 @@
+<section [id]="data().id || 'technique'" class="project-modal-detail-section">
+  <h3 class="section-title">{{ data().title }}</h3>
+  <div class="tech-info">
+    @if (data().description) {
+      <p [innerHTML]="data().description"></p>
+    }
+    <div class="tech-tags">
+      @for (tag of data().tags; track $index) {
+        <span>{{ tag }}</span>
+      }
+    </div>
+  </div>
+</section>

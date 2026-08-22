@@ -1,0 +1,30 @@
+<section [id]="data().id" class="project-modal-detail-section">
+  <h3 class="section-title">{{ data().title }}</h3>
+  @if (data().introText) {
+    <p class="section-intro">{{ data().introText }}</p>
+  }
+  <div class="processes-list">
+    @for (step of data().steps; track step.number; let last = $last) {
+      <div class="process-item">
+        <div class="step-header">
+          <span class="step-number-badge" aria-hidden="true">{{ step.number }}</span>
+          <h4 class="step-title">
+            {{ step.title }}
+            @if (step.duration) {
+              <span class="step-duration">({{ step.duration }})</span>
+            }
+          </h4>
+        </div>
+        <p class="step-description">{{ step.description }}</p>
+      </div>
+      @if (!last) {
+        <hr />
+      }
+    }
+  </div>
+  @if (data().totalDuration) {
+    <p class="total-duration-text">
+      <strong>Durée totale de réalisation :</strong> {{ data().totalDuration }}
+    </p>
+  }
+</section>

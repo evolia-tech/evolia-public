@@ -1,0 +1,17 @@
+<section [id]="data().id || 'cta'" class="project-modal-detail-section cta-section">
+  <div class="cta-card">
+    <div class="cta-content-column">
+      <h4 class="cta-title">{{ data().title }}</h4>
+      <p class="cta-description">{{ data().description }}</p>
+      <div class="cta-button-wrapper">
+        <app-evo-button
+          [text]="data().buttonText || 'Échangez avec nos experts'"
+          preset="cream"
+          variant="solid"
+          icon="faArrowRight"
+          (click)="onCtaClick()"
+        />
+      </div>
+    </div>
+  </div>
+</section>

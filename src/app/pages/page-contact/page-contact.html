@@ -56,16 +56,6 @@
     <!-- DROITE : Formulaire -->
     <div class="page-contact__form-container">
       <div class="form-card">
-
-        @if (isSubmitted) {
-        <div class="success-message" aria-live="polite">
-          <div class="success-icon">
-            <fa-icon [icon]="'faCheck' | toFaIcon"></fa-icon>
-          </div>
-          <h3>Message envoyé !</h3>
-          <p>Merci pour votre message. Notre équipe prendra contact avec vous rapidement.</p>
-        </div>
-        } @else {
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate class="contact-form">
 
           <div class="form-grid">
@@ -124,9 +114,10 @@
           </div>
 
           <!-- Bouton Envoyer -->
-          <button type="submit" class="submit-button" [disabled]="isSubmitting">
+          <button type="submit" class="submit-button" [disabled]="isSubmitting" [class.is-loading]="isSubmitting">
             <span class="btn-text">
               @if (isSubmitting) {
+              <span class="submit-spinner" aria-hidden="true"></span>
               Envoi en cours...
               } @else {
               Envoyer le message <fa-icon [icon]="'faArrowRight' | toFaIcon"></fa-icon>
@@ -140,9 +131,49 @@
               Confidentialité</a>. Vos données sont protégées et ne seront jamais partagées.
           </p>
         </form>
-        }
       </div>
     </div>
 
   </div>
+
+  <!-- MODAL / POPUP DE FEEDBACK (Design System Évolia Tech) -->
+  @if (popupState.isOpen) {
+  <div class="popup-backdrop" (click)="closePopup()" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+    <div class="popup-card" [class.popup-card--success]="popupState.type === 'success'" [class.popup-card--error]="popupState.type === 'error'" (click)="$event.stopPropagation()">
+
+      <!-- Badge icône supérieure -->
+      <div class="popup-badge" [class.popup-badge--success]="popupState.type === 'success'" [class.popup-badge--error]="popupState.type === 'error'">
+        @if (popupState.type === 'success') {
+          <fa-icon [icon]="'faCheck' | toFaIcon"></fa-icon>
+        } @else {
+          <fa-icon [icon]="'faExclamationTriangle' | toFaIcon"></fa-icon>
+        }
+      </div>
+
+      <!-- Titre de la popup -->
+      <h3 id="popup-title" class="popup-title">{{ popupState.title }}</h3>
+
+      <!-- Description -->
+      <p class="popup-message">{{ popupState.message }}</p>
+
+      <!-- Email Fallback si erreur -->
+      @if (popupState.type === 'error') {
+      <div class="email-fallback">
+        <a [href]="'mailto:' + popupState.emailContact" class="email-fallback-link">
+          <fa-icon [icon]="'faEnvelope' | toFaIcon"></fa-icon>
+          {{ popupState.emailContact }}
+        </a>
+      </div>
+      }
+
+      <!-- Bouton d'action -->
+      <div class="popup-actions">
+        <button type="button" class="popup-btn" [class.popup-btn--success]="popupState.type === 'success'" [class.popup-btn--error]="popupState.type === 'error'" (click)="closePopup()">
+          Compris
+        </button>
+      </div>
+
+    </div>
+  </div>
+  }
 </div>

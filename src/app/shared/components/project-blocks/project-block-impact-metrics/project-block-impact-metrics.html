@@ -1,0 +1,22 @@
+<section [id]="data().id" class="project-modal-detail-section">
+  <h3 class="section-title">{{ data().title }}</h3>
+  @if (data().introText) {
+    <p>{{ data().introText }}</p>
+  }
+
+  <div class="project-modal-highlight-box metrics-container">
+    <div class="key-redults">
+      @for (metric of data().metrics; track $index) {
+        <div class="key-result">
+          <span class="number">{{ metric.value }}</span>
+          <span class="label">{{ metric.label }}</span>
+        </div>
+      }
+    </div>
+    @if (data().imageSrc) {
+      <div class="image-wrapper">
+        <img [src]="data().imageSrc" [alt]="data().imageAlt || data().title" />
+      </div>
+    }
+  </div>
+</section>

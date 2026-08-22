@@ -1,4 +1,5 @@
-// shared/models/project.model.ts
+import { ProjectBlock } from './project-block';
+
 export interface KeyResult {
   icon?: string;
   value?: string | number;
@@ -26,6 +27,9 @@ export interface Project {
   // Sidebar
   keyResults: KeyResult[];
   sections: ProjectSection[];
+
+  // Contenu structuré sous forme de blocs UI
+  blocks?: ProjectBlock[];
 
   // SEO
   seoTitle: string;

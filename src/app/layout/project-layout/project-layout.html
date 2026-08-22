@@ -1,8 +1,6 @@
-@if (isOpen()) {
+@if (project()) {
   <div class="project-page-layout">
     <div class="project-container">
-
-      <!-- Header -->
       <app-project-layout-header
         [title]="project()?.clientName || ''"
         [scrollProgress]="scrollProgress()"
@@ -10,22 +8,60 @@
         (close)="closeModal()"
       />
 
-      <!-- Corps du projet -->
       <div class="project-main-grid">
-        <!-- Sidebar gauche -->
-        <div class="media-side">
+        <!-- SIDEBAR GAUCHE (Desktop) -->
+        <aside class="media-side">
           <app-project-layout-sidebar
             [data]="sidebarData()"
             [activeSectionId]="activeSectionId()"
             [onScrollTo]="scrollTo.bind(this)"
           />
-        </div>
+        </aside>
 
-        <!-- Contenu principal -->
+        <!-- CONTENU PRINCIPAL (Scrollable) -->
         <div class="content-side" (scroll)="onScroll($event)">
           <div class="dynamic-content-injector">
-            <main class="project-body">
-              <ng-container *ngComponentOutlet="currentComponent()"></ng-container>
+            <main class="project-modal-detail-content">
+              @for (block of project()?.blocks; track $index) {
+                @switch (block.type) {
+                  @case ('overview') {
+                    <app-project-block-overview [data]="block.data" />
+                  }
+                  @case ('media') {
+                    <app-project-block-media [data]="block.data" />
+                  }
+                  @case ('text') {
+                    <app-project-block-text-section [data]="block.data" />
+                  }
+                  @case ('challenges') {
+                    <app-project-block-challenges [data]="block.data" />
+                  }
+                  @case ('solution') {
+                    <app-project-block-solution-grid [data]="block.data" />
+                  }
+                  @case ('c4-diagram') {
+                    <app-project-block-c4-diagram [data]="block.data" />
+                  }
+                  @case ('process') {
+                    <app-project-block-process-timeline [data]="block.data" />
+                  }
+                  @case ('impact') {
+                    <app-project-block-impact-metrics [data]="block.data" />
+                  }
+                  @case ('tech') {
+                    <app-project-block-tech-stack [data]="block.data" />
+                  }
+                  @case ('highlight-cards') {
+                    <app-project-block-highlight-cards [data]="block.data" />
+                  }
+                  @case ('gallery') {
+                    <app-project-block-gallery [data]="block.data" />
+                  }
+                  @case ('cta') {
+                    <app-project-block-cta [data]="block.data" />
+                  }
+                }
+              }
             </main>
           </div>
         </div>

@@ -1,0 +1,25 @@
+<section [id]="data().id" class="project-modal-detail-section">
+  <h3 class="section-title">{{ data().title }}</h3>
+  @if (data().introText) {
+    <p class="section-intro">{{ data().introText }}</p>
+  }
+  <div class="solution-grid-container">
+    @for (solution of data().solutions; track $index) {
+      <div class="solution-card">
+        <h4>{{ solution.title }}</h4>
+        <ul class="solution-features-list">
+          @for (feature of solution.features; track $index) {
+            <li [innerHTML]="feature"></li>
+          }
+        </ul>
+        @if (solution.techStack && solution.techStack.length > 0) {
+          <div class="card-tech-tags">
+            @for (tech of solution.techStack; track $index) {
+              <span class="tech-pill">{{ tech }}</span>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>
