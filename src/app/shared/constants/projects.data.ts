@@ -8,7 +8,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'liko-auto',
     title: 'Marketplace automobile connectée & services auto au Cameroun',
     clientName: 'Liko Auto',
-    image: '/images/services/mobile.png',
+    showcaseImage: '/images/projects/liko-auto/liko-auto.webp',
     isSpotlighted: true,
     keyResults: [
       { value: '200+', label: 'ventes visées / mois' },
@@ -40,7 +40,7 @@ export const PROJECTS_DATA: Project[] = [
         data: {
           images: [
             {
-              src: '/images/services/mobile.png',
+              src: '/images/projects/liko-auto/mobile-liko-auto.webp',
               alt: 'Liko Auto Application Mobile',
               variant: 'mockup',
             },
@@ -291,7 +291,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'association-mahol-diaspora',
     title: 'Solidarité diaspora digitale',
     clientName: 'Mahol Diaspora',
-    image: '/images/projects/mahol-diaspora.png',
+    showcaseImage: '/images/projects/mahol/mahol-diaspora.webp',
     isSpotlighted: true,
     keyResults: [
       { value: '+288', label: 'adhérents actifs' },
@@ -410,7 +410,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'for-you-media-africa',
     title: 'Plateforme média digitale panafricaine moderne',
     clientName: 'For You Média Africa',
-    image: '/images/projects/for-you-media.webp',
+    showcaseImage: '/images/projects/for-you-media.webp',
     isSpotlighted: true,
     keyResults: [
       { icon: 'faRocket', label: 'Temps de chargement < 2s' },
@@ -641,7 +641,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'soprano-vesinet',
     title: 'Expérience digitale immersive pour un restaurant gastronomique',
     clientName: 'Soprano Vésinet',
-    image: '/images/projects/soprano-vesinet.png',
+    showcaseImage: '/images/projects/soprano-vesinet.png',
     isSpotlighted: true,
     keyResults: [
       { icon: 'faUtensils', label: 'Menu interactif' },
@@ -862,7 +862,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'stella',
     title: 'Boutique e-commerce headless premium',
     clientName: 'Stella',
-    image: '/images/projects/stella.png',
+    showcaseImage: '/images/projects/stella.png',
     isSpotlighted: true,
     keyResults: [
       { icon: 'faShoppingCart', label: 'Checkout ultra-rapide' },

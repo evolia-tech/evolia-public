@@ -8,7 +8,7 @@
     <!-- Zone visuelle -->
     <div class="project-visual">
       <div class="visual-frame">
-        <img [src]="project.image" [alt]="project.title" loading="lazy" />
+        <img [src]="project.showcaseImage || project.image" [alt]="project.title" loading="lazy" />
       </div>
     </div>
 

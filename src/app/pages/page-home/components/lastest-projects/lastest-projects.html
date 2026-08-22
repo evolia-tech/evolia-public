@@ -13,7 +13,7 @@
       @for (work of projectsForCarousel(); track $index) {
       <div class="work-card" (click)="onProjectClicked($index)">
         <div class="image-wrapper">
-          <img [ngSrc]="work.image" [alt]="work.title" fill [priority]="$index === 0" decoding="async" />
+          <img [ngSrc]="work.showcaseImage || work.image || ''" [alt]="work.title" fill [priority]="$index === 0" decoding="async" />
         </div>
         <h2 class="work-title">{{ work.title }}</h2>
       </div>

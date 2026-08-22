@@ -15,14 +15,15 @@ export interface Project {
   id: number;
   slug: string;
 
-  // Carrousel
+  // Carrousel & Titre principal
   title: string;
 
   // Header de la modale
   clientName: string;
 
-  // Image
-  image: string;
+  // Images
+  image?: string;
+  showcaseImage?: string;
 
   // Sidebar
   keyResults: KeyResult[];
