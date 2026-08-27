@@ -15,6 +15,10 @@ export class ProjectCard {
   @Input({ required: true }) index!: number;
   @Output() cardClick = new EventEmitter<Project>();
 
+  get hasCaseStudy(): boolean {
+    return !!(this.project?.blocks && this.project.blocks.length > 0);
+  }
+
   onCardClick(): void {
     this.cardClick.emit(this.project);
   }

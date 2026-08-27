@@ -1,0 +1,45 @@
+<div class="pending-modal-overlay" (click)="onBackdropClick($event)" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="pending-modal-card" (click)="$event.stopPropagation()">
+
+    <!-- Barre supérieure : Badge & Bouton Fermer sur la même ligne -->
+    <div class="modal-top-bar">
+      <div class="visual-badge">
+        <fa-icon [icon]="faClock" class="clock-icon"></fa-icon>
+        <span>En cours de finalisation</span>
+      </div>
+
+      <button type="button" class="close-btn" (click)="onClose()" aria-label="Fermer la fenêtre">
+        <fa-icon [icon]="faXmark"></fa-icon>
+      </button>
+    </div>
+
+    <!-- En-tête du projet -->
+    <div class="modal-header">
+      <span class="client-name">{{ project.clientName }}</span>
+      <h3 id="modal-title" class="modal-title">{{ project.title }}</h3>
+    </div>
+
+    <!-- Corps de la modale avec le message directement -->
+    <div class="modal-body">
+      <p class="status-description">
+        Notre équipe peaufine actuellement la présentation détaillée de ce projet (analyse des enjeux, architecture technique et coulisses de réalisation). Elle sera très prochainement disponible dans notre portfolio !
+      </p>
+    </div>
+
+    <!-- Actions Footer -->
+    <div class="modal-footer">
+      @if (project.liveUrl) {
+      <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="live-url-btn">
+        <fa-icon [icon]="faGlobe" class="btn-icon"></fa-icon>
+        <span>Découvrir le site web en ligne</span>
+        <fa-icon [icon]="faExternalLinkAlt" class="external-icon"></fa-icon>
+      </a>
+      }
+
+      <button type="button" class="dismiss-btn" (click)="onClose()">
+        Fermer
+      </button>
+    </div>
+
+  </div>
+</div>

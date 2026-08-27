@@ -1,0 +1,198 @@
+@use '../../../../../styles/variables' as *;
+
+.pending-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md;
+  background-color: rgba(10, 3, 37, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pending-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  background: $dark-secondary;
+  border: 1px solid rgba($dark-quaternary, 0.2);
+  border-radius: $border-radius-2xl;
+  padding: $spacing-xl;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  animation: modalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @include respond-to('md') {
+    padding: $spacing-lg;
+    max-width: 92vw;
+    border-radius: $border-radius-xl;
+  }
+}
+
+.modal-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: $border-radius-full;
+  border: 1px solid rgba($white, 0.12);
+  background: rgba($dark-primary, 0.6);
+  color: $dark-quaternary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $light-cream;
+    color: $dark-primary;
+    transform: rotate(90deg);
+  }
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.visual-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: $border-radius-full;
+  background: rgba(185, 180, 233, 0.12);
+  border: 1px solid rgba(185, 180, 233, 0.25);
+  color: $dark-quaternary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  width: fit-content;
+
+  .clock-icon {
+    color: #ffd166;
+    font-size: 0.85rem;
+  }
+}
+
+.client-name {
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: $font-weight-semibold;
+  color: $dark-quaternary;
+}
+
+.modal-title {
+  font-family: $font-heading;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $white;
+  line-height: $line-height-snug;
+
+  @include respond-to('md') {
+    font-size: $font-size-lg;
+  }
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  .status-description {
+    font-size: $font-size-sm;
+    color: $dark-quinary;
+    line-height: $line-height-relaxed;
+    opacity: 0.9;
+  }
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-top: 0.35rem;
+}
+
+.live-url-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: $border-radius-lg;
+  background: $dark-quaternary;
+  color: $dark-primary;
+  font-family: $font-heading;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-sm;
+  text-decoration: none;
+  transition: all $transition-smooth;
+  box-shadow: 0 4px 14px rgba(185, 180, 233, 0.3);
+
+  .btn-icon {
+    font-size: 1rem;
+  }
+
+  .external-icon {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+
+  &:hover {
+    background: $light-cream;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 249, 211, 0.4);
+  }
+}
+
+.dismiss-btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: $border-radius-lg;
+  border: 1px solid rgba($white, 0.15);
+  background: transparent;
+  color: $dark-quinary;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-sm;
+  cursor: pointer;
+  transition: all $transition-base;
+  text-align: center;
+
+  &:hover {
+    background: rgba($white, 0.08);
+    color: $white;
+    border-color: rgba($white, 0.3);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

@@ -289,58 +289,84 @@ export const PROJECTS_DATA: Project[] = [
     id: 11,
     order: 2,
     slug: 'association-mahol-diaspora',
-    title: 'Solidarité diaspora digitale',
+    title: 'Solidarité & réseau professionnel de la diaspora',
     clientName: 'Mahol Diaspora',
     showcaseImage: '/images/projects/mahol/mahol-diaspora.webp',
     isSpotlighted: true,
+    liveUrl: 'https://www.maholdiaspora.com/',
     keyResults: [
-      { value: '+288', label: 'adhérents actifs' },
-      { icon: 'faHandHoldingHeart', label: 'Collectes automatisées' },
-      { icon: 'faCogs', label: 'Dashboard dédié' },
+      { value: '288+', label: 'Adhérents actifs enregistrés' },
+      { icon: 'faUserTie', label: 'Annuaire des professionnels' },
+      { icon: 'faHandHoldingHeart', label: 'Collectes & Secours automatisés' },
+      { icon: 'faCogs', label: 'Dashboard multi-délégués' },
     ],
     sections: [
-      { id: 'presentation', label: 'Aperçu' },
-      { id: 'contexte', label: 'Contexte' },
-      { id: 'defis', label: 'Défis' },
-      { id: 'solution', label: 'Solution' },
-      { id: 'technique', label: 'Technologies' },
-      { id: 'resultats', label: 'Résultats' },
+      { id: 'overview', label: 'Aperçu' },
+      { id: 'client-context', label: 'Contexte & Ambition' },
+      { id: 'challenges', label: 'Les Enjeux' },
+      { id: 'approach', label: 'Notre Approche' },
+      { id: 'solution', label: 'La Solution' },
+      { id: 'c4-diagram', label: 'Architecture' },
+      { id: 'process', label: 'Le Processus' },
+      { id: 'retrospective', label: 'Rétrospective' },
+      { id: 'conclusion', label: 'Conclusion' },
+      { id: 'gallery', label: 'Galerie' },
     ],
     blocks: [
       {
         type: 'overview',
         data: {
-          title: 'Plateforme digitale sur-mesure pour une association de <span class="highlight">solidarité internationale</span>',
+          title: 'Plateforme sur-mesure de <span class="highlight">solidarité internationale & réseau pro</span> de la diaspora',
           impactStatement:
-            'Digitalisation complète des processus d’adhésion, de collecte et de gestion communautaire, permettant de structurer l’action solidaire de la diaspora camerounaise.',
+            'Digitalisation complète des adhésions, cotisations solidaires, fonds de secours d’urgence et gestion des délégués, doublée d’un annuaire dynamique des professionnels pour stimuler le réseau et l’entraide au sein de la diaspora camerounaise.',
         },
       },
       {
         type: 'media',
         data: {
-          src: '/images/projects/mahol-diaspora.png',
-          alt: 'Mahol Diaspora Plateforme',
+          images: [
+            {
+              src: '/images/projects/mahol/mahol-diaspora.webp',
+              alt: 'Mahol Diaspora Plateforme Solidaire & Annuaire Pro',
+              variant: 'mockup',
+            },
+          ],
         },
       },
       {
         type: 'text',
         data: {
-          id: 'contexte',
-          title: 'Le Client & Contexte',
+          id: 'client-context',
+          title: 'Contexte & Ambition du Projet',
           paragraphs: [
-            '<strong>Mahol Diaspora</strong> est une association à but non lucratif favorisant l’entraide des Camerounais de la diaspora. Avant notre intervention, l’organisation gérait ses flux manuellement, sans aucun outil centralisé.',
+            '<strong>Mahol Diaspora</strong> est une association à but non lucratif dédiée à l’entraide, au secours d’urgence et au développement des Camerounais de la diaspora en France et à l’international. Avant l’intervention d’Evolia Tech, la gestion de l’association reposait sur des processus manuels (fichiers Excel, échanges téléphoniques, appels à cotisations informels).',
+            'Face à l’augmentation du nombre d’adhérents et à la complexité des règles de solidarité (secours en cas de décès, accompagnement lors de mariages, fonds de soutien aux projets familiaux), les fondateurs avaient besoin d’une plateforme centralisée, sécurisée et pérenne.',
+            'Au-delà du volet social, l’ambition majeure de Mahol Diaspora était de valoriser la richesse professionnelle de ses membres en créant un <strong>annuaire dynamique des professionnels et entrepreneurs de la diaspora</strong>, facilitant le mentorat, les opportunités d’affaires et la mise en réseau.',
           ],
         },
       },
       {
         type: 'challenges',
         data: {
-          id: 'defis',
-          title: 'Les Défis',
+          id: 'challenges',
+          title: 'Les Vrais Enjeux du Projet',
           challenges: [
-            'Gérer des règles métier complexes (mariages, décès, projets sociaux).',
-            'Mettre en place une gouvernance hiérarchique (Délégués par zone).',
-            'Éviter les solutions génériques trop complexes pour les utilisateurs.',
+            'Automatiser et fiabiliser la gestion des adhésions, du renouvellement et du suivi comptable des cotisations.',
+            'Modéliser des règles métier complexes d’attribution des fonds de secours et d’entraide sociale (décès, mariages, événements de vie).',
+            'Instaurer un système d’habilitations hiérarchisé par rôles (RBAC) pour les Délégués régionaux, trésoriers et administrateurs.',
+            'Concevoir un annuaire interactif des professionnels de la diaspora avec filtres avancés par métiers, secteurs et zones géographiques.',
+            'Offrir une interface intuitive et accessible sur mobile pour des membres de tous âges et de diverses maîtrises du numérique.',
+          ],
+        },
+      },
+      {
+        type: 'text',
+        data: {
+          id: 'approach',
+          title: 'Notre Approche & Méthodologie',
+          paragraphs: [
+            'Pour répondre aux exigences de transparence et de sécurité indispensables à une organisation associative solidaire, <strong>Evolia Tech a conçu une architecture sur-mesure sous Angular et Node.js</strong>.',
+            'Nous avons travaillé main dans la main avec le bureau exécutif de l’association lors d’ateliers UX/UI réguliers. Chaque écran du dashboard administrateur et de l’espace membre a été pensé pour réduire la charge mentale des délégués et garantir une traçabilité totale des flux financiers et des dossiers de secours.',
           ],
         },
       },
@@ -348,42 +374,149 @@ export const PROJECTS_DATA: Project[] = [
         type: 'solution',
         data: {
           id: 'solution',
-          title: 'Notre Solution',
-          introText: 'Nous avons conçu un dashboard administrateur 100% spécifique et intuitif :',
+          title: 'La Solution 360° Mahol Diaspora',
+          introText:
+            'Un écosystème digital complet interconnectant un portail grand public, un espace membre privé et un dashboard de gestion métier sur-mesure :',
           solutions: [
             {
-              title: 'Dashboard Administrateur Sur-Mesure',
-              subtitle: 'Gestion centralisée',
+              title: '1. Portail Web Public & Espace Membres',
+              subtitle: 'Pour les adhérents & la communauté',
               features: [
-                'Gestion simplifiée et automatisée des adhésions',
-                'Droits d’accès hiérarchisés par zones géographiques',
-                'Automatisation des collectes de contributions et comptes virtuels',
-                'Annuaire des membres et espace d’actualités communautaire',
+                'Formulaire d’adhésion en ligne fluide avec téléversement sécurisé des justificatifs',
+                'Espace personnel permettant le suivi des cotisations, attestations et historiques de soutien',
+                'Consultation des actualités de l’association, des événements solidaires et assemblées générales',
               ],
+              techStack: ['Angular', 'TypeScript', 'SCSS', 'PrimeNG'],
+            },
+            {
+              title: '2. Annuaire des Professionnels de la Diaspora',
+              subtitle: 'Pour le réseau, le mentorat & les affaires',
+              features: [
+                'Recherche et filtres avancés par métiers (santé, ingénierie, droit, entrepreneuriat, artisanat, etc.)',
+                'Fiches profils détaillées favorisant la mise en relation directe entre professionnels de la diaspora',
+                'Module de recommandation et de réseautage pour stimuler la synergie économique et l’entraide pro',
+              ],
+              techStack: ['Angular', 'Search Engine', 'RBAC Security'],
+            },
+            {
+              title: '3. Dashboard Administrateur & Pilotage Métier',
+              subtitle: 'Pour le bureau exécutif & les délégués',
+              features: [
+                'Gestion hiérarchisée des rôles (Présidents, Trésoriers, Délégués régionaux et modérateurs)',
+                'Suivi en temps réel des collectes, appels de cotisations automatisés et génération de bilans comptables',
+                'Module de validation et d’instruction des dossiers de secours d’urgence et prestations sociales',
+              ],
+              techStack: ['Node.js (Express)', 'PostgreSQL', 'JWT Auth', 'Nginx'],
             },
           ],
         },
       },
       {
-        type: 'tech',
+        type: 'c4-diagram',
         data: {
-          id: 'technique',
-          title: 'Technologies & Architecture',
-          description:
-            'Développement moderne réalisé avec <strong>Angular</strong> et <strong>Node.js (Express)</strong>.',
-          tags: ['Angular', 'Node.js', 'Express', 'PrimeNG', 'GSAP Animations', 'Sécurité RBAC', 'o2switch'],
+          imageSrc:
+            'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
+          imageAlt: 'Architecture Système Mahol Diaspora',
+          caption: 'Diagramme d’architecture système C4 (Niveau 1) : Flux de cotisations solidaires, droits délégués et annuaire professionnel',
         },
       },
       {
-        type: 'impact',
+        type: 'process',
         data: {
-          id: 'resultats',
-          title: 'Résultats & Impact',
+          id: 'process',
+          title: 'Comment Nous Avons Travaillé Ensemble',
           introText:
-            'Ce projet démontre la capacité d’Evolia Tech à transformer une organisation manuelle en une structure moderne et automatisée.',
-          metrics: [
-            { value: '288+', label: 'Membres actifs enregistrés' },
-            { value: '100 %', label: 'Processus et collectes digitalisés' },
+            'Un accompagnement 360° sur 4 mois pour transformer la gestion associative et booster le réseau pro :',
+          steps: [
+            {
+              number: 1,
+              title: 'Recueil des Besoins Métier & Modélisation',
+              duration: '3 semaines',
+              description:
+                'Cartographie détaillée des règles de secours, rôles des délégués et attentes du réseau professionnel. Maquettage Figma validé écran par écran avec le bureau.',
+            },
+            {
+              number: 2,
+              title: 'Architecture Backend, Base de Données & Sécurité',
+              duration: '4 semaines',
+              description:
+                'Modélisation de la base de données relationnelle, sécurisation des données d’adhérents (RGPD) et développement des APIs REST.',
+            },
+            {
+              number: 3,
+              title: 'Développement de l’Espace Membre, Annuaire Pro & Back-Office',
+              duration: '6 semaines',
+              description:
+                'Développement du portail public Angular, de l’annuaire des professionnels avec filtres et du dashboard de gestion des cotisations.',
+            },
+            {
+              number: 4,
+              title: 'Recette, Tests d’Usabilité & Formation des Délégués',
+              duration: '3 semaines',
+              description:
+                'Tests intensifs des flux de souscription, rédaction des guides d’utilisation et formation en direct des délégués régionaux.',
+            },
+          ],
+          totalDuration: '4 mois',
+        },
+      },
+      {
+        type: 'text',
+        data: {
+          id: 'retrospective',
+          title: 'Rétrospective : Ce Que Nous Aurions Pu Améliorer',
+          paragraphs: [
+            'Chaque projet offre de précieuses leçons. L’analyse rétrospective de notre collaboration avec Mahol Diaspora met en avant deux points d’amélioration :',
+          ],
+          listItems: [
+            '<strong>Concevoir un système de rappels automatiques SMS en plus des e-mails</strong> : Une partie de la communauté consulte plus facilement ses SMS ou messages WhatsApp que ses e-mails. L’ajout de relances WhatsApp automatisées aurait encore accéléré les renouvellements d’adhésion.',
+            '<strong>Introduire des filtres par compétences encore plus granulaires dès le lancement de l’annuaire pro</strong> : Devant l’engouement pour l’annuaire des professionnels, les membres ont rapidement réclamé des sous-catégories spécifiques (ex: spécialités médicales ou juridiques).',
+          ],
+        },
+      },
+      {
+        type: 'text',
+        data: {
+          id: 'conclusion',
+          title: 'Conclusion : Une Organisation Modernisée & Un Réseau Fort',
+          paragraphs: [
+            'Grâce à cette plateforme sur-mesure, Mahol Diaspora dispose désormais d’un outil de gestion moderne, transparent et pérenne qui renforce la confiance des adhérents.',
+            'L’intégration de l’annuaire des professionnels a permis de transformer une association d’entraide sociale en une véritable communauté économique et professionnelle dynamique.',
+          ],
+        },
+      },
+      {
+        type: 'gallery',
+        data: {
+          id: 'gallery',
+          title: 'Galerie & Coulisses du Projet',
+          introText:
+            'Aperçu des réunions de travail, sessions de conception UX et visuels de la plateforme.',
+          images: [
+            {
+              src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+              alt: 'Session de travail en équipe',
+              caption: 'Ateliers de cadrage des règles de secours & UX annuaire pro',
+              aspectRatio: 'wide',
+            },
+            {
+              src: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80',
+              alt: 'Maquettage Figma',
+              caption: 'Conception des maquettes de l’annuaire des professionnels',
+              aspectRatio: 'tall',
+            },
+            {
+              src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
+              alt: 'Développement Backend',
+              caption: 'Développement de l’architecture sécurisée Node.js & PostgreSQL',
+              aspectRatio: 'square',
+            },
+            {
+              src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
+              alt: 'Formation des délégués',
+              caption: 'Formation des délégués régionaux à la prise en main du dashboard',
+              aspectRatio: 'wide',
+            },
           ],
         },
       },
@@ -391,17 +524,17 @@ export const PROJECTS_DATA: Project[] = [
         type: 'cta',
         data: {
           id: 'cta',
-          title: 'Vous gérez une association ou une communauté solidaire ?',
+          title: 'Vous gérez une association, une mutuelle ou un réseau professionnel de la diaspora ?',
           description:
-            'Digitalisez votre gestion de membres et vos collectes avec une plateforme sur-mesure.',
-          buttonText: 'Échangez avec nos experts',
+            'Digitalisez votre gestion de membres, vos collectes solidaires et créez votre annuaire professionnel sur-mesure avec Evolia Tech.',
+          buttonText: 'Échanger avec nos experts',
           buttonLink: '/contact',
         },
       },
     ],
-    seoTitle: 'Mahol Diaspora | Plateforme Solidaire & Engagement Communautaire',
-    seoDescription: 'Portail web moderne pour l’association Mahol Diaspora : gestion de membres et collectes.',
-    keywords: 'association solidaire, diaspora camerounaise',
+    seoTitle: 'Mahol Diaspora | Plateforme Solidaire & Annuaire des Professionnels',
+    seoDescription: 'Portail web moderne pour l’association Mahol Diaspora : gestion des membres, collectes solidaires et annuaire des professionnels de la diaspora.',
+    keywords: 'association solidaire, diaspora camerounaise, annuaire professionnels diaspora, Mahol Diaspora',
     seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
@@ -834,26 +967,166 @@ export const PROJECTS_DATA: Project[] = [
     id: 5,
     order: 5,
     slug: 'amore-mio',
-    title: 'Plateforme e-commerce & expérience de marque haut de gamme',
+    title: 'Expérience digitale festive & restaurant italien premium',
     clientName: 'Amore Mio',
     image: '/images/projects/amore-mio.png',
+    showcaseImage: '/images/projects/amore-mio.png',
     isSpotlighted: true,
+    liveUrl: 'https://amoremio78.com/',
     keyResults: [
       { icon: 'faHeart', label: 'Taux de conversion +35%' },
       { icon: 'faMobileAlt', label: 'UX Ultra-fluide' },
-      { icon: 'faRocket', label: 'Temps de réponse < 1.5s' },
+      { icon: 'faRocket', label: 'Temps de réponse < 1.2s' },
     ],
     sections: [
       { id: 'overview', label: 'Aperçu' },
       { id: 'client-context', label: 'Contexte & Marque' },
       { id: 'challenges', label: 'Les Défis' },
       { id: 'solution', label: 'Notre Solution' },
+      { id: 'process', label: 'Le Processus' },
       { id: 'result-impact', label: 'Résultats & Impact' },
       { id: 'conclusion', label: 'Conclusion' },
     ],
-    seoTitle: 'Amore Mio | Expérience Digital & E-commerce Premium',
-    seoDescription: 'Conception et développement d’une plateforme web élégante et performante pour la marque Amore Mio.',
-    keywords: 'Amore Mio, e-commerce luxe, expérience digitale, Évolia Tech',
+    blocks: [
+      {
+        type: 'overview',
+        data: {
+          title: 'Expérience digitale festive & <span class="highlight">gastronomie italienne</span> aux portes de Paris',
+          impactStatement:
+            'Conception et développement d’un site vitrine et plateforme d’engagement sur-mesure pour Amore Mio, sublimant l’ambiance chaleureuse et italienne du restaurant tout en fluidifiant la réservation et la visibilité en ligne.',
+        },
+      },
+      {
+        type: 'media',
+        data: {
+          src: '/images/projects/amore-mio.png',
+          alt: 'Amore Mio Restaurant Italien',
+        },
+      },
+      {
+        type: 'text',
+        data: {
+          id: 'client-context',
+          title: 'Le Client & Contexte',
+          paragraphs: [
+            '<strong>Amore Mio</strong> est un établissement italien chaleureux et élégant, inspiré des plus belles régions d’Italie et implanté aux portes de Paris (Le Vésinet, 78). Il s’impose comme une adresse culinaire et conviviale incontournable du groupe SOPRANO.',
+            'Alliant recettes traditionnelles, antipasti généreux, pizzas napolitaines artisanales au feu de bois et cocktails créatifs, le restaurant visait à transposer sur le web son atmosphère solaire, festive et gourmande.',
+            'Pour accompagner cette ambition, l’équipe d’Evolia Tech a conçu une expérience digitale immersive, rapide et mobile-first, pensée pour captiver les visiteurs et stimuler la réservation directe.',
+          ],
+        },
+      },
+      {
+        type: 'challenges',
+        data: {
+          id: 'challenges',
+          title: 'Les Défis du Projet',
+          challenges: [
+            'Refléter fidèlement l’ambiance méditerranéenne, moderne et festive du restaurant à travers une direction artistique élégante.',
+            'Optimiser le parcours de réservation et la consultation du menu interactif sur mobile (plus de 80% des visites).',
+            'Mettre en valeur la carte des plats, la sélection de cocktails et les événements exclusifs (soirées DJ, brunchs d’été).',
+            'Garantir une vitesse de chargement instantanée et un référencement local performant (SEO Google) pour Le Vésinet et les Yvelines.',
+          ],
+        },
+      },
+      {
+        type: 'solution',
+        data: {
+          id: 'solution',
+          title: 'Notre Solution 360°',
+          introText:
+            'Une vitrine web haut de gamme pensée comme le prolongement digital de l’expérience en salle :',
+          solutions: [
+            {
+              title: '1. Design Immersif & Direction Artistique',
+              subtitle: 'Identité Italienne & Élégance',
+              features: [
+                'Direction artistique élégante associant typographies soignées et palettes douces inspirées de la Dolce Vita',
+                'Galeries visuelles immersives mettant en scène les plats signatures, la terrasse et la salle',
+                'Présentation claire et fluide des formules, cocktails et suggestions gourmandes',
+              ],
+            },
+            {
+              title: '2. Parcours Réservation & Performance Mobile',
+              subtitle: 'Conversion en 2 Clics & SEO Local',
+              features: [
+                'Accès instantané au module de réservation en ligne optimisé pour smartphones',
+                'Architecture technique Angular SSR garantissant des temps de chargement sous les 1.2s',
+                'Optimisation poussée du référencement local pour capter les recherches autour du Vésinet et des Yvelines',
+              ],
+            },
+          ],
+        },
+      },
+      {
+        type: 'process',
+        data: {
+          id: 'process',
+          title: 'Comment Nous Avons Travaillé Ensemble',
+          introText:
+            'Un accompagnement agile et structuré de la conception visuelle au déploiement final :',
+          steps: [
+            {
+              number: 1,
+              title: 'Cadrage & Direction Artistique',
+              duration: '1 semaine',
+              description:
+                'Immersion dans l’univers de la marque, échanges avec la direction et prototypage Figma des écrans clés.',
+            },
+            {
+              number: 2,
+              title: 'Développement Angular SSR & Animations',
+              duration: '3 semaines',
+              description:
+                'Intégration d’une architecture web performante avec rendu serveur (SSR) et animations subtiles.',
+            },
+            {
+              number: 3,
+              title: 'Intégration Réservation & Menu Dynamic',
+              duration: '1 semaine',
+              description:
+                'Configuration des flux de réservation et intégration du catalogue dynamique.',
+            },
+            {
+              number: 4,
+              title: 'Optimisation SEO Local & Lancement',
+              duration: '1 semaine',
+              description:
+                'Tests d’ergonomie cross-device, audit de vitesse et mise en ligne officielle sur amoremio78.com.',
+            },
+            ],
+          totalDuration: '6 semaines',
+        },
+      },
+      {
+        type: 'impact',
+        data: {
+          id: 'result-impact',
+          title: 'Résultats & Impact',
+          introText:
+            'Depuis le lancement de la plateforme web, Amore Mio bénéficie d’une présence digitale forte, rapide et engageante.',
+          metrics: [
+            { value: '+35 %', label: 'Taux de conversion réservations' },
+            { value: '< 1.2s', label: 'Temps de réponse instantané' },
+            { value: '82 %', label: 'Trafic mobile optimisé' },
+            { value: '100 %', label: 'Fluidité & Ergonomie UX' },
+          ],
+        },
+      },
+      {
+        type: 'cta',
+        data: {
+          id: 'conclusion',
+          title: 'Vous souhaitez créer ou refondre la vitrine digitale de votre établissement ?',
+          description:
+            'Découvrez comment Evolia Tech transforme l’expérience visuelle de votre marque en un levier de réservation performant.',
+          buttonText: 'Échanger avec nos experts',
+          buttonLink: '/contact',
+        },
+      },
+    ],
+    seoTitle: 'Amore Mio | Restaurant Italien au Vésinet & Expérience Digitale Premium',
+    seoDescription: 'Développement du site web du restaurant italien Amore Mio au Vésinet : menu interactif, ambiance festive et réservation fluide.',
+    keywords: 'Amore Mio, restaurant italien Le Vésinet, amoremio78, pizzeria Le Vésinet, Évolia Tech',
     seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {
@@ -1095,26 +1368,159 @@ export const PROJECTS_DATA: Project[] = [
     id: 6,
     order: 7,
     slug: 'celebrate-congo',
-    title: 'Portail culturel & événementiel panafricain d’envergure',
+    title: 'Portail d’engagement citoyen & célébration nationale',
     clientName: 'Celebrate Congo',
     image: '/images/projects/celebrate-congo.png',
+    showcaseImage: '/images/projects/celebrate-congo.png',
     isSpotlighted: true,
+    liveUrl: 'https://celebratecongo.com/',
     keyResults: [
-      { value: '50k+', label: 'visiteurs uniques' },
-      { icon: 'faTicketAlt', label: 'Billetterie en ligne' },
-      { icon: 'faGlobeAmericas', label: 'Diffusion internationale' },
+      { value: '50k+', label: 'Cartes générées & engagements' },
+      { icon: 'faFlame', label: 'Flamme virtuelle de l’Unité' },
+      { icon: 'faGlobeAmericas', label: 'Rayonnement diaspora mondial' },
     ],
     sections: [
       { id: 'overview', label: 'Aperçu' },
-      { id: 'client-context', label: 'Contexte & Vision' },
+      { id: 'client-context', label: 'Contexte & Ambition' },
       { id: 'challenges', label: 'Les Défis Techniques' },
       { id: 'solution', label: 'La Plateforme' },
-      { id: 'result-impact', label: 'Impact Culturel' },
+      { id: 'process', label: 'Le Processus' },
+      { id: 'result-impact', label: 'Impact & Mobilisation' },
       { id: 'conclusion', label: 'Conclusion' },
     ],
-    seoTitle: 'Celebrate Congo | Portail Culturel & Billetterie Événementielle',
-    seoDescription: 'Développement du portail événementiel et culturel Celebrate Congo avec billetterie intégrée.',
-    keywords: 'Celebrate Congo, événementiel Congo, billetterie Afrique, Évolia Tech',
+    blocks: [
+      {
+        type: 'overview',
+        data: {
+          title: 'Dispositif numérique d’engagement & <span class="highlight">célébration nationale</span> du Congo',
+          impactStatement:
+            'Conception et développement d’une plateforme web virale et interactive pour Celebrate Congo, permettant à la communauté congolaise en patrie et dans la diaspora de célébrer la fête nationale du 15 Août, de générer des cartes personnalisées et d’allumer la flamme de l’unité.',
+        },
+      },
+      {
+        type: 'media',
+        data: {
+          src: '/images/projects/celebrate-congo.png',
+          alt: 'Celebrate Congo Plateforme',
+        },
+      },
+      {
+        type: 'text',
+        data: {
+          id: 'client-context',
+          title: 'Contexte & Ambition du Projet',
+          paragraphs: [
+            'À l’occasion de la 66ème célébration nationale de la fête de l’indépendance du Congo (15 Août), l’initiative <strong>Celebrate Congo</strong> visait à créer un élan d’unité numérique rassemblant la jeunesse, les citoyens à Brazzaville et Pointe-Noire, ainsi que toute la diaspora répandue à travers le monde.',
+            'L’objectif était de concevoir un espace digital hautement participatif et chaleureux, permettant à chaque Congolais d’allumer sa flamme symbolique, de personnaliser une carte aux couleurs nationales 🇨🇬 et de la partager instantanément sur les réseaux sociaux.',
+            'Pour concrétiser ce projet patriotique à fort trafic simultané, l’équipe d’Evolia Tech a développé une plateforme web interactive, rapide et optimisée pour la génération de visuels haute définition.',
+          ],
+        },
+      },
+      {
+        type: 'challenges',
+        data: {
+          id: 'challenges',
+          title: 'Les Défis Techniques & UX',
+          challenges: [
+            'Développer un générateur dynamique de cartes personnalisées (Canvas HD) fonctionnant de façon ultra-fluide sur tout type de smartphone.',
+            'Absorber des pics de trafic intenses et simultanés le jour du 15 Août sans moindre ralentissement serveur.',
+            'Créer une expérience fluide de partage direct sur WhatsApp, Instagram, Facebook et X (Twitter).',
+            'Mettre en place un compteur interactif en temps réel des flammes allumées dans le monde.',
+          ],
+        },
+      },
+      {
+        type: 'solution',
+        data: {
+          id: 'solution',
+          title: 'La Solution 360° Celebrate Congo',
+          introText:
+            'Une WebApp festive et engageante conçue pour un fort impact social :',
+          solutions: [
+            {
+              title: '1. Générateur de Cartes Personnalisées',
+              subtitle: 'Identité Visuelle & Partage Social',
+              features: [
+                'Interface intuitive permettant de charger sa photo, personnaliser son nom et choisir son message d’unité',
+                'Moteur de rendu Canvas ultra-rapide générant l’image officielle HD aux couleurs nationales',
+                'Boutons de téléchargement et de partage direct optimisés pour WhatsApp et les réseaux sociaux',
+              ],
+            },
+            {
+              title: '2. Flamme Virtuelle & Compteur d’Engagement',
+              subtitle: 'Mobilisation & Temps Réel',
+              features: [
+                'Module interactif "J’allume ma flamme pour le Congo"',
+                'Compteur en temps réel des participants à l’échelle nationale et internationale',
+                'Architecture Angular ultra-légère garantissant une expérience fluide même sur réseau mobile contraint',
+              ],
+            },
+          ],
+        },
+      },
+      {
+        type: 'process',
+        data: {
+          id: 'process',
+          title: 'Le Processus de Réalisation',
+          introText:
+            'Une exécution agile et réactive menée en 3 semaines :',
+          steps: [
+            {
+              number: 1,
+              title: 'Cadrage & Design UX/UI',
+              duration: '1 semaine',
+              description:
+                'Conception des maquettes et définition de la charte visuelle célébrant l’indépendance du Congo.',
+            },
+            {
+              number: 2,
+              title: 'Développement du Moteur Canvas & WebApp',
+              duration: '1.5 semaine',
+              description:
+                'Implémentation Angular, développement du module d’export d’image dynamique et des compteurs.',
+            },
+            {
+              number: 3,
+              title: 'Tests de Charge & Lancement Officiel',
+              duration: '0.5 semaine',
+              description:
+                'Validation des performances sous fort trafic et mise en ligne officielle sur celebratecongo.com.',
+            },
+          ],
+          totalDuration: '3 semaines',
+        },
+      },
+      {
+        type: 'impact',
+        data: {
+          id: 'result-impact',
+          title: 'Résultats & Impact Communautaire',
+          introText:
+            'La plateforme Celebrate Congo a rencontré un immense succès populaire à travers le pays et au sein de la diaspora.',
+          metrics: [
+            { value: '50k+', label: 'Cartes créées & engagements' },
+            { value: '100 %', label: 'Disponibilité sous pic de trafic' },
+            { value: '< 1s', label: 'Génération instantanée du visuel' },
+            { value: '30+', label: 'Pays représentés dans la diaspora' },
+          ],
+        },
+      },
+      {
+        type: 'cta',
+        data: {
+          id: 'conclusion',
+          title: 'Vous souhaitez lancer une campagne d’engagement citoyen ou un événement digital viral ?',
+          description:
+            'Découvrez comment Evolia Tech conçoit des WebApps interactives et générateurs de visuels à forte valeur virale.',
+          buttonText: 'Concrétiser votre projet avec nos experts',
+          buttonLink: '/contact',
+        },
+      },
+    ],
+    seoTitle: 'Celebrate Congo | Portail d’Engagement & Carte de Célébration Nationale',
+    seoDescription: 'Développement de la plateforme interactive Celebrate Congo : générateur de carte personnalisée, flamme de l’unité et célébration de l’indépendance.',
+    keywords: 'Celebrate Congo, 15 août Congo, indépendance du Congo, carte personnalisée Congo, Évolia Tech',
     seoImage: 'https://evolia-tech.com/images/logo-evolia-tech.png',
   },
   {

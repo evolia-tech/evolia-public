@@ -1,4 +1,4 @@
-<div class="project-card-wrapper" [class.is-reverse]="index % 2 === 1">
+<div class="project-card-wrapper" [class.is-reverse]="index % 2 === 1" [class.is-pending]="!hasCaseStudy">
 
   <!-- Numéro du projet (Top 10 Netflix alterné gauche / droite) -->
   <span class="project-index">{{ (index + 1).toString().padStart(2, '0') }}</span>

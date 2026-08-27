@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{c as r}from"./chunk-EFWS3KQR.mjs";import"./chunk-Q45PAZO5.mjs";import"./chunk-RIZPMNK3.mjs";import{$a as n,Ab as l,Bb as i,zb as o}from"./chunk-BVKZKKS2.mjs";import"./chunk-N7QBYMCK.mjs";var t=class a{static \u0275fac=function(e){return new(e||a)};static \u0275cmp=n({type:a,selectors:[["app-blank-layout"]],decls:2,vars:0,template:function(e,p){e&1&&(o(0,"main"),i(1,"router-outlet"),l())},dependencies:[r],encapsulation:2})},f=t;export{t as BlankLayout,f as default};

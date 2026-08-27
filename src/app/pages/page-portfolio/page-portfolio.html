@@ -9,4 +9,11 @@
       (projectSelect)="openProjectModal($event)">
     </app-projects-list>
   </div>
+
+  @if (pendingProject()) {
+  <app-project-pending-modal
+    [project]="pendingProject()!"
+    (close)="closePendingModal()">
+  </app-project-pending-modal>
+  }
 </div>

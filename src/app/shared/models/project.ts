@@ -43,4 +43,7 @@ export interface Project {
 
   // Carrousel page d'accueil
   isSpotlighted?: boolean;
+
+  // Lien du site web en ligne
+  liveUrl?: string;
 }
