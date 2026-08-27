@@ -326,7 +326,7 @@ export const PROJECTS_DATA: Project[] = [
         data: {
           images: [
             {
-              src: '/images/projects/mahol/mahol-diaspora.webp',
+              src: '/images/projects/mahol/mockup-mahol-diaspora.webp',
               alt: 'Mahol Diaspora Plateforme Solidaire & Annuaire Pro',
               variant: 'mockup',
             },
@@ -573,8 +573,13 @@ export const PROJECTS_DATA: Project[] = [
       {
         type: 'media',
         data: {
-          src: '/images/projects/for-you-media.webp',
-          alt: 'For You Média Africa Plateforme',
+          images: [
+            {
+              src: '/images/projects/for-you-media-afica/mockup-foryou-media.webp',
+              alt: 'For You Média Africa Plateforme',
+              variant: 'mockup',
+            },
+          ],
         },
       },
       {
@@ -804,8 +809,13 @@ export const PROJECTS_DATA: Project[] = [
       {
         type: 'media',
         data: {
-          src: '/images/projects/soprano-vesinet.png',
-          alt: 'Soprano Vésinet Restaurant',
+          images: [
+            {
+              src: '/images/projects/soprano-vesinet/mockup-soprano-vesinet.webp',
+              alt: 'Soprano Vésinet Restaurant',
+              variant: 'mockup',
+            },
+          ],
         },
       },
       {
@@ -999,8 +1009,13 @@ export const PROJECTS_DATA: Project[] = [
       {
         type: 'media',
         data: {
-          src: '/images/projects/amore-mio.png',
-          alt: 'Amore Mio Restaurant Italien',
+          images: [
+            {
+              src: '/images/projects/amore-mio/mockup-amore-mio.webp',
+              alt: 'Amore Mio Restaurant Italien',
+              variant: 'mockup',
+            },
+          ],
         },
       },
       {
@@ -1370,10 +1385,8 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'celebrate-congo',
     title: 'Portail d’engagement citoyen & célébration nationale',
     clientName: 'Celebrate Congo',
-    image: '/images/projects/celebrate-congo.png',
-    showcaseImage: '/images/projects/celebrate-congo.png',
+    showcaseImage: '/images/projects/celebrate-congo/celebrate-congo.webp',
     isSpotlighted: true,
-    liveUrl: 'https://celebratecongo.com/',
     keyResults: [
       { value: '50k+', label: 'Cartes générées & engagements' },
       { icon: 'faFlame', label: 'Flamme virtuelle de l’Unité' },
@@ -1386,6 +1399,7 @@ export const PROJECTS_DATA: Project[] = [
       { id: 'solution', label: 'La Plateforme' },
       { id: 'process', label: 'Le Processus' },
       { id: 'result-impact', label: 'Impact & Mobilisation' },
+      { id: 'retrospective', label: 'Rétrospective' },
       { id: 'conclusion', label: 'Conclusion' },
     ],
     blocks: [
@@ -1394,14 +1408,19 @@ export const PROJECTS_DATA: Project[] = [
         data: {
           title: 'Dispositif numérique d’engagement & <span class="highlight">célébration nationale</span> du Congo',
           impactStatement:
-            'Conception et développement d’une plateforme web virale et interactive pour Celebrate Congo, permettant à la communauté congolaise en patrie et dans la diaspora de célébrer la fête nationale du 15 Août, de générer des cartes personnalisées et d’allumer la flamme de l’unité.',
+            'Conception et développement d’une plateforme web virale et interactive pour Celebrate Congo, permettant à la communauté congolaise en patrie et dans la diaspora de célébrer la fête nationale du 15 Août, de générer des cartes personnalisées, d’allumer la flamme de l’unité et de découvrir les héros de l’histoire du Congo.',
         },
       },
       {
         type: 'media',
         data: {
-          src: '/images/projects/celebrate-congo.png',
-          alt: 'Celebrate Congo Plateforme',
+          images: [
+            {
+              src: '/images/projects/celebrate-congo/celebrate-congo.webp',
+              alt: 'Celebrate Congo Plateforme',
+              variant: 'mockup',
+            },
+          ],
         },
       },
       {
@@ -1410,9 +1429,9 @@ export const PROJECTS_DATA: Project[] = [
           id: 'client-context',
           title: 'Contexte & Ambition du Projet',
           paragraphs: [
-            'À l’occasion de la 66ème célébration nationale de la fête de l’indépendance du Congo (15 Août), l’initiative <strong>Celebrate Congo</strong> visait à créer un élan d’unité numérique rassemblant la jeunesse, les citoyens à Brazzaville et Pointe-Noire, ainsi que toute la diaspora répandue à travers le monde.',
-            'L’objectif était de concevoir un espace digital hautement participatif et chaleureux, permettant à chaque Congolais d’allumer sa flamme symbolique, de personnaliser une carte aux couleurs nationales 🇨🇬 et de la partager instantanément sur les réseaux sociaux.',
-            'Pour concrétiser ce projet patriotique à fort trafic simultané, l’équipe d’Evolia Tech a développé une plateforme web interactive, rapide et optimisée pour la génération de visuels haute définition.',
+            'À l’occasion de la <strong>66ème célébration nationale de la fête de l’indépendance du Congo (15 Août)</strong>, l’initiative <strong>Celebrate Congo</strong> visait à créer un élan d’unité numérique rassemblant la jeunesse, les citoyens à Brazzaville et Pointe-Noire, ainsi que toute la diaspora congolaise répandue à travers le monde.',
+            'La plateforme portait une triple ambition : permettre à chaque Congolais d’<strong>allumer symboliquement sa flamme pour le Congo</strong>, de <strong>personnaliser une carte officielle aux couleurs nationales 🇨🇬</strong> et de la partager instantanément sur WhatsApp, Instagram, Facebook et X (Twitter), transformant ainsi chaque participant en ambassadeur actif de la célébration.',
+            'Pour aller au-delà du simple événementiel numérique, la plateforme intégrait également une <strong>section Histoire & Révélation</strong> valorisant les héros oubliés de l’histoire du Congo — personnalités emblématiques dont les récits ont forgé l’identité nationale — ainsi qu’un espace de soutien permettant aux sponsors et partenaires de s’associer à cet élan patriotique.',
           ],
         },
       },
@@ -1422,10 +1441,12 @@ export const PROJECTS_DATA: Project[] = [
           id: 'challenges',
           title: 'Les Défis Techniques & UX',
           challenges: [
-            'Développer un générateur dynamique de cartes personnalisées (Canvas HD) fonctionnant de façon ultra-fluide sur tout type de smartphone.',
-            'Absorber des pics de trafic intenses et simultanés le jour du 15 Août sans moindre ralentissement serveur.',
-            'Créer une expérience fluide de partage direct sur WhatsApp, Instagram, Facebook et X (Twitter).',
-            'Mettre en place un compteur interactif en temps réel des flammes allumées dans le monde.',
+            'Développer un générateur dynamique de cartes personnalisées haute définition (Canvas HD) fonctionnant de façon ultra-fluide sur tout type de smartphone, même en zone à faible connectivité.',
+            'Absorber des pics de trafic massifs et simultanés le jour du 15 Août, sans aucun ralentissement ni indisponibilité serveur.',
+            'Créer une expérience de partage direct optimisée pour WhatsApp, Instagram, Facebook et X (Twitter) avec des visuels au format adapté à chaque réseau.',
+            'Mettre en place un compteur interactif en temps réel des flammes allumées, connecté à une base de données mise à jour instantanément à chaque participation.',
+            'Concevoir et livrer un back-office complet pour que l’équipe Celebrate Congo puisse gérer en totale autonomie les messages de participation, les histoires des héros publiées en front-end, et la base de contacts de la newsletter.',
+            'Assurer la modération efficace des messages d’unité soumis par les participants avant leur affichage public, pour garantir un environnement sain et bienveillant.',
           ],
         },
       },
@@ -1435,25 +1456,32 @@ export const PROJECTS_DATA: Project[] = [
           id: 'solution',
           title: 'La Solution 360° Celebrate Congo',
           introText:
-            'Une WebApp festive et engageante conçue pour un fort impact social :',
+            'Un écosystème digital complet en deux volets : une WebApp publique festive & engageante, et un back-office de pilotage éditorial sur-mesure :',
           solutions: [
             {
-              title: '1. Générateur de Cartes Personnalisées',
-              subtitle: 'Identité Visuelle & Partage Social',
+              title: '1. Interface Publique & Modules d’Engagement',
+              subtitle: 'Pour toute la communauté congolaise',
               features: [
-                'Interface intuitive permettant de charger sa photo, personnaliser son nom et choisir son message d’unité',
-                'Moteur de rendu Canvas ultra-rapide générant l’image officielle HD aux couleurs nationales',
-                'Boutons de téléchargement et de partage direct optimisés pour WhatsApp et les réseaux sociaux',
+                'Générateur de cartes personnalisées : upload de photo, saisie du nom et choix du message d’unité avec rendu Canvas HD instantané',
+                'Module "J’allume ma flamme" avec compteur temps réel des participants enregistrés depuis le Congo et la diaspora mondiale',
+                'Partage en un clic vers WhatsApp, Instagram, Facebook et X avec visuels formatés par réseau social',
+                'Section Histoire : galerie des figures historiques et héros du passé du Congo, enrichie dynamiquement depuis l’administration',
+                'Section Révélation : contenu éditorial et messages forts autour de l’identité et de l’unité nationale congolaise',
+                'Espace Sponsors & Direct : mise en avant des partenaires et lien vers la diffusion en direct de la célébration nationale',
+                'Newsletter : formulaire d’inscription pour rester informé des prochaines initiatives Celebrate Congo',
               ],
+              techStack: ['Angular', 'Canvas API', 'TypeScript', 'SCSS', 'Node.js'],
             },
             {
-              title: '2. Flamme Virtuelle & Compteur d’Engagement',
-              subtitle: 'Mobilisation & Temps Réel',
+              title: '2. Back-Office Éditorial & Administration',
+              subtitle: 'Pour l’équipe Celebrate Congo',
               features: [
-                'Module interactif "J’allume ma flamme pour le Congo"',
-                'Compteur en temps réel des participants à l’échelle nationale et internationale',
-                'Architecture Angular ultra-légère garantissant une expérience fluide même sur réseau mobile contraint',
+                'Tableau de bord de modération des messages d’unité : validation, rejet ou signalement des messages soumis par les participants avant publication publique',
+                'Gestion complète des Histoires & Héros du Congo : création, édition et publication depuis l’admin avec affichage instantané sur la page Histoire publique',
+                'Module de gestion de la newsletter : consultation de la base de contacts, export des abonnés et suivi des inscriptions',
+                'Interface sécurisée par authentification JWT avec accès restreint à l’équipe éditoriale de Celebrate Congo',
               ],
+              techStack: ['Angular', 'Node.js', 'PostgreSQL', 'JWT Auth'],
             },
           ],
         },
@@ -1464,31 +1492,38 @@ export const PROJECTS_DATA: Project[] = [
           id: 'process',
           title: 'Le Processus de Réalisation',
           introText:
-            'Une exécution agile et réactive menée en 3 semaines :',
+            'Une exécution agile et réactive menée en 4 semaines, du cadrage au lancement officiel :',
           steps: [
             {
               number: 1,
-              title: 'Cadrage & Design UX/UI',
+              title: 'Cadrage, Direction Artistique & Maquettes UX/UI',
               duration: '1 semaine',
               description:
-                'Conception des maquettes et définition de la charte visuelle célébrant l’indépendance du Congo.',
+                'Définition de l’identité visuelle patriotique (couleurs nationales du Congo, typographies impactantes), conception des maquettes Figma pour toutes les pages publiques et le back-office, validation avec le client.',
             },
             {
               number: 2,
-              title: 'Développement du Moteur Canvas & WebApp',
+              title: 'Développement du Moteur Canvas & Interface Publique',
               duration: '1.5 semaine',
               description:
-                'Implémentation Angular, développement du module d’export d’image dynamique et des compteurs.',
+                'Implémentation Angular de l’ensemble des modules publics : générateur de cartes Canvas HD, système de flamme avec compteur temps réel, pages Histoire, Révélation, Sponsors et formulaire newsletter.',
             },
             {
               number: 3,
-              title: 'Tests de Charge & Lancement Officiel',
+              title: 'Développement du Back-Office & APIs',
+              duration: '1 semaine',
+              description:
+                'Construction du backend Node.js et des APIs REST sécurisées : module de modération des messages, gestion CRUD des histoires des héros, administration de la newsletter et système d’authentification JWT.',
+            },
+            {
+              number: 4,
+              title: 'Tests de Charge, Recette & Lancement Officiel',
               duration: '0.5 semaine',
               description:
-                'Validation des performances sous fort trafic et mise en ligne officielle sur celebratecongo.com.',
+                'Validation des performances sous trafic intense (simulation de milliers de participants simultanés), tests de la modération, vérification des flux de partage social et mise en ligne officielle le 15 Août.',
             },
           ],
-          totalDuration: '3 semaines',
+          totalDuration: '4 semaines',
         },
       },
       {
