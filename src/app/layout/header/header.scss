@@ -76,12 +76,19 @@
     justify-content: center;
     transition: color 0.3s ease;
 
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+
     @include respond-to('md') {
       display: inline-flex;
     }
 
-    &:hover {
-      color: $accent-green-light;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $dark-quaternary;
+      background: transparent;
+      outline: none;
     }
   }
 
@@ -122,7 +129,10 @@
   // ============================================
   &.menu-open {
     @include respond-to('md') {
-      background-color: rgba($dark-primary, 0.98);
+      background: $dark-secondary;
+      background-image: radial-gradient(ellipse at 30% 20%, rgba($accent-green, 0.22) 0%, transparent 65%),
+        radial-gradient(ellipse at 80% 80%, rgba($dark-quaternary, 0.18) 0%, transparent 60%);
+      opacity: 1;
     }
   }
 }

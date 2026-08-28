@@ -30,7 +30,8 @@
                                 @for (fill of starFills; track $index) {
                                 <svg viewBox="0 0 24 24" width="16" height="16" class="star-svg">
                                     <defs>
-                                        <linearGradient [id]="'proc-star-grad-' + $index" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <linearGradient [id]="'proc-star-grad-' + $index" x1="0%" y1="0%" x2="100%"
+                                            y2="0%">
                                             <stop [attr.offset]="fill + '%'" stop-color="#ffc107" />
                                             <stop [attr.offset]="fill + '%'" stop-color="#ffffff" />
                                         </linearGradient>
@@ -40,7 +41,8 @@
                                 </svg>
                                 }
                             </div>
-                            <span class="rating-info">{{ googleReviews.rating }} • {{ googleReviews.count }} avis vérifiés</span>
+                            <span class="rating-info">{{ googleReviews.rating }} • {{ googleReviews.count }} avis
+                                vérifiés</span>
                         </div>
                     </a>
                 </div>
@@ -56,8 +58,8 @@
 
                 <!-- BOTTOM: Action rapide -->
                 <div class="proof-footer">
-                    <app-evo-button text="Planifier 30 min d'échange" preset="green" variant="solid" size="md" icon="faArrowRight"
-                        (click)="quoteService.openQuoteForm()">
+                    <app-evo-button text="Planifier 30 min d'échange" preset="green" variant="solid" size="md"
+                        icon="faArrowRight" (click)="quoteService.openQuoteForm()">
                     </app-evo-button>
                 </div>
 
@@ -73,7 +75,8 @@
             <!-- COLONNE GAUCHE : Titre + Contexte -->
             <div class="process-header">
                 <h2 class="title">
-                    Comment nous <span>travaillons</span> ensemble
+                    La <span>réalité</span> d'une <span>collaboration</span> : comment nous faisons
+                    <span>avancer</span> votre <span>projet</span>
                 </h2>
                 <p class="desc">
                     Un accompagnement en 6 étapes conçu pour que vous sachiez exactement où vous en êtes,
@@ -81,7 +84,6 @@
                 </p>
 
                 <div class="process-action">
-                    <p class="action-text">Prêt à démarrer ?</p>
                     <app-evo-button text="Lancer mon projet" preset="cream" variant="outline" icon="faArrowRight"
                         (click)="quoteService.openQuoteForm()">
                     </app-evo-button>

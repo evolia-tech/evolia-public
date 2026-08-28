@@ -57,11 +57,7 @@
             z-index: 2;
 
             @include respond-to('md') {
-                position: relative;
-                transform: none;
-                left: auto;
-                inset: auto;
-                padding: 1.5rem 1rem 2rem;
+                display: none !important;
             }
         }
     }

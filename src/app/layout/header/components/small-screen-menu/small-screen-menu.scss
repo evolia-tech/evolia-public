@@ -9,14 +9,16 @@
   width: 100%;
   height: 100vh;
   height: 100dvh;
-  background: rgba($dark-primary, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: $dark-secondary;
+  background-image: radial-gradient(ellipse at 30% 20%, rgba($accent-green, 0.22) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 80%, rgba($dark-quaternary, 0.18) 0%, transparent 60%);
+  opacity: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
   z-index: 1005;
+  -webkit-tap-highlight-color: transparent;
 
   &__inner {
     display: flex;

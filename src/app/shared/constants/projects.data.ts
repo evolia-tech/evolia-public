@@ -1416,7 +1416,7 @@ export const PROJECTS_DATA: Project[] = [
         data: {
           images: [
             {
-              src: '/images/projects/celebrate-congo/celebrate-congo.webp',
+              src: '/images/projects/celebrate-congo/mockup-celebrate-congo.webp',
               alt: 'Celebrate Congo Plateforme',
               variant: 'mockup',
             },
