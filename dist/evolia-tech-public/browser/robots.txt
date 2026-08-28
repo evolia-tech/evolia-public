@@ -1,6 +1,6 @@
 # ─────────────────────────────────────────────────────────────
 # Evolia Tech – robots.txt
-# Site : https://foryoumedia-africa.com/
+# Site : https://evolia-tech.com/
 # ─────────────────────────────────────────────────────────────
 
 # Autoriser tous les robots
@@ -21,4 +21,4 @@ User-agent: Googlebot-Image
 Allow: /images/
 
 # Sitemap
-Sitemap: https://foryoumedia-africa.com//sitemap.xml
+Sitemap: https://evolia-tech.com/sitemap.xml
