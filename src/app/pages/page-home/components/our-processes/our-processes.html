@@ -1,0 +1,117 @@
+<section class="process-section" id="our-processes">
+    <!-- IMAGE BANNIÈRE PLEINE LARGEUR -->
+    <div class="process-banner">
+        <img ngSrc="images/processes/client-meeting.webp" fill
+            alt="Réunion et démonstration client avec l'équipe Évolia Tech">
+        <div class="process-banner-overlay"></div>
+
+        <!-- CARTE FLOTTANTE : SOCIAL PROOF & CTA -->
+        <div class="container process-banner-container">
+            <div class="floating-proof-card">
+
+                <!-- TOP: Badge Avis Google (Inspiré de la section Stats) -->
+                <div class="proof-header">
+                    <a [href]="googleReviews.url" target="_blank" rel="noopener noreferrer" class="google-review-badge"
+                        title="Consulter nos avis sur Google">
+                        <div class="google-icon-circle">
+                            <svg viewBox="0 0 24 24" width="22" height="22">
+                                <path fill="#4285F4"
+                                    d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
+                                <path fill="#34A853"
+                                    d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.27v3.15C3.25 21.3 7.31 24 12 24z" />
+                                <path fill="#FBBC05"
+                                    d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.27C.46 8.2.0 10.05.0 12s.46 3.8 1.27 5.42l4.01-3.15z" />
+                                <path fill="#EA4335"
+                                    d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.25 2.7 1.27 6.58l4.01 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
+                            </svg>
+                        </div>
+                        <div class="review-details">
+                            <div class="stars">
+                                @for (fill of starFills; track $index) {
+                                <svg viewBox="0 0 24 24" width="16" height="16" class="star-svg">
+                                    <defs>
+                                        <linearGradient [id]="'proc-star-grad-' + $index" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop [attr.offset]="fill + '%'" stop-color="#ffc107" />
+                                            <stop [attr.offset]="fill + '%'" stop-color="#ffffff" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path [attr.fill]="'url(#proc-star-grad-' + $index + ')'"
+                                        d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.399 8.166L12 18.896l-7.333 3.864 1.399-8.166-5.934-5.784 8.2-1.192z" />
+                                </svg>
+                                }
+                            </div>
+                            <span class="rating-info">{{ googleReviews.rating }} • {{ googleReviews.count }} avis vérifiés</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- MIDDLE: Titre & Description -->
+                <div class="proof-body">
+                    <h3 class="proof-title">Un cadrage clair avant tout engagement</h3>
+                    <p class="proof-desc">
+                        Échangez en direct avec notre équipe technique.
+                        Nous définissons ensemble la meilleure stratégie pour votre projet.
+                    </p>
+                </div>
+
+                <!-- BOTTOM: Action rapide -->
+                <div class="proof-footer">
+                    <app-evo-button text="Planifier 30 min d'échange" preset="green" variant="solid" size="md" icon="faArrowRight"
+                        (click)="quoteService.openQuoteForm()">
+                    </app-evo-button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- BLOCS EN DESSOUS (2 COLONNES) -->
+        <div class="process-container">
+
+            <!-- COLONNE GAUCHE : Titre + Contexte -->
+            <div class="process-header">
+                <h2 class="title">
+                    Comment nous <span>travaillons</span> ensemble
+                </h2>
+                <p class="desc">
+                    Un accompagnement en 6 étapes conçu pour que vous sachiez exactement où vous en êtes,
+                    à chaque moment de votre projet.
+                </p>
+
+                <div class="process-action">
+                    <p class="action-text">Prêt à démarrer ?</p>
+                    <app-evo-button text="Lancer mon projet" preset="cream" variant="outline" icon="faArrowRight"
+                        (click)="quoteService.openQuoteForm()">
+                    </app-evo-button>
+                </div>
+            </div>
+
+            <!-- COLONNE DROITE : 1 seule colonne d'étapes -->
+            <div class="process-steps">
+
+                @for (step of steps; track step.number) {
+                <div class="step-card-wrapper">
+                    <!-- Numéro de l'étape centré verticalement à droite, légèrement caché derrière la card -->
+                    <span class="step-bg-num">{{ step.number }}</span>
+
+                    <!-- Carte de l'étape (diminuée en largeur avec effet de flou/blur) -->
+                    <div class="step-card">
+                        <div class="step-card__inner">
+                            <h3 class="step-title">{{ step.title }}</h3>
+                            <p class="step-desc">{{ step.desc }}</p>
+                            @if (step.note) {
+                            <p class="step-note">{{ step.note }}</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

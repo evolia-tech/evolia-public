@@ -9,6 +9,12 @@
     }
 
     @defer (on viewport; prefetch on idle) {
+        <app-our-processes></app-our-processes>
+    } @placeholder {
+        <div style="min-height: 500px;"></div>
+    }
+
+    @defer (on viewport; prefetch on idle) {
         <app-testimonials></app-testimonials>
     } @placeholder {
         <div style="min-height: 400px;"></div>

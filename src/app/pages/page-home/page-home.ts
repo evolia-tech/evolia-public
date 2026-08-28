@@ -4,6 +4,7 @@ import { ServicesGrid } from './components/services-grid/services-grid';
 import { Testimonials } from "./components/testimonials/testimonials";
 import { Faq } from './components/faq/faq';
 import { LastestProjects } from './components/lastest-projects/lastest-projects';
+import { OurProcesses } from './components/our-processes/our-processes';
 
 @Component({
   selector: 'app-page-home',
@@ -13,6 +14,7 @@ import { LastestProjects } from './components/lastest-projects/lastest-projects'
     HeroBanner,
     LastestProjects,
     ServicesGrid,
+    OurProcesses,
     Testimonials,
     Faq
   ]

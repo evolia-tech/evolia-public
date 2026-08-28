@@ -54,11 +54,9 @@
     grid-template-columns: 1.2fr 1fr;
     align-items: stretch;
     border-radius: $border-radius-2xl;
-    background: rgba($dark-secondary, 0.65);
+    background: $dark-secondary;
     background-image: radial-gradient(ellipse at 30% 20%, rgba($accent-green, 0.22) 0%, transparent 65%),
       radial-gradient(ellipse at 80% 80%, rgba($dark-quaternary, 0.18) 0%, transparent 60%);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba($light-cream, 0.1);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     cursor: pointer;
