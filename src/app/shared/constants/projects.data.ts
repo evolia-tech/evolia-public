@@ -543,7 +543,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'for-you-media-africa',
     title: 'Plateforme média digitale panafricaine moderne',
     clientName: 'For You Média Africa',
-    showcaseImage: '/images/projects/for-you-media.webp',
+    showcaseImage: '/images/projects/for-you-media-afica/for-you-media.webp',
     isSpotlighted: true,
     keyResults: [
       { icon: 'faRocket', label: 'Temps de chargement < 2s' },
@@ -779,7 +779,7 @@ export const PROJECTS_DATA: Project[] = [
     slug: 'soprano-vesinet',
     title: 'Expérience digitale immersive pour un restaurant gastronomique',
     clientName: 'Soprano Vésinet',
-    showcaseImage: '/images/projects/soprano-vesinet.png',
+    showcaseImage: '/images/projects/soprano-vesinet/soprano-vesinet.webp',
     isSpotlighted: true,
     keyResults: [
       { icon: 'faUtensils', label: 'Menu interactif' },
@@ -980,7 +980,7 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Expérience digitale festive & restaurant italien premium',
     clientName: 'Amore Mio',
     image: '/images/projects/amore-mio.png',
-    showcaseImage: '/images/projects/amore-mio.png',
+    showcaseImage: '/images/projects/amore-mio/amore-mio.webp',
     isSpotlighted: true,
     liveUrl: 'https://amoremio78.com/',
     keyResults: [

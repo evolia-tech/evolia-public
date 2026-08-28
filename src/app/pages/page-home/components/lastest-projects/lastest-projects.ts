@@ -32,7 +32,7 @@ export class LastestProjects implements AfterViewInit, OnDestroy {
   protected projectLayoutService = inject(ProjectLayoutService);
 
   protected projectsForCarousel = computed(() => {
-    const base = this.projectService.spotlightedProjects();
+    const base = this.projectService.spotlightedProjects().slice(0, 5);
     return [...base, ...base, ...base];
   });
 

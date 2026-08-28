@@ -82,7 +82,7 @@
           border-radius: 14px;
           @include flex-center;
           font-size: 1.3rem;
-          margin-bottom: 2.25rem;
+          margin-bottom: 4rem;
         }
 
         .title {
@@ -94,8 +94,7 @@
 
         .desc {
           font-size: 0.98rem;
-          line-height: 1.6;
-          margin: 0;
+          line-height: 1.5;
         }
 
         // --- VARIATION 1 : CARTE BRAND (BACKGROUND HERO BRAND-CARD) ---
