@@ -1,5 +1,4 @@
 import { Component, output } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -8,7 +7,7 @@ import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
   selector: 'app-small-screen-menu',
   templateUrl: './small-screen-menu.html',
   styleUrl: './small-screen-menu.scss',
-  imports: [CommonModule, RouterModule, FontAwesomeModule]
+  imports: [RouterModule, FontAwesomeModule]
 })
 export class SmallScreenMenu {
   closeMenu = output<void>();
