@@ -38,7 +38,7 @@ export class Team {
         '/images/team/steve.webp',
       hobbyLabel: 'Explorateur 🔍',
       mainSkills: ['Node.js', 'PostgreSQL', 'Microservices'],
-      socials: [{ platform: 'LinkedIn', icon: 'faLinkedin', url: '#' }],
+      socials: [{ platform: 'LinkedIn', icon: 'faLinkedin', url: 'https://www.linkedin.com/in/steve-bekou/' }],
     },
     {
       id: 3,
@@ -74,14 +74,14 @@ export class Team {
       id: 5,
       firstName: 'George',
       lastName: 'Abougou',
-      role: 'Assistant de Direction',
+      role: 'Coordinateur des opérations',
       // Pro: Professionnel administratif
       photoPro: '/images/team/george.webp',      // Hobby: Football
       photoHobby: '/images/team/george.webp',
       hobbyLabel: 'Footballeur ⚽',
       mainSkills: ['Gestion', 'Communication', 'Agile'],
       socials: [
-        { platform: 'LinkedIn', icon: 'faLinkedin', url: '#' },
+        { platform: 'LinkedIn', icon: 'faLinkedin', url: 'https://www.linkedin.com/in/george-abougou-abeng-1b51263a9' },
         { platform: 'Email', icon: 'faEnvelope', url: 'mailto:...' },
       ],
     },
