@@ -89,7 +89,7 @@
 
   // --- TYPOGRAPHIE ---
   &__title {
-    max-width: 720px;
+    max-width: 785px;
     // La taille est gérée responsive dans styles.scss (h1),
     // mais on peut forcer un peu plus grand ici si besoin
     line-height: 1;
@@ -103,7 +103,7 @@
   }
 
   &__description {
-    max-width: 550px;
+    max-width: 510px;
     font-size: 1.05rem;
     line-height: 1.5;
     color: $text-muted;

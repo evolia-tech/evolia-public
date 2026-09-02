@@ -8,8 +8,8 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-RAWWHB6N.js",
-      "chunk-EKIKVSQX.js",
+      "chunk-WHKANE6Z.js",
+      "chunk-6M6MLWXY.js",
       "chunk-3FPIGL5B.js",
       "chunk-6ZDDPA2A.js",
       "chunk-WYX2ETMM.js",
@@ -24,8 +24,8 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-RAWWHB6N.js",
-      "chunk-EKIKVSQX.js",
+      "chunk-WHKANE6Z.js",
+      "chunk-6M6MLWXY.js",
       "chunk-3FPIGL5B.js",
       "chunk-6ZDDPA2A.js",
       "chunk-WYX2ETMM.js",
@@ -124,8 +124,8 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-RAWWHB6N.js",
-      "chunk-EKIKVSQX.js",
+      "chunk-WHKANE6Z.js",
+      "chunk-6M6MLWXY.js",
       "chunk-3FPIGL5B.js",
       "chunk-6ZDDPA2A.js",
       "chunk-WYX2ETMM.js",
@@ -141,8 +141,8 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-RAWWHB6N.js",
-      "chunk-EKIKVSQX.js",
+      "chunk-WHKANE6Z.js",
+      "chunk-6M6MLWXY.js",
       "chunk-3FPIGL5B.js",
       "chunk-6ZDDPA2A.js",
       "chunk-WYX2ETMM.js",
@@ -157,8 +157,8 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-RAWWHB6N.js",
-      "chunk-EKIKVSQX.js",
+      "chunk-WHKANE6Z.js",
+      "chunk-6M6MLWXY.js",
       "chunk-3FPIGL5B.js",
       "chunk-6ZDDPA2A.js",
       "chunk-WYX2ETMM.js",
@@ -173,8 +173,8 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-RAWWHB6N.js",
-      "chunk-EKIKVSQX.js",
+      "chunk-WHKANE6Z.js",
+      "chunk-6M6MLWXY.js",
       "chunk-3FPIGL5B.js",
       "chunk-6ZDDPA2A.js",
       "chunk-WYX2ETMM.js",
@@ -189,8 +189,8 @@ export default {
   {
     "renderMode": 2,
     "preload": [
-      "chunk-RAWWHB6N.js",
-      "chunk-EKIKVSQX.js",
+      "chunk-WHKANE6Z.js",
+      "chunk-6M6MLWXY.js",
       "chunk-3FPIGL5B.js",
       "chunk-6ZDDPA2A.js",
       "chunk-WYX2ETMM.js",
@@ -217,26 +217,26 @@ export default {
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 6541, hash: '97ae48aabd3e5158c670166a43b1f6fee68a150d55754ac380798beacdf99b53', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 6141, hash: '98292b21f1ecd15a991f7c93256db70c9ffb055569e4d4e80eb5da1748851ea3', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'portfolio/for-you-media-africa/index.html': {size: 100053, hash: '663fe6b6019c0e66f1dcbadc5c14f1cfb5f4ff8d9b85f583d39f642cfdfeeeb9', text: () => import('./assets-chunks/portfolio_for-you-media-africa_index_html.mjs').then(m => m.default)},
-    'portfolio/index.html': {size: 108502, hash: '8b0e4935d11010a6fedf14009c8eb84a28a6b50910070bdcf9adde687a01f7c3', text: () => import('./assets-chunks/portfolio_index_html.mjs').then(m => m.default)},
-    'index.html': {size: 94134, hash: '7c9270c7dd41d8eeba41486c5aef087a8fa277b559d19f2eff56009942a148bb', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
-    'portfolio/parti-politique-purs/index.html': {size: 56261, hash: '2fef0e21c76d3d40d9c49b0a02b2b465942591e70cad831bea6bac017c3b08e3', text: () => import('./assets-chunks/portfolio_parti-politique-purs_index_html.mjs').then(m => m.default)},
-    'portfolio/presidentielles-cameroun/index.html': {size: 56293, hash: '04194072d746f1fed5a441ae7bd68b88dd8490c90af33500f2b2703504a1416a', text: () => import('./assets-chunks/portfolio_presidentielles-cameroun_index_html.mjs').then(m => m.default)},
-    'portfolio/stella/index.html': {size: 98607, hash: '5e5fe05fc9d0f23d7e06dc0bf644e67519c2969ec8b9fe33597e8c71f8ffdb83', text: () => import('./assets-chunks/portfolio_stella_index_html.mjs').then(m => m.default)},
-    'mentions-legales/index.html': {size: 83696, hash: 'c859238d45ea84abe05c6ec3363511404c0e22f52a4b1cfd153add5dd897543a', text: () => import('./assets-chunks/mentions-legales_index_html.mjs').then(m => m.default)},
-    'contact/index.html': {size: 98689, hash: '8e557bb96e0b233569823de88d1c166526068b137fb541082d20540dc052ac05', text: () => import('./assets-chunks/contact_index_html.mjs').then(m => m.default)},
-    'estimation-projet/index.html': {size: 64676, hash: 'c74376bef81d4584952d8f08dada26865d994fd4d0c98a2f303742139df6aeeb', text: () => import('./assets-chunks/estimation-projet_index_html.mjs').then(m => m.default)},
-    'portfolio/presidentielles-senegal/index.html': {size: 56403, hash: '277c2d3e5fc8501b5d666c6fe26977d93d44315a7a2d6cec0d70bd998963b50a', text: () => import('./assets-chunks/portfolio_presidentielles-senegal_index_html.mjs').then(m => m.default)},
-    'portfolio/amore-mio/index.html': {size: 91026, hash: '3e44109f6a53cdde19caa4b08fb4dd50e875fbd24bfa1a87db9fa358fb73fd79', text: () => import('./assets-chunks/portfolio_amore-mio_index_html.mjs').then(m => m.default)},
-    'portfolio/association-mahol-diaspora/index.html': {size: 103609, hash: 'a71189cd43c26288fd1ad5262363e33e51f72523fd092c0c2cae55f76ce61a45', text: () => import('./assets-chunks/portfolio_association-mahol-diaspora_index_html.mjs').then(m => m.default)},
-    'portfolio/celebrate-congo/index.html': {size: 95473, hash: 'cd5787154c8ee0df48115fbbbd169e4c2df597b9be8b12ca47d248ee8623abdb', text: () => import('./assets-chunks/portfolio_celebrate-congo_index_html.mjs').then(m => m.default)},
-    'portfolio/liko-auto/index.html': {size: 107944, hash: '0d74bbf87c2ce16d66618975581aa903e1df874d75fa4d10a7f8ca02d9686b61', text: () => import('./assets-chunks/portfolio_liko-auto_index_html.mjs').then(m => m.default)},
-    'about/index.html': {size: 144561, hash: '45ddfd61b1d76f893b1fb1ff6398752c11018ad87bcb8ac42768caefefe721a3', text: () => import('./assets-chunks/about_index_html.mjs').then(m => m.default)},
-    'politique-de-confidentialite/index.html': {size: 85173, hash: '6270926c2e626172f6cc6d7808fbaccb0a73f7345160ac4ef676d759467b5abf', text: () => import('./assets-chunks/politique-de-confidentialite_index_html.mjs').then(m => m.default)},
-    'portfolio/elites-voyages/index.html': {size: 56378, hash: '3bcf91470093e2b295c8d667af56bb4b98c6f7c06994cc673a9a2f7f7ade5d63', text: () => import('./assets-chunks/portfolio_elites-voyages_index_html.mjs').then(m => m.default)},
-    'portfolio/soprano-vesinet/index.html': {size: 94427, hash: 'c323a617ca85cb853cca30036ba67a5ad5e3e9330095c7da82f5ddc05f9d496f', text: () => import('./assets-chunks/portfolio_soprano-vesinet_index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 6541, hash: 'b00ac436a2d64e21dffe9bdadb1f92527ffd2320905e50438e90c16c935a9a1c', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 6141, hash: 'cb828a516e8c06da04e39d012d3c63d172f4d762fa565629d09cb3fae6622c71', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'portfolio/index.html': {size: 108560, hash: '41b3b977d05b81e542a837689cdad3ff8087c4c2de7a774a32e8e5f94770c8ca', text: () => import('./assets-chunks/portfolio_index_html.mjs').then(m => m.default)},
+    'portfolio/for-you-media-africa/index.html': {size: 100919, hash: '41f3b5ef4182eff9c248de1f833cdf5633479097d272491a2fe4bc5b67149332', text: () => import('./assets-chunks/portfolio_for-you-media-africa_index_html.mjs').then(m => m.default)},
+    'index.html': {size: 94204, hash: '61021f8fbd83d81da112c3b7849ea513588f83a007dee4ec7d394f31514d3122', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'portfolio/presidentielles-cameroun/index.html': {size: 56278, hash: 'b833cc07177e872eec0fcfabc7f0b7dab613c81443f82c10fd41b8597ac1170d', text: () => import('./assets-chunks/portfolio_presidentielles-cameroun_index_html.mjs').then(m => m.default)},
+    'portfolio/parti-politique-purs/index.html': {size: 56260, hash: 'd5870a24f6157b29f66a12a053f5123380afea88e3d866d9f3e62b85ab414e7f', text: () => import('./assets-chunks/portfolio_parti-politique-purs_index_html.mjs').then(m => m.default)},
+    'portfolio/stella/index.html': {size: 98854, hash: '3d776a11fc791c4b34100fa5a11502d8e2555bd5cf68e1012e4806c3321bf8ed', text: () => import('./assets-chunks/portfolio_stella_index_html.mjs').then(m => m.default)},
+    'mentions-legales/index.html': {size: 83758, hash: '9632290d938437f562ffe205f9f57c5e13e72ff1250913fdcaa575cfe12259b2', text: () => import('./assets-chunks/mentions-legales_index_html.mjs').then(m => m.default)},
+    'estimation-projet/index.html': {size: 64676, hash: 'c8be317346765b185816c57322302344a81625d7b6d4e068bdc4bb515018d625', text: () => import('./assets-chunks/estimation-projet_index_html.mjs').then(m => m.default)},
+    'contact/index.html': {size: 98988, hash: 'a77f57458de5eea4b76a39eeb043310a92808144856002e13e821ae034989f22', text: () => import('./assets-chunks/contact_index_html.mjs').then(m => m.default)},
+    'portfolio/presidentielles-senegal/index.html': {size: 56402, hash: '4b05875a48a9d26b05b603a54ed1406a21f00eb9d43e2fc2bdec9225c9a5ddc8', text: () => import('./assets-chunks/portfolio_presidentielles-senegal_index_html.mjs').then(m => m.default)},
+    'portfolio/association-mahol-diaspora/index.html': {size: 104471, hash: 'e3bd8fd11e800471070a8289ae3bf77452d35af144c0d2aa645cdc291adf9fa4', text: () => import('./assets-chunks/portfolio_association-mahol-diaspora_index_html.mjs').then(m => m.default)},
+    'portfolio/amore-mio/index.html': {size: 91889, hash: '761fe7517b6f0d7682ae4fc3b229e7a9c952ad570610e252aad0d83f7e6ef4f1', text: () => import('./assets-chunks/portfolio_amore-mio_index_html.mjs').then(m => m.default)},
+    'portfolio/celebrate-congo/index.html': {size: 95684, hash: 'ef05e04338c5ff6a031955075487f59ef82968cfc16ae57fd6688b47c76b75ba', text: () => import('./assets-chunks/portfolio_celebrate-congo_index_html.mjs').then(m => m.default)},
+    'portfolio/liko-auto/index.html': {size: 108155, hash: '8f165381f7367a68347d59d77caa7994913b904bc1c6296fd95f691362d7dab2', text: () => import('./assets-chunks/portfolio_liko-auto_index_html.mjs').then(m => m.default)},
+    'about/index.html': {size: 144779, hash: '47af5df92f2645f7aaed33d0b54165497cacb94c52335a4123a9147e7dec1738', text: () => import('./assets-chunks/about_index_html.mjs').then(m => m.default)},
+    'politique-de-confidentialite/index.html': {size: 85231, hash: 'e263e2e71adc317d0163fa4f7e5b381f4a114906562d76fa8fab5f67b946be3d', text: () => import('./assets-chunks/politique-de-confidentialite_index_html.mjs').then(m => m.default)},
+    'portfolio/elites-voyages/index.html': {size: 56377, hash: 'c2166463eac2bf75c0ae820c3ec9763bd6dbafa7f6d72fa134bf6df96e151706', text: () => import('./assets-chunks/portfolio_elites-voyages_index_html.mjs').then(m => m.default)},
+    'portfolio/soprano-vesinet/index.html': {size: 95293, hash: 'f3d06cc4fe5b1d320585e7de3b2533000d4303264b43a21be2708f35cefce2b2', text: () => import('./assets-chunks/portfolio_soprano-vesinet_index_html.mjs').then(m => m.default)},
     'styles-H223NSZR.css': {size: 5575, hash: 'dHU1f1kOm+Y', text: () => import('./assets-chunks/styles-H223NSZR_css.mjs').then(m => m.default)}
   },
 };

@@ -14,6 +14,17 @@
             loading="lazy"
           />
         </div>
+        @if (liveUrl()) {
+          <div class="mockup-action-button">
+            <app-evo-button
+              text="Voir le site web"
+              [link]="liveUrl()!"
+              [isExternal]="true"
+              preset="cream"
+              variant="outline"
+            />
+          </div>
+        }
       } @else {
         <img
           [src]="item.src"

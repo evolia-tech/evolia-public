@@ -545,6 +545,7 @@ export const PROJECTS_DATA: Project[] = [
     clientName: 'For You Média Africa',
     showcaseImage: '/images/projects/for-you-media-afica/for-you-media.webp',
     isSpotlighted: true,
+    liveUrl: 'https://foryoumediaafrica.com/',
     keyResults: [
       { icon: 'faRocket', label: 'Temps de chargement < 2s' },
       { icon: 'faMobileAlt', label: '100% mobile-first' },
@@ -781,6 +782,7 @@ export const PROJECTS_DATA: Project[] = [
     clientName: 'Soprano Vésinet',
     showcaseImage: '/images/projects/soprano-vesinet/soprano-vesinet.webp',
     isSpotlighted: true,
+    liveUrl: 'https://lesoprano.fr/',
     keyResults: [
       { icon: 'faUtensils', label: 'Menu interactif' },
       { icon: 'faMagic', label: 'Animations premium' },

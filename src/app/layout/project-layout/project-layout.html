@@ -28,7 +28,7 @@
                     <app-project-block-overview [data]="block.data" />
                   }
                   @case ('media') {
-                    <app-project-block-media [data]="block.data" />
+                    <app-project-block-media [data]="block.data" [liveUrl]="project()?.liveUrl" />
                   }
                   @case ('text') {
                     <app-project-block-text-section [data]="block.data" />
