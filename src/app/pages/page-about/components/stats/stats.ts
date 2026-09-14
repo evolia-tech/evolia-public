@@ -5,13 +5,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGear, faStar } from '@fortawesome/free-solid-svg-icons';
 import { EvoButton } from '../../../../shared/components/ui/evo-button/evo-button';
 import { GOOGLE_REVIEWS, getStarFills } from '../../../../shared/constants/company.data';
+import { GsapSplitTextFadeInScrollTriggerDirective } from '../../../../shared/directives/gsap-split-text-fade-in-scroll-trigger/gsap-split-text-fade-in-scroll-trigger.directive';
 
 @Component({
   selector: 'app-about-stats',
   standalone: true,
   templateUrl: './stats.html',
   styleUrl: './stats.scss',
-  imports: [CommonModule, RouterModule, FontAwesomeModule, EvoButton]
+  imports: [CommonModule, RouterModule, FontAwesomeModule, EvoButton, GsapSplitTextFadeInScrollTriggerDirective]
 })
 export class AboutStats {
   faGear = faGear;

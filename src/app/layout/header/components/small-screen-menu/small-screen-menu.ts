@@ -1,7 +1,8 @@
-import { Component, output } from '@angular/core';
+import { Component, output, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { QuoteService } from '../../../../core/services/quote';
 
 @Component({
   selector: 'app-small-screen-menu',
@@ -10,6 +11,7 @@ import { faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
   imports: [RouterModule, FontAwesomeModule]
 })
 export class SmallScreenMenu {
+  public quoteService = inject(QuoteService);
   closeMenu = output<void>();
 
   faFacebook = faFacebook;
@@ -17,6 +19,11 @@ export class SmallScreenMenu {
 
   onLinkClick() {
     this.closeMenu.emit();
+  }
+
+  openQuote() {
+    this.closeMenu.emit();
+    this.quoteService.openQuoteForm();
   }
 }
 

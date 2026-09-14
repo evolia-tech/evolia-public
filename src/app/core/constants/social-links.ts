@@ -17,11 +17,5 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: 'https://www.facebook.com/profile.php?id=61579578880270',
     icon: 'faFacebook',
     ariaLabel: 'Facebook'
-  },
-  {
-    name: 'Twitter / X',
-    url: 'https://twitter.com',
-    icon: 'faTwitter',
-    ariaLabel: 'Twitter'
   }
 ];

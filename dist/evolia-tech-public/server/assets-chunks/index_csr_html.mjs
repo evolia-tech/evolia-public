@@ -38,6 +38,8 @@ export default `<!doctype html>
   <link rel="preload" href="/fonts/inter/inter-variable.woff2" as="font" type="font/woff2" crossorigin="" fetchpriority="high">
   <link rel="preload" href="/fonts/sora/sora-variable.woff2" as="font" type="font/woff2" crossorigin="" fetchpriority="high">
 
+
+
   <!-- JSON-LD Schema.org – Organisation & Service (Google Rich Snippet) -->
   <script type="application/ld+json">
   {
@@ -108,10 +110,10 @@ export default `<!doctype html>
     ]
   }
   </script>
-<style>*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;font-size:16px;min-height:100%}body{min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}@font-face{font-family:Inter;src:url(/fonts/inter/inter-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}body{font-family:Inter,sans-serif;font-size:1rem;font-weight:400;color:#f9f9d3;background-color:#0a0325}</style><link rel="stylesheet" href="styles-H223NSZR.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-H223NSZR.css"></noscript></head>
+<style>*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;font-size:16px;min-height:100%}body{min-height:100vh;min-height:100dvh;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}@font-face{font-family:Inter;src:url(/fonts/inter/inter-variable.woff2) format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}body{font-family:Inter,sans-serif;font-size:1rem;font-weight:400;color:#f9f9d3;background-color:#0a0325}</style><link rel="stylesheet" href="styles-2BCGEXHC.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-2BCGEXHC.css"></noscript></head>
 
 <body ngcm="">
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-SFCKP5NJ.js"><link rel="modulepreload" href="chunk-RHFSIO2S.js"><link rel="modulepreload" href="chunk-BOA2IVTW.js"><link rel="modulepreload" href="chunk-GJTLTZS3.js"><link rel="modulepreload" href="chunk-4PCV6SOG.js"><link rel="modulepreload" href="chunk-OSFFGX7A.js"><link rel="modulepreload" href="chunk-HH7GCH4N.js"><link rel="modulepreload" href="chunk-Q5W3CDSJ.js"><script src="main-ZR5F57IC.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-IOVZGJZJ.js"><link rel="modulepreload" href="chunk-O3ZYXD2I.js"><link rel="modulepreload" href="chunk-XMTADCPR.js"><link rel="modulepreload" href="chunk-GJTLTZS3.js"><link rel="modulepreload" href="chunk-AQQIZSVH.js"><link rel="modulepreload" href="chunk-PPZQZRI5.js"><link rel="modulepreload" href="chunk-NF2LVCOL.js"><link rel="modulepreload" href="chunk-FAMEKB7S.js"><script src="main-4OEY6VEL.js" type="module"></script></body>
 
 </html>`;

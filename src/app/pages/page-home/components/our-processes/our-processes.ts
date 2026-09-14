@@ -3,6 +3,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { EvoButton } from '../../../../shared/components/ui/evo-button/evo-button';
 import { QuoteService } from '../../../../core/services/quote';
 import { GOOGLE_REVIEWS, getStarFills } from '../../../../shared/constants/company.data';
+import { GsapSplitTextFadeInScrollTriggerDirective } from '../../../../shared/directives/gsap-split-text-fade-in-scroll-trigger/gsap-split-text-fade-in-scroll-trigger.directive';
 
 export interface ProcessStep {
   number: number;
@@ -15,7 +16,7 @@ export interface ProcessStep {
   selector: 'app-our-processes',
   templateUrl: './our-processes.html',
   styleUrl: './our-processes.scss',
-  imports: [NgOptimizedImage, EvoButton],
+  imports: [NgOptimizedImage, EvoButton, GsapSplitTextFadeInScrollTriggerDirective],
 })
 export class OurProcesses {
   public quoteService = inject(QuoteService);

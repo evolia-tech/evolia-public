@@ -11,7 +11,7 @@
       <div class="project-modal-highlight-box highlight-card-item">
         @if (card.imagePosition === 'left' && card.imageSrc) {
           <div class="image-wrapper towns">
-            <img [src]="card.imageSrc" [alt]="card.imageAlt || ''" />
+            <app-project-block-media [data]="{ src: card.imageSrc, alt: card.imageAlt || '' }" />
           </div>
         }
 
@@ -24,7 +24,7 @@
 
         @if ((card.imagePosition === 'right' || !card.imagePosition) && card.imageSrc) {
           <div class="image-wrapper towns">
-            <img [src]="card.imageSrc" [alt]="card.imageAlt || ''" />
+            <app-project-block-media [data]="{ src: card.imageSrc, alt: card.imageAlt || '' }" />
           </div>
         }
       </div>

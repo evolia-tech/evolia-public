@@ -6,18 +6,18 @@
   </div>
 
   <div class="container hero__container">
-    <h1 class="hero__title">
-      Construisons ensemble le <span class="text-gradient">site web</span> ou
+    <h1 class="hero__title" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="true" [duration]="0.8" [delay]="0.1">
+      <span class="desktop-text">Construisons</span><span class="mobile-text">Créons</span> ensemble le <span class="text-gradient">site web</span> ou
       <span class="text-gradient">l'application mobile</span> qui propulse votre activité
     </h1>
-    <p class="hero__description">
+    <p class="hero__description" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="false" [duration]="0.8" [delay]="0.45">
       Faites équipe avec nos experts pour transformer vos idées en réalité grâce à notre accompagnement
       sur-mesure
     </p>
-    <div class="hero__actions">
-      <app-evo-button text="Nos Réalisations" link="/portfolio" variant="solid" preset="green"></app-evo-button>
-      <app-evo-button text="Lancer mon projet" variant="outline" preset="cream"
-        (click)="quoteService.openQuoteForm()"></app-evo-button>
+    <div class="hero__actions" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="false" [duration]="0.8" [delay]="0.75">
+      <app-evo-button text="Voir nos réalisations" link="/portfolio" variant="solid" preset="green"></app-evo-button>
+      <app-evo-button text="Planifier appel (30 Min)" variant="outline" preset="cream"
+        (click)="calendlyService.openAuditPopup()"></app-evo-button>
     </div>
   </div>
 </section>

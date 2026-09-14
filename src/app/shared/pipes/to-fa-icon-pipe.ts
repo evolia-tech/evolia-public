@@ -34,7 +34,8 @@ import {
   faXmark,
   faSearch,
   faPlay,
-  faPlus
+  faPlus,
+  faCalendarCheck
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -83,6 +84,7 @@ const ICONS_MAP: Record<string, IconProp> = {
   'faSearch': faSearch,
   'faPlay': faPlay,
   'faPlus': faPlus,
+  'faCalendarCheck': faCalendarCheck,
   // --- Brands ---
   'faLinkedin': faLinkedin,
   'faFacebook': faFacebook,

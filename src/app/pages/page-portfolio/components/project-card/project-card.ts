@@ -2,11 +2,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../../../shared/models/project';
 import { EvoButton } from '../../../../shared/components/ui/evo-button/evo-button';
+import { GsapSplitTextFadeInScrollTriggerDirective } from '../../../../shared/directives/gsap-split-text-fade-in-scroll-trigger/gsap-split-text-fade-in-scroll-trigger.directive';
 
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [CommonModule, EvoButton],
+  imports: [CommonModule, EvoButton, GsapSplitTextFadeInScrollTriggerDirective],
   templateUrl: './project-card.html',
   styleUrl: './project-card.scss'
 })

@@ -1,7 +1,7 @@
 <section [id]="data().id" class="project-modal-detail-section">
-  <h3 class="section-title">{{ data().title }}</h3>
+  <h3 class="section-title" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="true" [duration]="0.8" [delay]="0.1">{{ data().title }}</h3>
   @for (p of data().paragraphs; track $index) {
-    <p [innerHTML]="p"></p>
+    <p [innerHTML]="p" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="false" [duration]="0.7" [delay]="0.2 + ($index * 0.15)"></p>
   }
   @if (data().listItems && data().listItems!.length > 0) {
     <ul class="text-section-list">

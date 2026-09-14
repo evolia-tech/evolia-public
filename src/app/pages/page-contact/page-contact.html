@@ -4,13 +4,13 @@
     <!-- GAUCHE : Coordonnées et réseaux -->
     <div class="page-contact__info">
 
-      <h1 class="page-contact__title">
+      <h1 class="page-contact__title" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="true" [duration]="0.8" [delay]="0.1">
         <span>Échangeons</span> sur
         votre prochaine
         ambition digitale
       </h1>
 
-      <p class="page-contact__subtitle">
+      <p class="page-contact__subtitle" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="false" [duration]="0.8" [delay]="0.45">
         Une idée de produit SaaS, une application mobile sur-mesure ou une identité de marque à façonner ? Nos équipes
         sont à votre entière disposition pour donner vie à vos projets les plus ambitieux. Partagez-nous votre
         vision pour initier notre future collaboration.
@@ -19,18 +19,12 @@
       <!-- Réseaux sociaux (directement après le texte descriptif) -->
       <div class="socials-section">
         <div class="social-links">
-          <a href="https://www.linkedin.com/company/evolia-tech" target="_blank" aria-label="LinkedIn" class="social-link">
-            <fa-icon [icon]="'faLinkedin' | toFaIcon"></fa-icon>
+          @for (social of socialLinks; track social.name) {
+          <a [href]="social.url" target="_blank" [attr.aria-label]="social.ariaLabel" class="social-link"
+             appGsapSplitTextFadeInScrollTrigger [isTextSplit]="false" [duration]="0.5" [delay]="0.7 + $index * 0.1">
+            <fa-icon [icon]="social.icon | toFaIcon"></fa-icon>
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61579578880270" target="_blank" aria-label="Facebook" class="social-link">
-            <fa-icon [icon]="'faFacebook' | toFaIcon"></fa-icon>
-          </a>
-          <a href="https://github.com" target="_blank" aria-label="GitHub" class="social-link">
-            <fa-icon [icon]="'faGithub' | toFaIcon"></fa-icon>
-          </a>
-          <a href="https://twitter.com" target="_blank" aria-label="Twitter / X" class="social-link">
-            <fa-icon [icon]="'faTwitter' | toFaIcon"></fa-icon>
-          </a>
+          }
         </div>
       </div>
 
@@ -54,6 +48,21 @@
 
     <!-- DROITE : Formulaire -->
     <div class="page-contact__form-container">
+      <!-- Prise de RDV Calendly Directe (Au-dessus du formulaire) -->
+      <div class="calendly-booking-box card--glass">
+        <div class="dots-pattern"></div>
+        <div class="booking-header">
+          <span class="booking-icon">📅</span>
+          <h3 class="booking-title">Vous préférez un échange direct ?</h3>
+        </div>
+        <p class="booking-description">
+          Réservez gratuitement un créneau de 30 minutes avec notre Architecte <br> Solution pour cadrer vos besoins techniques.
+        </p>
+        <app-evo-button text="Planifier un rendez-vous (30 Min)" preset="green" variant="solid"
+          (click)="calendlyService.openAuditPopup()">
+        </app-evo-button>
+      </div>
+
       <div class="form-card">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate class="contact-form">
 

@@ -1,7 +1,9 @@
 <div class="project-card-wrapper" [class.is-reverse]="index % 2 === 1" [class.is-pending]="!hasCaseStudy">
 
   <!-- Numéro du projet (Top 10 Netflix alterné gauche / droite) -->
-  <span class="project-index">{{ (index + 1).toString().padStart(2, '0') }}</span>
+  <span class="project-index" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="false" [duration]="0.8" [delay]="0.1">
+    {{ (index + 1).toString().padStart(2, '0') }}
+  </span>
 
   <article class="project-item" (click)="onCardClick()">
 

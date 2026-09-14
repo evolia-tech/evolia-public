@@ -12,12 +12,17 @@
     </li>
     <li>
       <a routerLink="/portfolio" routerLinkActive="active">
-        Nos Réalisations
+        Réalisations
       </a>
     </li>
     <li>
       <a routerLink="/contact" routerLinkActive="active">
         Contact
+      </a>
+    </li>
+    <li>
+      <a (click)="quoteService.openQuoteForm()" role="button" tabindex="0" style="cursor: pointer;">
+        Devis
       </a>
     </li>
   </ul>

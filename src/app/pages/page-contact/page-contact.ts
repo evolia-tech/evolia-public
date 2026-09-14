@@ -5,6 +5,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToFaIconPipe } from '../../shared/pipes/to-fa-icon-pipe';
 import { GtmService } from '../../core/services/gtm';
 import { EmailService } from '../../core/services/email.service';
+import { CalendlyService } from '../../core/services/calendly';
+import { EvoButton } from '../../shared/components/ui/evo-button/evo-button';
+import { SOCIAL_LINKS } from '../../core/constants/social-links';
+import { GsapSplitTextFadeInScrollTriggerDirective } from '../../shared/directives/gsap-split-text-fade-in-scroll-trigger/gsap-split-text-fade-in-scroll-trigger.directive';
 
 export interface PopupState {
   isOpen: boolean;
@@ -18,12 +22,14 @@ export interface PopupState {
   selector: 'app-page-contact',
   templateUrl: './page-contact.html',
   styleUrl: './page-contact.scss',
-  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule, ToFaIconPipe],
+  imports: [CommonModule, ReactiveFormsModule, FontAwesomeModule, ToFaIconPipe, GsapSplitTextFadeInScrollTriggerDirective, EvoButton],
 })
 export class PageContact implements OnInit {
+  socialLinks = SOCIAL_LINKS;
   private fb = inject(FormBuilder);
   private gtmService = inject(GtmService);
   private emailService = inject(EmailService);
+  public calendlyService = inject(CalendlyService);
 
   contactForm!: FormGroup;
   isSubmitting = false;

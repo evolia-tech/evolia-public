@@ -1,12 +1,12 @@
 <div class="about-hero">
   <div class="content container">
     <div class="section-header">
-      <h1 class="title">
+      <h1 class="title" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="true" [duration]="0.8" [delay]="0.1">
         Notre <span>engagement</span> est de
         construire une <span>solution pérenne</span> pour le <span>succès</span> de vos projets
       </h1>
       <div class="action-block">
-        <p class="description">
+        <p class="description" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="false" [duration]="0.8" [delay]="0.45">
           Chez <b>Évolia Tech</b>, travailler en partenaires plutôt qu'en prestataires, c'est notre
           <b>ADN</b>.
           On conçoit des solutions digitales <b>robustes</b>, pensées pour <b>durer</b> et
@@ -16,7 +16,8 @@
         </p>
         <div class="socials">
           @for (social of socialLinks; track social.name) {
-          <a [href]="social.url" target="_blank" [attr.aria-label]="social.ariaLabel" class="social-link">
+          <a [href]="social.url" target="_blank" [attr.aria-label]="social.ariaLabel" class="social-link"
+             appGsapSplitTextFadeInScrollTrigger [isTextSplit]="false" [duration]="0.5" [delay]="0.7 + $index * 0.1">
             <fa-icon [icon]="social.icon | toFaIcon"></fa-icon>
           </a>
           }

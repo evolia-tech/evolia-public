@@ -2,6 +2,7 @@
   @for (item of items(); track $index) {
     <div
       class="intro-media"
+      [class.media-card-with-caption]="!!item.caption"
       [class.media-mockup-variant]="item.variant === 'mockup'"
     >
       @if (item.variant === 'mockup') {
@@ -26,15 +27,30 @@
           </div>
         }
       } @else {
-        <img
-          [src]="item.src"
-          [alt]="item.alt || ''"
-          class="standard-image"
-          loading="lazy"
-        />
+        <div class="media-frame">
+          @if (item.type === 'video') {
+            <video
+              [src]="item.src"
+              autoplay
+              loop
+              muted
+              playsinline
+              class="standard-video"
+            ></video>
+          } @else {
+            <img
+              [src]="item.src"
+              [alt]="item.alt || ''"
+              class="standard-image"
+              loading="lazy"
+            />
+          }
+        </div>
       }
       @if (item.caption) {
-        <span class="media-caption">{{ item.caption }}</span>
+        <div class="caption-container">
+          <p class="media-caption">{{ item.caption }}</p>
+        </div>
       }
     </div>
   }

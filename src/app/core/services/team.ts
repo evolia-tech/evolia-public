@@ -58,13 +58,13 @@ export class Team {
       id: 4,
       firstName: 'Bisso',
       lastName: 'Na Bisso',
-      role: 'UI/UX Designer',
-      // Pro: Créatif / Designer
+      role: 'Storyteller & Vidéaste',
+      // Pro: Créatif / Vidéaste & Content
       photoPro: '/images/team/bisso.webp',
       // Hobby: Boxe
       photoHobby: '/images/team/bisso.webp',
       hobbyLabel: 'Boxeur 🥊',
-      mainSkills: ['Figma', 'Prototyping', 'Design System'],
+      mainSkills: ['Storytelling', 'Montage Vidéo', 'Création de Contenu'],
       socials: [
         { platform: 'Instagram', icon: 'faInstagram', url: '#' },
         { platform: 'Portfolio', icon: 'faGlobe', url: '#' },

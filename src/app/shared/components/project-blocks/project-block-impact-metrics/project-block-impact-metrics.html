@@ -14,8 +14,8 @@
       }
     </div>
     @if (data().imageSrc) {
-      <div class="image-wrapper">
-        <img [src]="data().imageSrc" [alt]="data().imageAlt || data().title" />
+      <div class="image-wrapper full-bleed-media">
+        <app-project-block-media [data]="{ src: data().imageSrc, alt: data().imageAlt || data().title }" />
       </div>
     }
   </div>

@@ -118,6 +118,10 @@ button {
 }
 
 // 7. Utilitaires globaux
+[appGsapSplitTextFadeInScrollTrigger] {
+  opacity: 0;
+}
+
 .container {
   @include container;
 }
@@ -300,6 +304,39 @@ button {
 
     b {
       color: rgba($light-cream, 0.9);
+    }
+  }
+}
+
+// 8. Custom Styling pour la Pop-up Calendly (Thème Évolia Tech)
+.calendly-overlay {
+  background-color: rgba(#0A0325, 0.82) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  z-index: 999999 !important;
+
+  .calendly-popup {
+    border-radius: $border-radius-2xl !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(#F9F9D3, 0.12) !important;
+    box-shadow: $shadow-xl, 0 0 50px rgba(#14694D, 0.25) !important;
+    max-height: 90vh !important;
+  }
+
+  .calendly-popup-content {
+    border-radius: $border-radius-2xl !important;
+  }
+
+  .calendly-close-overlay {
+    background-color: rgba(#1E1A45, 0.9) !important;
+    border-radius: 50% !important;
+    color: #F9F9D3 !important;
+    border: 1px solid rgba(#F9F9D3, 0.2) !important;
+    transition: all $transition-base !important;
+
+    &:hover {
+      background-color: #14694D !important;
+      transform: scale(1.1);
     }
   }
 }

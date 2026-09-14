@@ -1,0 +1,145 @@
+@use 'sass:color';
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.ceo-quote-section {
+  padding: 4rem 0 6rem 0;
+  position: relative;
+  z-index: 2;
+
+  @include respond-to('md') {
+    padding: 2.5rem 0 4rem 0;
+  }
+
+  .ceo-quote-card {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    background: $dark-secondary;
+    background-image: radial-gradient(ellipse at 50% 0%, rgba($accent-green, 0.25) 0%, transparent 70%),
+                      radial-gradient(ellipse at 80% 100%, rgba($dark-quaternary, 0.12) 0%, transparent 65%);
+    border: 1px solid rgba($light-cream, 0.12);
+    border-radius: $border-radius-2xl;
+    padding: 3.5rem 3rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: $shadow-xl, 0 0 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+
+    @include respond-to('md') {
+      padding: 2.5rem 1.5rem 2rem 1.5rem;
+      border-radius: $border-radius-xl;
+    }
+
+    // Glow décoratif d'arrière-plan
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 120px;
+      background: rgba($accent-green-light, 0.3);
+      filter: blur(50px);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .quote-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba($accent-green, 0.25);
+      border: 1px solid rgba($accent-green-light, 0.4);
+      color: $light-cream;
+      font-size: 1.4rem;
+      @include flex-center;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .ceo-quote-kicker {
+      font-family: $font-heading;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $dark-quaternary;
+      margin-bottom: 1.5rem;
+    }
+
+    .ceo-quote-text {
+      font-family: $font-heading;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 400;
+      line-height: 1.6;
+      color: $light-cream;
+      margin: 0 0 2rem 0;
+      max-width: 820px;
+
+      .highlight-val {
+        color: $dark-quaternary;
+        font-weight: 600;
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+      }
+    }
+
+    .ceo-profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+
+      .avatar-wrapper {
+        position: relative;
+        width: 130px;
+        height: 130px;
+
+        .avatar-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          border: none;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          transition: transform $transition-base;
+        }
+
+        .avatar-ring {
+          display: none;
+        }
+
+        &:hover .avatar-img {
+          transform: scale(1.04);
+        }
+      }
+
+      .ceo-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+
+        .ceo-name {
+          font-family: $font-heading;
+          font-size: 1.15rem;
+          font-weight: 600;
+          color: $light-cream;
+          margin: 0;
+        }
+
+        .ceo-role {
+          font-size: 0.875rem;
+          color: $dark-quaternary;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}

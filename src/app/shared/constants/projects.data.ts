@@ -92,6 +92,7 @@ export const PROJECTS_DATA: Project[] = [
             {
               src: '/images/projects/liko-auto/dahsboard-admin-liko-auto.webp',
               alt: 'Espace Administration & Dashboard Liko Auto',
+              caption: 'Diagramme de contexte C4 (Niveau 1) : Flux de données et interconnexion des briques applicatives Liko Auto dans le projet avec liko auto.'
             },
           ],
         },
@@ -545,7 +546,7 @@ export const PROJECTS_DATA: Project[] = [
     clientName: 'For You Média Africa',
     showcaseImage: '/images/projects/for-you-media-afica/for-you-media.webp',
     isSpotlighted: true,
-    liveUrl: 'https://foryoumediaafrica.com/',
+    liveUrl: 'https://foryoumedia-africa.com/',
     keyResults: [
       { icon: 'faRocket', label: 'Temps de chargement < 2s' },
       { icon: 'faMobileAlt', label: '100% mobile-first' },
@@ -782,7 +783,7 @@ export const PROJECTS_DATA: Project[] = [
     clientName: 'Soprano Vésinet',
     showcaseImage: '/images/projects/soprano-vesinet/soprano-vesinet.webp',
     isSpotlighted: true,
-    liveUrl: 'https://lesoprano.fr/',
+    liveUrl: 'https://sopranovesinet.com/',
     keyResults: [
       { icon: 'faUtensils', label: 'Menu interactif' },
       { icon: 'faMagic', label: 'Animations premium' },

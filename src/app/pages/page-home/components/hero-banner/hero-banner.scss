@@ -100,6 +100,22 @@
     .text-gradient {
       color: $dark-quaternary;
     }
+
+    .desktop-text {
+      display: inline;
+
+      @include respond-to('md') {
+        display: none;
+      }
+    }
+
+    .mobile-text {
+      display: none;
+
+      @include respond-to('md') {
+        display: inline;
+      }
+    }
   }
 
   &__description {

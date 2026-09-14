@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Team } from './components/team/team';
 import { HeroBanner } from './components/hero-banner/hero-banner';
 import { AboutValues } from './components/values/values';
+import { CeoQuote } from './components/ceo-quote/ceo-quote';
 import { AboutStats } from './components/stats/stats';
 
 @Component({
@@ -10,7 +11,7 @@ import { AboutStats } from './components/stats/stats';
   standalone: true,
   templateUrl: './page-about.html',
   styleUrl: './page-about.scss',
-  imports: [CommonModule, Team, HeroBanner, AboutValues, AboutStats]
+  imports: [CommonModule, Team, HeroBanner, AboutValues, CeoQuote, AboutStats]
 })
 export class PageAbout {
 

@@ -19,6 +19,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { EvoButton } from '../../../../shared/components/ui/evo-button/evo-button';
 import { QuoteService } from '../../../../core/services/quote';
+import { GsapSplitTextFadeInScrollTriggerDirective } from '../../../../shared/directives/gsap-split-text-fade-in-scroll-trigger/gsap-split-text-fade-in-scroll-trigger.directive';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +28,8 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './services-grid.html',
   styleUrl: './services-grid.scss',
   imports: [
-    EvoButton
+    EvoButton,
+    GsapSplitTextFadeInScrollTriggerDirective
   ],
 })
 export class ServicesGrid implements AfterViewInit, OnDestroy {

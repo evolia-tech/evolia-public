@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { QuoteService } from '../../../../core/services/quote';
 
 @Component({
   selector: 'app-large-screen-menu',
@@ -8,4 +9,6 @@ import { RouterModule } from '@angular/router';
   styleUrl: './large-screen-menu.scss',
   imports: [CommonModule, RouterModule]
 })
-export class LargeScreenMenu {}
+export class LargeScreenMenu {
+  public quoteService = inject(QuoteService);
+}

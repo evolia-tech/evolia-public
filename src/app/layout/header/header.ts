@@ -4,6 +4,7 @@ import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { EvoButton } from '../../shared/components/ui/evo-button/evo-button';
 import { QuoteService } from '../../core/services/quote';
+import { CalendlyService } from '../../core/services/calendly';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { LargeScreenMenu } from './components/large-screen-menu/large-screen-menu';
@@ -39,6 +40,7 @@ export class Header implements OnInit {
   private platformId = inject(PLATFORM_ID);
   private router = inject(Router);
   public quoteService = inject(QuoteService);
+  public calendlyService = inject(CalendlyService);
 
   constructor() {
     this.router.events.pipe(

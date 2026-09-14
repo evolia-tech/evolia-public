@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToFaIconPipe } from '../../../../shared/pipes/to-fa-icon-pipe';
 import { CommonModule } from '@angular/common';
+import { GsapSplitTextFadeInScrollTriggerDirective } from '../../../../shared/directives/gsap-split-text-fade-in-scroll-trigger/gsap-split-text-fade-in-scroll-trigger.directive';
 
 @Component({
   selector: 'app-testimonials',
@@ -13,7 +14,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    ToFaIconPipe
+    ToFaIconPipe,
+    GsapSplitTextFadeInScrollTriggerDirective
   ],
 })
 export class Testimonials {

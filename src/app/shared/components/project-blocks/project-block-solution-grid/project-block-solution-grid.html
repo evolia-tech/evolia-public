@@ -6,7 +6,22 @@
   <div class="solution-grid-container">
     @for (solution of data().solutions; track $index) {
       <div class="solution-card">
-        <h4>{{ solution.title }}</h4>
+        <div class="solution-card-header">
+          <h4>{{ solution.title.replace(/^\d+\.\s*/, '') }}</h4>
+          @if (solution.subtitle) {
+            <span class="solution-subtitle">{{ solution.subtitle }}</span>
+          }
+        </div>
+
+        @if (solution.media) {
+          <div class="solution-media-wrapper">
+            <app-project-block-media [data]="solution.media" />
+          </div>
+        } @else if (solution.imageSrc) {
+          <div class="solution-media-wrapper">
+            <app-project-block-media [data]="{ src: solution.imageSrc, alt: solution.imageAlt, caption: solution.imageCaption }" />
+          </div>
+        }
         <ul class="solution-features-list">
           @for (feature of solution.features; track $index) {
             <li [innerHTML]="feature"></li>
@@ -19,6 +34,10 @@
             }
           </div>
         }
+
+        <div class="solution-badge-cutout" aria-hidden="true">
+          <span class="cutout-number">{{ $index + 1 }}</span>
+        </div>
       </div>
     }
   </div>

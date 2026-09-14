@@ -21,6 +21,7 @@ export class ProjectBlockMediaComponent {
       return [
         {
           src: d.src,
+          type: d.type,
           alt: d.alt,
           caption: d.caption,
           variant: d.variant,

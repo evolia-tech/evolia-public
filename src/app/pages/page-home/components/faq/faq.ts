@@ -3,12 +3,13 @@ import { FaqItem } from '../../../../shared/models/faq-item';
 import { EvoButton } from '../../../../shared/components/ui/evo-button/evo-button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToFaIconPipe } from '../../../../shared/pipes/to-fa-icon-pipe';
+import { GsapSplitTextFadeInScrollTriggerDirective } from '../../../../shared/directives/gsap-split-text-fade-in-scroll-trigger/gsap-split-text-fade-in-scroll-trigger.directive';
 
 @Component({
   selector: 'app-faq',
   templateUrl: './faq.html',
   styleUrl: './faq.scss',
-  imports: [EvoButton, FontAwesomeModule, ToFaIconPipe],
+  imports: [EvoButton, FontAwesomeModule, ToFaIconPipe, GsapSplitTextFadeInScrollTriggerDirective],
 })
 export class Faq {
   openIndex = signal<number | null>(0); // Ouvre le 1er par défaut

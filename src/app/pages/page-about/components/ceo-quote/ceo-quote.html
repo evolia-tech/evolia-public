@@ -1,0 +1,31 @@
+<section class="ceo-quote-section">
+  <div class="container">
+    <div class="ceo-quote-card">
+      <!-- Décoration Icône Citation -->
+      <div class="quote-badge">
+        <fa-icon [icon]="'faQuoteLeft' | toFaIcon"></fa-icon>
+      </div>
+
+      <!-- Titre de section / Mot du CEO -->
+      <span class="ceo-quote-kicker">Le mot du Fondateur</span>
+
+      <!-- Citation principale avec focus sur les 3 valeurs -->
+      <blockquote class="ceo-quote-text" appGsapSplitTextFadeInScrollTrigger [isTextSplit]="true" [duration]="0.8" [delay]="0.1">
+        « Notre philosophie chez Évolia Tech repose sur trois principes fondamentaux : 
+        l'<span class="highlight-val">obsession du travail</span> bien fait, une <span class="highlight-val">relation de confiance</span> réciproque, et un <span class="highlight-val">accompagnement sur-mesure</span> à chaque étape de votre vision digitale. »
+      </blockquote>
+
+      <!-- Profil du Fondateur (Photo circulaire + Nom + Rôle) -->
+      <div class="ceo-profile">
+        <div class="avatar-wrapper">
+          <img src="/images/team/samuel.webp" alt="Samuel Bonachi Mandeng - CEO Évolia Tech" class="avatar-img" />
+          <div class="avatar-ring"></div>
+        </div>
+        <div class="ceo-meta">
+          <h3 class="ceo-name">Samuel Bonachi Mandeng</h3>
+          <span class="ceo-role">Fondateur & CEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

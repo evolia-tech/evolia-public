@@ -3,12 +3,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { EmailService } from '../../../core/services/email.service';
+import { CalendlyService } from '../../../core/services/calendly';
 
 @Injectable()
 export class QuoteWizardStateService {
   private fb = inject(FormBuilder);
   private router = inject(Router);
   private emailService = inject(EmailService);
+  private calendlyService = inject(CalendlyService);
 
   // DynamicDialogRef (optional, present if opened in modal)
   public dialogRef = inject(DynamicDialogRef, { optional: true });
@@ -200,8 +202,8 @@ export class QuoteWizardStateService {
     }
   }
 
-  bookCall(url: string = 'https://calendly.com/evolia-tech') {
-    window.open(url, '_blank');
+  bookCall(url: string = 'https://calendly.com/samuelm-evolia-tech/30min') {
+    this.calendlyService.openAuditPopup(url);
   }
 
   onSubmit() {

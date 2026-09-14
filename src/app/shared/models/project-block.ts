@@ -6,6 +6,7 @@ export interface ProjectOverviewData {
 
 export interface ProjectMediaItem {
   src: string;
+  type?: 'image' | 'video';
   alt?: string;
   caption?: string;
   variant?: 'standard' | 'mockup';
@@ -14,6 +15,7 @@ export interface ProjectMediaItem {
 
 export interface ProjectMediaData {
   src?: string;
+  type?: 'image' | 'video';
   alt?: string;
   caption?: string;
   variant?: 'standard' | 'mockup';
@@ -39,6 +41,10 @@ export interface ProjectSolutionPart {
   subtitle?: string;
   features: string[];
   techStack?: string[];
+  imageSrc?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+  media?: ProjectMediaData;
 }
 
 export interface ProjectSolutionGridData {
