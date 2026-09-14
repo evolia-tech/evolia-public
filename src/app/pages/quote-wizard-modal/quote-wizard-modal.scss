@@ -333,7 +333,7 @@ $black: #000000;
       .label {
         font-size: 1rem;
         font-weight: 600;
-        color: $light-cream;
+        color: $dark-quaternary;
         margin-bottom: 2px;
         line-height: 1.2;
         letter-spacing: 0px;
@@ -560,6 +560,12 @@ $black: #000000;
         font-size: 2rem;
         font-weight: $font-weight-medium;
 
+        &.solid-title {
+          color: $dark-quaternary;
+          background: none;
+          -webkit-text-fill-color: initial;
+        }
+
         .text-gradient {
           @include text-gradient($accent-green-light, $dark-quaternary);
           font-weight: $font-weight-bold;
@@ -570,6 +576,13 @@ $black: #000000;
         font-size: 1.05rem;
         color: rgba($light-cream, 0.9);
         line-height: 1.5;
+
+        &.text-muted {
+          color: $text-muted;
+          strong {
+            color: $light-cream;
+          }
+        }
 
         strong {
           color: $white;
